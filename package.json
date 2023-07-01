@@ -5,8 +5,13 @@
     "packages/*"
   ],
   "scripts": {
+    "build": "lerna run build",
+    "preversion": "yarn run build",
     "version:beta": "lerna version prerelease --preid beta",
-    "release": "lerna publish"
+    "release:github": "ts-node scripts/release release",
+    "release:force": "lerna publish from-package --yes --registry=https://moensun-npm.pkg.coding.net/npm/moensun/",
+    "prelease:force": "lerna publish from-package --yes --dist-tag next",
+    "release": "lerna publish --registry=https://moensun-npm.pkg.coding.net/npm/moensun/"
   },
   "dependencies": {},
   "devDependencies": {
