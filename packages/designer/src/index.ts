@@ -1,1 +1,1 @@
-export {default as Designer} from './designer';
+export {default as Designer} from './containers/designer';

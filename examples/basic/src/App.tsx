@@ -4,10 +4,8 @@ import {Designer} from "@alkaid/designer";
 
 function App() {
   return (
-    <div className="App">
       <Designer/>
 
-    </div>
   );
 }
 
