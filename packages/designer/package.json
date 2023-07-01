@@ -2,8 +2,8 @@
   "name": "@alkaid/designer",
   "version": "0.0.1-beta.1",
   "description": "",
-  "module": "dist/esm/index.js",
-  "types": "dist/esm/index.d.ts",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "dev": "father dev",
     "build": "father build",
