@@ -1,6 +1,6 @@
 {
   "name": "@alkaid/designer",
-  "version": "0.0.1",
+  "version": "0.0.1-beta.0",
   "description": "",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
