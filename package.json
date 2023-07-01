@@ -2,9 +2,12 @@
   "name": "root",
   "private": true,
   "workspaces": [
+    "examples/*",
     "packages/*"
   ],
   "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean",
     "build": "lerna run build",
     "preversion": "yarn run build",
     "version:beta": "lerna version prerelease --preid beta",

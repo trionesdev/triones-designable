@@ -3,6 +3,8 @@
     "strict": true,
     "declaration": true,
     "skipLibCheck": true,
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true
   }
 }
