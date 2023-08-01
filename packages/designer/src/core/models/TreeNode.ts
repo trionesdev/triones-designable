@@ -1,5 +1,8 @@
-import {uid} from "../../shared/uid";
+import {uid} from "../../shared";
 import {action, define, observable} from "@formily/reactive";
+import {IDesignerControllerProps, IDesignerProps} from "../types";
+import _ from "lodash";
+import {GlobalRegistry} from "../registry";
 
 export interface ITreeNode {
     componentName?: string
@@ -13,6 +16,14 @@ export interface ITreeNode {
 }
 
 const TreeNodes = new Map<string, TreeNode>()
+
+const resolveDesignerProps = (
+    node: TreeNode,
+    props: IDesignerControllerProps
+) => {
+    if (_.isFunction(props)) return props(node)
+    return props
+}
 
 export class TreeNode {
     parent?: ITreeNode
@@ -79,6 +90,18 @@ export class TreeNode {
         })
     }
 
-     designerProps(){}
+    get designerProps(): IDesignerProps {
+        const behaviors = GlobalRegistry.getDesignerBehaviors(this)
+        const designerProps: IDesignerProps = behaviors.reduce((buf, pattern) => {
+            if (!pattern.designerProps) return buf
+            Object.assign(buf, resolveDesignerProps(this, pattern.designerProps))
+            return buf
+        }, {})
+        return designerProps
+    }
+
+    static findById(id: string) {
+        return TreeNodes.get(id)
+    }
 
 }

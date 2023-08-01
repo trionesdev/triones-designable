@@ -1,6 +1,22 @@
 import {ISchema} from "@formily/react";
-import {ITreeNode, TreeNode} from "./models/TreeNode";
+import {ITreeNode, TreeNode} from "./models";
 import React from "react";
+
+export type EngineProps={
+    sourceIdAttrName?: string //拖拽源Id的dom属性名
+    nodeIdAttrName?: string //节点Id的dom属性名
+    contentEditableAttrName?: string //原地编辑属性名
+    contentEditableNodeIdAttrName?: string //原地编辑指定Node Id属性名
+    clickStopPropagationAttrName?: string //点击阻止冒泡属性
+    outlineNodeIdAttrName?: string //大纲树节点ID的dom属性名
+    nodeSelectionIdAttrName?: string //节点工具栏属性名
+    nodeDragHandlerAttrName?: string //节点拖拽手柄属性名
+    screenResizeHandlerAttrName?: string
+    nodeResizeHandlerAttrName?: string //节点尺寸拖拽手柄属性名
+    nodeTranslateAttrName?: string // 节点自由布局的属性名
+    defaultComponentTree?: ITreeNode //默认组件树
+    rootComponentName?: string
+}
 
 export interface IDesignerProps {
     package?: string //npm包名
@@ -119,6 +135,7 @@ export type IDesignerIconsStore = IDesignerStore<IDesignerIcons>
 export type IDesignerLocaleStore = IDesignerStore<IDesignerLocales>
 export type IDesignerBehaviorStore = IDesignerStore<IBehavior[]>
 export type IDesignerLanguageStore = IDesignerStore<string>
+
 
 
 export type DnFC<P = {}> = React.FC<P> & {
