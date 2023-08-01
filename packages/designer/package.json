@@ -24,7 +24,8 @@
     "access": "public"
   },
   "devDependencies": {
-    "@ant-design/cssinjs": "^1.10.1",
+    "@ant-design/cssinjs": "^1.16.1",
+    "@types/lodash": "^4.14.196",
     "@types/react": "^18.0.28",
     "antd": "^5.7.3",
     "father": "^4.3.0",
@@ -33,6 +34,8 @@
   "dependencies": {
     "@formily/antd-v5": "^1.1.0",
     "@formily/core": "^2.2.27",
-    "@formily/react": "^2.2.27"
+    "@formily/react": "^2.2.27",
+    "@formily/reactive": "^2.2.27",
+    "lodash": "^4.17.21"
   }
 }

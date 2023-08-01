@@ -1,8 +1,12 @@
-import React from "react"
+import React, {FC} from "react"
 import type {CSSInterpolation} from '@ant-design/cssinjs';
 import {useStyleRegister} from '@ant-design/cssinjs';
 import classNames from 'classnames';
 import {GlobalToken, theme} from 'antd';
+import Layout from "@alkaid/designer/src/react/containers/Layout";
+import {useDesigner} from "../hooks";
+import {DesignerEngineContext} from "../context";
+import {Engine} from "../../core";
 
 const {useToken} = theme;
 
@@ -18,8 +22,14 @@ const genDesignerStyle = (
     };
 };
 
+type DesignerProps = {
+    children?: React.ReactNode
+    engine: Engine
+}
 
-const Designer = () => {
+export const Designer: FC<DesignerProps> = ({...props}) => {
+    const engine = useDesigner()
+
     const prefixCls = 'alkaid-designer';
     const {theme, token, hashId} = useToken();
     const wrapSSR = useStyleRegister(
@@ -28,9 +38,10 @@ const Designer = () => {
     );
 
     return wrapSSR(
-        <div className={classNames(prefixCls, hashId)}>
-
-        </div>
+        <Layout {...props} className={classNames(prefixCls, hashId)}>
+            <DesignerEngineContext.Provider value={props.engine}>
+                {props.children}
+            </DesignerEngineContext.Provider>
+        </Layout>
     )
 }
-export default Designer

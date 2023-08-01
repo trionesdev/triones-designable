@@ -1,1 +1,1 @@
-export {default as Designer} from './containers/designer';
+export {default as Designer} from './react/containers/Designer';
