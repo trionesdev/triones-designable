@@ -1,7 +1,7 @@
 import {createContext} from "react";
 import {Engine, IDesignerComponents, TreeNode} from "../core";
 
-export const DesignerEngineContext = createContext<Engine | null>(null)
+export const DesignerEngineContext = createContext<Engine | null | undefined>(null)
 
 export const DesignerComponentsContext = createContext<IDesignerComponents>({})
 export const TreeNodeContext = createContext<TreeNode | null>(null)

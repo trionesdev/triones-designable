@@ -1,1 +1,3 @@
-export {default as Designer} from './react/containers/Designer';
+export * from "./core"
+export * from "./react"
+export * from "./formily/antd"

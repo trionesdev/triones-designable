@@ -2,6 +2,7 @@ import React, {FC} from "react"
 import {GlobalToken, theme} from "antd";
 import {CSSInterpolation, useStyleRegister} from "@ant-design/cssinjs";
 import {DesignerEngineContext} from "../context";
+import classNames from "classnames";
 
 const {useToken} = theme;
 const genLayoutStyle = (
@@ -32,7 +33,7 @@ export const Layout: FC<LayoutProps> = ({
         () => [genLayoutStyle(prefixCls, token)],
     );
 
-    return <div>
+    return <div className={classNames(prefixCls,hashId)}>
         {children}
     </div>
 }

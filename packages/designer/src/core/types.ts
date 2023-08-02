@@ -133,7 +133,7 @@ export interface IResourceCreator {
 
 export type IDesignerIconsStore = IDesignerStore<IDesignerIcons>
 export type IDesignerLocaleStore = IDesignerStore<IDesignerLocales>
-export type IDesignerBehaviorStore = IDesignerStore<IBehavior[]>
+export type IDesignerBehaviorStore = IDesignerStore<Map<string,IBehavior>>
 export type IDesignerLanguageStore = IDesignerStore<string>
 
 

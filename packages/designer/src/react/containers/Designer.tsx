@@ -3,10 +3,10 @@ import type {CSSInterpolation} from '@ant-design/cssinjs';
 import {useStyleRegister} from '@ant-design/cssinjs';
 import classNames from 'classnames';
 import {GlobalToken, theme} from 'antd';
-import Layout from "@alkaid/designer/src/react/containers/Layout";
 import {useDesigner} from "../hooks";
 import {DesignerEngineContext} from "../context";
 import {Engine} from "../../core";
+import {Layout} from "./Layout";
 
 const {useToken} = theme;
 
@@ -24,7 +24,7 @@ const genDesignerStyle = (
 
 type DesignerProps = {
     children?: React.ReactNode
-    engine: Engine
+    engine?: Engine
 }
 
 export const Designer: FC<DesignerProps> = ({...props}) => {
