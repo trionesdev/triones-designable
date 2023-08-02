@@ -29,7 +29,6 @@ const DESIGNER_GlobalRegistry = {
 
     registerDesignerBehaviors: (...packages: IDesignerBehaviors[]) => {
         _.forEach(packages,(sources,key)=>{
-            debugger
             _.forEach(sources,(source,key)=>{
                 _.forEach(source.Behavior,(behavior)=>{
                     DESIGNER_BEHAVIORS_STORE.value.set(behavior.name,behavior)

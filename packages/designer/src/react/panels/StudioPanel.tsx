@@ -3,6 +3,8 @@ import {Layout} from "../containers";
 import {GlobalToken, theme} from "antd";
 import {CSSInterpolation, useStyleRegister} from "@ant-design/cssinjs";
 import classNames from "classnames";
+import {DndProvider} from "react-dnd";
+import {HTML5Backend} from "react-dnd-html5-backend";
 
 const {useToken} = theme;
 const genStudioPanelStyle = (
@@ -33,7 +35,9 @@ export const StudioPanel: FC<StudioPanelProps> = ({...props}) => {
     return wrapSSR(
         <Layout>
             <div></div>
-            <div className={classNames(prefixCls, hashId)}>{props.children}</div>
+            <DndProvider backend={HTML5Backend}>
+                <div className={classNames(prefixCls, hashId)}>{props.children}</div>
+            </DndProvider>
         </Layout>
     )
 }

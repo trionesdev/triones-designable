@@ -37,6 +37,8 @@
     "@formily/core": "^2.2.27",
     "@formily/react": "^2.2.27",
     "@formily/reactive": "^2.2.27",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1"
   }
 }
