@@ -1,5 +1,5 @@
-import {IDesignerComponents, TreeNode} from "../../core";
-import React, {FC, Fragment} from "react";
+import {GlobalRegistry, IDesignerComponents, TreeNode} from "../../core";
+import React, {FC, Fragment, useEffect} from "react";
 import {observer} from "@formily/react";
 import {DesignerComponentsContext, TreeNodeContext} from "../context";
 import {useComponents, useDesigner, useTree} from "../hooks";
@@ -71,6 +71,9 @@ export type ComponentTreeWidgetProps = {
 export const ComponentTreeWidget: FC<ComponentTreeWidgetProps> =
     observer((props: ComponentTreeWidgetProps) => {
         const tree = useTree()
+        useEffect(() => {
+            GlobalRegistry.registerDesignerBehaviors(props.components)
+        }, [])
         return <>
             <DesignerComponentsContext.Provider value={props.components}>
                 <TreeNodeWidget node={tree} />

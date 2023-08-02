@@ -1,6 +1,15 @@
 import React from 'react';
 import './App.css';
-import {CompositePanel, Designer, Engine, Input, ResourceWidget, StudioPanel} from "@alkaid/designer/src";
+import {
+    ComponentTreeWidget,
+    CompositePanel,
+    Designer,
+    Engine,
+    Input,
+    ResourceWidget,
+    StudioPanel, ViewPanel, ViewportPanel,
+    WorkspacePanel
+} from "@alkaid/designer/src";
 
 function App() {
     const engine = new Engine()
@@ -12,6 +21,15 @@ function App() {
                         <ResourceWidget title={`表单组件`} sources={[Input]}/>
                     </CompositePanel.Item>
                 </CompositePanel>
+                <WorkspacePanel>
+                    <ViewportPanel>
+                        <ViewPanel>
+                            <ComponentTreeWidget components={{
+                                Input
+                            }}/>
+                        </ViewPanel>
+                    </ViewportPanel>
+                </WorkspacePanel>
             </StudioPanel>
         </Designer>
 

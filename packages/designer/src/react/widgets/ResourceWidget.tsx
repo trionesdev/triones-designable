@@ -44,15 +44,15 @@ export const ResourceWidget: FC<ResourceWidgetProps> = observer(({
         () => [genResourceWidgetStyle(prefixCls, token)],
     );
 
-    const sourcesList = _.reduce(sources,(buf:IResource[],source)=>{
+    const sourcesList = _.reduce(sources, (buf: IResource[], source) => {
         if (isResourceList(source)) {
             return buf.concat(source)
         } else if (isResourceHost(source)) {
             return buf.concat(source.Resource!)
         }
         return buf;
-    },[]);
-debugger
+    }, []);
+
     return wrapSSR(
         <div className={classNames(prefixCls, hashId)}>
             <Space className={classNames(`${prefixCls}-header`, hashId)} onClick={() => {
@@ -62,9 +62,9 @@ debugger
                 <span>{title}</span>
             </Space>
             <div>
-<Row>
-    {sourcesList.map((source)=><Col span={12}>sss</Col>)}
-</Row>
+                <Row>
+                    {sourcesList.map((source) => <Col span={12}>sss</Col>)}
+                </Row>
             </div>
         </div>
     )

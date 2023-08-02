@@ -11,37 +11,6 @@ import {isBehaviorHost, isBehaviorList} from "./externals";
 import {TreeNode} from "./models";
 import _ from "lodash";
 
-const reSortBehaviors = (target: IBehavior[], sources: IDesignerBehaviors) => {
-    const findTargetBehavior = (behavior: IBehavior) => target.includes(behavior)
-    const findSourceBehavior = (name: string) => {
-        for (let key in sources) {
-            const { Behavior } = sources[key]
-            if (Behavior){
-                for (let i = 0; i < Behavior.length; i++) {
-                    if (Behavior[i].name === name) return Behavior[i]
-                }
-            }
-        }
-    }
-    _.each(sources, (item) => {
-        if (!item) return
-        if (!isBehaviorHost(item)) return
-        const { Behavior } = item
-        _.each(Behavior, (behavior) => {
-            if (findTargetBehavior(behavior)) return
-            const name = behavior.name
-            _.each(behavior.extends, (dep) => {
-                const behavior = findSourceBehavior(dep)
-                if (!behavior)
-                    throw new Error(`No ${dep} behavior that ${name} depends on`)
-                if (!findTargetBehavior(behavior)) {
-                    target.unshift(behavior)
-                }
-            })
-            target.push(behavior)
-        })
-    })
-}
 
 const DESIGNER_BEHAVIORS_STORE: IDesignerBehaviorStore = observable.ref(new Map())
 
@@ -52,32 +21,21 @@ const DESIGNER_LOCALES_STORE: IDesignerLocaleStore = observable.ref({})
 const DESIGNER_GlobalRegistry = {
 
     setDesignerBehaviors: (behaviors: IBehaviorLike[]) => {
-        DESIGNER_BEHAVIORS_STORE.value = behaviors.reduce<IBehavior[]>(
-            (buf, behavior) => {
-                if (isBehaviorHost(behavior)) {
-                    return buf.concat(behavior.Behavior!)
-                } else if (isBehaviorList(behavior)) {
-                    return buf.concat(behavior)
-                }
-                return buf
-            },
-            []
-        )
+
     },
     getDesignerBehaviors: (node: TreeNode) => {
-        return DESIGNER_BEHAVIORS_STORE.value.filter((pattern) =>
-            pattern.selector(node)
-        )
+
     },
 
     registerDesignerBehaviors: (...packages: IDesignerBehaviors[]) => {
-        const results: IBehavior[] = []
-        packages.forEach((sources) => {
-            reSortBehaviors(results, sources)
+        _.forEach(packages,(sources,key)=>{
+            debugger
+            _.forEach(sources,(source,key)=>{
+                _.forEach(source.Behavior,(behavior)=>{
+                    DESIGNER_BEHAVIORS_STORE.value.set(behavior.name,behavior)
+                })
+            })
         })
-        if (results.length) {
-            DESIGNER_BEHAVIORS_STORE.value = results
-        }
     },
 }
 
