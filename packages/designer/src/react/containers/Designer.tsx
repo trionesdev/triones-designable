@@ -1,12 +1,12 @@
-import React, {FC} from "react"
+import React, {FC, useEffect} from "react"
 import type {CSSInterpolation} from '@ant-design/cssinjs';
 import {useStyleRegister} from '@ant-design/cssinjs';
 import classNames from 'classnames';
 import {GlobalToken, theme} from 'antd';
-import {useDesigner} from "../hooks";
 import {DesignerEngineContext} from "../context";
-import {Engine} from "../../core";
+import {Engine, GlobalRegistry} from "../../core";
 import {Layout} from "./Layout";
+import * as icons from "../icons"
 
 const {useToken} = theme;
 
@@ -27,8 +27,17 @@ type DesignerProps = {
     engine?: Engine
 }
 
+GlobalRegistry.registerDesignerIcons(icons)
+
 export const Designer: FC<DesignerProps> = ({...props}) => {
-    const engine = useDesigner()
+    // const engine = useDesigner()
+
+
+    useEffect(()=>{
+        document.addEventListener('mousedown',(e)=>{
+            console.log(e)
+        })
+    },[])
 
     const prefixCls = 'alkaid-designer';
     const {theme, token, hashId} = useToken();

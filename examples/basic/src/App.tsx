@@ -4,7 +4,7 @@ import {
     ComponentTreeWidget,
     CompositePanel,
     Designer,
-    Engine,
+    Engine, Field, Form,
     Input,
     ResourceWidget,
     StudioPanel, ViewPanel, ViewportPanel,
@@ -12,7 +12,9 @@ import {
 } from "@alkaid/designer/src";
 
 function App() {
-    const engine = new Engine()
+    const engine = new Engine({
+        rootComponentName: 'Form'
+    })
     return (
         <Designer engine={engine}>
             <StudioPanel>
@@ -25,6 +27,8 @@ function App() {
                     <ViewportPanel>
                         <ViewPanel>
                             <ComponentTreeWidget components={{
+                                Form,
+                                Field,
                                 Input
                             }}/>
                         </ViewPanel>

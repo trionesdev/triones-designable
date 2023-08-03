@@ -43,14 +43,25 @@ export const createBehavior = (
 }
 
 export const createResource = (...sources: IResourceCreator[]): IResource[] => {
-    return sources.reduce((buf: IResource[], source) => {
-        return buf.concat({
-            ...source,
-            node: new TreeNode({
-                componentName: '$$ResourceNode$$',
+    // return sources.reduce((buf: IResource[], source) => {
+    //
+    //     const  ss =buf.concat({
+    //         ...source,
+    //         node: new TreeNode({
+    //             componentName: '$$ResourceNode$$',
+    //             isSourceNode: true,
+    //             children: source.elements || [],
+    //         }),
+    //     })
+    //     debugger
+    //     return ss
+    // }, [])
+
+    return _.reduce(sources,(buf: IResource[], source)=>{
+        return buf.concat({...source,node: new TreeNode({
+                componentName: source.elements?.[0].componentName,
                 isSourceNode: true,
-                children: source.elements || [],
-            }),
-        })
-    }, [])
+                props: source.elements?.[0].props
+            })})
+    },[])
 }

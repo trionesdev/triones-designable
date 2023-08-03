@@ -1,5 +1,6 @@
 export * from "./containers"
 export * from "./hooks"
 export * from "./panels"
+export * from "./icons"
 export * from "./widgets"
 export * from "./context"

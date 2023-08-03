@@ -3,11 +3,12 @@ import {action, define, observable} from "@formily/reactive";
 import {IDesignerControllerProps, IDesignerProps} from "../types";
 import _ from "lodash";
 import {GlobalRegistry} from "../registry";
+import {Operation} from "./Operation";
 
 export interface ITreeNode {
     componentName?: string
     sourceName?: string
-    // operation?: Operation
+    operation?: Operation
     hidden?: boolean
     isSourceNode?: boolean
     id?: string
@@ -30,7 +31,7 @@ export class TreeNode {
 
     root?: ITreeNode
 
-    // rootOperation: Operation
+    rootOperation?: Operation
 
     id?: string
 
@@ -49,6 +50,7 @@ export class TreeNode {
     isSelfSourceNode?: boolean
 
     constructor(node?: ITreeNode, parent?: TreeNode) {
+        debugger
         if (node instanceof TreeNode) {
             return node
         }
@@ -60,12 +62,12 @@ export class TreeNode {
             TreeNodes.set(this.id, this)
         } else {
             this.root = this
-            // this.rootOperation = node.operation
+            this.rootOperation = node?.operation
             this.isSelfSourceNode = node?.isSourceNode || false
             TreeNodes.set(this.id, this)
         }
         if (node) {
-            // this.from(node)
+            this.from(node)
         }
         this.makeObservable()
     }
@@ -102,6 +104,28 @@ export class TreeNode {
 
     static findById(id: string) {
         return TreeNodes.get(id)
+    }
+
+    from(node?:ITreeNode){
+        if (!node) return
+        if (node.id && node.id !== this.id) {
+            TreeNodes.delete(this.id!)
+            TreeNodes.set(node.id, this)
+            this.id = node.id
+        }
+        if (node.componentName) {
+            this.componentName = node.componentName
+        }
+        this.props = node.props ?? {}
+        if (node.hidden) {
+            this.hidden = node.hidden
+        }
+        if (node.children) {
+            this.children =
+                node.children?.map?.((node) => {
+                    return new TreeNode(node, this)
+                }) || []
+        }
     }
 
 }

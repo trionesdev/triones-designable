@@ -1,12 +1,13 @@
 import React, {FC, useState} from "react";
-import {IResource, IResourceLike, isResourceHost, isResourceList} from "../../core";
+import {GlobalRegistry, IResource, IResourceLike, isResourceHost, isResourceList} from "../../core";
 import {observer} from "@formily/react";
 import {Button, Col, GlobalToken, Row, Space, theme} from "antd";
 import {CSSInterpolation, useStyleRegister} from "@ant-design/cssinjs";
 import classNames from "classnames";
-import {DownOutlined, RightOutlined} from "@ant-design/icons";
+import {BarsOutlined, DownOutlined, RightOutlined} from "@ant-design/icons";
 import _ from "lodash";
 import {useDrag} from "react-dnd";
+import Icon from '@ant-design/icons';
 
 const {useToken} = theme;
 
@@ -15,8 +16,7 @@ const genResourceItemStyle = (
     token: GlobalToken,
 ): CSSInterpolation => {
     return {
-        [`.${prefixCls}`]: {
-        }
+        [`.${prefixCls}`]: {}
     };
 };
 
@@ -25,7 +25,12 @@ type ResourceItemProps = {
 }
 const ResourceItem: FC<ResourceItemProps> = ({source}) => {
     debugger
-    const [, drag] = useDrag(() => ({type: 'component'}))
+    const [, drag] = useDrag(() => ({
+        type: 'component',
+        item: {source},
+    }), [source])
+
+    const { node, icon, title, thumb, span } = source
 
     const prefixCls = 'alkaid-designer-resource-item';
     const {theme, token, hashId} = useToken();
@@ -34,7 +39,8 @@ const ResourceItem: FC<ResourceItemProps> = ({source}) => {
         () => [genResourceItemStyle(prefixCls, token)],
     );
 
-    return <Button ref={drag} className={classNames(prefixCls, hashId)} block={true}>ddd</Button>
+   const  s =GlobalRegistry.getDesignerIcon(source.icon)
+    return <Button ref={drag} className={classNames(prefixCls, hashId)} block={true} icon={<BarsOutlined />} data-designer-source-id={node?.id}>  ddd</Button>
 }
 
 const genResourceWidgetStyle = (
@@ -49,7 +55,7 @@ const genResourceWidgetStyle = (
                 backgroundColor: '#f9f9f9',
                 padding: '5px 8px',
                 cursor: 'pointer',
-                boxSizing:'border-box'
+                boxSizing: 'border-box'
             }
         }
     };

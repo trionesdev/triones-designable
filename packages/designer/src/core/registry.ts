@@ -3,7 +3,7 @@ import {
     IBehavior,
     IBehaviorLike,
     IDesignerBehaviors,
-    IDesignerBehaviorStore,
+    IDesignerBehaviorStore, IDesignerIcons,
     IDesignerIconsStore,
     IDesignerLocaleStore
 } from "./types";
@@ -23,15 +23,26 @@ const DESIGNER_GlobalRegistry = {
     setDesignerBehaviors: (behaviors: IBehaviorLike[]) => {
 
     },
-    getDesignerBehaviors: (node: TreeNode) => {
 
+    getDesignerIcon: (name: string) => {
+        // @ts-ignore
+        return DESIGNER_ICONS_STORE[name];
+    },
+
+    getDesignerBehaviors: (node: TreeNode): IBehavior[] => {
+        return []
+    },
+
+    registerDesignerIcons: (map: IDesignerIcons) => {
+        debugger
+        Object.assign(DESIGNER_ICONS_STORE, map)
     },
 
     registerDesignerBehaviors: (...packages: IDesignerBehaviors[]) => {
-        _.forEach(packages,(sources,key)=>{
-            _.forEach(sources,(source,key)=>{
-                _.forEach(source.Behavior,(behavior)=>{
-                    DESIGNER_BEHAVIORS_STORE.value.set(behavior.name,behavior)
+        _.forEach(packages, (sources, key) => {
+            _.forEach(sources, (source, key) => {
+                _.forEach(source.Behavior, (behavior) => {
+                    DESIGNER_BEHAVIORS_STORE.value.set(behavior.name, behavior)
                 })
             })
         })
