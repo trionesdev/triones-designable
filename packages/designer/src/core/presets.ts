@@ -1,6 +1,6 @@
 import {DragDropDriver} from "./drivers";
 import {useDragDropEffect} from "./effects";
-import {MouseMoveDriver} from "./drivers/MouseMoveDriver";
+import {MouseMoveDriver} from "./drivers";
 import {useCursorEffect} from "./effects";
 
 export const DEFAULT_EFFECTS = [

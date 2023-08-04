@@ -1,6 +1,6 @@
 import {useLayoutEffect, useRef, useState} from "react";
 import {useViewport} from "../hooks";
-import { Viewport as ViewportType } from '../../core'
+import {Viewport as ViewportType} from '../../core'
 import {globalThisPolyfill, requestIdle} from "../../shared";
 import React from "react";
 import {AuxToolWidget} from "../widgets/AuxToolWidget";
@@ -15,7 +15,12 @@ const genViewportStyle = (
 ): CSSInterpolation => {
     return {
         [`.${prefixCls}`]: {
-            height: '100%'
+            height: '100%',
+            width: '100%',
+            minHeight: '100px',
+            position: 'relative',
+            outline: 'none',
+            boxSizing: 'border-box'
         }
     };
 };
@@ -30,7 +35,7 @@ export const Viewport: React.FC<IViewportProps> = ({
                                                        placeholder,
                                                        dragTipsDirection,
                                                        ...props
-                                                   }) =>{
+                                                   }) => {
     const [loaded, setLoaded] = useState(false)
     const viewport = useViewport()
     const ref = useRef<HTMLDivElement>()
@@ -73,7 +78,7 @@ export const Viewport: React.FC<IViewportProps> = ({
     return wrapSSR(<div
         {...props}
         ref={ref}
-        className={classNames(prefixCls,hashId)}
+        className={classNames(prefixCls, hashId)}
         style={{
             opacity: !loaded ? 0 : 1,
             overflow: isFrameRef.current ? 'hidden' : 'overlay',
@@ -81,6 +86,6 @@ export const Viewport: React.FC<IViewportProps> = ({
         }}
     >
         {props.children}
-        <AuxToolWidget />
+        <AuxToolWidget/>
     </div>)
 }

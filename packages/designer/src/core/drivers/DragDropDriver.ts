@@ -1,4 +1,4 @@
-import { Engine } from '../models/Engine'
+import { Engine } from '../models'
 import { DragStartEvent, DragMoveEvent, DragStopEvent } from '../events'
 import {EventDriver} from "../../shared";
 

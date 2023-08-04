@@ -112,8 +112,8 @@ export class MoveHelper {
     if (!closestNode || !viewport.isPointInViewport(point))
       return ClosestPosition.Forbid
     const closestRect = viewport.getValidNodeRect(closestNode)
+    console.log("MoveHelper:calcClosestPosition:closestRect",closestRect)
     const isInline = this.getClosestLayout(viewport) === 'horizontal'
-    debugger
     if (!closestRect) {
       return
     }
@@ -128,6 +128,7 @@ export class MoveHelper {
       return getValidParent(node.parent)
     }
     if (isPointInRect(point, closestRect, viewport.moveSensitive)) {
+      console.log("MoveHelper:calcClosestPosition:isPointInRect:true")
       if (!closestNode.allowAppend(this.dragNodes)) {
         if (!closestNode.allowSibling(this.dragNodes)) {
           const parentClosestNode = getValidParent(closestNode)
@@ -310,6 +311,7 @@ export class MoveHelper {
         point,
         this.viewport
       )
+      console.log("moveHelper:dragMove:",this.viewportClosestDirection)
       this.outlineClosestDirection = this.viewportClosestDirection
     }
     if (this.outline.mounted) {

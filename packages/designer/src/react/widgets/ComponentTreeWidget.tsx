@@ -1,12 +1,11 @@
 import {GlobalRegistry, IDesignerComponents, TreeNode} from "../../core";
-import React, {FC, forwardRef, Fragment, useEffect} from "react";
+import React, {FC, Fragment, useEffect} from "react";
 import {observer} from "@formily/react";
 import {DesignerComponentsContext, TreeNodeContext} from "../context";
 import {useComponents, useDesigner, useTree} from "../hooks";
 import {GlobalToken, theme} from "antd";
 import {CSSInterpolation, useStyleRegister} from "@ant-design/cssinjs";
 import classNames from "classnames";
-import {DragPreviewImage, useDrag, useDrop} from "react-dnd";
 
 const {useToken} = theme;
 
@@ -18,14 +17,14 @@ export type TreeNodeWidgetProps = {
 export const TreeNodeWidget: FC<TreeNodeWidgetProps> =
     observer((props: TreeNodeWidgetProps) => {
 
-        const [{opacity}, drag, preview] = useDrag(() => ({
-            type: 'component',
-            collect: (monitor) => ({
-                opacity: monitor.isDragging() ? 0.4 : 1,
-            }),
-        }))
-
-        debugger
+        // const [{opacity}, drag, preview] = useDrag(() => ({
+        //     type: 'component',
+        //     collect: (monitor) => ({
+        //         opacity: monitor.isDragging() ? 0.4 : 1,
+        //     }),
+        // }))
+        //
+        // debugger
         const designer = useDesigner()
         const components = useComponents()
         const node = props.node
@@ -56,14 +55,11 @@ export const TreeNodeWidget: FC<TreeNodeWidgetProps> =
                 if (designer) {
                     dataId[designer?.props?.nodeIdAttrName!] = node.id
                 }
-                return <>
-                    {/*<DragPreviewImage connect={preview} src={<></>} />*/}
-                    {React.createElement(
-                        Component,
-                        Object.assign(renderProps(dataId), {ref: drag}),
-                        ...renderChildren()
-                    )}
-                </>
+                return React.createElement(
+                    Component,
+                    renderProps(dataId),
+                    ...renderChildren()
+                )
             } else {
                 if (node?.children?.length) {
                     return <Fragment>{renderChildren()}</Fragment>

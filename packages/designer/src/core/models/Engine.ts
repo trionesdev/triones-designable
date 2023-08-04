@@ -3,6 +3,7 @@ import {Workbench} from "./Workbench";
 import {Event, globalThisPolyfill, IEventProps, uid} from "../../shared";
 import {Workspace} from "./Workspace";
 import {Cursor} from "./Cursor";
+import {Screen, ScreenType} from "./Screen";
 
 export type EngineProps<T = Event> = IEventProps<T> &{
     sourceIdAttrName?: string //拖拽源Id的dom属性名
@@ -17,6 +18,7 @@ export type EngineProps<T = Event> = IEventProps<T> &{
     nodeResizeHandlerAttrName?: string //节点尺寸拖拽手柄属性名
     nodeTranslateAttrName?: string // 节点自由布局的属性名
     defaultComponentTree?: ITreeNode //默认组件树
+    defaultScreenType?: ScreenType
     rootComponentName?: string
 }
 
@@ -26,6 +28,7 @@ export class Engine extends Event{
     cursor: Cursor
     workbench?: Workbench
     workspace?:Workspace
+    screen: Screen
 
     constructor(props: EngineProps) {
         super(props)
@@ -38,8 +41,8 @@ export class Engine extends Event{
     }
 
     init() {
-
         this.workbench = new Workbench(this)
+        this.screen = new Screen(this)
         this.cursor = new Cursor(this)
     }
 

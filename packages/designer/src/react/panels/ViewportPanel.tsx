@@ -2,6 +2,8 @@ import React, {FC} from "react";
 import {GlobalToken, theme} from "antd";
 import {CSSInterpolation, useStyleRegister} from "@ant-design/cssinjs";
 import classNames from "classnames";
+import {Simulator, Workspace} from "../containers";
+import {WorkspacePanel} from "./WorkspacePanel";
 
 const {useToken} = theme;
 const genViewportPanelStyle = (
@@ -21,13 +23,16 @@ type ViewportPanelProps = {
 export const ViewportPanel: FC<ViewportPanelProps> = ({
                                                           children
                                                       }) => {
-    const prefixCls = 'alkaid-designer-viewport-panel';
-    const {theme, token, hashId} = useToken();
-    const wrapSSR = useStyleRegister(
-        {theme, token, hashId, path: [prefixCls]},
-        () => [genViewportPanelStyle(prefixCls, token)],
-    );
-    return wrapSSR(
-        <div className={classNames(prefixCls, hashId)}>{children}</div>
-    )
+    // const prefixCls = 'alkaid-designer-viewport-panel';
+    // const {theme, token, hashId} = useToken();
+    // const wrapSSR = useStyleRegister(
+    //     {theme, token, hashId, path: [prefixCls]},
+    //     () => [genViewportPanelStyle(prefixCls, token)],
+    // );
+    // return wrapSSR(
+    //     <div className={classNames(prefixCls, hashId)}>{children}</div>
+    // )
+    return <WorkspacePanel.Item flexable>
+        <Simulator>{children}</Simulator>
+    </WorkspacePanel.Item>
 }
