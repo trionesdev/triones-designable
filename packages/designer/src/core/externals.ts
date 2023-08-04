@@ -1,6 +1,8 @@
 import _ from "lodash";
-import {TreeNode} from "./models";
+import {Engine, EngineProps, TreeNode} from "./models";
 import {IBehavior, IBehaviorHost, IResource, IResourceCreator, IResourceHost} from "./types";
+import {untracked} from "@formily/reactive";
+import {DEFAULT_DRIVERS, DEFAULT_EFFECTS} from "./presets";
 
 export const isBehaviorHost = (val: any): val is IBehaviorHost =>
     val?.Behavior && isBehaviorList(val.Behavior)
@@ -64,4 +66,20 @@ export const createResource = (...sources: IResourceCreator[]): IResource[] => {
                 props: source.elements?.[0].props
             })})
     },[])
+}
+
+
+export const createDesigner = (props: EngineProps<Engine> = {}) => {
+    const drivers = props.drivers || []
+    const effects = props.effects || []
+    // const shortcuts = props.shortcuts || []
+    return untracked(
+        () =>
+            new Engine({
+                ...props,
+                effects: [...effects, ...DEFAULT_EFFECTS],
+                drivers: [...drivers, ...DEFAULT_DRIVERS],
+                // shortcuts: [...shortcuts, ...DEFAULT_SHORTCUTS],
+            })
+    )
 }

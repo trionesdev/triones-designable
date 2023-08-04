@@ -102,17 +102,17 @@ export const ComponentTreeWidget: FC<ComponentTreeWidgetProps> =
     observer((props: ComponentTreeWidgetProps) => {
         const tree = useTree()
 
-        const [{canDrop, isOver}, drop] = useDrop(() => ({
-            accept: 'component',
-            drop: (item: any, monitor) => {
-                debugger
-                tree.children.push(item.source.node)
-            },
-            collect: (monitor) => ({
-                isOver: monitor.isOver(),
-                canDrop: monitor.canDrop(),
-            }),
-        }))
+        // const [{canDrop, isOver}, drop] = useDrop(() => ({
+        //     accept: 'component',
+        //     drop: (item: any, monitor) => {
+        //         debugger
+        //         tree.children.push(item.source.node)
+        //     },
+        //     collect: (monitor) => ({
+        //         isOver: monitor.isOver(),
+        //         canDrop: monitor.canDrop(),
+        //     }),
+        // }))
 
 
         console.log(tree)
@@ -128,7 +128,7 @@ export const ComponentTreeWidget: FC<ComponentTreeWidgetProps> =
         );
 
         return wrapSSR(
-            <div ref={drop} className={classNames(prefixCls, hashId)}>
+            <div className={classNames(prefixCls, hashId)}>
                 <DesignerComponentsContext.Provider value={props.components}>
                     <TreeNodeWidget node={tree}/>
                 </DesignerComponentsContext.Provider>

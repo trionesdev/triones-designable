@@ -1,7 +1,6 @@
 import React, {FC} from "react"
 import {GlobalToken, theme} from "antd";
 import {CSSInterpolation, useStyleRegister} from "@ant-design/cssinjs";
-import {DesignerEngineContext} from "../context";
 import classNames from "classnames";
 
 const {useToken} = theme;
@@ -33,7 +32,9 @@ export const Layout: FC<LayoutProps> = ({
         () => [genLayoutStyle(prefixCls, token)],
     );
 
-    return <div className={classNames(prefixCls,hashId)}>
-        {children}
-    </div>
+    return wrapSSR(
+        <div className={classNames(prefixCls,hashId)}>
+            {children}
+        </div>
+    )
 }

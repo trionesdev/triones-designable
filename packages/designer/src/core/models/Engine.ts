@@ -1,9 +1,10 @@
-import {ITreeNode} from "./TreeNode";
+import {ITreeNode, TreeNode} from "./TreeNode";
 import {Workbench} from "./Workbench";
-import {uid} from "../../shared";
+import {Event, globalThisPolyfill, IEventProps, uid} from "../../shared";
 import {Workspace} from "./Workspace";
+import {Cursor} from "./Cursor";
 
-export type EngineProps = {
+export type EngineProps<T = Event> = IEventProps<T> &{
     sourceIdAttrName?: string //拖拽源Id的dom属性名
     nodeIdAttrName?: string //节点Id的dom属性名
     contentEditableAttrName?: string //原地编辑属性名
@@ -19,13 +20,15 @@ export type EngineProps = {
     rootComponentName?: string
 }
 
-export class Engine {
+export class Engine extends Event{
     id: string
     props?: EngineProps
+    cursor: Cursor
     workbench?: Workbench
     workspace?:Workspace
 
     constructor(props: EngineProps) {
+        super(props)
         this.props = {
             ...Engine.defaultProps,
             ...props
@@ -35,13 +38,62 @@ export class Engine {
     }
 
     init() {
+
         this.workbench = new Workbench(this)
+        this.cursor = new Cursor(this)
+    }
+
+    setCurrentTree(tree?: ITreeNode) {
+        if (this.workbench.currentWorkspace) {
+            this.workbench.currentWorkspace.operation.tree.from(tree)
+        }
+    }
+
+    getCurrentTree() {
+        return this.workbench?.currentWorkspace?.operation?.tree
+    }
+
+    getAllSelectedNodes() {
+        let results: TreeNode[] = []
+        for (let i = 0; i < this.workbench.workspaces.length; i++) {
+            const workspace = this.workbench.workspaces[i]
+            results = results.concat(workspace.operation.selection.selectedNodes)
+        }
+        return results
+    }
+
+    findNodeById(id: string) {
+        return TreeNode.findById(id)
+    }
+
+    findMovingNodes(): TreeNode[] {
+        const results = []
+        this.workbench.eachWorkspace((workspace) => {
+            workspace.operation.moveHelper.dragNodes?.forEach((node) => {
+                if (!results.includes(node)) {
+                    results.push(node)
+                }
+            })
+        })
+        return results
+    }
+
+    createNode(node: ITreeNode, parent?: TreeNode) {
+        return new TreeNode(node, parent)
+    }
+
+    mount() {
+        this.attachEvents(globalThisPolyfill)
+    }
+
+    unmount() {
+        this.detachEvents()
     }
 
     static defaultProps: EngineProps = {
         // shortcuts: [],
-        // effects: [],
-        // drivers: [],
+        effects: [],
+        drivers: [],
         rootComponentName: 'Root',
         sourceIdAttrName: 'data-designer-source-id',
         nodeIdAttrName: 'data-designer-node-id',

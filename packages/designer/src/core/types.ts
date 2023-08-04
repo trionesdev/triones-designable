@@ -1,6 +1,9 @@
 import {ISchema} from "@formily/react";
-import {ITreeNode, TreeNode} from "./models";
+import {Engine, ITreeNode, TreeNode} from "./models";
 import React from "react";
+import {Workspace} from "./models";
+import {Workbench} from "./models";
+import {Viewport} from "./models/Viewport";
 
 
 
@@ -31,6 +34,13 @@ export interface IDesignerProps {
     [key: string]: any
 }
 
+export type IEngineContext = {
+    workspace: Workspace
+    workbench: Workbench
+    engine: Engine
+    viewport: Viewport
+}
+
 export type IDesignerPropsMap = Record<string, IDesignerProps>
 
 export type IDesignerControllerProps =
@@ -50,13 +60,6 @@ export interface IDesignerLocales {
 export interface IDesignerMiniLocales {
     [ISOCode: string]: string
 }
-
-export type WorkbenchTypes =
-    | 'DESIGNABLE'
-    | 'PREVIEW'
-    | 'JSONTREE'
-    | 'MARKUP'
-    | (string & {})
 
 export interface IBehavior {
     name: string

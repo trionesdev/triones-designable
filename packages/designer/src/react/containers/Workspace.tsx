@@ -1,5 +1,5 @@
 import React, {FC, Fragment, useMemo, useRef} from "react";
-import {IWorkspace, WorkspaceContext} from "../context";
+import { WorkspaceContext} from "../context";
 import {useDesigner} from "../hooks";
 
 export type WorkspaceProps = {
@@ -20,15 +20,16 @@ export const Workspace:FC<WorkspaceProps> = ({
     const workspace = useMemo(() => {
         if (!designer) return
         if (oldId.current && oldId.current !== id) {
-            // const old = designer.workbench.findWorkspaceById(oldId.current)
-            // if (old) old.viewport.detachEvents()
+            const old = designer.workbench.findWorkspaceById(oldId.current)
+            if (old) old.viewport.detachEvents()
         }
-        const workspace:IWorkspace = {
+        const workspace = {
             id: id || 'index',
             title,
-            description,
+            description
         }
-        // designer.workbench.ensureWorkspace(workspace)
+        debugger
+        designer.workbench.ensureWorkspace(workspace)
         oldId.current = workspace.id
         return workspace
     }, [id, designer])
