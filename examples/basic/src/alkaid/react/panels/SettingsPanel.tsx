@@ -5,6 +5,7 @@ import { TextWidget, IconWidget } from '../widgets'
 import { usePrefix, useWorkbench } from '../hooks'
 import cls from 'classnames'
 export interface ISettingPanelProps {
+  children?:React.ReactNode
   title?: React.ReactNode
   extra?: React.ReactNode
 }
