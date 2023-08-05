@@ -20,11 +20,14 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      "@alkaid/*": ["../*"]
+//      "@alkaid/formily-antd": ["../../formily/antd/src"],
+//      "@alkaid/*": ["../../packages/*/src"],
+      "@alkaid/*": ["../../packages/*", "../../formily/*"]
     }
   },
   "include": [
     "src",
-    "../../packages"
+    "../../packages",
+    "../../formily",
   ]
 }

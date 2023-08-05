@@ -3,7 +3,7 @@
   "version": "0.0.1-beta.1",
   "private": true,
   "dependencies": {
-    "@alkaid/designer": "0.0.1-beta.1",
+    "@alkaid/core": "0.0.1-beta.1",
     "@craco/craco": "^7.1.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
@@ -15,9 +15,14 @@
     "craco-babel-loader": "^1.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "prettier": "^3.0.1",
     "react-scripts": "5.0.1",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
+  },
+  "devDependencies": {
+    "@alkaid/react": "0.0.1-beta.1",
+    "@alkaid/formily-antd": "0.0.1-beta.1"
   },
   "scripts": {
     "start": "craco start",

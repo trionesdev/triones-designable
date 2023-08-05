@@ -8,7 +8,14 @@ module.exports={
         {
             plugin: require('craco-babel-loader'),
             options: {
-                includes: [resolveApp('../../packages/designer')],
+                includes: [
+                    resolveApp('../../packages/shared'),
+                    resolveApp('../../packages/core'),
+                    resolveApp('../../packages/react'),
+                    resolveApp('../../packages/react-settings-form'),
+                    resolveApp('../../formily/antd'),
+                    resolveApp('../../formily/setters'),
+                ],
             },
         },
     ],
