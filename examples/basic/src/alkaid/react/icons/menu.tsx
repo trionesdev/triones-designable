@@ -1,4 +1,3 @@
-import React from 'react'
 
 export const Menu = (
   <svg viewBox="0 0 48 48">

@@ -9,7 +9,7 @@ import { DataSettingPanel } from './DataSettingPanel'
 import { TreePanel } from './TreePanel'
 import { transformDataToValue, transformValueToData } from './shared'
 import { IDataSourceItem, ITreeDataSource } from './types'
-import './styles.less'
+// import './styles.less'
 export interface IDataSourceSetterProps {
   className?: string
   style?: React.CSSProperties

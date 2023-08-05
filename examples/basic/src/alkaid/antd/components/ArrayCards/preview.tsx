@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import  { Fragment } from 'react'
 import { Card, CardProps } from 'antd'
 import { TreeNode, createResource } from '@alkaid/core'
 import {
@@ -21,7 +21,7 @@ import {
 } from '../../shared'
 import { createArrayBehavior } from '../ArrayBase'
 import cls from 'classnames'
-import './styles.less'
+// import './styles.less'
 
 const ensureObjectItemsNode = createEnsureTypeItemsNode('object')
 

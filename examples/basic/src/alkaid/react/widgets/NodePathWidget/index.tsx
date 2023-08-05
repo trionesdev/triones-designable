@@ -4,7 +4,7 @@ import { useSelectedNode, useSelection, usePrefix, useHover } from '../../hooks'
 import { IconWidget } from '../IconWidget'
 import { NodeTitleWidget } from '../NodeTitleWidget'
 import { observer } from '@formily/reactive-react'
-import './styles.less'
+// import './styles.less'
 
 export interface INodePathWidgetProps {
   workspaceId?: string

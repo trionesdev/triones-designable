@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { useViewport, useDesigner, usePrefix } from '../../hooks'
 import { Insertion } from './Insertion'
 import { Selection } from './Selection'
@@ -7,6 +7,7 @@ import { Cover } from './Cover'
 import { DashedBox } from './DashedBox'
 import { SpaceBlock } from './SpaceBlock'
 import { SnapLine } from './SnapLine'
+import React from 'react'
 // import './styles.less'
 
 export const AuxToolWidget = () => {

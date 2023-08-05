@@ -4,7 +4,7 @@ import { Radio } from '@formily/antd-v5'
 import { usePrefix, IconWidget } from '@alkaid/react'
 import { InputItems } from '../InputItems'
 import cls from 'classnames'
-import './styles.less'
+// import './styles.less'
 export interface IFlexStyleSetterProps {
   className?: string
   style?: React.CSSProperties

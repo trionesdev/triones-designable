@@ -5,7 +5,7 @@ import { usePrefix, useTreeNode, useSelected } from '../../hooks'
 import { IconWidget } from '../IconWidget'
 import { TextWidget } from '../TextWidget'
 import cls from 'classnames'
-import './styles.less'
+// import './styles.less'
 
 export interface INodeActionsWidgetProps {
   children?:React.ReactNode

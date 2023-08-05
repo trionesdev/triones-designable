@@ -4,14 +4,14 @@ import './App.css';
 import {
     ComponentTreeWidget,
     CompositePanel,
-    Designer,
-    ResourceWidget,
-    StudioPanel, ViewPanel,
-    ViewportPanel,
-    Workbench,
+    Designer, DesignerToolsWidget, HistoryWidget, OutlineTreeWidget,
+    ResourceWidget, SettingsPanel,
+    StudioPanel, ToolbarPanel, ViewPanel,
+    ViewportPanel, ViewToolsWidget, Workspace,
     WorkspacePanel
 } from "@alkaid/react";
-import {Field, Form, Input} from "@alkaid/formily-antd";
+import {ArrayCards, ArrayTable, Field, Form, Input, NumberPicker, Password, Rate} from "@alkaid/formily-antd";
+import {SettingsForm} from "@alkaid/react-settings-form";
 
 function App() {
     const engine = useMemo(
@@ -34,26 +34,69 @@ function App() {
     )
     return (
         <Designer engine={engine}>
-            <Workbench>
-                <StudioPanel>
-                    <CompositePanel>
-                        <CompositePanel.Item title={`组件`}>
-                            <ResourceWidget title={`表单组件`} sources={[Input]}/>
-                        </CompositePanel.Item>
-                    </CompositePanel>
+            <StudioPanel >
+                <CompositePanel>
+                    <CompositePanel.Item title="panels.Component" icon="Component">
+                        <ResourceWidget
+                            title="sources.Inputs"
+                            sources={[
+                                Input,
+                                Password,
+                                NumberPicker,
+                                Rate,
+                            ]}
+                        />
+                        <ResourceWidget
+                            title="sources.Layouts"
+                            sources={[
+
+                            ]}
+                        />
+                        <ResourceWidget
+                            title="sources.Arrays"
+                            sources={[ArrayCards, ArrayTable]}
+                        />
+                        {/*<ResourceWidget title="sources.Displays" sources={[Text]} />*/}
+                    </CompositePanel.Item>
+                    <CompositePanel.Item title="panels.OutlinedTree" icon="Outline">
+                        <OutlineTreeWidget />
+                    </CompositePanel.Item>
+                    <CompositePanel.Item title="panels.History" icon="History">
+                        <HistoryWidget />
+                    </CompositePanel.Item>
+                </CompositePanel>
+                <Workspace id="form">
                     <WorkspacePanel>
-                        <ViewportPanel>
+                        <ToolbarPanel>
+                            <DesignerToolsWidget />
+                            <ViewToolsWidget
+                                use={['DESIGNABLE', 'JSONTREE', 'MARKUP', 'PREVIEW']}
+                            />
+                        </ToolbarPanel>
+                        <ViewportPanel style={{ height: '100%' }}>
                             <ViewPanel type="DESIGNABLE">
-                                {() => (<ComponentTreeWidget components={{
-                                    Form,
-                                    Field,
-                                    Input
-                                }}/>)}
+                                {() => (
+                                    <ComponentTreeWidget
+                                        components={{
+                                            Form,
+                                            Field,
+                                            Input,
+                                            Rate,
+                                            NumberPicker,
+                                            Password,
+                                            ArrayCards,
+                                            ArrayTable,
+                                        }}
+                                    />
+                                )}
                             </ViewPanel>
                         </ViewportPanel>
                     </WorkspacePanel>
-                </StudioPanel>
-            </Workbench>
+                </Workspace>
+                <SettingsPanel title="panels.PropertySettings">
+                    <SettingsForm uploadAction="https://www.mocky.io/v2/5cc8019d300000980a055e76" />
+                </SettingsPanel>
+            </StudioPanel>
         </Designer>
 
     );

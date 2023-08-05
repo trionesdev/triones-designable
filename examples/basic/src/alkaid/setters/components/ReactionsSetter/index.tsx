@@ -20,7 +20,7 @@ import { FieldPropertySetter } from './FieldPropertySetter'
 import { FulfillRunHelper } from './helpers'
 import { IReaction } from './types'
 import { initDeclaration } from './declarations'
-import './styles.less'
+// import './styles.less'
 
 export interface IReactionsSetterProps {
   value?: IReaction

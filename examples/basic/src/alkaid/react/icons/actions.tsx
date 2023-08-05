@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const AddSort = (
   <g stroke="none" strokeWidth="1" fillRule="evenodd">
     <rect

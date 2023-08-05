@@ -1,4 +1,3 @@
-import React from 'react'
 
 export const Responsive = (
   <svg viewBox="0 0 1200 1024">

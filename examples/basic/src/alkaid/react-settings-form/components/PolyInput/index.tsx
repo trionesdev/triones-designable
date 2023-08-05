@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import { Button } from 'antd'
 import { usePrefix, IconWidget } from '@alkaid/react'
 import cls from 'classnames'
-import './styles.less'
+// import './styles.less'
 
 export interface IInput {
   style?: React.CSSProperties

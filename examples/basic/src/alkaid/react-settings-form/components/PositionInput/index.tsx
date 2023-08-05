@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { usePrefix } from '@alkaid/react'
 import cls from 'classnames'
-import './styles.less'
+// import './styles.less'
 
 export interface IPositionInputProps {
   className?: string

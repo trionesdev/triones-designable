@@ -1,4 +1,3 @@
-import React from 'react'
 
 export const Close = (
   <svg viewBox="64 64 896 896">

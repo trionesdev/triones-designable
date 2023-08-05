@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { usePrefix, IconWidget } from '@alkaid/react'
 import cls from 'classnames'
-import './styles.less'
+// import './styles.less'
 
 export interface IInputItemsContext {
   width?: string | number

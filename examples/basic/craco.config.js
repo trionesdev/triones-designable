@@ -1,3 +1,4 @@
+const CracoLessPlugin = require("craco-less");
 const fs = require('fs');
 const path = require('path');
 
@@ -20,14 +21,40 @@ module.exports={
     //         },
     //     },
     // ],
+    plugins: [
+        {
+            plugin: CracoLessPlugin,
+            options: {
+                // modifyLessRule: function (lessRule, _context) {
+                //     lessRule.test = /\.(module)\.(less)$/;
+                //     lessRule.exclude = /node_modules/;
+                //     return lessRule;
+                // },
+                // cssLoaderOptions: {
+                //     modules: {
+                //         localIdentName: '[name]__[local]--[hash:base64:5]'
+                //     }
+                // },
+                lessLoaderOptions: {
+                    lessOptions: {
+                        modifyVars: {
+                            'layout-header-background': '#333'
+                        },
+                        javascriptEnabled: true,
+                    },
+                }
+            }
+        },
+    ],
+
     webpack: {
         alias: {
-            "@alkaid/shared": resolve("shared/alkaid/shared"),
-            "@alkaid/core": resolve("shared/alkaid/core"),
-            "@alkaid/react": resolve("shared/alkaid/react"),
-            "@alkaid/react-settings-form": resolve("shared/alkaid/react-settings-form"),
-            "@alkaid/formily-antd": resolve("shared/alkaid/antd"),
-            "@alkaid/formily-setters": resolve("shared/alkaid/setters"),
+            "@alkaid/shared": resolve("src/alkaid/shared"),
+            "@alkaid/core": resolve("src/alkaid/core"),
+            "@alkaid/react": resolve("src/alkaid/react"),
+            "@alkaid/react-settings-form": resolve("src/alkaid/react-settings-form"),
+            "@alkaid/formily-antd": resolve("src/alkaid/antd"),
+            "@alkaid/formily-setters": resolve("src/alkaid/setters"),
         },
     },
 

@@ -4,7 +4,7 @@ import { observer } from '@formily/reactive-react'
 import { IconWidget, TextWidget, usePrefix } from '@alkaid/react'
 import { INodeItem, ITreeDataSource } from './types'
 import { traverseTree } from './shared'
-import './styles.less'
+// import './styles.less'
 export interface ITitleProps extends INodeItem {
   treeDataSource: ITreeDataSource
 }

@@ -6,7 +6,7 @@ import { Radio } from 'antd'
 import { usePrefix, IconWidget } from '@alkaid/react'
 import { FlexStyleSetter } from '../FlexStyleSetter'
 import cls from 'classnames'
-import './styles.less'
+// import './styles.less'
 export interface IDisplayStyleSetterProps {
   className?: string
   style?: React.CSSProperties

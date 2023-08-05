@@ -3,6 +3,10 @@ import { isValid } from '@alkaid/shared'
 import cls from 'classnames'
 import { IconWidget, TextWidget } from '../widgets'
 import { usePrefix } from '../hooks'
+import {useStyleRegister} from "@ant-design/cssinjs";
+import {genCompositePanelStyle} from "./styles";
+import {theme} from "antd";
+const {useToken} = theme;
 
 export interface ICompositePanelProps {
   children?: React.ReactNode
@@ -77,13 +81,19 @@ export const CompositePanel: React.FC<ICompositePanelProps> & {
     }
   }, [props.activeKey])
 
+  const {theme, token, hashId} = useToken();
+  const wrapSSR = useStyleRegister(
+      {theme, token, hashId, path: [prefix]},
+      () => [genCompositePanelStyle(prefix, token)],
+  );
+
   const renderContent = () => {
     if (!content || !visible) return
     return (
       <div
         className={cls(prefix + '-tabs-content', {
           pinning,
-        })}
+        },hashId)}
       >
         <div className={prefix + '-tabs-header'}>
           <div className={prefix + '-tabs-header-title'}>
@@ -125,13 +135,13 @@ export const CompositePanel: React.FC<ICompositePanelProps> & {
     )
   }
 
-  return (
+  return wrapSSR(
     <div
       className={cls(prefix, {
         [`direction-${props.direction}`]: !!props.direction,
-      })}
+      },hashId)}
     >
-      <div className={prefix + '-tabs'}>
+      <div className={cls(prefix + '-tabs',hashId)}>
         {items.map((item, index) => {
           const takeTab = () => {
             if (item.href) {
@@ -158,7 +168,7 @@ export const CompositePanel: React.FC<ICompositePanelProps> & {
             <Comp
               className={cls(prefix + '-tabs-pane', {
                 active: activeKey === item.key,
-              })}
+              },hashId)}
               key={index}
               href={item.href}
               onClick={(e: any) => {

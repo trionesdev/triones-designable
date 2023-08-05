@@ -1,4 +1,3 @@
-import React from 'react'
 
 export const History = (
   <svg viewBox="0 0 1056 1024">
