@@ -1,5 +1,5 @@
 import {createDesigner, KeyCode, Shortcut} from '@alkaid/core';
-import React, {useMemo} from 'react';
+import {useMemo} from 'react';
 import './App.css';
 import {
     ComponentTreeWidget,

@@ -1,33 +1,43 @@
 {
   "compilerOptions": {
-    "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
+
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+
+    "esModuleInterop": true,
+    "moduleResolution": "node",
     "jsx": "react-jsx",
+    "module": "esnext",
+    "target": "es5",
+    "allowJs": false,
+    "noUnusedLocals": true,
+    "preserveConstEnums": true,
+    "sourceMap": false,
+    "declaration": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "downlevelIteration": true,
+    "baseUrl": "./",
+    "allowSyntheticDefaultImports": true,
     "paths": {
-//      "@alkaid/formily-antd": ["../../formily/antd/src"],
-//      "@alkaid/*": ["../../packages/*/src"],
-      "@alkaid/*": ["../../packages/*", "../../formily/*"]
+//      "@alkaid/*": ["../../packages/*", "../../formily/*"],
+      "@alkaid/shared": ["src/alkaid/shared"],
+      "@alkaid/core": ["src/alkaid/core"],
+      "@alkaid/react": ["src/alkaid/react"],
+      "@alkaid/react-settings-form": ["src/alkaid/react-settings-form"],
+      "@alkaid/formily-antd": ["src/alkaid/antd"],
+      "@alkaid/formily-setters": ["src/alkaid/stters"]
     }
   },
   "include": [
     "src",
-    "../../packages",
-    "../../formily",
   ]
 }
