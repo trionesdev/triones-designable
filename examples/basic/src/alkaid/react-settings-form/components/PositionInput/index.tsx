@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { usePrefix } from '@alkaid/react'
+import {useCssInJs, usePrefix} from '@alkaid/react'
 import cls from 'classnames'
+import {genPositionInputStyle} from "./styles";
 // import './styles.less'
 
 export interface IPositionInputProps {
@@ -19,23 +20,24 @@ export const PositionInput: React.FC<IPositionInputProps> = (props) => {
     }
   }, [props.value])
   const createCellProps = (type: string) => ({
-    className: cls(prefix + '-cell', { active: current === type }),
+    className: cls(prefix + '-cell', { active: current === type },hashId),
     onClick() {
       setCurrent(type)
       props.onChange?.(type)
     },
   })
+  const {hashId} = useCssInJs({prefix,styleFun:genPositionInputStyle})
   return (
-    <div className={cls(prefix, props.className)} style={props.style}>
-      <div className={prefix + '-row'}>
+    <div className={cls(prefix, props.className,hashId)} style={props.style}>
+      <div className={cls(prefix + '-row',hashId)}>
         <div {...createCellProps('top')}>┳</div>
       </div>
-      <div className={prefix + '-row'}>
+      <div className={cls(prefix + '-row',hashId)}>
         <div {...createCellProps('left')}>┣</div>
         <div {...createCellProps('center')}>╋</div>
         <div {...createCellProps('right')}>┫</div>
       </div>
-      <div className={prefix + '-row'}>
+      <div className={cls(prefix + '-row',hashId)}>
         <div {...createCellProps('bottom')}>┻</div>
       </div>
     </div>

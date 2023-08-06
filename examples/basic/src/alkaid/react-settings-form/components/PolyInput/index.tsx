@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { Button } from 'antd'
-import { usePrefix, IconWidget } from '@alkaid/react'
+import {usePrefix, IconWidget, useCssInJs} from '@alkaid/react'
 import cls from 'classnames'
+import {genPolyInputStyle} from "./styles";
 // import './styles.less'
 
 export interface IInput {
@@ -87,10 +88,12 @@ export function createPolyInput(polyTypes: PolyTypes = []): React.FC<IInput> {
       return type?.toChangeValue ? type?.toChangeValue(value) : value
     }
 
+    const {hashId} = useCssInJs({prefix,styleFun:genPolyInputStyle})
+
     return (
-      <div className={cls(prefix, className)} style={style}>
+      <div className={cls(prefix, className,hashId)} style={style}>
         {component && (
-          <div className={prefix + '-content'}>
+          <div className={cls(prefix + '-content',hashId)}>
             {React.createElement(component, {
               ...props,
               value: type?.toInputValue ? type?.toInputValue(value) : value,
@@ -103,7 +106,7 @@ export function createPolyInput(polyTypes: PolyTypes = []): React.FC<IInput> {
           </div>
         )}
         <Button
-          className={prefix + '-controller'}
+          className={cls(prefix + '-controller',hashId)}
           style={{
             width: !component ? '100%' : 'auto',
           }}

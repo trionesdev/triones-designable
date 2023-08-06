@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import {usePrefix, IconWidget, useCssInJs} from '@alkaid/react'
 import cls from 'classnames'
-import {genInputItemsStyle} from "./styles";
+import {genInputItemsItemStyle, genInputItemsStyle} from "./styles";
 
 // import './styles.less'
 
@@ -51,7 +51,7 @@ InputItems.defaultProps = {
 InputItems.Item = (props) => {
     const prefix = usePrefix('input-items-item')
     const ctx = useContext(InputItemsContext)
-    const {hashId,wrapSSR} = useCssInJs({prefix, styleFun: genInputItemsStyle})
+    const {hashId,wrapSSR} = useCssInJs({prefix, styleFun: genInputItemsItemStyle})
     return wrapSSR(
         <div
             className={cls(prefix, props.className, {
