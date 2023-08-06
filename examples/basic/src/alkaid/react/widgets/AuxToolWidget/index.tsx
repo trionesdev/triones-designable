@@ -1,5 +1,5 @@
 import {useEffect, useRef} from 'react'
-import {useViewport, useDesigner, usePrefix} from '../../hooks'
+import {useViewport, useDesigner, usePrefix, useCssInJs} from '../../hooks'
 import {Insertion} from './Insertion'
 import {Selection} from './Selection'
 import {FreeSelection} from './FreeSelection'
@@ -8,18 +8,18 @@ import {DashedBox} from './DashedBox'
 import {SpaceBlock} from './SpaceBlock'
 import {SnapLine} from './SnapLine'
 import './styles.less'
-import {useStyleRegister} from "@ant-design/cssinjs";
 import cls from 'classnames'
-import {theme} from "antd";
 import {genAuxToolsStyle} from "./styles";
 
-const {useToken} = theme;
 
 export const AuxToolWidget = () => {
+    const ref = useRef<HTMLDivElement>()
     const engine = useDesigner()
     const viewport = useViewport()
     const prefix = usePrefix('auxtool')
-    const ref = useRef<HTMLDivElement>()
+    const {hashId,wrapSSR} = useCssInJs({prefix,styleFun:genAuxToolsStyle})
+
+
     useEffect(() => {
         return engine.subscribeWith('viewport:scroll', () => {
             if (viewport.isIframe && ref.current) {
@@ -29,12 +29,6 @@ export const AuxToolWidget = () => {
     }, [engine, viewport])
 
     if (!viewport) return null
-
-    const {theme, token, hashId} = useToken();
-    const wrapSSR = useStyleRegister(
-        {theme, token, hashId, path: [prefix]},
-        () => [genAuxToolsStyle(prefix, token)],
-    );
 
     return wrapSSR(
         <div ref={ref} className={cls(prefix, hashId)}>

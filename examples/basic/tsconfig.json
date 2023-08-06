@@ -29,8 +29,10 @@
     "allowSyntheticDefaultImports": true,
     "paths": {
 //      "@alkaid/*": ["../../packages/*", "../../formily/*"],
-      "@alkaid/shared": ["src/alkaid/shared"],
-      "@alkaid/core": ["src/alkaid/core"],
+//      "@alkaid/shared": ["src/alkaid/shared"],
+      "@alkaid/shared": ["../../packages/shared/src"],
+//      "@alkaid/core": ["src/alkaid/core"],
+      "@alkaid/core": ["../../packages/core/src"],
       "@alkaid/react": ["src/alkaid/react"],
       "@alkaid/react-settings-form": ["src/alkaid/react-settings-form"],
       "@alkaid/formily-antd": ["src/alkaid/antd"],
@@ -39,5 +41,6 @@
   },
   "include": [
     "src",
+//    "../../packages/shared/src"
   ]
 }

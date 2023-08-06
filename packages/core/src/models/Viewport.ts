@@ -427,7 +427,7 @@ export class Viewport {
           elementRect.height
         )
       } else {
-        return new Rect(
+        return new DOMRect(
           (elementRect.x - this.offsetX + this.viewportElement.scrollLeft) /
             this.scale,
           (elementRect.y - this.offsetY + this.viewportElement.scrollTop) /
@@ -494,7 +494,7 @@ export class Viewport {
     }
   }
 
-  getValidNodeOffsetRect(node: TreeNode): Rect {
+  getValidNodeOffsetRect(node: TreeNode) {
     if (!node) return
     const rect = this.getElementOffsetRectById(node.id)
     if (node && node === node.root && node.isInOperation) {

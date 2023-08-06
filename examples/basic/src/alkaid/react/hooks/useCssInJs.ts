@@ -9,9 +9,9 @@ type CssInJsProps = {
 }
 export const useCssInJs = (params?: CssInJsProps) => {
     const {theme, token, hashId} = useToken();
-    const wrapSSR = params?.styleFun ? useStyleRegister(
+    const wrapSSR = useStyleRegister(
         {theme, token, hashId, path: [params.prefix]},
         () => [params?.styleFun?.(params?.prefix, token)],
-    ) : null;
+    )
     return {hashId, wrapSSR}
 }

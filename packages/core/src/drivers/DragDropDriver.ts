@@ -18,10 +18,7 @@ export class DragDropDriver extends EventDriver<Engine> {
     if (e.button !== 0 || e.ctrlKey || e.metaKey) {
       return
     }
-    if (
-      e.target['isContentEditable'] ||
-      e.target['contentEditable'] === 'true'
-    ) {
+    if (e.target['isContentEditable'] || e.target['contentEditable'] === 'true') {
       return true
     }
     if (e.target?.['closest']?.('.monaco-editor')) return

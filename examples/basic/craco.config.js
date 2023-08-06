@@ -49,8 +49,9 @@ module.exports={
 
     webpack: {
         alias: {
-            "@alkaid/shared": resolve("src/alkaid/shared"),
-            "@alkaid/core": resolve("src/alkaid/core"),
+            // "@alkaid/shared": resolve("src/alkaid/shared"),
+            // "@alkaid/shared": resolve("../../packages/shared/src"),
+            // "@alkaid/core": resolve("src/alkaid/core"),
             "@alkaid/react": resolve("src/alkaid/react"),
             "@alkaid/react-settings-form": resolve("src/alkaid/react-settings-form"),
             "@alkaid/formily-antd": resolve("src/alkaid/antd"),

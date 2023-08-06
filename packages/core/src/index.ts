@@ -1,6 +1,6 @@
+import { globalThisPolyfill } from '@alkaid/shared'
 import * as Core from './exports'
 export * from './exports'
-import { globalThisPolyfill } from '@alkaid/shared'
 
 if (globalThisPolyfill?.['Designable']?.['Core']) {
   if (module.exports) {

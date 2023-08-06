@@ -373,7 +373,7 @@ export function calcEdgeLinesOfRect(rect: IRect): IRectEdgeLines {
   }
 }
 
-export function calcRectOfAxisLineSegment(line: ILineSegment) {
+export function calcRectOfAxisLineSegment(line: ILineSegment):Rect {
   if (!isLineSegment(line)) return
   const isXAxis = line.start.x === line.end.x
   return new Rect(

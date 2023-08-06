@@ -13,7 +13,7 @@
     "skipLibCheck": true,
     "experimentalDecorators": true,
     "downlevelIteration": true,
-//    "baseUrl": "./",
+    "baseUrl": "./",
     "allowSyntheticDefaultImports": true
   }
 }

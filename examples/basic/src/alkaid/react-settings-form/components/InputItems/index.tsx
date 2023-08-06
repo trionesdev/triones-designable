@@ -51,7 +51,7 @@ InputItems.defaultProps = {
 InputItems.Item = (props) => {
     const prefix = usePrefix('input-items-item')
     const ctx = useContext(InputItemsContext)
-    const {hashId,wrapSSR} = useCssInJs({prefix, styleFun: genInputItemsItemStyle})
+    const {hashId, wrapSSR} = useCssInJs({prefix, styleFun: genInputItemsItemStyle})
     return wrapSSR(
         <div
             className={cls(prefix, props.className, {
