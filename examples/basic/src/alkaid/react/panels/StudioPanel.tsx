@@ -1,12 +1,9 @@
 import React from 'react'
-import {usePosition, usePrefix} from '../hooks'
+import {useCssInJs, usePosition, usePrefix} from '../hooks'
 import {Layout} from '../containers'
 import cls from 'classnames'
-import {theme} from "antd";
-import {useStyleRegister} from "@ant-design/cssinjs";
 import {genStudioPanelStyle} from "./styles";
 
-const {useToken} = theme;
 
 export interface IStudioPanelProps {
     children?: React.ReactNode
@@ -28,11 +25,7 @@ const StudioPanelInternal: React.FC<IStudioPanelProps> = ({
     const position = usePosition()
     const classNameBase = cls('root', position, props.className)
 
-    const {theme, token, hashId} = useToken();
-    const wrapSSR = useStyleRegister(
-        {theme, token, hashId, path: [prefix]},
-        () => [genStudioPanelStyle(prefix, token)],
-    );
+    const {hashId,wrapSSR} = useCssInJs({prefix,styleFun:genStudioPanelStyle})
 
     if (logo || actions) {
         return wrapSSR(
