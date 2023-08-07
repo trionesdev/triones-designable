@@ -192,7 +192,7 @@ export const genWorkspacePanelStyle = (
             padding: '4px',
             overflow: 'hidden',
             boxSizing: 'border-box',
-            backgroundColor: token.colorBgBase,
+            backgroundColor: token.colorBgContainer,
             position: 'relative',
             zIndex: 1,
             [`&-item`]: {
