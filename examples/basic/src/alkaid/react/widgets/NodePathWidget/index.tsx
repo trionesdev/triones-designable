@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react'
 import {Breadcrumb} from 'antd'
-import {useSelectedNode, useSelection, usePrefix, useHover} from '../../hooks'
+import {useSelectedNode, useSelection, usePrefix, useHover, useCssInJs} from '../../hooks'
 import {IconWidget} from '../IconWidget'
 import {NodeTitleWidget} from '../NodeTitleWidget'
 import {observer} from '@formily/reactive-react'
+import {genNodePathWidgetStyle} from "./styles";
+import cls from "classnames";
 
 // import './styles.less'
 
@@ -19,15 +21,18 @@ export const NodePathWidget: React.FC<INodePathWidgetProps> = observer(
         const selection = useSelection(props.workspaceId)
         const hover = useHover(props.workspaceId)
         const prefix = usePrefix('node-path')
+        const {hashId,wrapSSR} = useCssInJs({prefix,styleFun:genNodePathWidgetStyle})
         if (!selected) return <React.Fragment/>
         const maxItems = props.maxItems ?? 3
-        const nodes = selected
-            .getParents()
-            .slice(0, maxItems - 1)
-            .reverse()
-            .concat(selected)
+
+
 
         useEffect(() => {
+            const nodes = selected
+                .getParents()
+                .slice(0, maxItems - 1)
+                .reverse()
+                .concat(selected)
             let items = nodes.map((node, key) => {
                 return {
                     title: <>
@@ -51,10 +56,10 @@ export const NodePathWidget: React.FC<INodePathWidgetProps> = observer(
                 }
             })
             setBreadcrumbItems(items)
-        }, [breadcrumbItems])
+        }, [selected])
 
-        return (
-            <Breadcrumb className={prefix} items={breadcrumbItems}/>
+        return wrapSSR(
+            <Breadcrumb className={cls(prefix,hashId)} items={breadcrumbItems}/>
         )
     }
 )

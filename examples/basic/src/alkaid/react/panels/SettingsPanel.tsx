@@ -2,8 +2,9 @@ import React, {useEffect, useState} from 'react'
 import {requestIdle} from '@alkaid/shared'
 import {observer} from '@formily/reactive-react'
 import {TextWidget, IconWidget} from '../widgets'
-import {usePrefix, useWorkbench} from '../hooks'
+import {useCssInJs, usePrefix, useWorkbench} from '../hooks'
 import cls from 'classnames'
+import {genSettingsPanelStyle} from "./styles";
 
 export interface ISettingPanelProps {
     children?: React.ReactNode
@@ -17,6 +18,7 @@ export const SettingsPanel: React.FC<ISettingPanelProps> = observer((props) => {
     const [innerVisible, setInnerVisible] = useState(true)
     const [pinning, setPinning] = useState(false)
     const [visible, setVisible] = useState(true)
+    const {hashId,wrapSSR} = useCssInJs({prefix,styleFun:genSettingsPanelStyle})
 
     useEffect(() => {
         if (visible || workbench.type === 'DESIGNABLE') {
@@ -36,9 +38,9 @@ export const SettingsPanel: React.FC<ISettingPanelProps> = observer((props) => {
     }
     if (!visible) {
         if (innerVisible) setInnerVisible(false)
-        return (
+        return wrapSSR(
             <div
-                className={prefix + '-opener'}
+                className={cls(prefix + '-opener',hashId)}
                 onClick={() => {
                     setVisible(true)
                 }}
@@ -47,14 +49,14 @@ export const SettingsPanel: React.FC<ISettingPanelProps> = observer((props) => {
             </div>
         )
     }
-    return (
-        <div className={cls(prefix, {pinning})}>
-            <div className={prefix + '-header'}>
-                <div className={prefix + '-header-title'}>
+    return wrapSSR(
+        <div className={cls(prefix, {pinning},hashId)}>
+            <div className={cls(prefix + '-header',hashId)}>
+                <div className={cls(prefix + '-header-title',hashId)}>
                     <TextWidget>{props.title}</TextWidget>
                 </div>
-                <div className={prefix + '-header-actions'}>
-                    <div className={prefix + '-header-extra'}>{props.extra}</div>
+                <div className={cls(prefix + '-header-actions',hashId)}>
+                    <div className={cls(prefix + '-header-extra',hashId)}>{props.extra}</div>
                     {!pinning && (
                         <IconWidget
                             infer="PushPinOutlined"
@@ -82,7 +84,7 @@ export const SettingsPanel: React.FC<ISettingPanelProps> = observer((props) => {
                     />
                 </div>
             </div>
-            <div className={prefix + '-body'}>{innerVisible && props.children}</div>
+            <div className={cls(prefix + '-body',hashId)}>{innerVisible && props.children}</div>
         </div>
     )
 })

@@ -61,7 +61,7 @@ export const DataSourceSetter: React.FC<IDataSourceSetterProps> = observer(
           bodyStyle={{ padding: 10 }}
           transitionName=""
           maskTransitionName=""
-          visible={modalVisible}
+          open={modalVisible}
           onCancel={closeModal}
           onOk={() => {
             onChange(transformDataToValue(treeDataSource.dataSource))

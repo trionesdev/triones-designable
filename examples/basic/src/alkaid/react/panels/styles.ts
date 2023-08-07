@@ -113,9 +113,189 @@ export const genCompositePanelStyle = (
                         borderRight: '1px solid transparent',
                         boxShadow: '-2px 5px 10px rgba(102, 102, 102, 0.42)'
                     }
+                },
+                [`&-header`]: {
+                    padding: '14px 7px',
+                    color: token.colorText,
+                    lineHeight: '18px',
+                    fontSize: '16px',
+                    borderBottom: `1px solid ${token.colorBorder}`,
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    [`&-actions`]: {
+                        display: 'flex',
+                        alignItems: 'center',
+                        [`& > *`]: {
+                            marginRight: '8px',
+                            [`&:last-child`]: {
+                                marginRight: 0
+                            }
+                        }
+                    },
+                    [`&-pin`]: {
+                        transition: 'all 0.15s ease-in-out',
+                        [`&:hover`]: {
+                            transform: 'scale(1.1)'
+                        }
+                    },
+                    [`&-title`]: {
+                        fontSize: '20px'
+                    },
+                    [`&-close`]: {
+                        transition: `all 0.15s ease-in-out`,
+                        [`&:hover`]: {
+                            transform: `rotate(90deg)`
+                        }
+                    }
+                },
+                [`&-body`]: {
+                    flexGrow: 2,
+                    flexShrink: 2,
+                    overflow: 'overlay',
+                    overflowX: 'hidden',
+                    height: '100%'
                 }
 
+            },
+            [`&.direction-right`]: {
+                flexDirection: `row-reverse`,
+                [`.${prefixCls}-tabs-pane.active:after`]: {
+                    left: 'auto',
+                    right: '-1px'
+                },
+                [`.${prefixCls}-tabs-content.pinning`]: {
+                    left: 'auto',
+                    right: '100%',
+                    top: 0
+                },
+                [`.${prefixCls}-tabs-content`]: {
+                    borderRight: 'none',
+                    borderLeft: `1px solid ${token.colorBorder}`
+                },
+                [`.${prefixCls}-tabs`]: {
+                    borderLeft: `1px solid ${token.colorBorder}`
+                }
             }
         }
     }
 }
+
+export const genWorkspacePanelStyle = (
+    prefixCls: string,
+    token: GlobalToken,
+): CSSInterpolation => [
+    {
+        [`.${prefixCls}`]: {
+            display: 'flex',
+            flexGrow: 1,
+            flexDirection: 'column',
+            padding: '4px',
+            overflow: 'hidden',
+            boxSizing: 'border-box',
+            backgroundColor: token.colorBgBase,
+            position: 'relative',
+            zIndex: 1,
+            [`&-item`]: {
+                position: 'relative'
+            },
+            [`button[disabled]`]: {
+                pointerEvents: `none`
+            }
+        }
+    }
+]
+
+export const genSettingsPanelStyle = (
+    prefixCls: string,
+    token: GlobalToken,
+): CSSInterpolation => [
+    {
+        [`.${prefixCls}`]: {
+            flexGrow: 0,
+            flexShrink: 0,
+            position: 'relative',
+            display: 'flex',
+            flexDirection: 'column',
+            zIndex: 2,
+            width: '300px',
+            background: `${token.colorBgBase}`,
+            borderLeft: `1px solid ${token.colorBorder}`,
+            height: '100%',
+            boxSizing: 'content-box',
+            userSelect: 'none',
+            [`&.pinning`]: {
+                position: 'absolute',
+                zIndex: 10,
+                top: 0,
+                right: 0,
+                boxShadow: `2px 5px 10px rgba(102, 102, 102, 0.52)`,
+                borderLeft: `1px solid transparent`
+            },
+            [`&-header`]: {
+                padding: `14px 7px`,
+                color: token.colorText,
+                lineHeight: '18px',
+                fontSize: '16px',
+                borderBottom: `1px solid ${token.colorBorder}`,
+                display: 'flex',
+                justifyContent: `space-between`,
+                [`&-actions`]: {
+                    display: 'flex',
+                    alignItems: 'center',
+                    [`& > *`]: {
+                        marginRight: '8px',
+                        [`&:last-child`]: {
+                            marginRight: 0
+                        }
+                    }
+                },
+                [`&-pin`]: {
+                    transition: 'all 0.15s ease-in-out',
+                    [`&:hover`]: {
+                        transform: 'scale(1.1)'
+                    }
+                },
+                [`&-title`]: {
+                    fontSize: '20px'
+                },
+                [`&-close`]: {
+                    transition: `all 0.15s ease-in-out`,
+                    [`&:hover`]: {
+                        transform: `rotate(90deg)`
+                    }
+                }
+            },
+            [`&-body`]: {
+                flexGrow: 2,
+                flexShrink: 2,
+                overflow: 'overlay',
+                overflowX: 'hidden',
+                height: '100%'
+            },
+            [`&-opener`]: {
+                position: `absolute`,
+                right: 0,
+                top: '50%',
+                transform: 'translateY(-50%)',
+                zIndex: 2,
+                background: token.colorBgBase,
+                border: `1px solid ${token.colorBorder}`,
+                color: token.colorText,
+                boxShadow: `0 0 6px rgb(0 0 0 / 10%)`,
+                borderRadius: `3px`,
+                display: 'flex',
+                alignItems: `center`,
+                justifyContent: 'center',
+                width: '40px',
+                height: '40px',
+                cursor: 'pointer',
+                [`.dn-icon`]: {
+                    transition: `all 0.15s ease-in-out`
+                },
+                [`&:hover .dn-icon`]: {
+                    transform: 'rotate(45deg)'
+                }
+            }
+        }
+    }
+]
