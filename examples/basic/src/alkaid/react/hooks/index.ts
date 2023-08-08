@@ -23,4 +23,5 @@ export * from './useTransformHelper'
 export * from './useSelectedNode'
 export * from './useSelected'
 export * from './useComponents'
+export * from "./useToken"
 export * from "./useCssInJs"

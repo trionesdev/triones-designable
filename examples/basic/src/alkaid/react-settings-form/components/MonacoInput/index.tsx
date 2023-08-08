@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import Editor, { EditorProps, loader } from '@monaco-editor/react'
-import { TextWidget, IconWidget, usePrefix, useTheme } from '@alkaid/react'
+import {TextWidget, IconWidget, usePrefix, useTheme, useCssInJs} from '@alkaid/react'
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
 import { Tooltip } from 'antd'
 import { parseExpression, parse } from '@babel/parser'
@@ -10,6 +10,7 @@ import cls from 'classnames'
 // import './styles.less'
 import './config'
 import { initMonaco } from './config'
+import {genMonacoInputStyle} from "./styles";
 
 export type Monaco = typeof monaco
 export interface MonacoInputProps extends EditorProps {
@@ -50,6 +51,7 @@ export const MonacoInput: React.FC<MonacoInputProps> & {
   const changedRef = useRef(false)
   const uidRef = useRef(uid())
   const prefix = usePrefix('monaco-input')
+  const {hashId,wrapSSR} = useCssInJs({prefix,styleFun:genMonacoInputStyle})
   const input = props.value || props.defaultValue
 
   useEffect(() => {
@@ -109,7 +111,7 @@ export const MonacoInput: React.FC<MonacoInputProps> & {
             <TextWidget token="SettingComponents.MonacoInput.helpDocument" />
           }
         >
-          <div className={prefix + '-helper'}>
+          <div className={cls(prefix + '-helper',hashId)}>
             <a target="_blank" href={href} rel="noreferrer">
               <IconWidget infer="Help" />
             </a>
@@ -253,7 +255,7 @@ export const MonacoInput: React.FC<MonacoInputProps> & {
     if (!helpCode) return null
     return (
       <div
-        className={prefix + '-view'}
+        className={cls(prefix + '-view',hashId)}
         style={{ width: helpCodeViewWidth || '50%' }}
       >
         <Editor
@@ -287,15 +289,15 @@ export const MonacoInput: React.FC<MonacoInputProps> & {
     )
   }
 
-  return (
+  return wrapSSR(
     <div
       className={cls(prefix, className, {
         loaded,
-      })}
+      },hashId)}
       style={{ width, height }}
     >
       {renderHelper()}
-      <div className={prefix + '-view'}>
+      <div className={cls(prefix + '-view',hashId)}>
         <Editor
           {...props}
           theme={theme === 'dark' ? 'monokai' : 'chrome-devtools'}

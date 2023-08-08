@@ -4,7 +4,7 @@ import { createForm, isVoidField } from '@formily/core'
 import { createSchemaField } from '@formily/react'
 import { GlobalRegistry } from '@alkaid/core'
 import { requestIdle } from '@alkaid/shared'
-import { usePrefix, TextWidget } from '@alkaid/react'
+import {usePrefix, TextWidget, useCssInJs} from '@alkaid/react'
 import { MonacoInput } from '@alkaid/react-settings-form'
 import {
   Form,
@@ -20,6 +20,8 @@ import { FieldPropertySetter } from './FieldPropertySetter'
 import { FulfillRunHelper } from './helpers'
 import { IReaction } from './types'
 import { initDeclaration } from './declarations'
+import {genReactionsSetterStyle} from "./styles";
+import cls from "classnames";
 // import './styles.less'
 
 export interface IReactionsSetterProps {
@@ -140,6 +142,7 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
   const [modalVisible, setModalVisible] = useState(false)
   const [innerVisible, setInnerVisible] = useState(false)
   const prefix = usePrefix('reactions-setter')
+  const {hashId,wrapSSR} = useCssInJs({prefix,styleFun: genReactionsSetterStyle})
   const form = useMemo(() => {
     return createForm({
       values: clone(props.value),
@@ -167,7 +170,7 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
       setInnerVisible(false)
     }
   }, [modalVisible])
-  return (
+  return wrapSSR(
     <>
       <Button block onClick={openModal}>
         <TextWidget token="SettingComponents.ReactionsSetter.configureReactions" />
@@ -191,7 +194,7 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
           closeModal()
         }}
       >
-        <div className={prefix}>
+        <div className={cls(prefix,hashId)}>
           {innerVisible && (
             <Form form={form}>
               <SchemaField>
