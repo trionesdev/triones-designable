@@ -40,7 +40,45 @@ export const genSettingsFormStyle = (
                 display: 'flex',
                 flexDirection: 'column',
                 position: 'relative',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                [`.dn-node-path`]:{
+                    flexGrow: 0
+                },
+
+
+                [`.ant-formily-item`]: {
+                    paddingBottom: '8px',
+                    marginBottom: '8px',
+                    marginTop: '8px',
+                    borderBottom:`1px solid ${token.colorBorder}`,
+                    [`*`]: {
+                        fontSize: '13px'
+                    },
+                    [`.ant-formily-item-control-content-component`]: {
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'flex-end',
+                        [`& > .ant-radio-group`]: {
+                            display: 'flex !important',
+                            width: '100%',
+                            [`.ant-radio-button-wrapper`]: {
+                                display: 'flex',
+                                justifyContent: 'center',
+                                padding: '0 6px !important',
+                                alignItems: 'center',
+                                flexGrow: 2
+                            }
+                        },
+                        [`& > .ant-slider`]: {
+                            flexShrink: 0,
+                            minWidth: 0,
+                            width: '100%'
+                        },
+                        [`& > .ant-select`]: {
+                            maxWidth: '140px'
+                        }
+                    }
+                }
             },
             [`&-content`]: {
                 flexGrow: 1,
@@ -54,38 +92,6 @@ export const genSettingsFormStyle = (
                 height: '100%',
                 color: '#888'
             },
-            [`.ant-formily-item`]: {
-                paddingBottom: '8px',
-                marginBottom: '8px',
-                marginTop: '8px',
-                [`*`]: {
-                    fontSize: '13px'
-                },
-                [`.ant-formily-item-control-content-component`]: {
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'flex-end',
-                    [`& > .ant-radio-group`]: {
-                        display: 'flex !important',
-                        width: '100%',
-                        [`.ant-radio-button-wrapper`]: {
-                            display: 'flex',
-                            justifyContent: 'center',
-                            padding: '0 6px !important',
-                            alignItems: 'center',
-                            flexGrow: 2
-                        }
-                    },
-                    [`& > .ant-slider`]: {
-                        flexShrink: 0,
-                        minWidth: 0,
-                        width: '100%'
-                    },
-                    [`& > .ant-select`]: {
-                        maxWidth: '140px'
-                    }
-                }
-            }
         },
     },
     {

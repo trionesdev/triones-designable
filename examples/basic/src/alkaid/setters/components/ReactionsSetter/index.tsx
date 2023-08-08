@@ -181,7 +181,7 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
         bodyStyle={{ padding: 10 }}
         transitionName=""
         maskTransitionName=""
-        visible={modalVisible}
+        open={modalVisible}
         onCancel={closeModal}
         destroyOnClose
         onOk={() => {
@@ -290,9 +290,10 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
                                   !field.value &&
                                   !field.modified
                                 ) {
-                                  field.value =
-                                    source.inputValues[1]?.props?.name ||
-                                    `v_${uid()}`
+                                  field.setValue(source.inputValues[1]?.props?.name || `v_${uid()}`)
+                                  // field.value =
+                                  //   source.inputValues[1]?.props?.name ||
+                                  //   `v_${uid()}`
                                 }
                               })
                             }}
@@ -332,16 +333,22 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
                                     property[0] === 'initialValue' ||
                                     property[0] === 'inputValue'
                                   ) {
-                                    field.value =
-                                      source.inputValues[1]?.props?.type ||
-                                      'any'
+                                    field.setValue(source.inputValues[1]?.props?.type || 'any')
+                                    // field.value =
+                                    //   source.inputValues[1]?.props?.type ||
+                                    //   'any'
                                   } else if (property[0] === 'inputValues') {
-                                    field.value = `any[]`
+                                    // @ts-ignore
+                                    field.setValue(`any[]`)
+                                    // field.value = `any[]`
                                   } else if (property[0]) {
-                                    field.value =
-                                      FieldStateValueTypes[property[0]]
+                                    field.setValue(FieldStateValueTypes[property[0]])
+                                    // field.value =
+                                    //   FieldStateValueTypes[property[0]]
                                   } else {
-                                    field.value = 'any'
+                                    // @ts-ignore
+                                    field.setValue("any")
+                                    // field.value = 'any'
                                   }
                                 }
                               })
