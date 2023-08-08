@@ -1,0 +1,35 @@
+{
+  "name": "@alkaid/shared",
+  "version": "0.0.1-beta.1",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "father dev",
+    "build": "father build",
+    "build:deps": "father prebundle",
+    "prepublishOnly": "father doctor && npm run build"
+  },
+  "keywords": [],
+  "authors": [
+    "fengxiaotx@163.com"
+  ],
+  "license": "MIT",
+  "files": [
+    "dist",
+    "compiled"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "antd": "^5.7.3",
+    "father": "^4.3.0",
+    "react": "^18.2.0"
+  },
+  "dependencies": {
+    "requestidlecallback": "^0.3.0"
+  }
+}
