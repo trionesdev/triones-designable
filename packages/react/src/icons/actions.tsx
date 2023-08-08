@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-export const AddSort = (
+export const AddSort:React.JSX.Element = (
   <g stroke="none" strokeWidth="1" fillRule="evenodd">
     <rect
       transform="translate(370.000000, 495.274170) scale(1, -1) rotate(90.000000) translate(-370.000000, -495.274170) "
@@ -37,7 +37,7 @@ export const AddSort = (
   </g>
 )
 
-export const AddIndex = (
+export const AddIndex:React.JSX.Element = (
   <g stroke="none" strokeWidth="1" fillRule="evenodd">
     <path
       d="M281,34 C195.672006,34 126.5,103.172006 126.5,188.5 C126.5,273.827994 195.672006,343 281,343 C366.327994,343 435.5,273.827994 435.5,188.5 C435.5,103.172006 366.327994,34 281,34 Z M281,114 C322.145214,114 355.5,147.354786 355.5,188.5 C355.5,229.645214 322.145214,263 281,263 C239.854786,263 206.5,229.645214 206.5,188.5 C206.5,147.354786 239.854786,114 281,114 Z"

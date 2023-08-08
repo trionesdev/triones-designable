@@ -1,4 +1,3 @@
-import React from 'react'
 
 export const PC = (
   <svg viewBox="0 0 1224 1024">

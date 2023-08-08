@@ -29,7 +29,8 @@
     "@formily/reactive": "^2.2.27",
     "requestidlecallback": "^0.3.0",
     "@alkaid/shared": "0.0.1-beta.1",
-    "@alkaid/core": "0.0.1-beta.1"
+    "@alkaid/core": "0.0.1-beta.1",
+    "@alkaid/react": "0.0.1-beta.1"
   },
   "scripts": {
     "start": "craco start",

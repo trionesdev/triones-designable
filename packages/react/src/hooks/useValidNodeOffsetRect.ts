@@ -1,10 +1,10 @@
 import { useState, useEffect, useMemo, useCallback } from 'react'
 import { TreeNode, CursorStatus, CursorDragType } from '@alkaid/core'
-import { LayoutObserver } from '@alkaid/shared'
+import {LayoutObserver, Rect} from '@alkaid/shared'
 import { useViewport } from './useViewport'
 import { useDesigner } from './useDesigner'
 
-const isEqualRect = (rect1: DOMRect, rect2: DOMRect) => {
+const isEqualRect = (rect1: Rect, rect2: Rect) => {
   return (
     rect1?.x === rect2?.x &&
     rect1?.y === rect2?.y &&

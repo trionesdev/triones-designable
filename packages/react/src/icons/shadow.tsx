@@ -1,4 +1,3 @@
-import React from 'react'
 
 export const Blur = (
   <path

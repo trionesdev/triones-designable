@@ -6,7 +6,8 @@ import { globalThisPolyfill } from '@alkaid/shared'
 
 export const useWorkspace = (id?: string): Workspace => {
   const designer = useDesigner()
-  const workspaceId = id || useContext(WorkspaceContext)?.id
+  const ctxWorkspaceId = useContext(WorkspaceContext)?.id
+  const workspaceId = id || ctxWorkspaceId
   if (workspaceId) {
     return designer.workbench.findWorkspaceById(workspaceId)
   }

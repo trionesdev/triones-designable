@@ -52,7 +52,7 @@ module.exports={
             // "@alkaid/shared": resolve("src/alkaid/shared"),
             // "@alkaid/shared": resolve("../../packages/shared/src"),
             // "@alkaid/core": resolve("src/alkaid/core"),
-            "@alkaid/react": resolve("src/alkaid/react"),
+            // "@alkaid/react": resolve("src/alkaid/react"),
             "@alkaid/react-settings-form": resolve("src/alkaid/react-settings-form"),
             "@alkaid/formily-antd": resolve("src/alkaid/antd"),
             "@alkaid/formily-setters": resolve("src/alkaid/setters"),

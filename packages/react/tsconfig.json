@@ -2,7 +2,7 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "module": "commonjs",
     "target": "es5",
     "allowJs": false,
@@ -16,7 +16,7 @@
     "baseUrl": "./",
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "@alkaid/*": ["../*"]
+      "@alkaid/*": ["../*/src"]
     }
   }
 }

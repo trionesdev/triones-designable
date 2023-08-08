@@ -1,4 +1,3 @@
-import React from 'react'
 
 export const InputSource = (
   <svg viewBox="0 0 1424 1024">

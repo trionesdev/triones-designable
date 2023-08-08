@@ -1,7 +1,8 @@
 import React from 'react'
-import { useMoveHelper, usePrefix } from '../../hooks'
+import {useMoveHelper, usePrefix, useToken} from '../../hooks'
 import { ClosestPosition } from '@alkaid/core'
 import { observer } from '@formily/reactive-react'
+import cls from "classnames";
 
 export interface IInsertionProps {
   workspaceId?: string
@@ -11,6 +12,7 @@ export const Insertion: React.FC<IInsertionProps> = observer(
   ({ workspaceId }) => {
     const moveHelper = useMoveHelper(workspaceId)
     const prefix = usePrefix('outline-tree-insertion')
+    const {hashId} = useToken()
     const createInsertionStyle = (): React.CSSProperties => {
       const closestDirection = moveHelper.outlineClosestDirection
       const closestRect = moveHelper.outlineClosestOffsetRect
@@ -56,7 +58,7 @@ export const Insertion: React.FC<IInsertionProps> = observer(
 
     if (!moveHelper?.closestNode) return null
 
-    return <div className={prefix} style={createInsertionStyle()}></div>
+    return <div className={cls(prefix,hashId)} style={createInsertionStyle()}></div>
   }
 )
 

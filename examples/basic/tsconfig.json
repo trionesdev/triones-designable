@@ -33,7 +33,8 @@
       "@alkaid/shared": ["../../packages/shared/src"],
 //      "@alkaid/core": ["src/alkaid/core"],
       "@alkaid/core": ["../../packages/core/src"],
-      "@alkaid/react": ["src/alkaid/react"],
+//      "@alkaid/react": ["src/alkaid/react"],
+      "@alkaid/react": ["../../packages/react/src"],
       "@alkaid/react-settings-form": ["src/alkaid/react-settings-form"],
       "@alkaid/formily-antd": ["src/alkaid/antd"],
       "@alkaid/formily-setters": ["src/alkaid/stters"]
@@ -41,6 +42,6 @@
   },
   "include": [
     "src",
-//    "../../packages/shared/src"
+    "../../packages/*/src"
   ]
 }
