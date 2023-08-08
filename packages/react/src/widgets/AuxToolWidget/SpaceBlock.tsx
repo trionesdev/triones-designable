@@ -1,11 +1,11 @@
-import {Fragment} from 'react'
+import React, {Fragment} from 'react'
 import {useTransformHelper, useCursor, usePrefix, useToken} from '../../hooks'
 import {observer} from '@formily/reactive-react'
 import {CursorStatus} from '@alkaid/core'
 import {ILineSegment, calcRectOfAxisLineSegment} from '@alkaid/shared'
 import cls from "classnames";
 
-export const SpaceBlock = observer(() => {
+export const SpaceBlock:React.FC = observer(() => {
     const cursor = useCursor()
     const transformHelper = useTransformHelper()
     const prefix = usePrefix('aux-space-block')

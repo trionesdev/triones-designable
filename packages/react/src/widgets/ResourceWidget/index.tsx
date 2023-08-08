@@ -14,7 +14,7 @@ import cls from 'classnames'
 // import './styles.less'
 import {genResourceWidgetStyle} from "./styles";
 
-export type SourceMapper = (resource: IResource) => React.ReactChild
+export type SourceMapper = (resource: IResource) => React.ReactNode
 
 export interface IResourceWidgetProps {
     title: React.ReactNode

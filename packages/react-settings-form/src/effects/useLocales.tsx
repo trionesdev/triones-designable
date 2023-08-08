@@ -1,4 +1,3 @@
-import React from 'react'
 import { isVoidField, onFieldReact } from '@formily/core'
 import { TreeNode, GlobalRegistry } from '@alkaid/core'
 import { isStr } from '@alkaid/shared'

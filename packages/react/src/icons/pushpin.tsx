@@ -1,5 +1,6 @@
+import React from "react";
 
-export const PushPinOutlined = (
+export const PushPinOutlined:React.JSX.Element  = (
   <svg
     viewBox="64 64 896 896"
     focusable="false"
@@ -13,7 +14,7 @@ export const PushPinOutlined = (
   </svg>
 )
 
-export const PushPinFilled = (
+export const PushPinFilled:React.JSX.Element  = (
   <svg
     viewBox="64 64 896 896"
     focusable="false"

@@ -2,7 +2,6 @@
  * 支持文本、数字、布尔、表达式
  * Todo: JSON、富文本，公式
  */
-import React from 'react'
 import { createPolyInput } from '../PolyInput'
 import { Input, Button, Popover, InputNumber, Select } from 'antd'
 import { MonacoInput } from '../MonacoInput'

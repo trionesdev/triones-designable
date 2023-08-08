@@ -1,10 +1,11 @@
 import React from 'react'
 import { Field, useField, observer } from '@formily/react'
 import { Radio } from '@formily/antd-v5'
-import { usePrefix, IconWidget } from '@alkaid/react'
+import {usePrefix, IconWidget, useCssInJs} from '@alkaid/react'
 import { InputItems } from '../InputItems'
 import cls from 'classnames'
-import './styles.less'
+import {genFlexStyleSetterStyle} from "./styles";
+// import './styles.less'
 export interface IFlexStyleSetterProps {
   className?: string
   style?: React.CSSProperties
@@ -14,8 +15,9 @@ export const FlexStyleSetter: React.FC<IFlexStyleSetterProps> = observer(
   (props) => {
     const field = useField()
     const prefix = usePrefix('flex-style-setter')
+      const {hashId} = useCssInJs({prefix,styleFun: genFlexStyleSetterStyle})
     return (
-      <div className={cls(prefix, props.className)} style={props.style}>
+      <div className={cls(prefix, props.className,hashId)} style={props.style}>
         <InputItems vertical>
           <Field
             name="flexDirection"

@@ -8,7 +8,8 @@ import { BackgroundSizeInput } from '../SizeInput'
 import { BackgroundImageInput } from '../ImageInput'
 import { InputItems } from '../InputItems'
 import cls from 'classnames'
-
+import {theme} from "antd";
+const {useToken} = theme;
 export interface IBackgroundStyleSetterProps {
   className?: string
   style?: React.CSSProperties
@@ -18,8 +19,9 @@ export const BackgroundStyleSetter: React.FC<IBackgroundStyleSetterProps> =
   observer((props) => {
     const field = useField()
     const prefix = usePrefix('background-style-setter')
+    const { hashId} = useToken();
     return (
-      <FoldItem className={cls(prefix, props.className)} label={field.title}>
+      <FoldItem className={cls(prefix, props.className,hashId)} label={field.title}>
         <FoldItem.Base>
           <Field
             name="backgroundColor"

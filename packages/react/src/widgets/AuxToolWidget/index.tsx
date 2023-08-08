@@ -1,4 +1,4 @@
-import {useEffect, useRef} from 'react'
+import React, {useEffect, useRef} from 'react'
 import {useViewport, useDesigner, usePrefix, useCssInJs} from '../../hooks'
 import {Insertion} from './Insertion'
 import {Selection} from './Selection'
@@ -12,12 +12,12 @@ import cls from 'classnames'
 import {genAuxToolsStyle} from "./styles";
 
 
-export const AuxToolWidget = () => {
+export const AuxToolWidget: React.FC = () => {
     const ref = useRef<HTMLDivElement>()
     const engine = useDesigner()
     const viewport = useViewport()
     const prefix = usePrefix('auxtool')
-    const {hashId,wrapSSR} = useCssInJs({prefix,styleFun:genAuxToolsStyle})
+    const {hashId, wrapSSR} = useCssInJs({prefix, styleFun: genAuxToolsStyle})
 
 
     useEffect(() => {

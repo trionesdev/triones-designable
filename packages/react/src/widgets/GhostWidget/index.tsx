@@ -1,4 +1,4 @@
-import {useRef, useEffect} from 'react'
+import React, {useRef, useEffect} from 'react'
 import {useCursor, usePrefix, useDesigner, useCssInJs} from '../../hooks'
 import {CursorStatus} from '@alkaid/core'
 import {autorun} from '@formily/reactive'
@@ -8,7 +8,7 @@ import {NodeTitleWidget} from '../NodeTitleWidget'
 import {genGhostWidgetStyle} from "./styles";
 import cls from "classnames";
 
-export const GhostWidget = observer(() => {
+export const GhostWidget:React.FC = observer(() => {
     const designer = useDesigner()
     const cursor = useCursor()
     const ref = useRef<HTMLDivElement>()

@@ -5,7 +5,7 @@ import {CursorStatus} from '@alkaid/core'
 import {Rect} from "@alkaid/shared";
 import cls from "classnames";
 
-export const SnapLine = observer(() => {
+export const SnapLine:React.FC = observer(() => {
     const cursor = useCursor()
     const transformHelper = useTransformHelper()
     const prefix = usePrefix('aux-snap-line')
