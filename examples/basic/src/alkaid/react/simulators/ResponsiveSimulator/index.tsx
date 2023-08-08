@@ -11,12 +11,13 @@ import {
   calcSpeedFactor,
   createUniformSpeedAnimation,
 } from '@alkaid/shared'
-import { useScreen, useDesigner, usePrefix } from '../../hooks'
+import {useScreen, useDesigner, usePrefix, useCssInJs} from '../../hooks'
 import { IconWidget } from '../../widgets'
 import { ResizeHandle, ResizeHandleType } from './handle'
 
 import cls from 'classnames'
-import './styles.less'
+// import './styles.less'
+import {genResponsiveSimulatorStyle} from "./styles";
 
 const useResizeEffect = (
   container: React.MutableRefObject<HTMLDivElement>,
@@ -137,14 +138,15 @@ export const ResponsiveSimulator: React.FC<IResponsiveSimulatorProps> =
     const container = useRef<HTMLDivElement>()
     const content = useRef<HTMLDivElement>()
     const prefix = usePrefix('responsive-simulator')
+    const {hashId,wrapSSR} = useCssInJs({prefix,styleFun:genResponsiveSimulatorStyle})
     const screen = useScreen()
     useDesigner((engine) => {
       useResizeEffect(container, content, engine)
     })
-    return (
+    return wrapSSR(
       <div
         {...props}
-        className={cls(prefix, props.className)}
+        className={cls(prefix, props.className,hashId)}
         style={{
           height: '100%',
           width: '100%',
