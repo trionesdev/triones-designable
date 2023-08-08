@@ -1,15 +1,17 @@
 import React from 'react'
 import {
-  useHover,
-  usePrefix,
-  useValidNodeOffsetRect,
-  useSelection,
+    useHover,
+    usePrefix,
+    useValidNodeOffsetRect,
+    useSelection, useToken,
 } from '../../hooks'
 import { observer } from '@formily/reactive-react'
+import cls from "classnames";
 
 export const DashedBox = observer(() => {
   const hover = useHover()
   const prefix = usePrefix('aux-dashed-box')
+    const {hashId} = useToken()
   const selection = useSelection()
   const rect = useValidNodeOffsetRect(hover?.node)
   const createTipsStyle = () => {
@@ -33,9 +35,9 @@ export const DashedBox = observer(() => {
   if (hover.node.hidden) return null
   if (selection.selected.includes(hover.node.id)) return null
   return (
-    <div className={prefix} style={createTipsStyle()}>
+    <div className={cls(prefix,hashId)} style={createTipsStyle()}>
       <span
-        className={prefix + '-title'}
+        className={cls(prefix + '-title',hashId)}
         style={{
           position: 'absolute',
           bottom: '100%',

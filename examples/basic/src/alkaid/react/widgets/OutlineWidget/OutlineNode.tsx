@@ -9,17 +9,17 @@ import { isFn } from '@alkaid/shared'
 import { autorun } from '@formily/reactive'
 import { observer } from '@formily/reactive-react'
 import {
-  usePrefix,
-  useCursor,
-  useSelection,
-  useMoveHelper,
-  useDesigner,
+    usePrefix,
+    useCursor,
+    useSelection,
+    useMoveHelper,
+    useDesigner, useToken,
 } from '../../hooks'
 import { IconWidget } from '../IconWidget'
 import { NodeTitleWidget } from '../NodeTitleWidget'
 import { NodeContext } from './context'
 import cls from 'classnames'
-import './styles.less'
+// import './styles.less'
 export interface IOutlineTreeNodeProps {
   node: TreeNode
   style?: React.CSSProperties
@@ -30,6 +30,7 @@ export interface IOutlineTreeNodeProps {
 export const OutlineTreeNode: React.FC<IOutlineTreeNodeProps> = observer(
   ({ node, className, style, workspaceId }) => {
     const prefix = usePrefix('outline-tree-node')
+      const {hashId} = useToken()
     const engine = useDesigner()
     const ref = useRef<HTMLDivElement>()
     const ctx = useContext(NodeContext)
@@ -129,22 +130,22 @@ export const OutlineTreeNode: React.FC<IOutlineTreeNodeProps> = observer(
       <div
         style={style}
         ref={ref}
-        className={cls(prefix, className, 'expanded')}
+        className={cls(prefix, className, 'expanded',hashId)}
         data-designer-outline-node-id={node.id}
       >
-        <div className={prefix + '-header'}>
+        <div className={cls(prefix + '-header',hashId)}>
           <div
-            className={prefix + '-header-head'}
+            className={cls(prefix + '-header-head',hashId)}
             style={{
               left: -node.depth * 16,
               width: node.depth * 16,
             }}
           ></div>
-          <div className={prefix + '-header-content'}>
-            <div className={prefix + '-header-base'}>
+          <div className={cls(prefix + '-header-content',hashId)}>
+            <div className={cls(prefix + '-header-base',hashId)}>
               {(node?.children?.length > 0 || node === node.root) && (
                 <div
-                  className={prefix + '-expand'}
+                  className={cls(prefix + '-expand',hashId)}
                   onClick={(e) => {
                     e.preventDefault()
                     e.stopPropagation()
@@ -158,11 +159,11 @@ export const OutlineTreeNode: React.FC<IOutlineTreeNodeProps> = observer(
                   <IconWidget infer="Expand" size={10} />
                 </div>
               )}
-              <div className={prefix + '-icon'}>{renderIcon(node)}</div>
-              <div className={prefix + '-title'}>{renderTitle(node)}</div>
+              <div className={cls(prefix + '-icon',hashId)}>{renderIcon(node)}</div>
+              <div className={cls(prefix + '-title',hashId)}>{renderTitle(node)}</div>
             </div>
             <div
-              className={prefix + '-header-actions'}
+              className={cls(prefix + '-header-actions',hashId)}
               data-click-stop-propagation
             >
               {renderActions(node)}
@@ -170,7 +171,7 @@ export const OutlineTreeNode: React.FC<IOutlineTreeNodeProps> = observer(
                 <IconWidget
                   className={cls(prefix + '-hidden-icon', {
                     hidden: node.hidden,
-                  })}
+                  },hashId)}
                   infer={node.hidden ? 'EyeClose' : 'Eye'}
                   size={14}
                   onClick={() => {
@@ -181,7 +182,7 @@ export const OutlineTreeNode: React.FC<IOutlineTreeNodeProps> = observer(
             </div>
           </div>
         </div>
-        <div className={prefix + '-children'}>
+        <div className={cls(prefix + '-children',hashId)}>
           {node.children?.map((child) => {
             return (
               <OutlineTreeNode

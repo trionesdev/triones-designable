@@ -1,10 +1,11 @@
-import React, {createContext, useContext, useEffect, useRef} from 'react'
+import React, {createContext, useContext} from 'react'
 import {isStr, isFn, isObj, isPlainObj} from '@alkaid/shared'
 import {observer} from '@formily/reactive-react'
 import {Tooltip, TooltipProps} from 'antd'
-import {usePrefix, useRegistry, useTheme} from '../../hooks'
+import {useCssInJs, usePrefix, useRegistry, useTheme} from '../../hooks'
 import cls from 'classnames'
-import './styles.less'
+// import './styles.less'
+import {genIconWidgetStyle} from "./styles";
 
 const IconContext = createContext<IconProviderProps>(null)
 
@@ -35,6 +36,7 @@ export const IconWidget: React.FC<IIconWidgetProps> & {
     const context = useContext(IconContext)
     const registry = useRegistry()
     const prefix = usePrefix('icon')
+    const {hashId, wrapSSR} = useCssInJs({prefix, styleFun: genIconWidgetStyle})
     const size = props.size || '1em'
     const height = props.style?.height || size
     const width = props.style?.width || size
@@ -116,10 +118,10 @@ export const IconWidget: React.FC<IIconWidgetProps> & {
         return children
     }
     if (!props.infer) return null
-    return renderTooltips(
+    return wrapSSR(renderTooltips(
         <span
             {...props}
-            className={cls(prefix, props.className)}
+            className={cls(prefix, props.className, hashId)}
             style={{
                 ...props.style,
                 cursor: props.onClick ? 'pointer' : props.style?.cursor,
@@ -127,23 +129,23 @@ export const IconWidget: React.FC<IIconWidgetProps> & {
         >
       {takeIcon(props.infer)}
     </span>
-    )
+    ))
 })
 
 IconWidget.ShadowSVG = (props) => {
-    const ref = useRef<HTMLDivElement>()
+    // const ref = useRef<HTMLDivElement>()
     // const width = isNumSize(props.width) ? `${props.width}px` : props.width
     // const height = isNumSize(props.height) ? `${props.height}px` : props.height
-    useEffect(() => {
-        // if (ref.current) {
-        //     debugger
-        //     const root = ref.current.attachShadow({
-        //         mode: 'open',
-        //     })
-        //     root.innerHTML = `<svg viewBox="0 0 1024 1024" style="width:${width};height:${height}">${props.content}</svg>`
-        // }
-    }, [])
-    return <div ref={ref}></div>
+    // useEffect(() => {
+    //     if (ref.current) {
+    //         debugger
+    //         const root = ref.current.attachShadow({
+    //             mode: 'open',
+    //         })
+    //         root.innerHTML = `<svg viewBox="0 0 1024 1024" style="width:${width};height:${height}">${props.content}</svg>`
+    //     }
+    // }, [])
+    return <div></div>
 }
 
 IconWidget.Provider = (props) => {

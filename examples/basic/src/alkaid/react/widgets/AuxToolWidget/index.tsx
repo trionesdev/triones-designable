@@ -7,7 +7,7 @@ import {Cover} from './Cover'
 import {DashedBox} from './DashedBox'
 import {SpaceBlock} from './SpaceBlock'
 import {SnapLine} from './SnapLine'
-import './styles.less'
+// import './styles.less'
 import cls from 'classnames'
 import {genAuxToolsStyle} from "./styles";
 

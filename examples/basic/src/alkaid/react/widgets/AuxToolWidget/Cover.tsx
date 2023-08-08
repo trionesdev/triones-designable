@@ -4,7 +4,7 @@ import {
   useMoveHelper,
   useCursor,
   useValidNodeOffsetRect,
-  usePrefix,
+  usePrefix, useToken,
 } from '../../hooks'
 import { observer } from '@formily/reactive-react'
 import { CursorStatus, ClosestPosition, TreeNode } from '@alkaid/core'
@@ -17,6 +17,7 @@ interface ICoverRectProps {
 
 const CoverRect: React.FC<ICoverRectProps> = (props) => {
   const prefix = usePrefix('aux-cover-rect')
+  const {hashId} = useToken()
   const rect = useValidNodeOffsetRect(props.node)
   const createCoverStyle = () => {
     const baseStyle: React.CSSProperties = {
@@ -38,7 +39,7 @@ const CoverRect: React.FC<ICoverRectProps> = (props) => {
       className={cls(prefix, {
         dragging: props.dragging,
         dropping: props.dropping,
-      })}
+      },hashId)}
       style={createCoverStyle()}
     ></div>
   )

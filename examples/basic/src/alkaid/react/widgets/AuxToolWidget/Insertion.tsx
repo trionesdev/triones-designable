@@ -1,11 +1,13 @@
 import React from 'react'
-import { useMoveHelper, usePrefix } from '../../hooks'
+import {useMoveHelper, usePrefix, useToken} from '../../hooks'
 import { ClosestPosition } from '@alkaid/core'
 import { observer } from '@formily/reactive-react'
+import cls from "classnames";
 
 export const Insertion = observer(() => {
   const moveHelper = useMoveHelper()
   const prefix = usePrefix('aux-insertion')
+  const {hashId} = useToken()
   const createInsertionStyle = (): React.CSSProperties => {
     const closestDirection = moveHelper.viewportClosestDirection
     const closestRect = moveHelper.viewportClosestOffsetRect
@@ -74,7 +76,7 @@ export const Insertion = observer(() => {
     return baseStyle
   }
 
-  return <div className={prefix} style={createInsertionStyle()}></div>
+  return <div className={cls(prefix,hashId)} style={createInsertionStyle()}></div>
 })
 
 Insertion.displayName = 'Insertion'
