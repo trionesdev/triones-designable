@@ -1,6 +1,6 @@
 {
   "name": "@alkaid/formily-transformer",
-  "version": "0.0.1-beta.1",
+  "version": "0.0.1-beta.2",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -24,12 +24,12 @@
     "access": "public"
   },
   "devDependencies": {
-    "father": "^4.3.0",
     "@formily/core": "^2.2.27",
-    "@formily/json-schema": "^2.2.27"
+    "@formily/json-schema": "^2.2.27",
+    "father": "^4.3.0"
   },
   "dependencies": {
-    "@alkaid/core": "0.0.1-beta.1",
-    "@alkaid/shared": "0.0.1-beta.1"
+    "@alkaid/core": "^0.0.1-beta.2",
+    "@alkaid/shared": "^0.0.1-beta.2"
   }
 }

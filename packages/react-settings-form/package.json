@@ -1,6 +1,6 @@
 {
   "name": "@alkaid/react-settings-form",
-  "version": "0.0.1-beta.1",
+  "version": "0.0.1-beta.2",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -29,6 +29,7 @@
     "react": "^18.2.0"
   },
   "dependencies": {
+    "@alkaid/react": "^0.0.1-beta.2",
     "@formily/antd-v5": "^1.1.0",
     "@formily/core": "^2.2.27",
     "@formily/react": "^2.2.27",
@@ -37,7 +38,6 @@
     "monaco-editor": "^0.41.0",
     "prettier": "^3.0.1",
     "react-color": "^2.19.3",
-    "react-tiny-popover": "^7.2.4",
-    "@alkaid/react": "0.0.1-beta.1"
+    "react-tiny-popover": "^7.2.4"
   }
 }
