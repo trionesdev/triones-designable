@@ -31,7 +31,7 @@ export const FormLayout: ISchema = {
     },
     feedbackLayout: {
       type: 'string',
-      enum: ['loose', 'terse', 'popover', 'none', null],
+      enum: ['loose', 'terse', 'popover', 'none', undefined],
       'x-decorator': 'FormItem',
       'x-component': 'Select',
       'x-component-props': {
@@ -40,7 +40,7 @@ export const FormLayout: ISchema = {
     },
     size: {
       type: 'string',
-      enum: ['large', 'small', 'default', null],
+      enum: ['large', 'small', 'default', undefined],
       'x-decorator': 'FormItem',
       'x-component': 'Select',
       'x-component-props': {

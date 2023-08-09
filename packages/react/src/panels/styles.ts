@@ -32,6 +32,25 @@ export const genStudioPanelStyle = (
                     position: 'relative'
                 }
             },
+            [`&-header`]: {
+                display: 'flex',
+                alignItems: 'center',
+                flexGrow: 0,
+                flexShrink: 0,
+                justifyContent: 'space-between',
+                background: `#fff`,
+                borderBottom: `1px solid #d9d9d9`,
+                padding: '4px',
+                [`&-logo`]: {
+                    display: 'flex',
+                    alignItems: 'center',
+                },
+                [`&-actions`]: {
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'flex-end'
+                }
+            },
             [`&.root`]: {
                 position: 'fixed',
                 top: 0,

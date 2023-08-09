@@ -1,5 +1,5 @@
-import {createDesigner, KeyCode, Shortcut} from '@alkaid/core';
-import {useMemo} from 'react';
+import {createDesigner, GlobalRegistry, KeyCode, Shortcut} from '@alkaid/core';
+import {useEffect, useMemo} from 'react';
 import './App.css';
 import {
     ComponentTreeWidget,
@@ -12,6 +12,8 @@ import {
 } from "@alkaid/react";
 import {ArrayCards, ArrayTable, Field, Form, Input, NumberPicker, Password, Rate} from "@alkaid/formily-antd";
 import {SettingsForm} from "@alkaid/react-settings-form";
+import {transformToSchema} from "@alkaid/formily-transformer";
+import {Button} from "antd";
 
 function App() {
     const engine = useMemo(
@@ -24,7 +26,7 @@ function App() {
                             [KeyCode.Control, KeyCode.S],
                         ],
                         handler(ctx) {
-                            // saveSchema(ctx.engine)
+                            console.log(JSON.stringify(transformToSchema(engine.getCurrentTree())))
                         },
                     }),
                 ],
@@ -32,9 +34,18 @@ function App() {
             }),
         []
     )
+
+    const handleSave = () => {
+        console.log(JSON.stringify(transformToSchema(engine.getCurrentTree())))
+    }
+
+    useEffect(() => {
+        GlobalRegistry.setDesignerLanguage('zh-cn')
+    }, []);
+
     return (
         <Designer engine={engine}>
-            <StudioPanel >
+            <StudioPanel actions={[<Button onClick={handleSave}>保存</Button>]}>
                 <CompositePanel>
                     <CompositePanel.Item title="panels.Component" icon="Component">
                         <ResourceWidget
@@ -48,9 +59,7 @@ function App() {
                         />
                         <ResourceWidget
                             title="sources.Layouts"
-                            sources={[
-
-                            ]}
+                            sources={[]}
                         />
                         <ResourceWidget
                             title="sources.Arrays"
@@ -59,21 +68,21 @@ function App() {
                         {/*<ResourceWidget title="sources.Displays" sources={[Text]} />*/}
                     </CompositePanel.Item>
                     <CompositePanel.Item title="panels.OutlinedTree" icon="Outline">
-                        <OutlineTreeWidget />
+                        <OutlineTreeWidget/>
                     </CompositePanel.Item>
                     <CompositePanel.Item title="panels.History" icon="History">
-                        <HistoryWidget />
+                        <HistoryWidget/>
                     </CompositePanel.Item>
                 </CompositePanel>
                 <Workspace id="form">
                     <WorkspacePanel>
                         <ToolbarPanel>
-                            <DesignerToolsWidget />
+                            <DesignerToolsWidget/>
                             <ViewToolsWidget
                                 use={['DESIGNABLE', 'JSONTREE', 'MARKUP', 'PREVIEW']}
                             />
                         </ToolbarPanel>
-                        <ViewportPanel style={{ height: '100%' }}>
+                        <ViewportPanel style={{height: '100%'}}>
                             <ViewPanel type="DESIGNABLE">
                                 {() => (
                                     <ComponentTreeWidget
@@ -94,7 +103,7 @@ function App() {
                     </WorkspacePanel>
                 </Workspace>
                 <SettingsPanel title="panels.PropertySettings">
-                    <SettingsForm uploadAction="https://www.mocky.io/v2/5cc8019d300000980a055e76" />
+                    <SettingsForm uploadAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"/>
                 </SettingsPanel>
             </StudioPanel>
         </Designer>

@@ -1,9 +1,13 @@
 import React from 'react'
 import { observer } from '@formily/reactive-react'
 import { DroppableWidget } from '@alkaid/react'
-import './styles.less'
+// import './styles.less'
 
-export const Container: React.FC = observer((props) => {
+type ContainerProps = {
+  children?:React.ReactNode
+}
+
+export const Container: React.FC<ContainerProps> = observer((props) => {
   return <DroppableWidget>{props.children}</DroppableWidget>
 })
 

@@ -38,9 +38,10 @@
 //      "@alkaid/react-settings-form": ["src/alkaid/react-settings-form"],
       "@alkaid/react-settings-form": ["../../packages/react-settings-form/src"],
 //      "@alkaid/formily-antd": ["src/alkaid/antd"],
-      "@alkaid/formily-antd": ["src/alkaid/antd"],
+      "@alkaid/formily-antd": ["../../formily/antd/src"],
 //      "@alkaid/formily-setters": ["src/alkaid/stters"],
-      "@alkaid/formily-setters": ["../../formily/setters/src"]
+      "@alkaid/formily-setters": ["../../formily/setters/src"],
+      "@alkaid/formily-transformer": ["../../formily/transformer/src"]
     }
   },
   "include": [

@@ -1,5 +1,5 @@
 {
-  "name": "@alkaid/formily-antd",
+  "name": "@alkaid/formily-transformer",
   "version": "0.0.1-beta.1",
   "description": "",
   "main": "dist/index.js",
@@ -24,19 +24,12 @@
     "access": "public"
   },
   "devDependencies": {
-    "@types/react": "^18.0.28",
     "father": "^4.3.0",
-    "react": "^18.2.0"
+    "@formily/core": "^2.2.27",
+    "@formily/json-schema": "^2.2.27"
   },
   "dependencies": {
-    "@alkaid/shared": "0.0.1-beta.1",
     "@alkaid/core": "0.0.1-beta.1",
-    "@alkaid/react": "0.0.1-beta.1",
-    "@alkaid/formily-setters": "0.0.1-beta.1",
-    "@alkaid/formily-transformer": "0.0.1-beta.1",
-    "@formily/antd-v5": "^1.1.0",
-    "@formily/core": "^2.2.27",
-    "@formily/react": "^2.2.27",
-    "@formily/reactive": "^2.2.27"
+    "@alkaid/shared": "0.0.1-beta.1"
   }
 }

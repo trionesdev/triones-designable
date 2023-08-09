@@ -1,4 +1,3 @@
-import React from 'react'
 import { FormPath } from '@formily/core'
 import { toJS } from '@formily/reactive'
 import {
@@ -22,6 +21,7 @@ import {
 import { isArr, isStr } from '@alkaid/shared'
 import { Container } from '../../common/Container'
 import { AllLocales } from '../../locales'
+import React from 'react'
 
 Schema.silent(true)
 

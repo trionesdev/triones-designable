@@ -25,22 +25,22 @@ const StudioPanelInternal: React.FC<IStudioPanelProps> = ({
     const position = usePosition()
     const classNameBase = cls('root', position, props.className)
 
-    const {hashId,wrapSSR} = useCssInJs({prefix,styleFun:genStudioPanelStyle})
+    const {hashId, wrapSSR} = useCssInJs({prefix, styleFun: genStudioPanelStyle})
 
     if (logo || actions) {
         return wrapSSR(
-            <div {...props} className={cls(`${prefix}-container`, classNameBase,hashId)}>
-                <div className={prefix + '-header'}>
-                    <div className={prefix + '-header-logo'}>{logo}</div>
-                    <div className={prefix + '-header-actions'}>{actions}</div>
+            <div {...props} className={cls(`${prefix}-container`, classNameBase, hashId)}>
+                <div className={cls(prefix + '-header', hashId)}>
+                    <div className={cls(prefix + '-header-logo', hashId)}>{logo}</div>
+                    <div className={cls(prefix + '-header-actions', hashId)}>{actions}</div>
                 </div>
-                <div className={prefix}>{props.children}</div>
+                <div className={cls(prefix, hashId)}>{props.children}</div>
             </div>
         )
     }
     return (
         wrapSSR(
-            <div {...props} className={cls(prefix,classNameBase,hashId)}>
+            <div {...props} className={cls(prefix, classNameBase, hashId)}>
                 {props.children}
             </div>
         )
