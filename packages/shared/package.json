@@ -31,5 +31,6 @@
   },
   "dependencies": {
     "requestidlecallback": "^0.3.0"
-  }
+  },
+  "gitHead": "5ad2f5310aebd63a4fbcbec8d719422ff200af90"
 }

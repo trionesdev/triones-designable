@@ -24,12 +24,13 @@
     "access": "public"
   },
   "devDependencies": {
-    "@formily/core": "^2.2.27",
-    "@formily/json-schema": "^2.2.27",
     "father": "^4.3.0"
   },
   "dependencies": {
+    "@formily/core": "^2.2.29",
+    "@formily/json-schema": "^2.2.29",
     "@alkaid/core": "^0.0.1-beta.2",
     "@alkaid/shared": "^0.0.1-beta.2"
-  }
+  },
+  "gitHead": "5ad2f5310aebd63a4fbcbec8d719422ff200af90"
 }

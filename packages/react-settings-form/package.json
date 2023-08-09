@@ -39,5 +39,6 @@
     "prettier": "^3.0.1",
     "react-color": "^2.19.3",
     "react-tiny-popover": "^7.2.4"
-  }
+  },
+  "gitHead": "5ad2f5310aebd63a4fbcbec8d719422ff200af90"
 }

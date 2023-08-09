@@ -25,18 +25,23 @@
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
-    "father": "^4.3.0",
-    "react": "^18.2.0"
+    "father": "^4.3.0"
   },
   "dependencies": {
+    "antd": "^5.8.2",
+    "classnames": "^2.3.2",
+    "react": "^18.2.0",
     "@alkaid/core": "^0.0.1-beta.2",
     "@alkaid/formily-setters": "^0.0.1-beta.2",
     "@alkaid/formily-transformer": "^0.0.1-beta.2",
     "@alkaid/react": "^0.0.1-beta.2",
     "@alkaid/shared": "^0.0.1-beta.2",
     "@formily/antd-v5": "^1.1.0",
-    "@formily/core": "^2.2.27",
-    "@formily/react": "^2.2.27",
-    "@formily/reactive": "^2.2.27"
-  }
+    "@formily/shared": "^2.2.29",
+    "@formily/core": "^2.2.29",
+    "@formily/react": "^2.2.29",
+    "@formily/reactive": "^2.2.29",
+    "@formily/reactive-react": "^2.2.29"
+  },
+  "gitHead": "5ad2f5310aebd63a4fbcbec8d719422ff200af90"
 }

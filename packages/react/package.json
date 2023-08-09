@@ -27,11 +27,18 @@
     "@types/react": "^18.0.28",
     "father": "^4.3.0",
     "prettier": "^3.0.1",
-    "react": "^18.2.0",
     "react-color": "^2.19.3",
     "react-tiny-popover": "^7.2.4"
   },
   "dependencies": {
-    "@alkaid/core": "^0.0.1-beta.2"
-  }
+    "@alkaid/core": "^0.0.1-beta.2",
+    "@ant-design/cssinjs": "^1.16.1",
+    "@formily/reactive": "^2.2.29",
+    "@formily/reactive-react": "^2.2.29",
+    "antd": "^5.8.2",
+    "classnames": "^2.3.2",
+    "dateformat": "^5.0.3",
+    "react": "^18.2.0"
+  },
+  "gitHead": "5ad2f5310aebd63a4fbcbec8d719422ff200af90"
 }
