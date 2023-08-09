@@ -15,7 +15,8 @@
     "release:github": "ts-node scripts/release release",
     "release:force": "lerna publish from-package --yes --registry=https://moensun-npm.pkg.coding.net/npm/moensun/",
     "prelease:force": "lerna publish from-package --yes --dist-tag next",
-    "release": "lerna publish --registry=https://moensun-npm.pkg.coding.net/npm/moensun/"
+    "release": "lerna publish --registry=https://moensun-npm.pkg.coding.net/npm/moensun/",
+    "codingPublish": "lerna publish --registry=https://moensun-npm.pkg.coding.net/npm/moensun/"
   },
   "dependencies": {},
   "devDependencies": {
