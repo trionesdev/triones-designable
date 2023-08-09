@@ -45,7 +45,7 @@ export const ResourceWidget: React.FC<IResourceWidgetProps> = observer(
                         <IconWidget
                             className={cls(prefix + '-item-icon', hashId)}
                             infer={icon}
-                            style={{width: 150, height: 40}}
+                            style={{width: 16, height: 16}}
                         />
                     )}
                     <span className={cls(prefix + '-item-text', hashId)}>
@@ -69,7 +69,7 @@ export const ResourceWidget: React.FC<IResourceWidgetProps> = observer(
         const remainItems =
             sources.reduce((length, source) => {
                 return length + (source.span ?? 1)
-            }, 0) % 3
+            }, 0) % 2
         return wrapSSR(
             <div
                 className={cls(prefix, props.className, {
@@ -97,7 +97,7 @@ export const ResourceWidget: React.FC<IResourceWidgetProps> = observer(
                         {remainItems ? (
                             <div
                                 className={cls(prefix + '-item-remain', hashId)}
-                                style={{gridColumnStart: `span ${3 - remainItems}`}}
+                                style={{gridColumnStart: `span ${2 - remainItems}`}}
                             ></div>
                         ) : null}
                     </div>

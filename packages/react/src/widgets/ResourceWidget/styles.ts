@@ -40,7 +40,7 @@ export const genResourceWidgetStyle = (
             [`&.expand`]: {
                 [`.dn-resource-content`]: {
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(3, 33.3333%)',
+                    gridTemplateColumns: 'repeat(2, 50%)',
                     gridGap: '1px',
                     backgroundColor: '#d9d9d9',
                     borderBottom: `1px solid #d9d9d9`
@@ -58,7 +58,7 @@ export const genResourceWidgetStyle = (
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                flexDirection: 'column',
+                flexDirection: 'row',
                 cursor: 'grab',
                 transition: 'color 0.1s ease-out',
                 [`&:hover`]: {
@@ -67,13 +67,14 @@ export const genResourceWidgetStyle = (
                     zIndex: 1
                 },
                 [`&-icon`]: {
-                    margin: '12px 0'
+                    margin: '12px 8px'
                 },
                 [`&-text`]: {
-                    textAlign: 'center',
+                    flex:"1 auto",
+                    // textAlign: 'center',
                     fontSize: '12px',
                     lineHeight: 1,
-                    marginBottom: '12px'
+                    // marginBottom: '12px'
                 },
                 [`&-remain`]:{
                     background:'#fff'
