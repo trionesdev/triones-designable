@@ -8,6 +8,8 @@ import {useFlowViewport} from "../hooks/useFlowViewport";
 import {useDrop} from "react-dnd";
 import {TreeNode} from "@alkaid/core";
 import _ from "lodash";
+import ReactDOM from "react-dom/client";
+import {ContextMenuPanel} from "../panels/ContextMenuPanel";
 
 
 export const FlowViewport = () => {
@@ -184,7 +186,36 @@ export const FlowViewport = () => {
             })
         })
         graphInstance.on('node:click', ({e, x, y, cell, view}) => {
-            
+            debugger
+            viewport.setSelectedNode(cell)
+        })
+        graphInstance.on('cell:contextmenu', ({e, x, y, cell, view}) => {
+            let type: string = 'node';
+            if (cell.isNode()) {
+                type = 'node'
+            } else if (cell.isEdge()) {
+                type = 'edge'
+            }
+            const localPoint = view.graph.localToGraph(x, y)
+            const items = viewport.engine.contextMenuService(type, cell, graphInstance)
+            console.log(items)
+            //region 菜单载体
+            const div = document.createElement('div');
+            e.currentTarget.appendChild(div)
+            const root = ReactDOM.createRoot(
+                div as HTMLElement
+            );
+
+            function destroy() {
+                root.unmount();
+                if (div.parentNode) {
+                    div.parentNode.removeChild(div);
+                }
+            }
+
+            //endregion
+
+            root.render(<ContextMenuPanel onDestroy={destroy} x={localPoint.x} y={localPoint.y} items={items}/>)
         })
         viewport.setGraph(graphInstance)
     }, [])

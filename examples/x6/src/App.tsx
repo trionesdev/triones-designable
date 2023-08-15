@@ -8,11 +8,42 @@ import {ResourceWidget} from "./alkaid/flow/widgets/ResourceWidget";
 import {ResourcePanel, StudioPanel, ViewportPanel, WorkspacePanel} from "./alkaid/flow/panels";
 import {ComponentsWidget} from "./alkaid/flow/widgets/ComponentsWidget";
 import {Field, Input} from "@alkaid/formily-antd";
+import {Cell, Graph} from "@antv/x6";
+import {SettingsFormPanel} from "./alkaid/flow/panels/SettingsFormPanel";
 
 function App() {
     const engine = useMemo(
         () =>
-            createFlowDesigner(),
+            createFlowDesigner({
+                contextMenuService: (type, cell: Cell, graph: Graph) => {
+                    let items = []
+                    switch (type) {
+                        case "node":
+                            items = [
+                                {
+                                    label: "删除节点",
+                                    onClick: () => {
+                                        graph.removeNode(cell.id)
+                                    }
+                                }
+                            ]
+                            break
+                        case "edge":
+                            items = [
+                                {
+                                    label: "删除连接线",
+                                    onClick: () => {
+                                        graph.removeEdge(cell.id)
+                                    }
+                                }
+                            ]
+                            break
+                        default:
+                            break
+                    }
+                    return items
+                }
+            }),
         []
     )
 
@@ -25,17 +56,18 @@ function App() {
             <FlowDesigner engine={engine}>
                 <StudioPanel>
                     <ResourcePanel>
-                        <ResourceWidget title={`测试`} sources={[Input,FlinkSqlNode]}></ResourceWidget>
+                        <ResourceWidget title={`开发任务`} sources={[Input, FlinkSqlNode]}></ResourceWidget>
                     </ResourcePanel>
                     <WorkspacePanel>
                         <ViewportPanel>
-                            {()=>(<ComponentsWidget components={{
+                            {() => (<ComponentsWidget components={{
                                 Field,
                                 Input,
                                 FlinkSqlNode
                             }}/>)}
                         </ViewportPanel>
                     </WorkspacePanel>
+                    <SettingsFormPanel></SettingsFormPanel>
                 </StudioPanel>
             </FlowDesigner>
         </>

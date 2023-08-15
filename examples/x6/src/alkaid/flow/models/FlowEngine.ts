@@ -1,17 +1,27 @@
-import {IEventProps} from "@alkaid/shared";
+import {Event, IEventProps} from "@alkaid/shared";
 import {TreeNode} from "@alkaid/core";
 import {FlowViewport} from "./FlowViewport";
 import {Options as GraphOptions} from "@antv/x6/src/graph/options";
+import {ContextMenuItem} from "../types";
+import {Cell, Graph} from "@antv/x6";
 
-export type FlowEngineProps<T = Event> = IEventProps<T> & {}
-
-export class FlowEngine {
+export type FlowEngineProps<T = Event> = IEventProps<T> & {
     viewport?: FlowViewport
     graphOptions?: Partial<GraphOptions.Manual>
-    contextMenu?: () => void
+    contextMenuService?: (type:string,cell: Cell,graph: Graph) => ContextMenuItem[]
+}
 
-    constructor() {
+export class FlowEngine extends Event {
+    viewport?: FlowViewport
+    graphOptions?: Partial<GraphOptions.Manual>
+    contextMenuService?: (type:string,cell: Cell,graph: Graph) => ContextMenuItem[]
+    props: FlowEngineProps<FlowEngine>
+
+    constructor(props: FlowEngineProps<FlowEngine>) {
+        super(props)
+        this.props = {...props}
         this.viewport = new FlowViewport(this)
+        this.contextMenuService = props.contextMenuService
     }
 
     findNodeById(id: string) {

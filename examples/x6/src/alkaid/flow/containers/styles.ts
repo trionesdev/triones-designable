@@ -9,7 +9,8 @@ export const genFlowViewportStyle = (
         [`.${prefixCls}`]: {
             flex: '1 auto',
             display: 'flex',
-            backgroundColor: 'white'
+            backgroundColor: 'white',
+            width: 0
         }
     }
 ]
