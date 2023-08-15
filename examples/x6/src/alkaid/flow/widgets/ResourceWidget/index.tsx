@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {FC, useState} from 'react'
 import {
     isResourceHost,
     isResourceList,
@@ -9,9 +9,59 @@ import {isFn} from '@alkaid/shared'
 import {observer} from '@formily/reactive-react'
 import cls from 'classnames'
 import {genResourceWidgetStyle} from "./styles";
-import {IconWidget, TextWidget, useCssInJs} from "@alkaid/react";
+import {IconWidget, TextWidget, useCssInJs, useToken} from "@alkaid/react";
+import {useDrag} from "react-dnd";
 
 export type SourceMapper = (resource: IResource) => React.ReactNode
+
+type ResourceNodeProps = {
+    source?: IResource
+}
+const ResourceNode: FC<ResourceNodeProps> = ({source}) => {
+    const {node, icon, title, thumb, span} = source
+    const [{}, drag] = useDrag(() => ({
+        type: 'flow-node',
+        item: node,
+        end: (item, monitor) => {
+        },
+        collect: (monitor) => ({
+            isDragging: monitor.isDragging(),
+            handlerId: monitor.getHandlerId(),
+        }),
+    }))
+
+    const prefix = "dn-resource"
+    const {hashId} = useToken()
+
+
+    return (
+        <div
+            className={cls(prefix + '-item', hashId)}
+            style={{gridColumnStart: `span ${span || 1}`}}
+            key={node.id}
+            data-designer-source-id={node.id}
+            ref={drag}
+        >
+            {thumb && <img className={cls(prefix + '-item-thumb', hashId)} src={thumb}/>}
+            {icon && React.isValidElement(icon) ? (
+                <>{icon}</>
+            ) : (
+                <IconWidget
+                    className={cls(prefix + '-item-icon', hashId)}
+                    infer={icon}
+                    style={{width: 16, height: 16}}
+                />
+            )}
+            <span className={cls(prefix + '-item-text', hashId)}>
+            {
+                <TextWidget>
+                    {title || node.children[0]?.getMessage('title')}
+                </TextWidget>
+            }
+          </span>
+        </div>
+    )
+}
 
 export interface IResourceWidgetProps {
     title: React.ReactNode
@@ -26,35 +76,46 @@ export const ResourceWidget: React.FC<IResourceWidgetProps> = observer(
         const prefix = "dn-resource"
         const {hashId, wrapSSR} = useCssInJs({prefix, styleFun: genResourceWidgetStyle})
         const [expand, setExpand] = useState(props.defaultExpand)
-        const renderNode = (source: IResource) => {
-            const {node, icon, title, thumb, span} = source
-            return (
-                <div
-                    className={cls(prefix + '-item', hashId)}
-                    style={{gridColumnStart: `span ${span || 1}`}}
-                    key={node.id}
-                    data-designer-source-id={node.id}
-                >
-                    {thumb && <img className={cls(prefix + '-item-thumb', hashId)} src={thumb}/>}
-                    {icon && React.isValidElement(icon) ? (
-                        <>{icon}</>
-                    ) : (
-                        <IconWidget
-                            className={cls(prefix + '-item-icon', hashId)}
-                            infer={icon}
-                            style={{width: 16, height: 16}}
-                        />
-                    )}
-                    <span className={cls(prefix + '-item-text', hashId)}>
-            {
-                <TextWidget>
-                    {title || node.children[0]?.getMessage('title')}
-                </TextWidget>
-            }
-          </span>
-                </div>
-            )
-        }
+        // const renderNode = (source: IResource) => {
+        //     const {node, icon, title, thumb, span} = source
+        //     const [{}, drag] = useDrag(() => ({
+        //         type: 'flow-node',
+        //         item: node,
+        //         collect: (monitor) => ({
+        //             isDragging: monitor.isDragging(),
+        //             handlerId: monitor.getHandlerId(),
+        //         }),
+        //     }))
+        //
+        //
+        //     return (
+        //         <div
+        //             className={cls(prefix + '-item', hashId)}
+        //             style={{gridColumnStart: `span ${span || 1}`}}
+        //             key={node.id}
+        //             data-designer-source-id={node.id}
+        //             ref={drag}
+        //         >
+        //             {thumb && <img className={cls(prefix + '-item-thumb', hashId)} src={thumb}/>}
+        //             {icon && React.isValidElement(icon) ? (
+        //                 <>{icon}</>
+        //             ) : (
+        //                 <IconWidget
+        //                     className={cls(prefix + '-item-icon', hashId)}
+        //                     infer={icon}
+        //                     style={{width: 16, height: 16}}
+        //                 />
+        //             )}
+        //             <span className={cls(prefix + '-item-text', hashId)}>
+        //     {
+        //         <TextWidget>
+        //             {title || node.children[0]?.getMessage('title')}
+        //         </TextWidget>
+        //     }
+        //   </span>
+        //         </div>
+        //     )
+        // }
         const sources = props.sources.reduce<IResource[]>((buf, source) => {
             if (isResourceList(source)) {
                 return buf.concat(source)
@@ -63,7 +124,7 @@ export const ResourceWidget: React.FC<IResourceWidgetProps> = observer(
             }
             return buf
         }, [])
-
+        debugger
         const remainItems =
             sources.reduce((length, source) => {
                 return length + (source.span ?? 1)
@@ -91,7 +152,9 @@ export const ResourceWidget: React.FC<IResourceWidgetProps> = observer(
                 </div>
                 <div className={cls(prefix + '-content-wrapper', hashId)}>
                     <div className={cls(prefix + '-content', hashId)}>
-                        {sources.map(isFn(props.children) ? props.children : renderNode)}
+                        {sources.map(isFn(props.children) ? props.children : (source) => (
+                            <ResourceNode source={source}/>))}
+                        {/*{sources.map((source)=><ResourceNode source={source}/>)}*/}
                         {remainItems ? (
                             <div
                                 className={cls(prefix + '-item-remain', hashId)}

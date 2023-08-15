@@ -32,7 +32,7 @@ export const FlowDesigner: FC<FlowDesignerProps> = (props) => {
             'There can only be one Designable Engine Context in the React Tree'
         )
     return <div>
-        <FlowDesignerEngineContext.Provider value={engine}>
+        <FlowDesignerEngineContext.Provider value={props.engine}>
             {props.children}
         </FlowDesignerEngineContext.Provider>
     </div>

@@ -1,8 +1,8 @@
 import {useContext} from "react";
-import {DesignerEngineContext} from "@alkaid/react";
 import {globalThisPolyfill} from "@alkaid/shared";
+import {FlowDesignerEngineContext} from "../context";
 
 export const useFlowDesigner = () => {
-    const context = useContext(DesignerEngineContext)
+    const context = useContext(FlowDesignerEngineContext)
     return globalThisPolyfill['__ALKAID_FLOW_ENGINE__'] || context
 }
