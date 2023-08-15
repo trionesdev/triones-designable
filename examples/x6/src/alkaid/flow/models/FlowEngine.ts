@@ -8,6 +8,7 @@ export type FlowEngineProps<T = Event> = IEventProps<T> & {}
 export class FlowEngine {
     viewport?: FlowViewport
     graphOptions?: Partial<GraphOptions.Manual>
+    contextMenu?: () => void
 
     constructor() {
         this.viewport = new FlowViewport(this)

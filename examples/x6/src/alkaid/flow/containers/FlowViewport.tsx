@@ -164,6 +164,28 @@ export const FlowViewport = () => {
                 },
             },
         }, viewport.graphOptions, {container: graphRef.current}))
+        graphInstance.on('node:moved', ({node}) => {
+            const nodeData = node.getData()
+            const position = node.position()
+            node.setData({
+                ...nodeData,
+                x: position?.x,
+                y: position?.y,
+            })
+        })
+
+        graphInstance.on('node:resized', ({node}: { node: any }) => {
+            const nodeData = node.getData()
+            const size = node.size()
+            node.setData({
+                ...nodeData,
+                width: size?.width,
+                height: size?.height,
+            })
+        })
+        graphInstance.on('node:click', ({e, x, y, cell, view}) => {
+            
+        })
         viewport.setGraph(graphInstance)
     }, [])
 
