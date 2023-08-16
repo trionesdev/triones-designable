@@ -19,9 +19,9 @@ FlinkSqlNode.Behavior = createBehavior({
                     type: 'void',
                     'x-component': 'CollapseItem',
                     properties: {
-                        'x-component-props': {
-                            type: 'object',
-                            properties: {
+                        'x-component-props':{
+                            type:'object',
+                            properties:{
                                 title: {
                                     type: 'string',
                                     'x-decorator': 'FormItem',
@@ -34,21 +34,19 @@ FlinkSqlNode.Behavior = createBehavior({
                                 },
                             }
                         }
-
                     }
-                },
-
-            }
+                }
+            },
         },
-        defaultProps:{
-            "title":"Flink Sql"
+        defaultProps: {
+            "title": "Flink Sql"
         },
         graphNodeProps: {
             data: {
                 label: 'Flink Sql',
                 icon: '',
                 props: {
-                    "title":"Flink Sql"
+                    "title": "Flink Sql"
                 }
             },
             "ports": [
@@ -68,7 +66,7 @@ FlinkSqlNode.Behavior = createBehavior({
             "title": "Flink Sql",
             "settings": {
                 "x-component-props": {
-                    "title":"名称",
+                    "title": "名称",
                     "cron": "调度"
                 }
             }

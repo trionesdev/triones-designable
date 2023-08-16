@@ -17,6 +17,7 @@ export class FlowViewport {
 
     makeObservable() {
         define(this, {
+            graph: observable.ref,
             selectedNode: observable.ref,
             setGraph: action,
             setSelectedNode: action

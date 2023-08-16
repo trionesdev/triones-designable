@@ -4,15 +4,15 @@ import cls from "classnames";
 import {useEffect, useRef} from "react";
 import {Graph, Path} from "@antv/x6";
 import {uid} from "@alkaid/shared";
-import {useFlowViewport} from "../hooks/useFlowViewport";
+import {useFlowViewport} from "../hooks";
 import {useDrop} from "react-dnd";
 import {TreeNode} from "@alkaid/core";
 import _ from "lodash";
 import ReactDOM from "react-dom/client";
 import {ContextMenuPanel} from "../panels/ContextMenuPanel";
+import {observer} from "@formily/reactive-react";
 
-
-export const FlowViewport = () => {
+export const FlowViewport = observer(() => {
     const prefix = "alkaid-flow-viewport"
     const {hashId, wrapSSR} = useCssInJs({prefix, styleFun: genFlowViewportStyle})
 
@@ -110,6 +110,7 @@ export const FlowViewport = () => {
         )
 
 
+        // @ts-ignore
         const graphInstance: Graph = new Graph(_.merge({
             panning: {
                 enabled: true,
@@ -189,6 +190,9 @@ export const FlowViewport = () => {
             debugger
             viewport.setSelectedNode(cell)
         })
+        graphInstance.on('node:change:*', () => {
+            console.log("changed")
+        })
         graphInstance.on('cell:contextmenu', ({e, x, y, cell, view}) => {
             let type: string = 'node';
             if (cell.isNode()) {
@@ -223,4 +227,4 @@ export const FlowViewport = () => {
     return wrapSSR(<div className={cls(prefix, hashId)} ref={drop}>
         <div style={{width: '100%', height: '100%'}} ref={graphRef}/>
     </div>)
-}
+})

@@ -18,7 +18,7 @@ const BaseNodeBase: FC<BaseNodeProps> = ({
         paddingRight: 8,
         boxSizing: 'border-box'
     }}>
-        <div>{data?.props?.title || data?.label || '默认组件'}</div>
+        <div>{data?.props?.title}</div>
     </Space>
 }
 export const BaseNode = connect(BaseNodeBase)
