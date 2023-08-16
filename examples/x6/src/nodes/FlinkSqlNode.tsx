@@ -12,12 +12,44 @@ FlinkSqlNode.Behavior = createBehavior({
     extends: ['Field'],
     selector: (node) => node.props['x-component'] === 'FlinkSqlNode',
     designerProps: {
-        propsSchema: {},
+        propsSchema: {
+            type: 'object',
+            properties: {
+                'component-group': {
+                    type: 'void',
+                    'x-component': 'CollapseItem',
+                    properties: {
+                        'x-component-props': {
+                            type: 'object',
+                            properties: {
+                                title: {
+                                    type: 'string',
+                                    'x-decorator': 'FormItem',
+                                    'x-component': 'Input',
+                                },
+                                cron: {
+                                    type: 'string',
+                                    'x-decorator': 'FormItem',
+                                    'x-component': 'Input',
+                                },
+                            }
+                        }
+
+                    }
+                },
+
+            }
+        },
+        defaultProps:{
+            "title":"Flink Sql"
+        },
         graphNodeProps: {
             data: {
                 label: 'Flink Sql',
                 icon: '',
-                props: {}
+                props: {
+                    "title":"Flink Sql"
+                }
             },
             "ports": [
                 {
@@ -33,7 +65,13 @@ FlinkSqlNode.Behavior = createBehavior({
     },
     designerLocales: {
         'zh-CN': {
-            "title": "Flink Sql"
+            "title": "Flink Sql",
+            "settings": {
+                "x-component-props": {
+                    "title":"名称",
+                    "cron": "调度"
+                }
+            }
         }
     }
 })
