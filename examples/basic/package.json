@@ -1,9 +1,9 @@
 {
   "name": "@alkaid/basic-example",
-  "version": "0.0.2",
+  "version": "0.0.3-beta.0",
   "private": true,
   "dependencies": {
-    "@alkaid/core": "^0.0.2",
+    "@alkaid/core": "^0.0.3-beta.0",
     "@craco/craco": "^7.1.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
@@ -22,12 +22,12 @@
     "web-vitals": "^2.1.0"
   },
   "devDependencies": {
-    "@alkaid/core": "0.0.1-beta.2",
-    "@alkaid/formily-antd": "^0.0.2",
-    "@alkaid/formily-transformer": "^0.0.2",
-    "@alkaid/react": "^0.0.2",
-    "@alkaid/react-settings-form": "^0.0.2",
-    "@alkaid/shared": "^0.0.2",
+    "@alkaid/core": "0.0.3-beta.0",
+    "@alkaid/formily-antd": "^0.0.3-beta.0",
+    "@alkaid/formily-transformer": "^0.0.3-beta.0",
+    "@alkaid/react": "^0.0.3-beta.0",
+    "@alkaid/react-settings-form": "^0.0.3-beta.0",
+    "@alkaid/shared": "^0.0.3-beta.0",
     "@ant-design/cssinjs": "^1.16.1",
     "@formily/antd-v5": "^1.1.0",
     "@formily/core": "^2.2.27",
