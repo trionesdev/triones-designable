@@ -5,8 +5,6 @@ import {SketchPicker} from 'react-color'
 import cls from 'classnames'
 import {genColorInputStyle} from "./styles";
 
-// import './styles.less'
-
 export interface IColorInputProps {
     value?: string
     onChange?: (color: string) => void

@@ -5,7 +5,6 @@ import {observable} from '@formily/reactive'
 import {IconWidget, useCssInJs, usePrefix} from '@alkaid/react'
 import cls from 'classnames'
 import {genFoldItemStyle} from "./styles";
-// import './styles.less'
 
 const ExpandedMap = new Map<string, boolean>()
 

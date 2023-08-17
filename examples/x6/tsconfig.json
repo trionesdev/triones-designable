@@ -1,0 +1,54 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "module": "esnext",
+    "target": "es5",
+    "allowJs": false,
+    "noUnusedLocals": true,
+    "preserveConstEnums": true,
+    "sourceMap": false,
+    "declaration": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "downlevelIteration": true,
+    "baseUrl": "./",
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+//      "@alkaid/*": ["../../packages/*", "../../formily/*"],
+//      "@alkaid/shared": ["src/alkaid/shared"],
+      "@alkaid/shared": ["../../packages/shared/src"],
+//      "@alkaid/core": ["src/alkaid/core"],
+      "@alkaid/core": ["../../packages/core/src"],
+      "@alkaid/core/*": ["../../packages/core/src/*"],
+//      "@alkaid/react": ["src/alkaid/react"],
+      "@alkaid/react": ["../../packages/react/src"],
+//      "@alkaid/react-settings-form": ["src/alkaid/react-settings-form"],
+      "@alkaid/react-settings-form": ["../../packages/react-settings-form/src"],
+//      "@alkaid/formily-antd": ["src/alkaid/antd"],
+//      "@alkaid/formily-antd": ["../../formily/antd/src"],
+//      "@alkaid/formily-setters": ["src/alkaid/stters"],
+//      "@alkaid/formily-setters": ["../../formily/setters/src"],
+//      "@alkaid/formily-transformer": ["../../formily/transformer/src"]
+      "@alkaid/flow": ["../../packages/flow/src"]
+    }
+  },
+  "include": [
+    "src",
+    "../../packages/*/src",
+    "../../formily/*/src",
+  ]
+}

@@ -4,8 +4,6 @@ import {usePrefix, IconWidget, useCssInJs} from '@alkaid/react'
 import cls from 'classnames'
 import {genCollapseItemStyle} from "./styles";
 
-// import './styles.less'
-
 export interface ICollapseItemProps {
     className?: string
     style?: React.CSSProperties

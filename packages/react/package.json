@@ -1,6 +1,6 @@
 {
   "name": "@alkaid/react",
-  "version": "0.0.1-beta.2",
+  "version": "0.0.2-beta.0",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -9,7 +9,8 @@
     "dev": "father dev",
     "build": "father build",
     "build:deps": "father prebundle",
-    "prepublishOnly": "father doctor && npm run build"
+    "prepublishOnly": "father doctor && npm run build",
+    "codingPublish": "npm publish --registry=https://moensun-npm.pkg.coding.net/npm/moensun/"
   },
   "keywords": [],
   "authors": [
@@ -31,7 +32,7 @@
     "react-tiny-popover": "^7.2.4"
   },
   "dependencies": {
-    "@alkaid/core": "^0.0.1-beta.2",
+    "@alkaid/core": "^0.0.2-beta.0",
     "@ant-design/cssinjs": "^1.16.1",
     "@formily/reactive": "^2.2.29",
     "@formily/reactive-react": "^2.2.29",
@@ -40,5 +41,5 @@
     "dateformat": "^5.0.3",
     "react": "^18.2.0"
   },
-  "gitHead": "5ad2f5310aebd63a4fbcbec8d719422ff200af90"
+  "gitHead": "690a5cf13f852f3c3f639534d228e71678d6d532"
 }
