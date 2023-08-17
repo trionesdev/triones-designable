@@ -31,6 +31,8 @@
     "father": "^4.3.0"
   },
   "dependencies": {
+    "@alkaid/shared": "^0.0.3-beta.0",
+    "@alkaid/core": "^0.0.3-beta.0",
     "@alkaid/react": "^0.0.3-beta.0",
     "@ant-design/cssinjs": "^1.16.1",
     "@antv/x6": "^2.12.1",
