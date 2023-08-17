@@ -8,6 +8,7 @@ export const genStudioPanelStyle = (
     {
         [`.${prefixCls}`]: {
             display: 'flex',
+            height: '100%',
             [`&.fixed`]: {
                 position: 'fixed',
                 left: 0,

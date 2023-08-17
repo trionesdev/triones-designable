@@ -23,7 +23,7 @@
     "sourceMap": false,
     "declaration": true,
     "skipLibCheck": true,
-    "experimentalDecorators": true,
+//    "experimentalDecorators": true,
     "downlevelIteration": true,
     "baseUrl": "./",
     "allowSyntheticDefaultImports": true,
