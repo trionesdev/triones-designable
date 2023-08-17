@@ -11,6 +11,7 @@ import _ from "lodash";
 import ReactDOM from "react-dom/client";
 import {ContextMenuPanel} from "../panels/ContextMenuPanel";
 import {observer} from "@formily/reactive-react";
+import React from "react";
 
 export const FlowViewport = observer(() => {
     const prefix = "alkaid-flow-viewport"
@@ -189,9 +190,6 @@ export const FlowViewport = observer(() => {
         graphInstance.on('node:click', ({e, x, y, cell, view}) => {
             debugger
             viewport.setSelectedNode(cell)
-        })
-        graphInstance.on('node:change:*', () => {
-            console.log("changed")
         })
         graphInstance.on('cell:contextmenu', ({e, x, y, cell, view}) => {
             let type: string = 'node';

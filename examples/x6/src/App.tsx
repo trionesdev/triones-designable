@@ -2,14 +2,16 @@ import {GlobalRegistry} from '@alkaid/core';
 import {useEffect, useMemo} from 'react';
 import './App.css';
 import {FlinkSqlNode, FlowNode} from "./nodes";
-import {FlowDesigner} from "./alkaid/flow/containers";
-import {createFlowDesigner} from "./alkaid/flow/externals";
-import {ResourceWidget} from "./alkaid/flow/widgets/ResourceWidget";
-import {ResourcePanel, SettingsPanel, StudioPanel, ViewportPanel, WorkspacePanel} from "./alkaid/flow/panels";
-import {ComponentsWidget} from "./alkaid/flow/widgets/ComponentsWidget";
 import {Cell, Graph} from "@antv/x6";
-import {SettingsForm} from "./alkaid/flow/settings-form";
-import {Field} from "@alkaid/formily-antd";
+import {
+    ComponentsWidget, createFlowDesigner,
+    FlowDesigner,
+    ResourcePanel,
+    ResourceWidget, SettingsForm, SettingsPanel,
+    StudioPanel,
+    ViewportPanel,
+    WorkspacePanel
+} from "@alkaid/flow";
 
 function App() {
     const engine = useMemo(
@@ -62,7 +64,6 @@ function App() {
                     <WorkspacePanel>
                         <ViewportPanel>
                             {() => (<ComponentsWidget components={{
-                                Field,
                                 FlowNode,
                                 FlinkSqlNode
                             }}/>)}

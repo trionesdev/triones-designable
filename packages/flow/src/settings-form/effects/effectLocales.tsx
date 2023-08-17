@@ -2,6 +2,7 @@ import { isVoidField, onFieldReact } from '@formily/core'
 import { TreeNode, GlobalRegistry } from '@alkaid/core'
 import { isStr } from '@alkaid/shared'
 import { IconWidget } from '@alkaid/react'
+import React from 'react'
 
 const takeIcon = (message: string) => {
     if (!isStr(message)) return

@@ -6,6 +6,7 @@ import {genContextMenuPanelStyle} from "./styles";
 import cls from "classnames";
 import {useClickAway} from "ahooks";
 import {IconWidget} from "../widgets/IconWidget";
+import React from "react";
 
 type ContextMenuPanelProps = {
     onDestroy: () => void,
