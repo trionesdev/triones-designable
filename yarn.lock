@@ -1621,7 +1621,7 @@
     "@formily/validator" "2.2.29"
     hoist-non-react-statics "^3.3.2"
 
-"@formily/reactive-react@2.2.29", "@formily/reactive-react@^2.2.0", "@formily/reactive-react@^2.2.29":
+"@formily/reactive-react@2.2.29", "@formily/reactive-react@^2.2.0", "@formily/reactive-react@^2.2.27", "@formily/reactive-react@^2.2.29":
   version "2.2.29"
   resolved "https://moensun-npm.pkg.coding.net/npm/moensun/@formily/reactive-react/-/reactive-react-2.2.29.tgz#e505ac42c1f963c963ab6ee7b6177693b0e909a7"
   integrity sha512-KY63AWjotssWFqlI4I0903HYpMbatsPCaNgALvOF8ni5oYvYNz8ezfgutFJbNaOO4DzfjJ2+cfP1IMtaGqqcDg==

@@ -9,29 +9,24 @@ export const FlinkSqlNode: DnFC<React.ComponentProps<typeof BaseNode>> = BaseNod
 
 FlinkSqlNode.Behavior = createBehavior({
     name: 'FlinkSqlNode',
-    extends: ['Field'],
+    extends: ['FlowNode'],
     selector: (node) => node.props['x-component'] === 'FlinkSqlNode',
     designerProps: {
         propsSchema: {
             type: 'object',
             properties: {
-                'component-group': {
+                'node-props-group': {
                     type: 'void',
                     'x-component': 'CollapseItem',
                     properties: {
-                        'x-component-props':{
-                            type:'object',
-                            properties:{
+                        'x-component-props': {
+                            type: 'object',
+                            properties: {
                                 title: {
                                     type: 'string',
                                     'x-decorator': 'FormItem',
                                     'x-component': 'Input',
-                                },
-                                cron: {
-                                    type: 'string',
-                                    'x-decorator': 'FormItem',
-                                    'x-component': 'Input',
-                                },
+                                }
                             }
                         }
                     }
@@ -44,7 +39,7 @@ FlinkSqlNode.Behavior = createBehavior({
         graphNodeProps: {
             data: {
                 label: 'Flink Sql',
-                icon: '',
+                icon: 'TextAreaSource',
                 props: {
                     "title": "Flink Sql"
                 }
@@ -66,8 +61,7 @@ FlinkSqlNode.Behavior = createBehavior({
             "title": "Flink Sql",
             "settings": {
                 "x-component-props": {
-                    "title": "名称",
-                    "cron": "调度"
+                    "title": "名称"
                 }
             }
         }
@@ -79,7 +73,7 @@ FlinkSqlNode.Resource = createResource({
     "title": "Flink Sql",
     elements: [
         {
-            componentName: 'Field',
+            componentName: 'FlowNode',
             props: {
                 type: 'object',
                 'x-component': 'FlinkSqlNode',

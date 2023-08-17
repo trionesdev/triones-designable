@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@alkaid/core": "^0.0.1-beta.2",
+    "@ant-design/icons": "^5.2.5",
     "@craco/craco": "^7.1.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
