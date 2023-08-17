@@ -1,6 +1,6 @@
 {
   "name": "@alkaid/formily-antd",
-  "version": "0.0.1-beta.2",
+  "version": "0.0.2-beta.0",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -28,20 +28,20 @@
     "father": "^4.3.0"
   },
   "dependencies": {
-    "antd": "^5.8.2",
-    "classnames": "^2.3.2",
-    "react": "^18.2.0",
-    "@alkaid/core": "^0.0.1-beta.2",
-    "@alkaid/formily-setters": "^0.0.1-beta.2",
-    "@alkaid/formily-transformer": "^0.0.1-beta.2",
-    "@alkaid/react": "^0.0.1-beta.2",
-    "@alkaid/shared": "^0.0.1-beta.2",
+    "@alkaid/core": "^0.0.2-beta.0",
+    "@alkaid/formily-setters": "^0.0.2-beta.0",
+    "@alkaid/formily-transformer": "^0.0.2-beta.0",
+    "@alkaid/react": "^0.0.2-beta.0",
+    "@alkaid/shared": "^0.0.2-beta.0",
     "@formily/antd-v5": "^1.1.0",
-    "@formily/shared": "^2.2.29",
     "@formily/core": "^2.2.29",
     "@formily/react": "^2.2.29",
     "@formily/reactive": "^2.2.29",
-    "@formily/reactive-react": "^2.2.29"
+    "@formily/reactive-react": "^2.2.29",
+    "@formily/shared": "^2.2.29",
+    "antd": "^5.8.2",
+    "classnames": "^2.3.2",
+    "react": "^18.2.0"
   },
-  "gitHead": "5ad2f5310aebd63a4fbcbec8d719422ff200af90"
+  "gitHead": "690a5cf13f852f3c3f639534d228e71678d6d532"
 }

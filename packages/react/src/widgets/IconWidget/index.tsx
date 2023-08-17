@@ -4,7 +4,6 @@ import {observer} from '@formily/reactive-react'
 import {Tooltip, TooltipProps} from 'antd'
 import {useCssInJs, usePrefix, useRegistry, useTheme} from '../../hooks'
 import cls from 'classnames'
-// import './styles.less'
 import {genIconWidgetStyle} from "./styles";
 
 const IconContext = createContext<IconProviderProps>(null)
@@ -41,6 +40,7 @@ export const IconWidget: React.FC<IIconWidgetProps> & {
     const height = props.style?.height || size
     const width = props.style?.width || size
     const takeIcon = (infer: React.ReactNode) => {
+        debugger
         if (isStr(infer)) {
             const finded = registry.getDesignerIcon(infer)
             if (finded) {

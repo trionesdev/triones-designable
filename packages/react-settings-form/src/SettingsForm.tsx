@@ -15,7 +15,7 @@ import {
 import {SchemaField} from './SchemaField'
 import {ISettingFormProps} from './types'
 import {SettingsFormContext} from './shared/context'
-import {useLocales, useSnapshot} from './effects'
+import {effectLocales, effectSnapshot} from './effects'
 import {Empty} from 'antd'
 import cls from 'classnames'
 
@@ -47,8 +47,8 @@ export const SettingsForm: React.FC<ISettingFormProps> = observer(
                 initialValues: node?.designerProps?.defaultProps,
                 values: node?.props,
                 effects(form) {
-                    useLocales(node)
-                    useSnapshot(operation)
+                    effectLocales(node)
+                    effectSnapshot(operation)
                     props.effects?.(form)
                 },
             })

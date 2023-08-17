@@ -11,7 +11,6 @@ import {SizeInput} from '../SizeInput'
 import {PositionInput} from '../PositionInput'
 import cls from 'classnames'
 import {genBorderStyleSetterStyle} from "./styles";
-// import './styles.less'
 
 const Positions = ['center', 'top', 'right', 'bottom', 'left']
 
