@@ -1,6 +1,6 @@
 {
   "name": "@alkaid/core",
-  "version": "0.0.1-beta.2",
+  "version": "0.0.2-beta.0",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -29,7 +29,7 @@
     "react": "^18.2.0"
   },
   "dependencies": {
-    "@alkaid/shared": "^0.0.1-beta.2",
+    "@alkaid/shared": "^0.0.2-beta.0",
     "@formily/path": "^2.2.29",
     "@formily/reactive": "^2.2.29",
     "@juggle/resize-observer": "^3.4.0"
