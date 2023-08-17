@@ -1,9 +1,9 @@
 {
   "name": "@alkaid/x6-example",
-  "version": "0.0.2-beta.0",
+  "version": "0.0.2",
   "private": true,
   "dependencies": {
-    "@alkaid/core": "^0.0.2-beta.0",
+    "@alkaid/core": "^0.0.2",
     "@ant-design/icons": "^5.2.5",
     "@craco/craco": "^7.1.0",
     "@testing-library/jest-dom": "^5.14.1",
@@ -28,11 +28,11 @@
   },
   "devDependencies": {
     "@alkaid/core": "^0.0.2-beta.0",
-    "@alkaid/formily-antd": "^0.0.2-beta.0",
-    "@alkaid/formily-transformer": "^0.0.2-beta.0",
-    "@alkaid/react": "^0.0.2-beta.0",
-    "@alkaid/react-settings-form": "^0.0.2-beta.0",
-    "@alkaid/shared": "^0.0.2-beta.0",
+    "@alkaid/formily-antd": "^0.0.2",
+    "@alkaid/formily-transformer": "^0.0.2",
+    "@alkaid/react": "^0.0.2",
+    "@alkaid/react-settings-form": "^0.0.2",
+    "@alkaid/shared": "^0.0.2",
     "@ant-design/cssinjs": "^1.16.1",
     "@antv/x6": "^2.12.1",
     "@antv/x6-react-shape": "^2.2.2",

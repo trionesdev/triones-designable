@@ -1,6 +1,6 @@
 {
   "name": "@alkaid/flow",
-  "version": "0.0.2-beta.0",
+  "version": "0.0.2",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -31,7 +31,7 @@
     "father": "^4.3.0"
   },
   "dependencies": {
-    "@alkaid/react": "^0.0.2-beta.0",
+    "@alkaid/react": "^0.0.2",
     "@ant-design/cssinjs": "^1.16.1",
     "@antv/x6": "^2.12.1",
     "@antv/x6-react-shape": "^2.2.2",
