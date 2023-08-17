@@ -40,7 +40,6 @@ export const IconWidget: React.FC<IIconWidgetProps> & {
     const height = props.style?.height || size
     const width = props.style?.width || size
     const takeIcon = (infer: React.ReactNode) => {
-        debugger
         if (isStr(infer)) {
             const finded = registry.getDesignerIcon(infer)
             if (finded) {

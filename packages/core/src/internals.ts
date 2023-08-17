@@ -6,7 +6,6 @@ export const lowerSnake = (str: string) => {
 }
 
 export const mergeLocales = (target: any, source: any) => {
-  debugger
   if (isPlainObj(target) && isPlainObj(source)) {
     each(source, function (value, key) {
       const token = lowerSnake(key)
