@@ -1,6 +1,6 @@
 {
   "name": "@alkaid/flow",
-  "version": "0.0.3-beta.0",
+  "version": "0.0.3-beta.1",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",
