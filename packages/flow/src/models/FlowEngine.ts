@@ -2,8 +2,9 @@ import {Event, IEventProps} from "@alkaid/shared";
 import {TreeNode} from "@alkaid/core";
 import {FlowViewport} from "./FlowViewport";
 import {Options as GraphOptions} from "@antv/x6/src/graph/options";
-import {ContextMenuItem} from "../types";
+import {ContextMenuItem, GraphData} from "../types";
 import {Cell, Graph} from "@antv/x6";
+import _ from "lodash";
 
 export type FlowEngineProps<T = Event> = IEventProps<T> & {
     componentName?: string
@@ -35,5 +36,31 @@ export class FlowEngine extends Event {
     }
 
     mount() {
+    }
+
+    getGraphData(): GraphData {
+        const nodes: any = []
+        const edges: any = []
+        this.viewport.graph?.getCells().forEach(cell => {
+            if (cell.isNode()) {
+                nodes.push(cell.getData())
+            } else if (cell.isEdge()) {
+                edges.push(cell.getData())
+            }
+        })
+        return {nodes, edges}
+    }
+
+    graphRender(data: GraphData) {
+        if (_.isEmpty(data.nodes)) {
+            data.nodes.forEach((node) => {
+                this.viewport.graph.addNode(node)
+            })
+        }
+        if (_.isEmpty(data.edges)) {
+            data.edges.forEach((edge) => {
+                this.viewport.graph.addEdge(edge)
+            })
+        }
     }
 }

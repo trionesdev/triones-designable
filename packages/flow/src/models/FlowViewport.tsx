@@ -2,6 +2,7 @@ import {Graph, Node} from "@antv/x6";
 import {FlowEngine} from "./FlowEngine";
 import {Options as GraphOptions} from "@antv/x6/src/graph/options";
 import {action, define, observable} from "@formily/reactive";
+import {GraphEdge, GraphNode} from "@alkaid/flow";
 
 export class FlowViewport {
     engine?: FlowEngine
@@ -38,5 +39,28 @@ export class FlowViewport {
 
     cleanSelectedNode() {
         this.selectedNode = null
+    }
+
+    addNode(node: GraphNode) {
+        this.graph.addNode({
+            id: node.id,
+            x: node.x,
+            y: node.y,
+            width: node.width || 190,
+            height: node.height || 36,
+            shape: node.shape,
+            ports: node.ports,
+            data: node
+        })
+    }
+
+    addEdge(edge: GraphEdge) {
+        this.graph.addEdge({
+            id: edge.id,
+            shape: 'dag-edge',
+            source: edge.source,
+            target: edge.target,
+            zIndex: edge.zIndex || -1
+        })
     }
 }

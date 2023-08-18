@@ -9,12 +9,18 @@ export const genStudioPanelStyle = (
         [`.${prefixCls}`]: {
             display: 'flex',
             height: '100%',
+            flexDirection: 'column',
             [`&.fixed`]: {
                 position: 'fixed',
                 left: 0,
                 right: 0,
                 top: 0,
                 bottom: 0
+            },
+            [`&-header`]: {},
+            [`&-body`]: {
+                display: 'flex',
+                flex: '1 auto'
             }
         }
     }

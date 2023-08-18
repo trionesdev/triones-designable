@@ -12,6 +12,7 @@ import ReactDOM from "react-dom/client";
 import {ContextMenuPanel} from "../panels/ContextMenuPanel";
 import {observer} from "@formily/reactive-react";
 import React from "react";
+import {GraphNode} from "@alkaid/flow";
 
 export const FlowViewport = observer(() => {
     const prefix = "alkaid-flow-viewport"
@@ -25,21 +26,16 @@ export const FlowViewport = observer(() => {
             const pagePoint = monitor.getClientOffset()
             const localPoint = viewport.graph.pageToLocal(pagePoint?.x!, pagePoint?.y!)
             const graphPoint = viewport.graph.localToGraph(localPoint)
+
             const addNode = (node: TreeNode) => {
-                let id = uid()
-                let nodeConfig = _.merge({}, {
-                    id: id,
-                    x: graphPoint.x, y: graphPoint.y,
-                    width: 190,
-                    height: 36,
-                    shape: node.props['x-component'],
-                    data: {
-                        id: id,
-                        shape: node.props['x-component']
-                    }
+                let nodeData: GraphNode = _.merge({}, {
+                    id: uid(),
+                    x: graphPoint.x,
+                    y: graphPoint.y,
+                    shape: node.props['x-component']
                 }, node.designerProps?.graphNodeProps)
 
-                viewport.graph.addNode(nodeConfig)
+                viewport.addNode(nodeData)
             }
 
             if (node.componentName === '$$ResourceNode$$') {
@@ -201,7 +197,6 @@ export const FlowViewport = observer(() => {
             }
             const localPoint = view.graph.localToGraph(x, y)
             const items = viewport.engine.contextMenuService(type, cell, graphInstance)
-            console.log(items)
             //region 菜单载体
             const div = document.createElement('div');
             e.currentTarget.appendChild(div)

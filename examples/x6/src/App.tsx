@@ -12,6 +12,7 @@ import {
     ViewportPanel,
     WorkspacePanel
 } from "@alkaid/flow";
+import {Button} from "antd";
 
 function App() {
     const engine = useMemo(
@@ -50,6 +51,10 @@ function App() {
         []
     )
 
+    const handleSave = () => {
+      console.log(engine.getGraphData())
+    }
+
     useEffect(() => {
         GlobalRegistry.setDesignerLanguage('zh-cn')
 
@@ -57,7 +62,7 @@ function App() {
     return (
         <>
             <FlowDesigner engine={engine}>
-                <StudioPanel>
+                <StudioPanel actions={[<Button onClick={handleSave}>保存</Button>]}>
                     <ResourcePanel>
                         <ResourceWidget title={`开发任务`} sources={[FlinkSqlNode]}></ResourceWidget>
                     </ResourcePanel>
