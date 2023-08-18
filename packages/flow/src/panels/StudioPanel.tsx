@@ -19,7 +19,7 @@ export const StudioPanel: FC<StudioPanelProps> = ({
     const prefix = "alkaid-flow-studio-panel"
     const {hashId, wrapSSR} = useCssInJs({prefix, styleFun: genStudioPanelStyle})
     return wrapSSR(<div className={cls(prefix, position, hashId)}>
-        {actions && <div className={cls(`${prefix}-header`)}>
+        {actions && <div className={cls(`${prefix}-header`, hashId)}>
             <div></div>
             <Space>{actions}</Space>
         </div>}

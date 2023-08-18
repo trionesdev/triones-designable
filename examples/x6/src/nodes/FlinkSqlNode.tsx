@@ -26,6 +26,11 @@ FlinkSqlNode.Behavior = createBehavior({
                                     type: 'string',
                                     'x-decorator': 'FormItem',
                                     'x-component': 'Input',
+                                },
+                                cron:{
+                                    type:'string',
+                                    'x-decorator': 'FormItem',
+                                    'x-component': 'FlinkSqlSelect',
                                 }
                             }
                         }
@@ -59,7 +64,8 @@ FlinkSqlNode.Behavior = createBehavior({
             "title": "Flink Sql",
             "settings": {
                 "x-component-props": {
-                    "title": "名称"
+                    "title": "名称",
+                    "cron":"调度"
                 }
             }
         }

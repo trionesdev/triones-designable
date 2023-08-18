@@ -13,6 +13,7 @@ import {
     WorkspacePanel
 } from "@alkaid/flow";
 import {Button} from "antd";
+import {FlinkSqlSelect} from "./components/FlinkSqlSelect";
 
 function App() {
     const engine = useMemo(
@@ -134,7 +135,7 @@ function App() {
                         </ViewportPanel>
                     </WorkspacePanel>
                     <SettingsPanel title={`属性设置`}>
-                        <SettingsForm></SettingsForm>
+                        <SettingsForm components={{FlinkSqlSelect}}/>
                     </SettingsPanel>
                 </StudioPanel>
             </FlowDesigner>
