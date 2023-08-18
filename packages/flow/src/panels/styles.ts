@@ -17,7 +17,10 @@ export const genStudioPanelStyle = (
                 top: 0,
                 bottom: 0
             },
-            [`&-header`]: {},
+            [`&-header`]: {
+                display: 'flex',
+                justifyContent: 'space-between'
+            },
             [`&-body`]: {
                 display: 'flex',
                 flex: '1 auto'
