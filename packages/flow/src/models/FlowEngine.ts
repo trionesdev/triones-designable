@@ -41,25 +41,28 @@ export class FlowEngine extends Event {
     getGraphData(): GraphData {
         const nodes: any = []
         const edges: any = []
-        this.viewport.graph?.getCells().forEach(cell => {
-            if (cell.isNode()) {
-                nodes.push(cell.getData())
-            } else if (cell.isEdge()) {
-                edges.push(cell.getData())
-            }
+        this.viewport.graph.getNodes().forEach(node=>{
+            nodes.push(node.getData())
+        })
+        this.viewport.graph.getEdges().forEach(edge=>{
+            edges.push({
+                id: edge.id,
+                source: edge.source,
+                target: edge.target
+            })
         })
         return {nodes, edges}
     }
 
     graphRender(data: GraphData) {
-        if (_.isEmpty(data.nodes)) {
+        if (!_.isEmpty(data.nodes)) {
             data.nodes.forEach((node) => {
-                this.viewport.graph.addNode(node)
+                this.viewport.addNode(node)
             })
         }
-        if (_.isEmpty(data.edges)) {
+        if (!_.isEmpty(data.edges)) {
             data.edges.forEach((edge) => {
-                this.viewport.graph.addEdge(edge)
+                this.viewport.addEdge(edge)
             })
         }
     }

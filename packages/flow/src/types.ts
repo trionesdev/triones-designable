@@ -27,5 +27,5 @@ export interface GraphEdge {
     id: string
     source: { cell: string, port: string }
     target: { cell: string, port: string }
-    zIndex: number
+    zIndex?: number
 }
