@@ -27,25 +27,34 @@ export const FlowViewport = observer(() => {
             const localPoint = viewport.graph.pageToLocal(pagePoint?.x!, pagePoint?.y!)
             const graphPoint = viewport.graph.localToGraph(localPoint)
 
-            const addNode = (node: TreeNode) => {
+            const nodeDrop = (node: TreeNode) => {
                 let nodeData: GraphNode = _.merge({}, {
                     id: uid(),
                     x: graphPoint.x,
                     y: graphPoint.y,
                     shape: node.props['x-component']
                 }, node.designerProps?.graphNodeProps)
-
-                viewport.addNode(nodeData)
+                viewport.engine?.onDrop?.({
+                    id: nodeData.id,
+                    x: nodeData.x,
+                    y: nodeData.y,
+                    width: nodeData.width || 190,
+                    height: nodeData.height || 36,
+                    type: nodeData.type,
+                    shape: nodeData.shape,
+                    ports: nodeData.ports,
+                    data: nodeData
+                }, viewport.graph)
             }
 
             if (node.componentName === '$$ResourceNode$$') {
                 if (!_.isEmpty(node.children)) {
                     _.forEach(node.children, (comp: TreeNode) => {
-                        addNode(comp)
+                        nodeDrop(comp)
                     })
                 }
             } else {
-                addNode(node)
+                nodeDrop(node)
             }
         },
         collect: (monitor) => ({
@@ -142,9 +151,9 @@ export const FlowViewport = observer(() => {
                 },
                 connectionPoint: 'anchor',
                 anchor: 'center',
-                validateMagnet({magnet}) {
-                    return magnet.getAttribute('port-group') !== 'top'
-                },
+                // validateMagnet({magnet}) {
+                //     return magnet.getAttribute('port-group') !== 'top'
+                // },
                 createEdge() {
                     const edgeId = uid()
                     return graphInstance.createEdge({
@@ -184,6 +193,7 @@ export const FlowViewport = observer(() => {
         })
         graphInstance.on('node:click', ({e, x, y, cell, view}) => {
             viewport.setSelectedNode(cell)
+            viewport.engine?.onNodeClick?.(cell)
         })
         graphInstance.on('blank:click', () => {
             viewport.cleanSelectedNode()

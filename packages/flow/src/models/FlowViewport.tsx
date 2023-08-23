@@ -48,6 +48,7 @@ export class FlowViewport {
             y: node.y,
             width: node.width || 190,
             height: node.height || 36,
+            type: node.type,
             shape: node.shape,
             ports: node.ports,
             data: node

@@ -17,6 +17,7 @@ export interface GraphNode {
     height?: number
     label?: string
     icon?: string
+    type?: string
     shape: string
     ports?: any[]
 

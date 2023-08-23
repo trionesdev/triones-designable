@@ -20,6 +20,9 @@ function App() {
         () =>
             createFlowDesigner({
                 componentName:'FlowNode',
+                onDrop:(metadata, graph)=>{
+                    graph.addNode(metadata)
+                },
                 contextMenuService: (type, cell: Cell, graph: Graph) => {
                     let items = []
                     switch (type) {

@@ -12,7 +12,7 @@ export const genResourceWidgetStyle = (
             [`&-header`]: {
                 display: 'flex',
                 alignItems: 'center',
-                padding: '5px 8px',
+                padding: '8px 8px',
                 color: '#333',
                 borderBottom: `1px solid #d9d9d9`,
                 backgroundColor: `#eee`,

@@ -44,6 +44,7 @@ FlinkSqlNode.Behavior = createBehavior({
         graphNodeProps: {
             label: 'Flink Sql',
             icon: 'TextAreaSource',
+            type: 'FLINK_SQL',
             props: {
                 "title": "Flink Sql"
             },
