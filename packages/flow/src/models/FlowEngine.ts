@@ -75,6 +75,17 @@ export class FlowEngine extends Event {
     }
 
     graphRenderFromJson(data: FromJSONData) {
-        this.viewport.graph?.fromJSON(data)
+        const nodes = _.get(data, 'nodes', [])
+        const edges = _.get(data, 'edges', [])
+        if (!_.isEmpty(nodes)) {
+            nodes.forEach((node) => {
+                this.viewport.addNode(node)
+            })
+        }
+        if (!_.isEmpty(edges)) {
+            edges.forEach((edge) => {
+                this.viewport.addEdge(edge)
+            })
+        }
     }
 }

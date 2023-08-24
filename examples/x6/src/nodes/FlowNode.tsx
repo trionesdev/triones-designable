@@ -1,10 +1,10 @@
 import { DnFC } from "@alkaid/react";
-import { ISchema, ObjectField } from "@formily/react";
+import { ISchema } from "@formily/react";
 import { observer } from "@formily/reactive-react";
 import { createBehavior } from "@alkaid/core";
 
 export const FlowNode: DnFC<ISchema> = observer((props) => {
-  return <ObjectField name={``}></ObjectField>;
+  return <></>;
 });
 
 FlowNode.Behavior = createBehavior({
