@@ -13,6 +13,7 @@ export type FlowEngineProps<T = Event> = IEventProps<T> & {
     graphOptions?: Partial<GraphOptions.Manual>
     contextMenuService?: (type: string, cell: Cell, graph: Graph) => ContextMenuItem[]
     onNodeClick?: (node: Node) => void
+    onNodeDoubleClick?: (node: Node) => void
     onDrop?: (metadata: Node.Metadata, graph: Graph) => void
 }
 
@@ -22,6 +23,7 @@ export class FlowEngine extends Event {
     graphOptions?: Partial<GraphOptions.Manual>
     contextMenuService?: (type: string, cell: Cell, graph: Graph) => ContextMenuItem[]
     onNodeClick?: (node: Node) => void
+    onNodeDoubleClick?: (node: Node) => void
     onDrop?: (metadata: Node.Metadata, graph: Graph) => void
     props: FlowEngineProps<FlowEngine>
 
@@ -33,6 +35,7 @@ export class FlowEngine extends Event {
         this.graphOptions = props.graphOptions
         this.contextMenuService = props.contextMenuService
         this.onNodeClick = props.onNodeClick
+        this.onNodeDoubleClick = props.onNodeDoubleClick
         this.onDrop = props.onDrop
 
         this.viewport = new FlowViewport(this)

@@ -189,6 +189,9 @@ export const FlowViewport = observer(() => {
             viewport.setSelectedNode(cell)
             viewport.engine?.onNodeClick?.(cell)
         })
+        graphInstance.on('node:dblclick', ({e, x, y, cell, view}) => {
+            viewport.engine?.onNodeDoubleClick?.(cell)
+        })
         graphInstance.on('blank:click', () => {
             viewport.cleanSelectedNode()
         })
