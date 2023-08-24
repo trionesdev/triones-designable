@@ -29,10 +29,13 @@ export class FlowEngine extends Event {
         super(props)
         this.props = {...props}
         this.componentName = props.componentName
-        this.viewport = new FlowViewport(this)
+
+        this.graphOptions = props.graphOptions
         this.contextMenuService = props.contextMenuService
         this.onNodeClick = props.onNodeClick
         this.onDrop = props.onDrop
+
+        this.viewport = new FlowViewport(this)
     }
 
     findNodeById(id: string) {

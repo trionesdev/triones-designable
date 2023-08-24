@@ -114,9 +114,7 @@ export const FlowViewport = observer(() => {
             true,
         )
 
-
-        // @ts-ignore
-        const graphInstance: Graph = new Graph(_.merge({
+        const graphOptions = _.merge({
             panning: {
                 enabled: true,
                 eventTypes: ['leftMouseDown', 'mouseWheel'],
@@ -147,24 +145,16 @@ export const FlowViewport = observer(() => {
                 allowLoop: false,
                 highlight: true,
                 connector: {
-                    name: 'smooth',
+                    name: 'normal',
                     // name: 'curveConnector',
                 },
                 connectionPoint: 'anchor',
                 anchor: 'center',
-                // validateMagnet({magnet}) {
-                //     return magnet.getAttribute('port-group') !== 'top'
-                // },
                 createEdge() {
                     const edgeId = uid()
                     return graphInstance.createEdge({
                         id: edgeId,
                         shape: 'dag-edge',
-                        // attrs: {
-                        //     line: {
-                        //         strokeDasharray: '5 5',
-                        //     },
-                        // },
                         zIndex: -1,
                         data: {
                             id: edgeId
@@ -172,7 +162,10 @@ export const FlowViewport = observer(() => {
                     })
                 },
             },
-        }, viewport.graphOptions, {container: graphRef.current}))
+        }, viewport.graphOptions, {container: graphRef.current})
+
+        // @ts-ignore
+        const graphInstance: Graph = new Graph(graphOptions)
         graphInstance.on('node:moved', ({node}) => {
             const nodeData = node.getData()
             const position = node.position()
@@ -227,7 +220,7 @@ export const FlowViewport = observer(() => {
             root.render(<ContextMenuPanel onDestroy={destroy} x={localPoint.x} y={localPoint.y} items={items}/>)
         })
         viewport.setGraph(graphInstance)
-    }, [])
+    }, [viewport.graphOptions])
 
     return wrapSSR(<div className={cls(prefix, hashId)} ref={drop}>
         <div style={{width: '100%', height: '100%'}} ref={graphRef}/>

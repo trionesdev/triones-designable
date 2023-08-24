@@ -20,6 +20,20 @@ function App() {
         () =>
             createFlowDesigner({
                 componentName:'FlowNode',
+                graphOptions:{
+                    connecting: {
+                        router: 'er',
+                        snap: true,
+                        allowBlank: false,
+                        allowLoop: false,
+                        highlight: true,
+                        connector: {
+                            name: 'normal',
+                        },
+                        connectionPoint: 'anchor',
+                        anchor: 'center',
+                    },
+                },
                 onDrop:(metadata, graph)=>{
                     graph.addNode(metadata)
                 },
