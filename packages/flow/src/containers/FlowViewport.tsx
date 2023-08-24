@@ -141,13 +141,13 @@ export const FlowViewport = observer(() => {
                 },
             },
             connecting: {
-                router: 'smooth',
+                router: 'normal',
                 snap: true,
                 allowBlank: false,
                 allowLoop: false,
                 highlight: true,
                 connector: {
-                    name: 'rounded',
+                    name: 'smooth',
                     // name: 'curveConnector',
                 },
                 connectionPoint: 'anchor',
