@@ -37,6 +37,9 @@ function App() {
                 onDrop:(metadata, graph)=>{
                     graph.addNode(metadata)
                 },
+                onNodeDoubleClick:(node)=>{
+                    console.log("node:doubleClick")
+                },
                 contextMenuService: (type, cell: Cell, graph: Graph) => {
                     let items = []
                     switch (type) {
