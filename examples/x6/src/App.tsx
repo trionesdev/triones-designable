@@ -1,7 +1,7 @@
 import {GlobalRegistry} from '@alkaid/core';
 import {useEffect, useMemo} from 'react';
 import './App.css';
-import {FlinkSqlNode, FlowNode} from "./nodes";
+import {BatchSyncNode, FlinkSqlNode, FlowNode} from "./nodes";
 import {Cell, Graph} from "@antv/x6";
 import {
     ComponentsWidget, createFlowDesigner,
@@ -144,13 +144,14 @@ function App() {
             <FlowDesigner engine={engine}>
                 <StudioPanel actions={[<Button onClick={handleSave}>保存</Button>,<Button onClick={handleRender}>渲染</Button>]}>
                     <ResourcePanel>
-                        <ResourceWidget title={`开发任务`} sources={[FlinkSqlNode]}></ResourceWidget>
+                        <ResourceWidget title={`开发任务`} sources={[FlinkSqlNode,BatchSyncNode]}></ResourceWidget>
                     </ResourcePanel>
                     <WorkspacePanel>
                         <ViewportPanel>
                             {() => (<ComponentsWidget components={{
                                 FlowNode,
-                                FlinkSqlNode
+                                FlinkSqlNode,
+                                BatchSyncNode
                             }}/>)}
                         </ViewportPanel>
                     </WorkspacePanel>

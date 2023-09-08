@@ -1,17 +1,16 @@
 import {DnFC} from "@alkaid/react";
+import React from "react";
 import {BaseNode} from "./BaseNode";
 import {createBehavior, createResource} from "@alkaid/core";
-import React from "react";
 import {uid} from "@alkaid/shared";
 import _ from "lodash";
 
-export const FlinkSqlNode: DnFC<React.ComponentProps<typeof BaseNode>> = _.cloneDeep(BaseNode)
+export const BatchSyncNode: DnFC<React.ComponentProps<typeof BaseNode>> = _.cloneDeep(BaseNode)
 
-
-FlinkSqlNode.Behavior = createBehavior({
-    name: 'FlinkSqlNode',
+BatchSyncNode.Behavior = createBehavior({
+    name: 'BatchSyncNode',
     extends: ['FlowNode'],
-    selector: (node) => node.props['x-component'] === 'FlinkSqlNode',
+    selector: (node) => node.props?.['x-component'] === 'BatchSyncNode',
     designerProps: {
         propsSchema: {
             type: 'object',
@@ -27,11 +26,6 @@ FlinkSqlNode.Behavior = createBehavior({
                                     type: 'string',
                                     'x-decorator': 'FormItem',
                                     'x-component': 'Input',
-                                },
-                                cron:{
-                                    type:'string',
-                                    'x-decorator': 'FormItem',
-                                    'x-component': 'FlinkSqlSelect',
                                 }
                             }
                         }
@@ -40,14 +34,14 @@ FlinkSqlNode.Behavior = createBehavior({
             },
         },
         defaultProps: {
-            "title": "Flink Sql"
+            "title": "离线同步"
         },
         graphNodeProps: {
-            label: 'Flink Sql',
-            icon: 'TextAreaSource',
-            type: 'FLINK_SQL',
+            type: 'BATCH_SYNC',
+            label: '离线同步任务',
+            icon: 'RadioGroupSource',
             props: {
-                "title": "Flink Sql"
+                "title": "离线同步"
             },
             "ports": [
                 {
@@ -63,26 +57,25 @@ FlinkSqlNode.Behavior = createBehavior({
     },
     designerLocales: {
         'zh-CN': {
-            "title": "Flink Sql",
+            "title": "离线同步",
             "settings": {
                 "x-component-props": {
-                    "title": "名称",
-                    "cron":"调度"
+                    "title": "名称"
                 }
             }
         }
     }
 })
 
-FlinkSqlNode.Resource = createResource({
-    icon: 'TextAreaSource',
-    "title": "Flink Sql",
+BatchSyncNode.Resource = createResource({
+    icon: 'RadioGroupSource',
+    "title": "离线同步任务",
     elements: [
         {
             componentName: 'FlowNode',
             props: {
                 type: 'object',
-                'x-component': 'FlinkSqlNode',
+                'x-component': 'BatchSyncNode',
             },
         },
     ],
