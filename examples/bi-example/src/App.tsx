@@ -1,19 +1,18 @@
-import { createDesigner, GlobalRegistry } from "@alkaid/core";
+import {
+  // createDesigner,
+  GlobalRegistry,
+  KeyCode,
+  Shortcut,
+} from "@alkaid/core";
 import { useEffect, useMemo } from "react";
 import "./App.css";
 import {
   ComponentTreeWidget,
   CompositePanel,
-  Designer,
-  DesignerToolsWidget,
   ResourceWidget,
   SettingsPanel,
   StudioPanel,
   ToolbarPanel,
-  ViewPanel,
-  ViewportPanel,
-  Workspace,
-  WorkspacePanel,
 } from "@alkaid/react";
 import {
   Field,
@@ -29,12 +28,35 @@ import { Button } from "antd";
 import { DemoNode } from "./CustomNode/DemoNode";
 import { FloatWrapper } from "./CustomNode/FloatWrapper";
 import { RootNode } from "./CustomNode/RootNode";
+import {
+  ScaleDesigner,
+  createDesigner,
+  DesignerToolsWidget,
+  Workspace,
+  ViewportPanel,
+  ViewPanel,
+  WorkspacePanel,
+} from "@alkaid/scale-workspace";
+// import { ScaleDesigner } from "@alkaid/scale-workspace";
 
 function App() {
   const engine = useMemo(
     () =>
       createDesigner({
-        rootComponentName: "RootNode",
+        shortcuts: [
+          new Shortcut({
+            codes: [
+              [KeyCode.Meta, KeyCode.S],
+              [KeyCode.Control, KeyCode.S],
+            ],
+            handler(ctx) {
+              console.log(
+                JSON.stringify(transformToSchema(engine.getCurrentTree()))
+              );
+            },
+          }),
+        ],
+        rootComponentName: "Form",
       }),
     []
   );
@@ -48,7 +70,7 @@ function App() {
   }, []);
 
   return (
-    <Designer engine={engine}>
+    <ScaleDesigner engine={engine}>
       <StudioPanel actions={[<Button onClick={handleSave}>保存</Button>]}>
         <CompositePanel>
           <CompositePanel.Item title="panels.Component" icon="Component">
@@ -86,7 +108,7 @@ function App() {
           <SettingsForm uploadAction="https://www.mocky.io/v2/5cc8019d300000980a055e76" />
         </SettingsPanel>
       </StudioPanel>
-    </Designer>
+    </ScaleDesigner>
   );
 }
 

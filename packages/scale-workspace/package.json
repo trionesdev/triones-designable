@@ -1,0 +1,52 @@
+{
+  "name": "@alkaid/scale-workspace",
+  "version": "0.0.3-beta.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "father dev",
+    "build": "father build",
+    "build:deps": "father prebundle",
+    "prepublishOnly": "father doctor && npm run build",
+    "codingPublish": "npm publish --registry=https://moensun-npm.pkg.coding.net/npm/moensun/"
+  },
+  "keywords": [],
+  "authors": [
+    "fengxiaotx@163.com"
+  ],
+  "license": "MIT",
+  "files": [
+    "dist",
+    "compiled"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.0",
+    "antd": "^5.7.3",
+    "father": "^4.3.0"
+  },
+  "dependencies": {
+    "@alkaid/shared": "^0.0.3-beta.0",
+    "@alkaid/core": "^0.0.3-beta.0",
+    "@alkaid/react": "^0.0.3-beta.0",
+    "@ant-design/cssinjs": "^1.16.1",
+    "@formily/antd-v5": "^1.1.0",
+    "@formily/core": "^2.2.27",
+    "@formily/react": "^2.2.27",
+    "@formily/reactive": "^2.2.27",
+    "@formily/reactive-react": "^2.2.27",
+    "ahooks": "^3.7.8",
+    "antd": "^5.8.0",
+    "classnames": "^2.3.2",
+    "lodash": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "requestidlecallback": "^0.3.0"
+  },
+  "gitHead": "690a5cf13f852f3c3f639534d228e71678d6d532"
+}

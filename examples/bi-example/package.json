@@ -28,6 +28,7 @@
     "@alkaid/react": "^0.0.3-beta.0",
     "@alkaid/react-settings-form": "^0.0.3-beta.0",
     "@alkaid/shared": "^0.0.3-beta.0",
+    "@alkaid/scale-workspace": "^0.0.3-beta.0",
     "@ant-design/cssinjs": "^1.16.1",
     "@formily/antd-v5": "^1.1.0",
     "@formily/core": "^2.2.27",
