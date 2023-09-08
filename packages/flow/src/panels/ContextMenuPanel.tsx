@@ -7,6 +7,7 @@ import cls from "classnames";
 import {useClickAway} from "ahooks";
 import {IconWidget} from "../widgets/IconWidget";
 import React from "react";
+import {uid} from "@alkaid/shared";
 
 type ContextMenuPanelProps = {
     onDestroy: () => void,
@@ -28,7 +29,7 @@ export const ContextMenuPanel: FC<ContextMenuPanelProps> = ({
     const {hashId, wrapSSR} = useCssInJs({prefix, styleFun: genContextMenuPanelStyle})
     return wrapSSR(<div className={cls(`${prefix}-mask`, hashId)}>
         <div ref={ref} className={cls(prefix, hashId)} style={{top: y, left: x}}>
-            {items.map((item) => <Button style={{textAlign: 'left'}} type={`text`} block
+            {items.map((item) => <Button key={item.key || uid()} style={{textAlign: 'left'}} type={`text`} block
                                          onClick={() => {
                                              item.onClick?.()
                                              onDestroy?.()
