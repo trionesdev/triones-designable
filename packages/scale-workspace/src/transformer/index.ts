@@ -14,8 +14,10 @@ export interface IFormilySchema {
 
 const createOptions = (options: ITransformerOptions): ITransformerOptions => {
   return {
-    designableFieldName: "Field",
-    designableFormName: "Form",
+    // designableFieldName: "Field",
+    // designableFormName: "Form",
+    designableFieldName: "FloatWrapper",
+    designableFormName: "RootNode",
     ...options,
   };
 };
@@ -47,6 +49,7 @@ export const transformToSchema = (
     if (node !== root) {
       Object.assign(schema, clone(node.props));
     }
+
     schema["x-designable-id"] = node.id;
     if (schema.type === "array") {
       if (node.children[0]) {
@@ -99,6 +102,7 @@ export const transformToTreeNode = (
   };
   const appendTreeNode = (parent: ITreeNode, schema: Schema) => {
     if (!schema) return;
+
     const current = {
       id: schema["x-designable-id"] || uid(),
       componentName: realOptions.designableFieldName,

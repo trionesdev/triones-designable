@@ -31,9 +31,9 @@ DemoNode.Behavior = createBehavior({
   selector: (node) => node.props["x-component"] === "DemoNode",
 
   designerProps: {
-    propsSchema: createVoidFieldSchema(AllSchemas.Text),
+    propsSchema: createVoidFieldSchema(),
   },
-  designerLocales: AllLocales.Text,
+  // designerLocales: AllLocales.Text,
   // designerProps(node) {
   //   return {
   //     propsSchema: {

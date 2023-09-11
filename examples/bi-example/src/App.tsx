@@ -1,9 +1,4 @@
-import {
-  // createDesigner,
-  GlobalRegistry,
-  KeyCode,
-  Shortcut,
-} from "@alkaid/core";
+import { GlobalRegistry, KeyCode, Shortcut } from "@alkaid/core";
 import { useEffect, useMemo } from "react";
 import "./App.css";
 import {
@@ -23,11 +18,7 @@ import {
   ArrayCards,
 } from "@alkaid/formily-antd";
 import { SettingsForm } from "@alkaid/react-settings-form";
-import { transformToSchema } from "@alkaid/formily-transformer";
 import { Button } from "antd";
-import { DemoNode } from "./CustomNode/DemoNode";
-import { FloatWrapper } from "./CustomNode/FloatWrapper";
-import { RootNode } from "./CustomNode/RootNode";
 import {
   ScaleDesigner,
   createDesigner,
@@ -36,7 +27,9 @@ import {
   ViewportPanel,
   ViewPanel,
   WorkspacePanel,
+  transformToSchema,
 } from "@alkaid/scale-workspace";
+import { RootNode, DemoNode, FloatWrapper } from "./bi-components";
 // import { ScaleDesigner } from "@alkaid/scale-workspace";
 
 function App() {
@@ -56,7 +49,7 @@ function App() {
             },
           }),
         ],
-        rootComponentName: "Form",
+        rootComponentName: "RootNode",
       }),
     []
   );
