@@ -3,6 +3,7 @@
   "version": "0.0.3-beta.0",
   "private": true,
   "dependencies": {
+    "@ant-design/charts": "^1.4.2",
     "@alkaid/core": "^0.0.3-beta.0",
     "@craco/craco": "^7.1.0",
     "@testing-library/jest-dom": "^5.14.1",
