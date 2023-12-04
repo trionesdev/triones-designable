@@ -65,9 +65,6 @@ export const TreeNodeWidget: React.FC<ITreeNodeWidgetProps> = observer(
         if (!node) return null
         if (node.hidden) return null
 
-        useEffect(()=>{
-            console.log('tree node',node)
-        },[node])
 
         return React.createElement(
             TreeNodeContext.Provider,
