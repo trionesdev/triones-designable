@@ -64,6 +64,11 @@ export const TreeNodeWidget: React.FC<ITreeNodeWidgetProps> = observer(
 
         if (!node) return null
         if (node.hidden) return null
+
+        useEffect(()=>{
+            console.log('tree node',node)
+        },[node])
+
         return React.createElement(
             TreeNodeContext.Provider,
             {value: node},
@@ -82,6 +87,11 @@ export const ComponentTreeWidget: React.FC<IComponentTreeWidgetProps> =
         if (designer && tree) {
             dataId[designer?.props?.nodeIdAttrName] = tree.id
         }
+
+        useEffect(()=>{
+            console.log('tree',tree)
+        },[tree])
+
         useEffect(() => {
             GlobalRegistry.registerDesignerBehaviors(props.components)
         }, [])

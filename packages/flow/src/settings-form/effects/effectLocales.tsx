@@ -30,7 +30,6 @@ export const effectLocales = (node: TreeNode) => {
         const path = field.path.toString().replace(/\.[\d+]/g, '')
         const takeMessage = (prop?: string) => {
             const token = `settings.${path}${prop ? `.${prop}` : ''}`
-            debugger
             return node.getMessage(token) || GlobalRegistry.getDesignerMessage(token)
         }
         const title = takeMessage('title') || takeMessage()

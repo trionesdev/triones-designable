@@ -22,7 +22,7 @@
     "web-vitals": "^2.1.0"
   },
   "devDependencies": {
-    "@alkaid/core": "0.0.1-beta.2",
+    "@alkaid/core": "0.0.2-beta.0",
     "@alkaid/formily-antd": "^0.0.2-beta.0",
     "@alkaid/formily-transformer": "^0.0.2-beta.0",
     "@alkaid/react": "^0.0.2-beta.0",

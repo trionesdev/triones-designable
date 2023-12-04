@@ -33,6 +33,7 @@ export const ViewPanel: React.FC<IViewPanelProps> = observer((props) => {
   if (workbench.type !== props.type) return null
   const render = () => {
     return props.children(tree, (payload) => {
+      debugger
       tree.from(payload)
       tree.takeSnapshot()
     })
@@ -43,6 +44,11 @@ export const ViewPanel: React.FC<IViewPanelProps> = observer((props) => {
         {render()}
       </Viewport>
     )
+
+  useEffect(()=>{
+    console.log('tree',tree)
+  },[tree])
+
   return (
     <div
       style={{
