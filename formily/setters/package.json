@@ -28,9 +28,9 @@
     "father": "^4.3.0"
   },
   "dependencies": {
-    "@alkaid/core": "^0.0.2-beta.0",
-    "@alkaid/react": "^0.0.2-beta.0",
-    "@alkaid/shared": "^0.0.2-beta.0",
+    "@trionesdev/designable-core": "^0.0.2-beta.0",
+    "@trionesdev/designable-react": "^0.0.2-beta.0",
+    "@trionesdev/designable-shared": "^0.0.2-beta.0",
     "@ant-design/icons": "^5.2.5",
     "@formily/antd-v5": "^1.1.0",
     "@formily/core": "^2.2.29",
