@@ -1,4 +1,4 @@
-import { each } from '@alkaid/shared'
+import { each } from '@trionesdev/designable-shared'
 import { Path } from '@formily/path'
 import { observable } from '@formily/reactive'
 import {

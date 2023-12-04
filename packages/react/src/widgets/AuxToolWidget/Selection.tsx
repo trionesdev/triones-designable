@@ -11,7 +11,7 @@ import {
     useDesigner, useToken,
 } from '../../hooks'
 import {observer} from '@formily/reactive-react'
-import {TreeNode} from '@alkaid/core'
+import {TreeNode} from '@trionesdev/designable-core'
 import {TranslateHandler} from './TranslateHandler'
 import cls from "classnames";
 

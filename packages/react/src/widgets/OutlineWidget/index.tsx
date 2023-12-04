@@ -4,9 +4,9 @@ import {useTree, usePrefix, useOutline, useWorkbench, useCssInJs} from '../../ho
 import {observer} from '@formily/reactive-react'
 import {OutlineTreeNode} from './OutlineNode'
 import {Insertion} from './Insertion'
-import {TreeNode, Viewport} from '@alkaid/core'
+import {TreeNode, Viewport} from '@trionesdev/designable-core'
 import {NodeContext} from './context'
-import {globalThisPolyfill} from '@alkaid/shared'
+import {globalThisPolyfill} from '@trionesdev/designable-shared'
 import {genOutlineTreeWidgetStyle} from "./styles";
 
 export interface IOutlineTreeWidgetProps {

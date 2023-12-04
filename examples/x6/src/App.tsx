@@ -1,4 +1,4 @@
-import {GlobalRegistry} from '@alkaid/core';
+import {GlobalRegistry} from '@trionesdev/designable-core';
 import {useEffect, useMemo} from 'react';
 import './App.css';
 import {FlinkSqlNode, FlowNode} from "./nodes";
@@ -11,7 +11,7 @@ import {
     StudioPanel,
     ViewportPanel,
     WorkspacePanel
-} from "@alkaid/flow";
+} from "@trionesdev/designable-flow";
 
 function App() {
     const engine = useMemo(

@@ -1,4 +1,4 @@
-import { createBehavior } from '@alkaid/core'
+import { createBehavior } from '@trionesdev/designable-core'
 import { createFieldSchema, createVoidFieldSchema } from '../Field'
 import { AllSchemas } from '../../schemas'
 import { AllLocales } from '../../locales'

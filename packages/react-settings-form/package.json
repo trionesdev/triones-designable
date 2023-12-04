@@ -1,5 +1,5 @@
 {
-  "name": "@alkaid/react-settings-form",
+  "name": "@trionesdev/designable-react-settings-form",
   "version": "0.0.2-beta.0",
   "description": "",
   "main": "dist/index.js",
@@ -30,7 +30,7 @@
     "react": "^18.2.0"
   },
   "dependencies": {
-    "@alkaid/react": "^0.0.2-beta.0",
+    "@trionesdev/designable-react": "^0.0.2-beta.0",
     "@ant-design/cssinjs": "^1.16.1",
     "@babel/parser": "^7.22.10",
     "@formily/antd-v5": "^1.1.0",

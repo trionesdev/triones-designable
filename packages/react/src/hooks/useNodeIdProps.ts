@@ -1,4 +1,4 @@
-import { TreeNode } from '@alkaid/core'
+import { TreeNode } from '@trionesdev/designable-core'
 import { useDesigner } from './useDesigner'
 import { useTreeNode } from './useTreeNode'
 

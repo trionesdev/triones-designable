@@ -1,5 +1,5 @@
 import React from 'react'
-import { usePrefix, IconWidget } from '@alkaid/react'
+import { usePrefix, IconWidget } from '@trionesdev/designable-react'
 import { useField, Field, observer } from '@formily/react'
 import { Select, Radio, NumberPicker } from '@formily/antd-v5'
 import { FoldItem } from '../FoldItem'

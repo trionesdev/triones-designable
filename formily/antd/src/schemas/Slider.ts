@@ -1,4 +1,4 @@
-import { GlobalRegistry } from '@alkaid/core'
+import { GlobalRegistry } from '@trionesdev/designable-core'
 import { ISchema } from '@formily/react'
 
 export const Slider: ISchema = {

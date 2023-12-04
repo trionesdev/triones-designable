@@ -10,9 +10,9 @@ import {
     ViewportPanel, ViewToolsWidget, Workspace,
     WorkspacePanel
 } from "@alkaid/react";
-import {ArrayCards, ArrayTable, Field, Form, Input, NumberPicker, Password, Rate} from "@alkaid/formily-antd";
-import {SettingsForm} from "@alkaid/react-settings-form";
-import {transformToSchema} from "@alkaid/formily-transformer";
+import {ArrayCards, ArrayTable, Field, Form, Input, NumberPicker, Password, Rate} from "@trionesdev/designable-formily-antd";
+import {SettingsForm} from "@trionesdev/designable-react-settings-form";
+import {transformToSchema} from "@trionesdev/designable-formily-transformer";
 import {Button} from "antd";
 
 function App() {

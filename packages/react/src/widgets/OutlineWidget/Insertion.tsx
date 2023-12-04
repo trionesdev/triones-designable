@@ -1,6 +1,6 @@
 import React from 'react'
 import {useMoveHelper, usePrefix, useToken} from '../../hooks'
-import { ClosestPosition } from '@alkaid/core'
+import { ClosestPosition } from '@trionesdev/designable-core'
 import { observer } from '@formily/reactive-react'
 import cls from "classnames";
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {useCssInJs, usePrefix} from '@alkaid/react'
+import {useCssInJs, usePrefix} from '@trionesdev/designable-react'
 import cls from 'classnames'
 import {genPositionInputStyle} from "./styles";
 // import './styles.less'

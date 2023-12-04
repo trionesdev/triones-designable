@@ -1,5 +1,5 @@
 import React from 'react'
-import {TreeNode} from '@alkaid/core'
+import {TreeNode} from '@trionesdev/designable-core'
 import {IconWidget} from '../IconWidget'
 import {usePrefix, useToken} from '../../hooks'
 import {Button} from 'antd'

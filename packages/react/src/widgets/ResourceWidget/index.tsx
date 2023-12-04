@@ -4,8 +4,8 @@ import {
     isResourceList,
     IResourceLike,
     IResource,
-} from '@alkaid/core'
-import {isFn} from '@alkaid/shared'
+} from '@trionesdev/designable-core'
+import {isFn} from '@trionesdev/designable-shared'
 import {observer} from '@formily/reactive-react'
 import {useCssInJs, usePrefix} from '../../hooks'
 import {IconWidget} from '../IconWidget'

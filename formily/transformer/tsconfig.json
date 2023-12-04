@@ -16,7 +16,7 @@
     "baseUrl": "./",
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "@alkaid/*": ["../../packages/*/src"]
+      "@trionesdev/*": ["../../packages/*/src"]
     }
   }
 }

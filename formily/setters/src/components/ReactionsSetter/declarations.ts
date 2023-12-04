@@ -1,4 +1,4 @@
-import { MonacoInput, getNpmCDNRegistry } from '@alkaid/react-settings-form'
+import { MonacoInput, getNpmCDNRegistry } from '@trionesdev/designable-react-settings-form'
 
 export interface IDependency {
   name: string

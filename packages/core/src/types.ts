@@ -9,7 +9,7 @@ import {
   Workspace,
   TreeNode,
 } from './models'
-import {IEventProps} from "@alkaid/shared";
+import {IEventProps} from "@trionesdev/designable-shared";
 
 export type IEngineProps<T = Event> = IEventProps<T> & {
   shortcuts?: Shortcut[]

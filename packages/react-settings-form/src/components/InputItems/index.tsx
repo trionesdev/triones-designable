@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import {usePrefix, IconWidget, useCssInJs} from '@alkaid/react'
+import {usePrefix, IconWidget, useCssInJs} from '@trionesdev/designable-react'
 import cls from 'classnames'
 import {genInputItemsItemStyle, genInputItemsStyle} from "./styles";
 

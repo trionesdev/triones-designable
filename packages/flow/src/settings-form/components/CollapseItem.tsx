@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {GlobalToken} from "antd";
 import {CSSInterpolation} from "@ant-design/cssinjs";
 import {observer, useField} from "@formily/react";
-import {IconWidget, useCssInJs} from "@alkaid/react";
+import {IconWidget, useCssInJs} from "@trionesdev/designable-react";
 import cls from "classnames";
 
 export const genCollapseItemStyle = (

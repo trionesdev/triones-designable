@@ -1,6 +1,6 @@
 import React, {ReactNode} from 'react'
 import {observer} from '@formily/reactive-react'
-import {usePrefix, useToken} from '@alkaid/react'
+import {usePrefix, useToken} from '@trionesdev/designable-react'
 import cls from "classnames";
 
 // import './styles.less'

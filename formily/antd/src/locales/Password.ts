@@ -1,4 +1,4 @@
-import { createLocales } from '@alkaid/core'
+import { createLocales } from '@trionesdev/designable-core'
 import { Input } from './Input'
 
 export const Password = createLocales(Input, {

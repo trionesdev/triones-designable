@@ -1,5 +1,5 @@
 import React, {FC} from "react";
-import {useCssInJs} from "@alkaid/react";
+import {useCssInJs} from "@trionesdev/designable-react";
 import {genWorkspacePanelStyle} from "./styles";
 import cls from "classnames";
 

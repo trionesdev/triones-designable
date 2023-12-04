@@ -1,9 +1,9 @@
 import React, {useMemo} from 'react'
-import {createBehavior, createResource} from '@alkaid/core'
+import {createBehavior, createResource} from '@trionesdev/designable-core'
 import {createForm} from '@formily/core'
 import {observer} from '@formily/react'
 import {Form as FormilyForm} from '@formily/antd-v5'
-import {usePrefix, DnFC, useCssInJs} from '@alkaid/react'
+import {usePrefix, DnFC, useCssInJs} from '@trionesdev/designable-react'
 import {AllSchemas} from '../../schemas'
 import {AllLocales} from '../../locales'
 import {genFormStyle} from "./styles";

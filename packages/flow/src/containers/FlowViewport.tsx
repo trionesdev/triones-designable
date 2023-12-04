@@ -1,12 +1,12 @@
-import {useCssInJs} from "@alkaid/react";
+import {useCssInJs} from "@trionesdev/designable-react";
 import {genFlowViewportStyle} from "./styles";
 import cls from "classnames";
 import {useEffect, useRef} from "react";
 import {Graph, Path} from "@antv/x6";
-import {uid} from "@alkaid/shared";
+import {uid} from "@trionesdev/designable-shared";
 import {useFlowViewport} from "../hooks";
 import {useDrop} from "react-dnd";
-import {TreeNode} from "@alkaid/core";
+import {TreeNode} from "@trionesdev/designable-core";
 import _ from "lodash";
 import ReactDOM from "react-dom/client";
 import {ContextMenuPanel} from "../panels/ContextMenuPanel";

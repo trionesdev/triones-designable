@@ -1,8 +1,8 @@
 import React from 'react'
 import { Card as AntdCard } from 'antd'
 
-import { createBehavior, createResource } from '@alkaid/core'
-import { DnFC } from '@alkaid/react'
+import { createBehavior, createResource } from '@trionesdev/designable-core'
+import { DnFC } from '@trionesdev/designable-react'
 import { createVoidFieldSchema } from '../Field'
 import { AllSchemas } from '../../schemas'
 import { AllLocales } from '../../locales'

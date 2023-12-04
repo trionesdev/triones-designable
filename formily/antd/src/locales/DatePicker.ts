@@ -1,4 +1,4 @@
-import { createLocales } from '@alkaid/core'
+import { createLocales } from '@trionesdev/designable-core'
 
 export const DatePicker = {
   'zh-CN': {

@@ -5,7 +5,7 @@
 import { createPolyInput } from '../PolyInput'
 import { Input, Button, Popover, InputNumber, Select } from 'antd'
 import { MonacoInput } from '../MonacoInput'
-import { TextWidget } from '@alkaid/react'
+import { TextWidget } from '@trionesdev/designable-react'
 import React from 'react'
 
 const STARTTAG_REX =

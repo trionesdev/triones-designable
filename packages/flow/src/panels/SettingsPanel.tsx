@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react'
-import {requestIdle} from '@alkaid/shared'
+import {requestIdle} from '@trionesdev/designable-shared'
 import {observer} from '@formily/reactive-react'
 import cls from 'classnames'
 import {genSettingsPanelStyle} from "./styles";
-import {IconWidget, TextWidget, useCssInJs} from "@alkaid/react";
+import {IconWidget, TextWidget, useCssInJs} from "@trionesdev/designable-react";
 import {useSelectedNode} from "../hooks";
 
 export interface ISettingPanelProps {

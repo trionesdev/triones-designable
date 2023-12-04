@@ -1,5 +1,5 @@
 import React from "react";
-import {useCssInJs} from "@alkaid/react";
+import {useCssInJs} from "@trionesdev/designable-react";
 import {genResourcePanelStyle} from "./styles";
 import cls from "classnames";
 

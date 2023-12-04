@@ -1,4 +1,4 @@
-import { createLocales } from '@alkaid/core'
+import { createLocales } from '@trionesdev/designable-core'
 import { Component } from './Component'
 
 export const Form = createLocales(Component, {

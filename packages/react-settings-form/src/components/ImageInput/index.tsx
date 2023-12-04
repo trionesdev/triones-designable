@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import {InputProps} from 'antd/lib/input'
 import {Input, Upload} from 'antd'
-import {usePrefix, IconWidget, useCssInJs} from '@alkaid/react'
+import {usePrefix, IconWidget, useCssInJs} from '@trionesdev/designable-react'
 import {SettingsFormContext} from '../../shared/context'
 import cls from 'classnames'
 import {genImageInputStyle} from "./styles";

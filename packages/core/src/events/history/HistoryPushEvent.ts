@@ -1,4 +1,4 @@
-import { ICustomEvent } from '@alkaid/shared'
+import { ICustomEvent } from '@trionesdev/designable-shared'
 import { AbstractHistoryEvent } from './AbstractHistoryEvent'
 
 export class HistoryPushEvent

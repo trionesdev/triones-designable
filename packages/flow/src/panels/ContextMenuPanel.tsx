@@ -1,7 +1,7 @@
 import {FC, useRef} from "react";
 import {ContextMenuItem} from "../types";
 import {Button} from "antd";
-import {useCssInJs} from "@alkaid/react";
+import {useCssInJs} from "@trionesdev/designable-react";
 import {genContextMenuPanelStyle} from "./styles";
 import cls from "classnames";
 import {useClickAway} from "ahooks";

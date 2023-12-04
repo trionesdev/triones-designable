@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
-import { isStr, isPlainObj } from '@alkaid/shared'
-import { GlobalRegistry, IDesignerMiniLocales } from '@alkaid/core'
+import { isStr, isPlainObj } from '@trionesdev/designable-shared'
+import { GlobalRegistry, IDesignerMiniLocales } from '@trionesdev/designable-core'
 import { observer } from '@formily/reactive-react'
 
 export interface ITextWidgetProps {

@@ -4,12 +4,12 @@ import {
     isResourceList,
     IResourceLike,
     IResource,
-} from '@alkaid/core'
-import {isFn} from '@alkaid/shared'
+} from '@trionesdev/designable-core'
+import {isFn} from '@trionesdev/designable-shared'
 import {observer} from '@formily/reactive-react'
 import cls from 'classnames'
 import {genResourceWidgetStyle} from "./styles";
-import { TextWidget, useCssInJs, useToken} from "@alkaid/react";
+import { TextWidget, useCssInJs, useToken} from "@trionesdev/designable-react";
 import {useDrag} from "react-dnd";
 import {IconWidget} from "../IconWidget";
 

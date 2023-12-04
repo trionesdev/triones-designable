@@ -1,5 +1,5 @@
 import {useContext} from "react";
-import {globalThisPolyfill} from "@alkaid/shared";
+import {globalThisPolyfill} from "@trionesdev/designable-shared";
 import {FlowDesignerEngineContext} from "../context";
 
 export const useFlowDesigner = () => {
