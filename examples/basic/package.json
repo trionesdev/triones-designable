@@ -22,7 +22,7 @@
     "web-vitals": "^2.1.0"
   },
   "devDependencies": {
-    "@trionesdev/designable-@alkaid/core": "0.0.2-beta.0",
+    "@trionesdev/designable-core": "0.0.2-beta.0",
     "@trionesdev/designable-formily-antd": "^0.0.2-beta.0",
     "@trionesdev/designable-formily-transformer": "^0.0.2-beta.0",
     "@trionesdev/designable-react": "^0.0.2-beta.0",
