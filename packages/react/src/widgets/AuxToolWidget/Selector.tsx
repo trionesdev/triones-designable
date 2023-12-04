@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useRef} from 'react'
-import {TreeNode} from '@alkaid/core'
+import {TreeNode} from '@trionesdev/designable-core'
 import {useHover, useSelection, usePrefix, useToken} from '../../hooks'
 import {IconWidget} from '../IconWidget'
 import {NodeTitleWidget} from '../NodeTitleWidget'

@@ -1,8 +1,8 @@
 import { useContext } from 'react'
 import { useDesigner } from './useDesigner'
 import { WorkspaceContext } from '../context'
-import { Workspace } from '@alkaid/core'
-import { globalThisPolyfill } from '@alkaid/shared'
+import { Workspace } from '@trionesdev/designable-core'
+import { globalThisPolyfill } from '@trionesdev/designable-shared'
 
 export const useWorkspace = (id?: string): Workspace => {
   const designer = useDesigner()

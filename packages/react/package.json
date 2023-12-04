@@ -1,6 +1,6 @@
 {
-  "name": "@alkaid/react",
-  "version": "0.0.3-beta.0",
+  "name": "@trionesdev/designable-react",
+  "version": "0.0.2-beta.0",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -32,7 +32,7 @@
     "react-tiny-popover": "^7.2.4"
   },
   "dependencies": {
-    "@alkaid/core": "^0.0.3-beta.0",
+    "@trionesdev/designable-core": "^0.0.2-beta.0",
     "@ant-design/cssinjs": "^1.16.1",
     "@formily/reactive": "^2.2.29",
     "@formily/reactive-react": "^2.2.29",

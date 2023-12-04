@@ -1,4 +1,4 @@
-import { GlobalRegistry } from '@alkaid/core'
+import { GlobalRegistry } from '@trionesdev/designable-core'
 
 GlobalRegistry.registerDesignerLocales({
   'zh-CN': {

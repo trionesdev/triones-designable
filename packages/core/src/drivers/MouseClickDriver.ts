@@ -1,4 +1,4 @@
-import { EventDriver } from '@alkaid/shared'
+import { EventDriver } from '@trionesdev/designable-shared'
 import { Engine } from '../models/Engine'
 import { MouseClickEvent, MouseDoubleClickEvent } from '../events'
 

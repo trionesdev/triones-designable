@@ -1,8 +1,8 @@
-import {DnFC} from "@alkaid/react";
+import {DnFC} from "@trionesdev/designable-react";
 import React from "react";
 import {BaseNode} from "./BaseNode";
-import {createBehavior, createResource} from "@alkaid/core";
-import {uid} from "@alkaid/shared";
+import {createBehavior, createResource} from "@trionesdev/designable-core";
+import {uid} from "@trionesdev/designable-shared";
 import _ from "lodash";
 
 export const BatchSyncNode: DnFC<React.ComponentProps<typeof BaseNode>> = _.cloneDeep(BaseNode)

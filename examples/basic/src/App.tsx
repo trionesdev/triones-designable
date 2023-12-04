@@ -1,4 +1,4 @@
-import {createDesigner, GlobalRegistry, KeyCode, Shortcut} from '@alkaid/core';
+import {createDesigner, GlobalRegistry, KeyCode, Shortcut} from '@trionesdev/designable-core';
 import {useEffect, useMemo} from 'react';
 import './App.css';
 import {
@@ -9,10 +9,10 @@ import {
     StudioPanel, ToolbarPanel, ViewPanel,
     ViewportPanel, ViewToolsWidget, Workspace,
     WorkspacePanel
-} from "@alkaid/react";
-import {ArrayCards, ArrayTable, Field, Form, Input, NumberPicker, Password, Rate} from "@alkaid/formily-antd";
-import {SettingsForm} from "@alkaid/react-settings-form";
-import {transformToSchema} from "@alkaid/formily-transformer";
+} from "@trionesdev/designable-react";
+import {ArrayCards, ArrayTable, Field, Form, Input, NumberPicker, Password, Rate} from "@trionesdev/designable-formily-antd";
+import {SettingsForm} from "@trionesdev/designable-react-settings-form";
+import {transformToSchema} from "@trionesdev/designable-formily-transformer";
 import {Button} from "antd";
 
 function App() {

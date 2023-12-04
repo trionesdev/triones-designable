@@ -1,30 +1,30 @@
-import React, { createContext, useContext } from "react";
-import { isStr, isFn, isObj, isPlainObj } from "@alkaid/shared";
-import { observer } from "@formily/reactive-react";
-import { Tooltip, TooltipProps } from "antd";
-import { useCssInJs, usePrefix, useRegistry, useTheme } from "../../hooks";
-import cls from "classnames";
-import { genIconWidgetStyle } from "./styles";
+import React, {createContext, useContext} from 'react'
+import {isStr, isFn, isObj, isPlainObj} from '@trionesdev/designable-shared'
+import {observer} from '@formily/reactive-react'
+import {Tooltip, TooltipProps} from 'antd'
+import {useCssInJs, usePrefix, useRegistry, useTheme} from '../../hooks'
+import cls from 'classnames'
+import {genIconWidgetStyle} from "./styles";
 
-const IconContext = createContext<IconProviderProps>(null);
+const IconContext = createContext<IconProviderProps>(null)
 
 // const isNumSize = (val: any) => /^[\d.]+$/.test(val)
 
 export interface IconProviderProps {
-  children?: React.ReactNode;
-  tooltip?: boolean;
+    children?: React.ReactNode
+    tooltip?: boolean
 }
 
 export interface IShadowSVGProps {
-  content?: string;
-  width?: number | string;
-  height?: number | string;
+    content?: string
+    width?: number | string
+    height?: number | string
 }
 
 export interface IIconWidgetProps extends React.HTMLAttributes<HTMLElement> {
-  tooltip?: React.ReactNode | TooltipProps;
-  infer: React.ReactNode;
-  size?: number | string;
+    tooltip?: React.ReactNode | TooltipProps
+    infer: React.ReactNode
+    size?: number | string
 }
 
 export const IconWidget: React.FC<IIconWidgetProps> & {
@@ -140,19 +140,20 @@ export const IconWidget: React.FC<IIconWidgetProps> & {
 });
 
 IconWidget.ShadowSVG = (props) => {
-  // const ref = useRef<HTMLDivElement>()
-  // const width = isNumSize(props.width) ? `${props.width}px` : props.width
-  // const height = isNumSize(props.height) ? `${props.height}px` : props.height
-  // useEffect(() => {
-  //     if (ref.current) {
-  //         const root = ref.current.attachShadow({
-  //             mode: 'open',
-  //         })
-  //         root.innerHTML = `<svg viewBox="0 0 1024 1024" style="width:${width};height:${height}">${props.content}</svg>`
-  //     }
-  // }, [])
-  return <div></div>;
-};
+    // const ref = useRef<HTMLDivElement>()
+    // const width = isNumSize(props.width) ? `${props.width}px` : props.width
+    // const height = isNumSize(props.height) ? `${props.height}px` : props.height
+    // useEffect(() => {
+    //     if (ref.current) {
+    //         debugger
+    //         const root = ref.current.attachShadow({
+    //             mode: 'open',
+    //         })
+    //         root.innerHTML = `<svg viewBox="0 0 1024 1024" style="width:${width};height:${height}">${props.content}</svg>`
+    //     }
+    // }, [])
+    return <div></div>
+}
 
 IconWidget.Provider = (props) => {
   return (

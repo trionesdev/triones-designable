@@ -30,20 +30,16 @@
     "paths": {
 //      "@alkaid/*": ["../../packages/*", "../../formily/*"],
 //      "@alkaid/shared": ["src/alkaid/shared"],
-      "@alkaid/shared": ["../../packages/shared/src"],
+      "@trionesdev/designable-shared": ["../../packages/shared/src"],
 //      "@alkaid/core": ["src/alkaid/core"],
-      "@alkaid/core": ["../../packages/core/src"],
-      "@alkaid/core/*": ["../../packages/core/src/*"],
+      "@trionesdev/designable-core": ["../../packages/core/src"],
+      "@trionesdev/designable-core/*": ["../../packages/core/src/*"],
 //      "@alkaid/react": ["src/alkaid/react"],
-      "@alkaid/react": ["../../packages/react/src"],
+      "@trionesdev/designable-react": ["../../packages/react/src"],
 //      "@alkaid/react-settings-form": ["src/alkaid/react-settings-form"],
-      "@alkaid/react-settings-form": ["../../packages/react-settings-form/src"],
-//      "@alkaid/formily-antd": ["src/alkaid/antd"],
-//      "@alkaid/formily-antd": ["../../formily/antd/src"],
-//      "@alkaid/formily-setters": ["src/alkaid/stters"],
-//      "@alkaid/formily-setters": ["../../formily/setters/src"],
-//      "@alkaid/formily-transformer": ["../../formily/transformer/src"]
-      "@alkaid/flow": ["../../packages/flow/src"]
+      "@trionesdev/designable-react-settings-form": ["../../packages/react-settings-form/src"],
+
+      "@trionesdev/designable-flow": ["../../packages/flow/src"]
     }
   },
   "include": [

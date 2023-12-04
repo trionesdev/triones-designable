@@ -2,7 +2,7 @@ import React, {Fragment, useRef, useMemo} from 'react'
 import {FormItem, IFormItemProps} from '@formily/antd-v5'
 import {useField, observer} from '@formily/react'
 import {observable} from '@formily/reactive'
-import {IconWidget, useCssInJs, usePrefix} from '@alkaid/react'
+import {IconWidget, useCssInJs, usePrefix} from '@trionesdev/designable-react'
 import cls from 'classnames'
 import {genFoldItemStyle} from "./styles";
 

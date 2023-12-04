@@ -1,4 +1,4 @@
-import { isFn, KeyCode } from '@alkaid/shared'
+import { isFn, KeyCode } from '@trionesdev/designable-shared'
 import { IEngineContext } from '../types'
 
 export { KeyCode }

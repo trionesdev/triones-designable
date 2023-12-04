@@ -2,7 +2,7 @@ import {Graph, Node} from "@antv/x6";
 import {FlowEngine} from "./FlowEngine";
 import {Options as GraphOptions} from "@antv/x6/src/graph/options";
 import {action, define, observable} from "@formily/reactive";
-import {GraphEdge, GraphNode} from "@alkaid/flow";
+import {GraphEdge, GraphNode} from "@trionesdev/designable-flow";
 
 export class FlowViewport {
     engine?: FlowEngine

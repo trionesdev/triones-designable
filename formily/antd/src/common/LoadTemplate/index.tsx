@@ -1,5 +1,5 @@
 import React from 'react'
-import { NodeActionsWidget } from '@alkaid/react'
+import { NodeActionsWidget } from '@trionesdev/designable-react'
 
 export interface ITemplateAction {
   title: React.ReactNode

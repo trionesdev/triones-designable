@@ -1,7 +1,7 @@
-import { DnFC } from "@alkaid/react";
+import { DnFC } from "@trionesdev/designable-react";
 import { ISchema } from "@formily/react";
 import { observer } from "@formily/reactive-react";
-import { createBehavior } from "@alkaid/core";
+import { createBehavior } from "@trionesdev/designable-core";
 
 export const FlowNode: DnFC<ISchema> = observer((props) => {
   return <></>;

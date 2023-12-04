@@ -1,13 +1,13 @@
 import {Fragment} from 'react'
 import {Card, CardProps} from 'antd'
-import {TreeNode, createResource} from '@alkaid/core'
+import {TreeNode, createResource} from '@trionesdev/designable-core'
 import {
     useTreeNode,
     TreeNodeWidget,
     DroppableWidget,
     useNodeIdProps,
     DnFC, useCssInJs,
-} from '@alkaid/react'
+} from '@trionesdev/designable-react'
 import {ArrayBase} from '@formily/antd-v5'
 import {observer} from '@formily/react'
 import {LoadTemplate} from '../../common/LoadTemplate'

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useField, Field, observer } from '@formily/react'
-import { usePrefix } from '@alkaid/react'
+import { usePrefix } from '@trionesdev/designable-react'
 import { Select, Input } from '@formily/antd-v5'
 import { FoldItem } from '../FoldItem'
 import { ColorInput } from '../ColorInput'

@@ -1,13 +1,13 @@
 import React from 'react'
 import {Table, TableProps} from 'antd'
-import {TreeNode, createBehavior, createResource} from '@alkaid/core'
+import {TreeNode, createBehavior, createResource} from '@trionesdev/designable-core'
 import {
     useTreeNode,
     TreeNodeWidget,
     DroppableWidget,
     useNodeIdProps,
     DnFC, useCssInJs,
-} from '@alkaid/react'
+} from '@trionesdev/designable-react'
 import {ArrayBase} from '@formily/antd-v5'
 import {observer} from '@formily/react'
 import {LoadTemplate} from '../../common/LoadTemplate'

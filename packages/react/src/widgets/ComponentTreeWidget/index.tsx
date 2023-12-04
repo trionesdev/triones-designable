@@ -2,7 +2,7 @@ import React, {Fragment, useEffect} from 'react'
 import {useTree, usePrefix, useDesigner, useComponents, useCssInJs} from '../../hooks'
 import {TreeNodeContext, DesignerComponentsContext} from '../../context'
 import {IDesignerComponents} from '../../types'
-import {TreeNode, GlobalRegistry} from '@alkaid/core'
+import {TreeNode, GlobalRegistry} from '@trionesdev/designable-core'
 import {observer} from '@formily/reactive-react'
 import cls from 'classnames'
 // import './styles.less'
@@ -64,6 +64,8 @@ export const TreeNodeWidget: React.FC<ITreeNodeWidgetProps> = observer(
 
         if (!node) return null
         if (node.hidden) return null
+
+
         return React.createElement(
             TreeNodeContext.Provider,
             {value: node},
@@ -82,6 +84,11 @@ export const ComponentTreeWidget: React.FC<IComponentTreeWidgetProps> =
         if (designer && tree) {
             dataId[designer?.props?.nodeIdAttrName] = tree.id
         }
+
+        useEffect(()=>{
+            console.log('tree',tree)
+        },[tree])
+
         useEffect(() => {
             GlobalRegistry.registerDesignerBehaviors(props.components)
         }, [])

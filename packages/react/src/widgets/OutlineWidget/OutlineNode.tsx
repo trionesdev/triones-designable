@@ -4,8 +4,8 @@ import {
   ClosestPosition,
   CursorStatus,
   DragMoveEvent,
-} from '@alkaid/core'
-import { isFn } from '@alkaid/shared'
+} from '@trionesdev/designable-core'
+import { isFn } from '@trionesdev/designable-shared'
 import { autorun } from '@formily/reactive'
 import { observer } from '@formily/reactive-react'
 import {

@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react'
-import { Engine } from '@alkaid/core'
+import { Engine } from '@trionesdev/designable-core'
 import { DesignerEngineContext } from '../context'
-import { isFn, globalThisPolyfill } from '@alkaid/shared'
+import { isFn, globalThisPolyfill } from '@trionesdev/designable-shared'
 export interface IEffects {
   (engine: Engine): void
 }

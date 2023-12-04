@@ -6,11 +6,11 @@ import {
   DragMoveEvent,
   DragStopEvent,
   CursorDragType,
-} from '@alkaid/core'
+} from '@trionesdev/designable-core'
 import {
   calcSpeedFactor,
   createUniformSpeedAnimation,
-} from '@alkaid/shared'
+} from '@trionesdev/designable-shared'
 import {useScreen, useDesigner, usePrefix, useCssInJs} from '../../hooks'
 import { IconWidget } from '../../widgets'
 import { ResizeHandle, ResizeHandleType } from './handle'

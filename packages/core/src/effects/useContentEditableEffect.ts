@@ -1,5 +1,5 @@
 import { Path } from '@formily/path'
-import { requestIdle, globalThisPolyfill } from '@alkaid/shared'
+import { requestIdle, globalThisPolyfill } from '@trionesdev/designable-shared'
 import { Engine, TreeNode } from '../models'
 import { MouseDoubleClickEvent, MouseClickEvent } from '../events'
 

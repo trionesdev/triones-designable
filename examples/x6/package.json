@@ -1,9 +1,8 @@
 {
-  "name": "@alkaid/x6-example",
-  "version": "0.0.2",
+  "name": "@trionesdev/designable-x6-example",
+  "version": "0.0.2-beta.0",
   "private": true,
   "dependencies": {
-    "@alkaid/core": "^0.0.3-beta.0",
     "@ant-design/icons": "^5.2.5",
     "@craco/craco": "^7.1.0",
     "@testing-library/jest-dom": "^5.14.1",
@@ -27,12 +26,12 @@
     "web-vitals": "^2.1.0"
   },
   "devDependencies": {
-    "@alkaid/core": "^0.0.3-beta.0",
-    "@alkaid/formily-antd": "^0.0.3-beta.0",
-    "@alkaid/formily-transformer": "^0.0.3-beta.0",
-    "@alkaid/react": "^0.0.3-beta.0",
-    "@alkaid/react-settings-form": "^0.0.3-beta.0",
-    "@alkaid/shared": "^0.0.3-beta.0",
+    "@trionesdev/designable-core": "^0.0.2-beta.0",
+    "@trionesdev/designable-formily-antd": "^0.0.2-beta.0",
+    "@trionesdev/designable-formily-transformer": "^0.0.2-beta.0",
+    "@trionesdev/designable-react": "^0.0.2-beta.0",
+    "@trionesdev/designable-react-settings-form": "^0.0.2-beta.0",
+    "@trionesdev/designable-shared": "^0.0.2-beta.0",
     "@ant-design/cssinjs": "^1.16.1",
     "@antv/x6": "^2.12.1",
     "@antv/x6-react-shape": "^2.2.2",

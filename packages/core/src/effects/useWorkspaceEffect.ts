@@ -1,5 +1,5 @@
 import { Engine } from '../models'
-import { ICustomEvent } from '@alkaid/shared'
+import { ICustomEvent } from '@trionesdev/designable-shared'
 import { IEngineContext } from '../types'
 import { SelectNodeEvent } from '../events'
 

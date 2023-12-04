@@ -2,7 +2,7 @@ import React, {FC, useEffect, useRef} from "react";
 import {FlowEngine} from "../models";
 import {FlowDesignerEngineContext} from "../context";
 import {useFlowDesigner} from "../hooks";
-import {useCssInJs} from "@alkaid/react";
+import {useCssInJs} from "@trionesdev/designable-react";
 import {genFlowDesignerStyle} from "./styles";
 import cls from "classnames";
 

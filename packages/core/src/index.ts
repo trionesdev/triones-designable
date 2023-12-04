@@ -1,4 +1,4 @@
-import { globalThisPolyfill } from '@alkaid/shared'
+import { globalThisPolyfill } from '@trionesdev/designable-shared'
 import * as Core from './exports'
 export * from './exports'
 

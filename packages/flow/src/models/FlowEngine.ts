@@ -1,5 +1,5 @@
-import {Event, IEventProps} from "@alkaid/shared";
-import {TreeNode} from "@alkaid/core";
+import {Event, IEventProps} from "@trionesdev/designable-shared";
+import {TreeNode} from "@trionesdev/designable-core";
 import {FlowViewport} from "./FlowViewport";
 import {Options as GraphOptions} from "@antv/x6/src/graph/options";
 import {ContextMenuItem, GraphData} from "../types";

@@ -1,6 +1,6 @@
 import React from 'react'
-import { ScreenType } from '@alkaid/core'
-import { requestIdle } from '@alkaid/shared'
+import { ScreenType } from '@trionesdev/designable-core'
+import { requestIdle } from '@trionesdev/designable-shared'
 import { observer } from '@formily/reactive-react'
 import { useScreen } from '../hooks'
 import {

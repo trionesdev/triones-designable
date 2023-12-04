@@ -7,9 +7,9 @@ import {
   Schema,
   ISchema,
 } from '@formily/react'
-import { GlobalRegistry } from '@alkaid/core'
+import { GlobalRegistry } from '@trionesdev/designable-core'
 import { ArrayItems } from '@formily/antd-v5'
-import { FoldItem } from '@alkaid/react-settings-form'
+import { FoldItem } from '@trionesdev/designable-react-settings-form'
 import { Select } from 'antd'
 
 export interface IValidatorSetterProps {

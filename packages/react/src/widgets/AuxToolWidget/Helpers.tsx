@@ -1,5 +1,5 @@
 import React, {useRef, useState, useLayoutEffect} from 'react'
-import {TreeNode} from '@alkaid/core'
+import {TreeNode} from '@trionesdev/designable-core'
 import {reaction} from '@formily/reactive'
 import {usePrefix, useToken, useViewport} from '../../hooks'
 import {Selector} from './Selector'
@@ -7,7 +7,7 @@ import {Copy} from './Copy'
 import {Delete} from './Delete'
 import {DragHandler} from './DragHandler'
 import cls from 'classnames'
-import {Rect} from "@alkaid/shared";
+import {Rect} from "@trionesdev/designable-shared";
 
 const HELPER_DEBOUNCE_TIMEOUT = 100
 

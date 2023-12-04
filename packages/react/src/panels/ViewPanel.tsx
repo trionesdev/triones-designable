@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { TreeNode, ITreeNode, WorkbenchTypes } from '@alkaid/core'
+import { TreeNode, ITreeNode, WorkbenchTypes } from '@trionesdev/designable-core'
 import { observer } from '@formily/reactive-react'
 import { useTree, useWorkbench } from '../hooks'
 import { Viewport } from '../containers'
-import { requestIdle } from '@alkaid/shared'
+import { requestIdle } from '@trionesdev/designable-shared'
 
 export interface IViewPanelProps {
   type: WorkbenchTypes
@@ -33,6 +33,7 @@ export const ViewPanel: React.FC<IViewPanelProps> = observer((props) => {
   if (workbench.type !== props.type) return null
   const render = () => {
     return props.children(tree, (payload) => {
+      debugger
       tree.from(payload)
       tree.takeSnapshot()
     })
@@ -43,6 +44,11 @@ export const ViewPanel: React.FC<IViewPanelProps> = observer((props) => {
         {render()}
       </Viewport>
     )
+
+  useEffect(()=>{
+    console.log('tree',tree)
+  },[tree])
+
   return (
     <div
       style={{

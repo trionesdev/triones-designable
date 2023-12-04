@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react'
-import {isValid} from '@alkaid/shared'
+import {isValid} from '@trionesdev/designable-shared'
 import cls from 'classnames'
 import {IconWidget, TextWidget} from '../widgets'
 import {useCssInJs, usePrefix} from '../hooks'

@@ -1,8 +1,8 @@
-import { EventDriver } from '@alkaid/shared'
+import { EventDriver } from '@trionesdev/designable-shared'
 import { Engine } from '../models/Engine'
 import { ViewportResizeEvent } from '../events'
 import { ResizeObserver } from '@juggle/resize-observer'
-import { globalThisPolyfill } from '@alkaid/shared'
+import { globalThisPolyfill } from '@trionesdev/designable-shared'
 
 export class ViewportResizeDriver extends EventDriver<Engine> {
   request = null

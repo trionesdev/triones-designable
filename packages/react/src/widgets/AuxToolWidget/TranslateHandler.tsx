@@ -1,7 +1,7 @@
 import React from 'react'
 import cls from 'classnames'
 import { useDesigner, usePrefix } from '../../hooks'
-import { TreeNode } from '@alkaid/core'
+import { TreeNode } from '@trionesdev/designable-core'
 import { IconWidget } from '../IconWidget'
 
 export interface ITranslateHandlerProps {

@@ -3,7 +3,7 @@ import {useField, Field, observer} from '@formily/react'
 import {Field as FieldType} from '@formily/core'
 import {FormItem} from '@formily/antd-v5'
 import {Radio} from 'antd'
-import {usePrefix, IconWidget, useCssInJs} from '@alkaid/react'
+import {usePrefix, IconWidget, useCssInJs} from '@trionesdev/designable-react'
 import {FlexStyleSetter} from '../FlexStyleSetter'
 import cls from 'classnames'
 import {genDisplayStyleSetterStyle} from "./styles";

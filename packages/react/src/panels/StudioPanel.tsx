@@ -40,7 +40,7 @@ const StudioPanelInternal: React.FC<IStudioPanelProps> = ({
     }
     return (
         wrapSSR(
-            <div {...props} className={cls(prefix, classNameBase, hashId)}>
+            <div {...props} className={cls(`${prefix}-container`, classNameBase, hashId)}>
                 {props.children}
             </div>
         )

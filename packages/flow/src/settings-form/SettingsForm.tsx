@@ -1,14 +1,14 @@
 import React, {FC, useEffect, useMemo, useState} from "react";
 import {useFlowDesigner, useFlowViewport, useSelectedNode} from "../hooks";
 import {observer} from "@formily/reactive-react";
-import {useCssInJs} from "@alkaid/react";
+import {useCssInJs} from "@trionesdev/designable-react";
 import cls from "classnames";
-import {TreeNode} from "@alkaid/core";
+import {TreeNode} from "@trionesdev/designable-core";
 import {Form} from "@formily/antd-v5";
 import {createForm, Form as FormInstance} from "@formily/core";
 import {SchemaField} from "./SchemaField";
 import {genSettingsFormStyle} from "./styles";
-import {cancelIdle, requestIdle} from "@alkaid/shared";
+import {cancelIdle, requestIdle} from "@trionesdev/designable-shared";
 import {effectLocales, effectSave} from "./effects";
 
 
