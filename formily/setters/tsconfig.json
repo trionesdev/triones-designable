@@ -16,7 +16,7 @@
     "baseUrl": "./",
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "@trionesdev/*": ["../../packages/*", "../../formily/*"]
+      "@trionesdev/*": ["../../packages/*/src"]
     }
   }
 }
