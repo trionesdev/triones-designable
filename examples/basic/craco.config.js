@@ -59,6 +59,8 @@ module.exports={
         },
         configure: (webpackConfig, { env, paths }) => {
             webpackConfig.output = {
+                ...webpackConfig.output,
+                path: path.resolve(__dirname, 'build'),
                 publicPath: './'
             };
             return webpackConfig;
