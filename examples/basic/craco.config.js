@@ -57,6 +57,12 @@ module.exports={
             // "@alkaid/formily-antd": resolve("src/alkaid/antd"),
             // "@alkaid/formily-setters": resolve("src/alkaid/setters"),
         },
+        configure: (webpackConfig, { env, paths }) => {
+            webpackConfig.output = {
+                publicPath: './'
+            };
+            return webpackConfig;
+        },
     },
 
 }
