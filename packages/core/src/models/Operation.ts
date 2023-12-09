@@ -55,8 +55,12 @@ export class Operation {
   }
 
   dispatch(event: ICustomEvent, callback?: () => void) {
-    if (this.workspace.dispatch(event) === false) return
-    if (isFn(callback)) return callback()
+    if (this.workspace.dispatch(event) === false) {
+      return
+    }
+    if (isFn(callback)) {
+      return callback()
+    }
   }
 
   snapshot(type?: string) {

@@ -98,7 +98,10 @@ const resolveDesignerProps = (
   node: TreeNode,
   props: IDesignerControllerProps
 ) => {
-  if (isFn(props)) return props(node)
+  if (isFn(props)) {
+    // @ts-ignore
+    return props(node)
+  }
   return props
 }
 
@@ -338,6 +341,7 @@ export class TreeNode {
 
   triggerMutation<T>(event: any, callback?: () => T, defaults?: T): T {
     if (this.operation) {
+      // @ts-ignore
       const result = this.operation.dispatch(event, callback) || defaults
       this.takeSnapshot(event?.type)
       return result
