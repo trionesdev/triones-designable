@@ -9,7 +9,6 @@ import {GlobalRegistry} from "@trionesdev/designable-core";
 
 const IconContext = createContext<IconProviderProps>(null)
 
-// const isNumSize = (val: any) => /^[\d.]+$/.test(val)
 
 export interface IconProviderProps {
     children?: React.ReactNode

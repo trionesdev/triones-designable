@@ -179,7 +179,6 @@ export class TreeNode {
 
   get designerLocales(): IDesignerLocales {
     const behaviors = GlobalRegistry.getDesignerBehaviors(this)
-    debugger
     const designerLocales: IDesignerLocales = behaviors.reduce(
       (buf, pattern) => {
         if (!pattern.designerLocales) return buf
