@@ -3,7 +3,6 @@
   "version": "0.0.2-beta.0",
   "private": true,
   "dependencies": {
-    "@trionesdev/designable-core": "^0.0.2-beta.0",
     "@ant-design/icons": "^5.2.5",
     "@craco/craco": "^7.1.0",
     "@testing-library/jest-dom": "^5.14.1",
@@ -27,7 +26,7 @@
     "web-vitals": "^2.1.0"
   },
   "devDependencies": {
-    "@trionesdev/designable-core": "0.0.1-beta.2",
+    "@trionesdev/designable-core": "^0.0.2-beta.0",
     "@trionesdev/designable-formily-antd": "^0.0.2-beta.0",
     "@trionesdev/designable-formily-transformer": "^0.0.2-beta.0",
     "@trionesdev/designable-react": "^0.0.2-beta.0",
