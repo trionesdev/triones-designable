@@ -85,10 +85,6 @@ export const ComponentTreeWidget: React.FC<IComponentTreeWidgetProps> =
             dataId[designer?.props?.nodeIdAttrName] = tree.id
         }
 
-        useEffect(()=>{
-            console.log('tree',tree)
-        },[tree])
-
         useEffect(() => {
             GlobalRegistry.registerDesignerBehaviors(props.components)
         }, [])
