@@ -45,9 +45,6 @@ export const ViewPanel: React.FC<IViewPanelProps> = observer((props) => {
       </Viewport>
     )
 
-  useEffect(()=>{
-    console.log('tree',tree)
-  },[tree])
 
   return (
     <div
