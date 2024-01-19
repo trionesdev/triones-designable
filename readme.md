@@ -22,6 +22,12 @@ yarn start
 > 如果想进行调试，则进入对应的组件目录下，执行 ``yarn dev``
 
 
+## 推送私仓
+以coding的私仓为例，添加一个命令,指定私仓地址
+```
+"codingPublish": "lerna publish --registry=https://moensun-npm.pkg.coding.net/npm/moensun/"
+```
+
 #### 互相吹捧，共同进步
 <div style="width: 100%;text-align: center">
 <img src="images/shuque_wx.jpg" width="200px" alt="">
