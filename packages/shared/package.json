@@ -1,6 +1,6 @@
 {
   "name": "@trionesdev/designable-shared",
-  "version": "0.0.2-beta.0",
+  "version": "0.0.4-beta.0",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",

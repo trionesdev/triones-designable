@@ -1,6 +1,6 @@
 {
   "name": "@trionesdev/designable-formily-setters",
-  "version": "0.0.2-beta.0",
+  "version": "0.0.4-beta.0",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -28,10 +28,6 @@
     "father": "^4.3.0"
   },
   "dependencies": {
-    "@trionesdev/designable-core": "^0.0.2-beta.0",
-    "@trionesdev/designable-react": "^0.0.2-beta.0",
-    "@trionesdev/designable-shared": "^0.0.2-beta.0",
-    "@trionesdev/designable-react-settings-form": "^0.0.2-beta.0",
     "@ant-design/icons": "^5.2.5",
     "@formily/antd-v5": "^1.1.0",
     "@formily/core": "^2.2.29",
@@ -39,6 +35,10 @@
     "@formily/reactive": "^2.2.29",
     "@formily/reactive-react": "^2.2.29",
     "@formily/shared": "^2.2.29",
+    "@trionesdev/designable-core": "^0.0.4-beta.0",
+    "@trionesdev/designable-react": "^0.0.4-beta.0",
+    "@trionesdev/designable-react-settings-form": "^0.0.4-beta.0",
+    "@trionesdev/designable-shared": "^0.0.4-beta.0",
     "antd": "^5.8.2",
     "classnames": "^2.3.2",
     "prettier": "^3.0.1",
