@@ -1,7 +1,7 @@
-# @alkaid/designer
+# @trionesdev/designable-formily-transformer
 
-[![NPM version](https://img.shields.io/npm/v/@alkaid/designer.svg?style=flat)](https://npmjs.org/package/@alkaid/designer)
-[![NPM downloads](http://img.shields.io/npm/dm/@alkaid/designer.svg?style=flat)](https://npmjs.org/package/@alkaid/designer)
+[![NPM version](https://img.shields.io/npm/v/@trionesdev/designable-formily-transformer.svg?style=flat)](https://npmjs.org/package/@trionesdev/designable-formily-transformer)
+[![NPM downloads](http://img.shields.io/npm/dm/@trionesdev/designable-formily-transformer.svg?style=flat)](https://npmjs.org/package/@trionesdev/designable-formily-transformer)
 
 ## Install
 
