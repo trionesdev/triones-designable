@@ -1,6 +1,6 @@
 {
   "name": "@trionesdev/designable-flow",
-  "version": "0.0.6-beta.0",
+  "version": "0.0.7-beta.0",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -39,7 +39,7 @@
     "@formily/react": "^2.2.27",
     "@formily/reactive": "^2.2.27",
     "@formily/reactive-react": "^2.2.27",
-    "@trionesdev/designable-react": "^0.0.6-beta.0",
+    "@trionesdev/designable-react": "^0.0.7-beta.0",
     "ahooks": "^3.7.8",
     "antd": "^5.8.0",
     "classnames": "^2.3.2",
