@@ -1,7 +1,7 @@
-# @alkaid/designer
+# @trionesdev/designable-react
 
-[![NPM version](https://img.shields.io/npm/v/@alkaid/designer.svg?style=flat)](https://npmjs.org/package/@alkaid/designer)
-[![NPM downloads](http://img.shields.io/npm/dm/@alkaid/designer.svg?style=flat)](https://npmjs.org/package/@alkaid/designer)
+[![NPM version](https://img.shields.io/npm/v/@trionesdev/designable-react.svg?style=flat)](https://npmjs.org/package/@trionesdev/designable-react)
+[![NPM downloads](http://img.shields.io/npm/dm/@trionesdev/designable-react.svg?style=flat)](https://npmjs.org/package/@trionesdev/designable-react)
 
 ## Install
 
