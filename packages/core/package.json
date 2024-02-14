@@ -1,6 +1,6 @@
 {
   "name": "@trionesdev/designable-core",
-  "version": "0.0.4-beta.0",
+  "version": "0.0.5-beta.0",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -33,7 +33,7 @@
     "@formily/path": "^2.2.29",
     "@formily/reactive": "^2.2.29",
     "@juggle/resize-observer": "^3.4.0",
-    "@trionesdev/designable-shared": "^0.0.4-beta.0"
+    "@trionesdev/designable-shared": "^0.0.5-beta.0"
   },
   "gitHead": "12d35d54f9cd650c7518bd7e5e0fb273f56bc366"
 }
