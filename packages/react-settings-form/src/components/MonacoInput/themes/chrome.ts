@@ -103,4 +103,4 @@ export default {
     'editorCursor.foreground': '#000000',
     'editorWhitespace.foreground': '#B3B3B3F4',
   },
-}
+};

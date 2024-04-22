@@ -1,5 +1,5 @@
-import { createLocales } from '@trionesdev/designable-core'
-import { Card } from './Card'
+import { createLocales } from '@trionesdev/designable-core';
+import { Card } from './Card';
 
 export const ArrayCards = createLocales(Card, {
   'zh-CN': {
@@ -17,4 +17,4 @@ export const ArrayCards = createLocales(Card, {
     addIndex: '색인 추가',
     addOperation: '작업 추가',
   },
-})
+});

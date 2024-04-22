@@ -1,4 +1,4 @@
-import { ISchema } from '@formily/react'
+import { ISchema } from '@formily/react';
 
 export const FormCollapse: ISchema & { CollapsePanel?: ISchema } = {
   type: 'object',
@@ -32,7 +32,7 @@ export const FormCollapse: ISchema & { CollapsePanel?: ISchema } = {
       },
     },
   },
-}
+};
 
 FormCollapse.CollapsePanel = {
   type: 'object',
@@ -58,4 +58,4 @@ FormCollapse.CollapsePanel = {
       'x-component': 'Input',
     },
   },
-}
+};

@@ -47,4 +47,4 @@ export const Space = {
       },
     },
   },
-}
+};

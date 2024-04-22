@@ -1,27 +1,30 @@
-import React from 'react'
-import { useField, Field, observer } from '@formily/react'
-import { usePrefix } from '@trionesdev/designable-react'
-import { Select, Input } from '@formily/antd-v5'
-import { FoldItem } from '../FoldItem'
-import { ColorInput } from '../ColorInput'
-import { BackgroundSizeInput } from '../SizeInput'
-import { BackgroundImageInput } from '../ImageInput'
-import { InputItems } from '../InputItems'
-import cls from 'classnames'
-import {theme} from "antd";
-const {useToken} = theme;
+import React from 'react';
+import { useField, Field, observer } from '@formily/react';
+import { usePrefix } from '@trionesdev/designable-react';
+import { Select, Input } from '@formily/antd-v5';
+import { FoldItem } from '../FoldItem';
+import { ColorInput } from '../ColorInput';
+import { BackgroundSizeInput } from '../SizeInput';
+import { BackgroundImageInput } from '../ImageInput';
+import { InputItems } from '../InputItems';
+import cls from 'classnames';
+import { theme } from 'antd';
+const { useToken } = theme;
 export interface IBackgroundStyleSetterProps {
-  className?: string
-  style?: React.CSSProperties
+  className?: string;
+  style?: React.CSSProperties;
 }
 
 export const BackgroundStyleSetter: React.FC<IBackgroundStyleSetterProps> =
   observer((props) => {
-    const field = useField()
-    const prefix = usePrefix('background-style-setter')
-    const { hashId} = useToken();
+    const field = useField();
+    const prefix = usePrefix('background-style-setter');
+    const { hashId } = useToken();
     return (
-      <FoldItem className={cls(prefix, props.className,hashId)} label={field.title}>
+      <FoldItem
+        className={cls(prefix, props.className, hashId)}
+        label={field.title}
+      >
         <FoldItem.Base>
           <Field
             name="backgroundColor"
@@ -91,5 +94,5 @@ export const BackgroundStyleSetter: React.FC<IBackgroundStyleSetterProps> =
           </InputItems>
         </FoldItem.Extra>
       </FoldItem>
-    )
-  })
+    );
+  });

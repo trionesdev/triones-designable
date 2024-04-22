@@ -1,4 +1,4 @@
-import { ISchema } from '@formily/react'
+import { ISchema } from '@formily/react';
 
 export const Input: ISchema & { TextArea?: ISchema } = {
   type: 'object',
@@ -56,7 +56,7 @@ export const Input: ISchema & { TextArea?: ISchema } = {
       },
     },
   },
-}
+};
 
 Input.TextArea = {
   type: 'object',
@@ -89,4 +89,4 @@ Input.TextArea = {
       'x-component': 'Switch',
     },
   },
-}
+};

@@ -1,5 +1,5 @@
-import {useFlowViewport} from "./useFlowViewport";
+import { useFlowViewport } from './useFlowViewport';
 
 export const useSelectedNode = () => {
-    return useFlowViewport().selectedNode
-}
+  return useFlowViewport().selectedNode;
+};

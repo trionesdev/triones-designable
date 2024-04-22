@@ -1,16 +1,16 @@
-import { ICustomEvent } from '@trionesdev/designable-shared'
-import { AbstractCursorEvent } from './AbstractCursorEvent'
+import { ICustomEvent } from '@trionesdev/designable-shared';
+import { AbstractCursorEvent } from './AbstractCursorEvent';
 
 export class MouseClickEvent
   extends AbstractCursorEvent
   implements ICustomEvent
 {
-  type = 'mouse:click'
+  type = 'mouse:click';
 }
 
 export class MouseDoubleClickEvent
   extends AbstractCursorEvent
   implements ICustomEvent
 {
-  type = 'mouse:dblclick'
+  type = 'mouse:dblclick';
 }

@@ -1,3 +1,3 @@
-export * from './PCSimulator'
-export * from './MobileSimulator'
-export * from './ResponsiveSimulator'
+export * from './PCSimulator';
+export * from './MobileSimulator';
+export * from './ResponsiveSimulator';

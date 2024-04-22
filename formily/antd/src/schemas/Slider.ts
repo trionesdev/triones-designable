@@ -1,5 +1,5 @@
-import { GlobalRegistry } from '@trionesdev/designable-core'
-import { ISchema } from '@formily/react'
+import { GlobalRegistry } from '@trionesdev/designable-core';
+import { ISchema } from '@formily/react';
 
 export const Slider: ISchema = {
   type: 'object',
@@ -76,4 +76,4 @@ export const Slider: ISchema = {
       },
     },
   },
-}
+};

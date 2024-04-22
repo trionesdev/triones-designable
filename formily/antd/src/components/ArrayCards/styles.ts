@@ -1,13 +1,13 @@
-import {GlobalToken} from "antd";
-import {CSSInterpolation} from "@ant-design/cssinjs";
+import { GlobalToken } from 'antd';
+import { CSSInterpolation } from '@ant-design/cssinjs';
 
 export const genArrayCardsStyle = (
-    prefixCls: string,
-    token: GlobalToken,
+  prefixCls: string,
+  token: GlobalToken,
 ): CSSInterpolation => {
-    return  {
-        [`.${prefixCls}`]:{
-            backgroundColor: token.colorBgContainer
-        }
-    }
-}
+  return {
+    [`.${prefixCls}`]: {
+      backgroundColor: token.colorBgContainer,
+    },
+  };
+};

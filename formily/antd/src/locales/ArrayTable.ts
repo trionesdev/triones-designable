@@ -70,7 +70,7 @@ export const ArrayTable = {
       },
     },
   },
-}
+};
 
 export const ArrayTableColumn = {
   'zh-CN': {
@@ -127,4 +127,4 @@ export const ArrayTableColumn = {
       },
     },
   },
-}
+};

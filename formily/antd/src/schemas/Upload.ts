@@ -1,4 +1,4 @@
-import { ISchema } from '@formily/react'
+import { ISchema } from '@formily/react';
 
 export const Upload: ISchema & { Dragger?: ISchema } = {
   type: 'object',
@@ -98,6 +98,6 @@ export const Upload: ISchema & { Dragger?: ISchema } = {
       'x-component': 'Switch',
     },
   },
-}
+};
 
-Upload.Dragger = Upload
+Upload.Dragger = Upload;

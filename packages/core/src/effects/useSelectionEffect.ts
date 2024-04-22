@@ -1,68 +1,68 @@
-import { Engine, CursorStatus } from '../models'
-import { MouseClickEvent } from '../events'
-import { KeyCode, Point } from '@trionesdev/designable-shared'
+import { Engine, CursorStatus } from '../models';
+import { MouseClickEvent } from '../events';
+import { KeyCode, Point } from '@trionesdev/designable-shared';
 
 export const useSelectionEffect = (engine: Engine) => {
   engine.subscribeTo(MouseClickEvent, (event) => {
-    if (engine.cursor.status !== CursorStatus.Normal) return
-    const target: HTMLElement = event.data.target as any
+    if (engine.cursor.status !== CursorStatus.Normal) return;
+    const target: HTMLElement = event.data.target as any;
     const el = target?.closest?.(`
       *[${engine.props.nodeIdAttrName}],
       *[${engine.props.outlineNodeIdAttrName}]
-    `)
+    `);
     const isHelpers = target?.closest?.(
-      `*[${engine.props.nodeSelectionIdAttrName}]`
-    )
+      `*[${engine.props.nodeSelectionIdAttrName}]`,
+    );
     const currentWorkspace =
-      event.context?.workspace ?? engine.workbench.activeWorkspace
-    if (!currentWorkspace) return
+      event.context?.workspace ?? engine.workbench.activeWorkspace;
+    if (!currentWorkspace) return;
     if (!el?.getAttribute) {
-      const point = new Point(event.data.topClientX, event.data.topClientY)
-      const operation = currentWorkspace.operation
-      const viewport = currentWorkspace.viewport
-      const outline = currentWorkspace.outline
-      const isInViewport = viewport.isPointInViewport(point, false)
-      const isInOutline = outline.isPointInViewport(point, false)
-      if (isHelpers) return
+      const point = new Point(event.data.topClientX, event.data.topClientY);
+      const operation = currentWorkspace.operation;
+      const viewport = currentWorkspace.viewport;
+      const outline = currentWorkspace.outline;
+      const isInViewport = viewport.isPointInViewport(point, false);
+      const isInOutline = outline.isPointInViewport(point, false);
+      if (isHelpers) return;
       if (isInViewport || isInOutline) {
-        const selection = operation.selection
-        const tree = operation.tree
-        selection.select(tree)
+        const selection = operation.selection;
+        const tree = operation.tree;
+        selection.select(tree);
       }
-      return
+      return;
     }
-    const nodeId = el.getAttribute(engine.props.nodeIdAttrName)
-    const structNodeId = el.getAttribute(engine.props.outlineNodeIdAttrName)
-    const operation = currentWorkspace.operation
-    const selection = operation.selection
-    const tree = operation.tree
-    const node = tree.findById(nodeId || structNodeId)
+    const nodeId = el.getAttribute(engine.props.nodeIdAttrName);
+    const structNodeId = el.getAttribute(engine.props.outlineNodeIdAttrName);
+    const operation = currentWorkspace.operation;
+    const selection = operation.selection;
+    const tree = operation.tree;
+    const node = tree.findById(nodeId || structNodeId);
     if (node) {
-      engine.keyboard.requestClean()
+      engine.keyboard.requestClean();
       if (
         engine.keyboard.isKeyDown(KeyCode.Meta) ||
         engine.keyboard.isKeyDown(KeyCode.Control)
       ) {
         if (selection.has(node)) {
           if (selection.selected.length > 1) {
-            selection.remove(node)
+            selection.remove(node);
           }
         } else {
-          selection.add(node)
+          selection.add(node);
         }
       } else if (engine.keyboard.isKeyDown(KeyCode.Shift)) {
         if (selection.has(node)) {
           if (selection.selected.length > 1) {
-            selection.remove(node)
+            selection.remove(node);
           }
         } else {
-          selection.crossAddTo(node)
+          selection.crossAddTo(node);
         }
       } else {
-        selection.select(node)
+        selection.select(node);
       }
     } else {
-      selection.select(tree)
+      selection.select(tree);
     }
-  })
-}
+  });
+};

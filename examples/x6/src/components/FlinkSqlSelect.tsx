@@ -1,3 +1,3 @@
 export const FlinkSqlSelect = () => {
-    return <>s</>
-}
+  return <>s</>;
+};

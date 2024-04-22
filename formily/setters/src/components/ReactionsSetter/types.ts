@@ -1,13 +1,13 @@
 export interface IReaction {
   dependencies?: {
-    [key: string]: string
-  }
+    [key: string]: string;
+  };
   fulfill?: {
     state?: {
-      [key: string]: string
-    }
+      [key: string]: string;
+    };
     schema?: {
-      [key: string]: string
-    }
-  }
+      [key: string]: string;
+    };
+  };
 }

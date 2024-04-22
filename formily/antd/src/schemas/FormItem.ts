@@ -1,4 +1,4 @@
-import { ISchema } from '@formily/react'
+import { ISchema } from '@formily/react';
 
 export const FormItem: ISchema = {
   type: 'object',
@@ -138,4 +138,4 @@ export const FormItem: ISchema = {
       },
     },
   },
-}
+};

@@ -1,4 +1,4 @@
-import { ISchema } from '@formily/react'
+import { ISchema } from '@formily/react';
 
 export const Text: ISchema = {
   type: 'object',
@@ -18,4 +18,4 @@ export const Text: ISchema = {
       enum: ['h1', 'h2', 'h3', 'p', 'normal'],
     },
   },
-}
+};

@@ -20,7 +20,7 @@ export const GlobalHelper = `
  * 
  * https://react.formilyjs.org/api/shared/schema#%E5%86%85%E7%BD%AE%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BD%9C%E7%94%A8%E5%9F%9F
  **/
-`
+`;
 
 export const BooleanHelper = `
 /** 
@@ -66,7 +66,7 @@ $deps.VariableName > 100
 !$deps.VariableName
 
 ${GlobalHelper}
-`
+`;
 
 export const DisplayHelper = `
 /** 
@@ -112,7 +112,7 @@ $deps.VariableName > 100 ? 'visible' : 'hidden'
 !$deps.VariableName ? 'visible' : 'none'
 
 ${GlobalHelper}
-`
+`;
 
 export const PatternHelper = `
 /** 
@@ -158,7 +158,7 @@ $deps.VariableName > 100 ? 'editable' : 'readOnly'
 !$deps.VariableName ? 'editable' : 'disabled'
 
 ${GlobalHelper}
-`
+`;
 
 export const StringHelper = `
 /** 
@@ -176,7 +176,7 @@ export const StringHelper = `
 $deps.VariableName === 'TARGET_VALUE' ? 'Associated String Text' : ''
 
 ${GlobalHelper}
-`
+`;
 
 export const AnyHelper = `
 /** 
@@ -245,7 +245,7 @@ $deps.VariableName + 'Compose String'
 !$deps.VariableName
 
 ${GlobalHelper}
-`
+`;
 
 export const DataSourceHelper = `
 /** 
@@ -270,7 +270,7 @@ export const DataSourceHelper = `
 ]
 
 ${GlobalHelper}
-`
+`;
 
 export const ComponentPropsHelper = `
 /** 
@@ -292,7 +292,7 @@ export const ComponentPropsHelper = `
 }
 
 ${GlobalHelper}
-`
+`;
 
 export const DecoratorPropsHelper = `
 /** 
@@ -314,7 +314,7 @@ export const DecoratorPropsHelper = `
 }
 
 ${GlobalHelper}
-`
+`;
 
 export const FulfillRunHelper = `
 /** 
@@ -390,4 +390,4 @@ $effect(()=>{
 },[ state.keyword, $deps.VariableName ])
 
 ${GlobalHelper}
-`
+`;

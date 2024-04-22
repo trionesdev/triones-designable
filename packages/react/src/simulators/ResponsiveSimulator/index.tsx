@@ -1,152 +1,155 @@
-import React, { useRef } from 'react'
-import { observer } from '@formily/reactive-react'
+import React, { useRef } from 'react';
+import { observer } from '@formily/reactive-react';
 import {
   Engine,
   DragStartEvent,
   DragMoveEvent,
   DragStopEvent,
   CursorDragType,
-} from '@trionesdev/designable-core'
+} from '@trionesdev/designable-core';
 import {
   calcSpeedFactor,
   createUniformSpeedAnimation,
-} from '@trionesdev/designable-shared'
-import {useScreen, useDesigner, usePrefix, useCssInJs} from '../../hooks'
-import { IconWidget } from '../../widgets'
-import { ResizeHandle, ResizeHandleType } from './handle'
+} from '@trionesdev/designable-shared';
+import { useScreen, useDesigner, usePrefix, useCssInJs } from '../../hooks';
+import { IconWidget } from '../../widgets';
+import { ResizeHandle, ResizeHandleType } from './handle';
 
-import cls from 'classnames'
+import cls from 'classnames';
 // import './styles.less'
-import {genResponsiveSimulatorStyle} from "./styles";
+import { genResponsiveSimulatorStyle } from './styles';
 
 const useResizeEffect = (
   container: React.MutableRefObject<HTMLDivElement>,
   content: React.MutableRefObject<HTMLDivElement>,
-  engine: Engine
+  engine: Engine,
 ) => {
-  let status: ResizeHandleType = null
-  let startX = 0
-  let startY = 0
-  let startWidth = 0
-  let startHeight = 0
-  let animationX = null
-  let animationY = null
+  let status: ResizeHandleType = null;
+  let startX = 0;
+  let startY = 0;
+  let startWidth = 0;
+  let startHeight = 0;
+  let animationX = null;
+  let animationY = null;
 
   const getStyle = (status: ResizeHandleType) => {
-    if (status === ResizeHandleType.Resize) return 'nwse-resize'
-    if (status === ResizeHandleType.ResizeHeight) return 'ns-resize'
-    if (status === ResizeHandleType.ResizeWidth) return 'ew-resize'
-  }
+    if (status === ResizeHandleType.Resize) return 'nwse-resize';
+    if (status === ResizeHandleType.ResizeHeight) return 'ns-resize';
+    if (status === ResizeHandleType.ResizeWidth) return 'ew-resize';
+  };
 
   const updateSize = (deltaX: number, deltaY: number) => {
-    const containerRect = container.current?.getBoundingClientRect()
+    const containerRect = container.current?.getBoundingClientRect();
     if (status === ResizeHandleType.Resize) {
-      engine.screen.setSize(startWidth + deltaX, startHeight + deltaY)
+      engine.screen.setSize(startWidth + deltaX, startHeight + deltaY);
       container.current.scrollBy(
         containerRect.width + deltaX,
-        containerRect.height + deltaY
-      )
+        containerRect.height + deltaY,
+      );
     } else if (status === ResizeHandleType.ResizeHeight) {
-      engine.screen.setSize(startWidth, startHeight + deltaY)
+      engine.screen.setSize(startWidth, startHeight + deltaY);
       container.current.scrollBy(
         container.current.scrollLeft,
-        containerRect.height + deltaY
-      )
+        containerRect.height + deltaY,
+      );
     } else if (status === ResizeHandleType.ResizeWidth) {
-      engine.screen.setSize(startWidth + deltaX, startHeight)
+      engine.screen.setSize(startWidth + deltaX, startHeight);
       container.current.scrollBy(
         containerRect.width + deltaX,
-        container.current.scrollTop
-      )
+        container.current.scrollTop,
+      );
     }
-  }
+  };
 
   engine.subscribeTo(DragStartEvent, (e) => {
-    if (!engine.workbench.currentWorkspace?.viewport) return
-    const target = e.data.target as HTMLElement
+    if (!engine.workbench.currentWorkspace?.viewport) return;
+    const target = e.data.target as HTMLElement;
     if (target?.closest(`*[${engine.props.screenResizeHandlerAttrName}]`)) {
-      const rect = content.current?.getBoundingClientRect()
-      if (!rect) return
+      const rect = content.current?.getBoundingClientRect();
+      if (!rect) return;
       status = target.getAttribute(
-        engine.props.screenResizeHandlerAttrName
-      ) as ResizeHandleType
-      engine.cursor.setStyle(getStyle(status))
-      startX = e.data.topClientX
-      startY = e.data.topClientY
-      startWidth = rect.width
-      startHeight = rect.height
-      engine.cursor.setDragType(CursorDragType.Resize)
+        engine.props.screenResizeHandlerAttrName,
+      ) as ResizeHandleType;
+      engine.cursor.setStyle(getStyle(status));
+      startX = e.data.topClientX;
+      startY = e.data.topClientY;
+      startWidth = rect.width;
+      startHeight = rect.height;
+      engine.cursor.setDragType(CursorDragType.Resize);
     }
-  })
+  });
   engine.subscribeTo(DragMoveEvent, (e) => {
-    if (!engine.workbench.currentWorkspace?.viewport) return
-    if (!status) return
-    const deltaX = e.data.topClientX - startX
-    const deltaY = e.data.topClientY - startY
-    const containerRect = container.current?.getBoundingClientRect()
-    const distanceX = Math.floor(containerRect.right - e.data.topClientX)
-    const distanceY = Math.floor(containerRect.bottom - e.data.topClientY)
-    const factorX = calcSpeedFactor(distanceX, 10)
-    const factorY = calcSpeedFactor(distanceY, 10)
-    updateSize(deltaX, deltaY)
+    if (!engine.workbench.currentWorkspace?.viewport) return;
+    if (!status) return;
+    const deltaX = e.data.topClientX - startX;
+    const deltaY = e.data.topClientY - startY;
+    const containerRect = container.current?.getBoundingClientRect();
+    const distanceX = Math.floor(containerRect.right - e.data.topClientX);
+    const distanceY = Math.floor(containerRect.bottom - e.data.topClientY);
+    const factorX = calcSpeedFactor(distanceX, 10);
+    const factorY = calcSpeedFactor(distanceY, 10);
+    updateSize(deltaX, deltaY);
     if (distanceX <= 10) {
       if (!animationX) {
         animationX = createUniformSpeedAnimation(1000 * factorX, (delta) => {
-          updateSize(deltaX + delta, deltaY)
-        })
+          updateSize(deltaX + delta, deltaY);
+        });
       }
     } else {
       if (animationX) {
-        animationX = animationX()
+        animationX = animationX();
       }
     }
 
     if (distanceY <= 10) {
       if (!animationY) {
         animationY = createUniformSpeedAnimation(300 * factorY, (delta) => {
-          updateSize(deltaX, deltaY + delta)
-        })
+          updateSize(deltaX, deltaY + delta);
+        });
       }
     } else {
       if (animationY) {
-        animationY = animationY()
+        animationY = animationY();
       }
     }
-  })
+  });
   engine.subscribeTo(DragStopEvent, () => {
-    if (!status) return
-    status = null
-    engine.cursor.setStyle('')
-    engine.cursor.setDragType(CursorDragType.Move)
+    if (!status) return;
+    status = null;
+    engine.cursor.setStyle('');
+    engine.cursor.setDragType(CursorDragType.Move);
     if (animationX) {
-      animationX = animationX()
+      animationX = animationX();
     }
     if (animationY) {
-      animationY = animationY()
+      animationY = animationY();
     }
-  })
-}
+  });
+};
 
 export interface IResponsiveSimulatorProps
   extends React.HTMLAttributes<HTMLDivElement> {
-  className?: string
-  style?: React.CSSProperties
+  className?: string;
+  style?: React.CSSProperties;
 }
 
 export const ResponsiveSimulator: React.FC<IResponsiveSimulatorProps> =
   observer((props) => {
-    const container = useRef<HTMLDivElement>()
-    const content = useRef<HTMLDivElement>()
-    const prefix = usePrefix('responsive-simulator')
-    const {hashId,wrapSSR} = useCssInJs({prefix,styleFun:genResponsiveSimulatorStyle})
-    const screen = useScreen()
+    const container = useRef<HTMLDivElement>();
+    const content = useRef<HTMLDivElement>();
+    const prefix = usePrefix('responsive-simulator');
+    const { hashId, wrapSSR } = useCssInJs({
+      prefix,
+      styleFun: genResponsiveSimulatorStyle,
+    });
+    const screen = useScreen();
     useDesigner((engine) => {
-      useResizeEffect(container, content, engine)
-    })
+      useResizeEffect(container, content, engine);
+    });
     return wrapSSR(
       <div
         {...props}
-        className={cls(prefix, props.className,hashId)}
+        className={cls(prefix, props.className, hashId)}
         style={{
           height: '100%',
           width: '100%',
@@ -190,6 +193,6 @@ export const ResponsiveSimulator: React.FC<IResponsiveSimulatorProps> =
             </ResizeHandle>
           </div>
         </div>
-      </div>
-    )
-  })
+      </div>,
+    );
+  });

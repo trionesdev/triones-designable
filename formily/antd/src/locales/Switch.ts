@@ -8,4 +8,4 @@ export const Switch = {
   'ko-KR': {
     title: '스위치',
   },
-}
+};

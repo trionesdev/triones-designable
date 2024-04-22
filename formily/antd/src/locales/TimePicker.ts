@@ -1,5 +1,5 @@
-import { createLocales } from '@trionesdev/designable-core'
-import { DatePicker } from './DatePicker'
+import { createLocales } from '@trionesdev/designable-core';
+import { DatePicker } from './DatePicker';
 
 export const TimePicker = createLocales(DatePicker, {
   'zh-CN': {
@@ -59,7 +59,7 @@ export const TimePicker = createLocales(DatePicker, {
       },
     },
   },
-})
+});
 
 export const TimeRangePicker = createLocales(TimePicker, {
   'zh-CN': {
@@ -71,4 +71,4 @@ export const TimeRangePicker = createLocales(TimePicker, {
   'ko-KR': {
     title: '시간 범위',
   },
-})
+});

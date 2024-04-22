@@ -1,3 +1,3 @@
 export const FormilyDemo = () => {
-return <></>
-}
+  return <></>;
+};

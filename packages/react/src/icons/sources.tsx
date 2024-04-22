@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-export const InputSource:React.JSX.Element  = (
+export const InputSource: React.JSX.Element = (
   <svg viewBox="0 0 1424 1024">
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <rect
@@ -19,9 +19,9 @@ export const InputSource:React.JSX.Element  = (
       ></path>
     </g>
   </svg>
-)
+);
 
-export const TextAreaSource:React.JSX.Element  = (
+export const TextAreaSource: React.JSX.Element = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
     <path
       d="M944,0 C988.18278,0 1024,35.81722 1024,80 L1024,944 C1024,988.18278 988.18278,1024 944,1024 L80,1024 C35.81722,1024 0,988.18278 0,944 L0,80 C0,35.81722 35.81722,0 80,0 L944,0 Z M944,20 L80,20 C47.1942859,20 20.5378857,46.328343 20,79.0077903 L20,80 L20,944 C20,976.805714 46.328343,1003.46211 79.0077903,1004 L80,1004 L944,1004 C976.805714,1004 1003.46211,977.671657 1004,944.99221 L1004,944 L1004,80 C1004,47.1942859 977.671657,20.5378857 944.99221,20 L944,20 Z"
@@ -33,9 +33,9 @@ export const TextAreaSource:React.JSX.Element  = (
       fill="var(--dn-brand-color)"
     ></path>
   </g>
-)
+);
 
-export const SelectSource:React.JSX.Element  = (
+export const SelectSource: React.JSX.Element = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
     <path
       d="M944,0 C988.18278,0 1024,35.81722 1024,80 L1024,944 C1024,988.18278 988.18278,1024 944,1024 L80,1024 C35.81722,1024 0,988.18278 0,944 L0,80 C0,35.81722 35.81722,0 80,0 L944,0 Z M944,20 L80,20 C47.1942859,20 20.5378857,46.328343 20,79.0077903 L20,80 L20,944 C20,976.805714 46.328343,1003.46211 79.0077903,1004 L80,1004 L944,1004 C976.805714,1004 1003.46211,977.671657 1004,944.99221 L1004,944 L1004,80 C1004,47.1942859 977.671657,20.5378857 944.99221,20 L944,20 Z"
@@ -84,8 +84,8 @@ export const SelectSource:React.JSX.Element  = (
       rx="10"
     ></rect>
   </g>
-)
-export const TreeSelectSource:React.JSX.Element  = (
+);
+export const TreeSelectSource: React.JSX.Element = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
     <path
       d="M944,0 C988.18278,0 1024,35.81722 1024,80 L1024,944 C1024,988.18278 988.18278,1024 944,1024 L80,1024 C35.81722,1024 0,988.18278 0,944 L0,80 C0,35.81722 35.81722,0 80,0 L944,0 Z M944,20 L80,20 C47.1942859,20 20.5378857,46.328343 20,79.0077903 L20,80 L20,944 C20,976.805714 46.328343,1003.46211 79.0077903,1004 L80,1004 L944,1004 C976.805714,1004 1003.46211,977.671657 1004,944.99221 L1004,944 L1004,80 C1004,47.1942859 977.671657,20.5378857 944.99221,20 L944,20 Z"
@@ -147,9 +147,9 @@ export const TreeSelectSource:React.JSX.Element  = (
       rx="10"
     ></rect>
   </g>
-)
+);
 
-export const CascaderSource:React.JSX.Element  = (
+export const CascaderSource: React.JSX.Element = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
     <path
       d="M944,0 C988.18278,0 1024,35.81722 1024,80 L1024,944 C1024,988.18278 988.18278,1024 944,1024 L80,1024 C35.81722,1024 0,988.18278 0,944 L0,80 C0,35.81722 35.81722,0 80,0 L944,0 Z M944,20 L80,20 C47.1942859,20 20.5378857,46.328343 20,79.0077903 L20,80 L20,944 C20,976.805714 46.328343,1003.46211 79.0077903,1004 L80,1004 L944,1004 C976.805714,1004 1003.46211,977.671657 1004,944.99221 L1004,944 L1004,80 C1004,47.1942859 977.671657,20.5378857 944.99221,20 L944,20 Z"
@@ -212,9 +212,9 @@ export const CascaderSource:React.JSX.Element  = (
       rx="10"
     ></rect>
   </g>
-)
+);
 
-export const RadioGroupSource:React.JSX.Element  = (
+export const RadioGroupSource: React.JSX.Element = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
     <path
       d="M182,172 C259.319865,172 322,234.680135 322,312 C322,389.319865 259.319865,452 182,452 C104.680135,452 42,389.319865 42,312 C42,234.680135 104.680135,172 182,172 Z M182,192 C115.72583,192 62,245.72583 62,312 C62,378.27417 115.72583,432 182,432 C248.27417,432 302,378.27417 302,312 C302,245.72583 248.27417,192 182,192 Z"
@@ -283,9 +283,9 @@ export const RadioGroupSource:React.JSX.Element  = (
       rx="10"
     ></rect>
   </g>
-)
+);
 
-export const CheckboxGroupSource:React.JSX.Element  = (
+export const CheckboxGroupSource: React.JSX.Element = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
     <path
       d="M282,162 L82,162 C54.3857625,162 32,184.385763 32,212 L32,412 C32,439.614237 54.3857625,462 82,462 L282,462 C309.614237,462 332,439.614237 332,412 L332,212 C332,184.385763 309.614237,162 282,162 Z M82,182 L282,182 C298.568542,182 312,195.431458 312,212 L312,412 C312,428.568542 298.568542,442 282,442 L82,442 C65.4314575,442 52,428.568542 52,412 L52,212 C52,195.431458 65.4314575,182 82,182 Z"
@@ -321,9 +321,9 @@ export const CheckboxGroupSource:React.JSX.Element  = (
       fillRule="nonzero"
     ></path>
   </g>
-)
+);
 
-export const SliderSource:React.JSX.Element  = (
+export const SliderSource: React.JSX.Element = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
     <rect fill="#999999" x="289" y="304" width="735" height="20" rx="10"></rect>
     <rect fill="#999999" x="0" y="702" width="531" height="20" rx="10"></rect>
@@ -339,9 +339,9 @@ export const SliderSource:React.JSX.Element  = (
       fillRule="nonzero"
     ></path>
   </g>
-)
+);
 
-export const RateSource:React.JSX.Element  = (
+export const RateSource: React.JSX.Element = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
     <path
       d="M487.286155,34.2736908 L320.815283,276.187129 C319.518769,278.071208 317.615604,279.453938 315.423095,280.104784 L33.9074136,363.672628 C30.3952048,364.715226 27.103676,366.392344 24.1957719,368.620957 C11.0451673,378.699558 8.55481647,397.53055 18.6334176,410.681154 L197.264441,643.759726 C198.655661,645.574996 199.382605,647.8123 199.324074,650.098623 L191.808687,943.65983 C191.714925,947.32232 192.29282,950.971008 193.513765,954.425268 C199.035324,970.046695 216.175101,978.234256 231.796528,972.712697 L508.667444,874.849738 C510.82378,874.087558 513.17622,874.087558 515.332556,874.849738 L792.203472,972.712697 C795.657733,973.933642 799.30642,974.511537 802.96891,974.417775 C819.532026,973.993747 832.615341,960.222946 832.191313,943.65983 L824.675926,650.098623 C824.617395,647.8123 825.344339,645.574996 826.735559,643.759726 L1005.36658,410.681154 C1007.5952,407.77325 1009.27231,404.481721 1010.31491,400.969512 C1015.02992,385.086021 1005.97608,368.387637 990.092586,363.672628 L708.576905,280.104784 C706.384396,279.453938 704.481231,278.071208 703.184717,276.187129 L536.713845,34.2736908 C534.636943,31.2555623 532.024771,28.6433902 529.006642,26.5664883 C515.357563,17.1739791 496.678664,20.6246113 487.286155,34.2736908 Z M517.668881,43.0423848 C518.674924,43.7346854 519.545648,44.6054094 520.237948,45.6114523 L686.708821,287.524891 C690.598363,293.177126 696.307856,297.325316 702.885386,299.277853 L984.401066,382.845698 C989.695563,384.417367 992.713511,389.983495 991.141841,395.277992 C990.794309,396.448729 990.235269,397.545905 989.492398,398.515206 L810.861375,631.593778 C806.687715,637.039589 804.506882,643.751501 804.682477,650.610471 L812.197864,944.171677 C812.339206,949.692716 807.978101,954.282983 802.457063,954.430326 C801.236233,954.45558 800.020004,954.262948 798.868583,953.855966 L521.997667,855.993007 C515.528661,853.706468 508.471339,853.706468 502.002333,855.993007 L225.131417,953.855966 C219.924274,955.696486 214.211015,952.967299 212.370496,947.760157 C211.963514,946.608737 211.770882,945.392507 211.802136,944.171677 L219.317523,650.610471 C219.493118,643.751501 217.312285,637.039589 213.138625,631.593778 L34.5076015,398.515206 C31.1480678,394.131671 31.9781848,387.854674 36.3617196,384.49514 C37.331021,383.75227 38.4281973,383.19323 39.5989335,382.845698 L321.114614,299.277853 C327.692144,297.325316 333.401637,293.177126 337.291179,287.524891 L503.762052,45.6114523 C506.83698,41.1430036 512.897807,39.9537114 517.42357,42.8787518 L517.668881,43.0423848 Z"
@@ -358,7 +358,7 @@ export const RateSource:React.JSX.Element  = (
       rx="10"
     ></rect>
   </g>
-)
+);
 export const DatePickerSource = {
   light: (
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -672,7 +672,7 @@ export const DatePickerSource = {
       ></rect>
     </g>
   ),
-}
+};
 
 export const DateRangePickerSource = {
   light: (
@@ -987,9 +987,9 @@ export const DateRangePickerSource = {
       ></path>
     </g>
   ),
-}
+};
 
-export const TimePickerSource:React.JSX.Element  = (
+export const TimePickerSource: React.JSX.Element = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
     <path
       d="M692,67.4415588 C697.522847,67.4415588 702,71.9187113 702,77.4415588 C702,82.8707987 697.673329,87.2894905 692.279905,87.437717 L692,87.4415588 L352,87.4415588 C346.57076,87.4415588 342.152068,91.7682296 342.003842,97.1616539 L342,97.4415588 L342,437.441559 C342,442.964406 337.522847,447.441559 332,447.441559 C326.57076,447.441559 322.152068,443.114888 322.003842,437.721464 L322,437.441559 L322,97.4415588 C322,81.0387017 335.164172,67.7105016 351.503895,67.4455779 L352,67.4415588 L692,67.4415588 Z"
@@ -1020,9 +1020,9 @@ export const TimePickerSource:React.JSX.Element  = (
     <circle fill="#999999" cx="512" cy="452" r="20"></circle>
     <circle fill="#999999" cx="512" cy="572" r="20"></circle>
   </g>
-)
+);
 
-export const TimeRangePickerSource:React.JSX.Element  = (
+export const TimeRangePickerSource: React.JSX.Element = (
   <svg viewBox="0 0 1424 1024">
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <path
@@ -1075,9 +1075,9 @@ export const TimeRangePickerSource:React.JSX.Element  = (
       <circle fill="#999999" cx="1080.84641" cy="564.1" r="12.8"></circle>
     </g>
   </svg>
-)
+);
 
-export const NumberPickerSource:React.JSX.Element  = (
+export const NumberPickerSource: React.JSX.Element = (
   <svg viewBox="0 0 1424 1024">
     <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <path
@@ -1122,7 +1122,7 @@ export const NumberPickerSource:React.JSX.Element  = (
       ></path>
     </g>
   </svg>
-)
+);
 
 export const PasswordSource = {
   light: (
@@ -1175,9 +1175,9 @@ export const PasswordSource = {
       </g>
     </svg>
   ),
-}
+};
 
-export const TransferSource:React.JSX.Element  = (
+export const TransferSource: React.JSX.Element = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
     <path
       d="M322,0 C370.127481,0 409.21135,38.8191143 409.988214,86.9753912 L410,88.4375 L410,218.839844 C410,224.362691 405.522847,228.839844 400,228.839844 C394.57076,228.839844 390.152068,224.513173 390.003842,219.119749 L390,218.839844 L390,88.4375 C390,51.006125 360.148902,20.6132787 323.124135,20.009165 L322,20 L88,20 C50.8326247,20 20.6098525,50.0185325 20.0091138,87.3053938 L20,88.4375 L20,935.5625 C20,972.993875 49.8510984,1003.38672 86.875865,1003.99084 L88,1004 L322,1004 C359.167375,1004 389.390148,973.981468 389.990886,936.694606 L390,935.5625 L390,811.042969 C390,805.520121 394.477153,801.042969 400,801.042969 C405.42924,801.042969 409.847932,805.36964 410,810.763064 L410,811.042969 L410,935.5625 C410,983.904398 371.397407,1023.20693 323.45561,1023.98815 L322,1024 L88,1024 C39.8725186,1024 0.788650371,985.180886 0.0117857556,937.024609 L0,935.5625 L0,88.4375 C0,40.0956016 38.6025934,0.793068282 86.5443898,0.0118518055 L88,0 L322,0 Z"
@@ -1221,9 +1221,9 @@ export const TransferSource:React.JSX.Element  = (
       transform="translate(311.000000, 649.000000) scale(-1, 1) rotate(45.000000) translate(-311.000000, -649.000000) "
     ></path>
   </g>
-)
+);
 
-export const UploadSource:React.JSX.Element  = (
+export const UploadSource: React.JSX.Element = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
     <rect
       fill="#999999"
@@ -1246,7 +1246,7 @@ export const UploadSource:React.JSX.Element  = (
       fillRule="nonzero"
     ></path>
   </g>
-)
+);
 
 export const UploadDraggerSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -1286,7 +1286,7 @@ export const UploadDraggerSource = (
       fillRule="nonzero"
     ></path>
   </g>
-)
+);
 
 export const SwitchSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -1301,7 +1301,7 @@ export const SwitchSource = (
       fillRule="nonzero"
     ></path>
   </g>
-)
+);
 
 export const ObjectSource = (
   <svg viewBox="0 0 1424 1024">
@@ -1335,7 +1335,7 @@ export const ObjectSource = (
       </g>
     </g>
   </svg>
-)
+);
 
 export const CardSource = {
   light: (
@@ -1418,7 +1418,7 @@ export const CardSource = {
       ></rect>
     </g>
   ),
-}
+};
 
 export const GridSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -1482,7 +1482,7 @@ export const GridSource = (
       rx="10"
     ></rect>
   </g>
-)
+);
 
 export const FormLayoutSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -1555,7 +1555,7 @@ export const FormLayoutSource = (
       rx="10"
     ></rect>
   </g>
-)
+);
 
 export const SpaceSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -1580,7 +1580,7 @@ export const SpaceSource = (
       fillRule="nonzero"
     ></path>
   </g>
-)
+);
 
 export const TabSource = {
   light: (
@@ -1717,7 +1717,7 @@ export const TabSource = {
       ></rect>
     </g>
   ),
-}
+};
 
 export const CollapseSource = {
   light: (
@@ -1846,7 +1846,7 @@ export const CollapseSource = {
       ></rect>
     </g>
   ),
-}
+};
 
 export const ArrayCardsSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -1897,7 +1897,7 @@ export const ArrayCardsSource = (
       rx="10"
     ></rect>
   </g>
-)
+);
 
 export const ArrayTableSource = {
   light: (
@@ -2072,7 +2072,7 @@ export const ArrayTableSource = {
       ></rect>
     </g>
   ),
-}
+};
 
 export const ButtonSource = (
   <svg viewBox="0 0 1424 1024">
@@ -2102,7 +2102,7 @@ export const ButtonSource = (
       ></rect>
     </g>
   </svg>
-)
+);
 
 export const MediaSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -2127,7 +2127,7 @@ export const MediaSource = (
       rx="10"
     ></rect>
   </g>
-)
+);
 
 export const NotificationSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -2180,7 +2180,7 @@ export const NotificationSource = (
       fillRule="nonzero"
     ></path>
   </g>
-)
+);
 
 export const ImageSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -2200,7 +2200,7 @@ export const ImageSource = (
       fillRule="nonzero"
     ></path>
   </g>
-)
+);
 
 export const TextSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -2242,7 +2242,7 @@ export const TextSource = (
       transform="translate(532.221771, 725.196578) rotate(45.000000) translate(-532.221771, -725.196578) "
     ></path>
   </g>
-)
+);
 
 export const CreateButtonSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -2275,7 +2275,7 @@ export const CreateButtonSource = (
       rx="10"
     ></rect>
   </g>
-)
+);
 
 export const DeleteButtonSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -2311,7 +2311,7 @@ export const DeleteButtonSource = (
       ></rect>
     </g>
   </g>
-)
+);
 
 export const SubmitButtonSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -2331,7 +2331,7 @@ export const SubmitButtonSource = (
       fillRule="nonzero"
     ></path>
   </g>
-)
+);
 
 export const ResetButtonSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -2352,7 +2352,7 @@ export const ResetButtonSource = (
       transform="translate(332.000000, 490.213203) rotate(225.000000) translate(-332.000000, -490.213203) "
     ></path>
   </g>
-)
+);
 
 export const UpdateButtonSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -2378,7 +2378,7 @@ export const UpdateButtonSource = (
       transform="translate(512.000000, 652.000000) scale(1, -1) translate(-512.000000, -652.000000) "
     ></path>
   </g>
-)
+);
 
 export const OpenPageButtonSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -2404,7 +2404,7 @@ export const OpenPageButtonSource = (
       fillRule="nonzero"
     ></path>
   </g>
-)
+);
 
 export const CustomButtonSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -2445,7 +2445,7 @@ export const CustomButtonSource = (
       transform="translate(573.920412, 596.207209) scale(-1, 1) rotate(675.000000) translate(-573.920412, -596.207209) "
     ></path>
   </g>
-)
+);
 
 export const ConfirmButtonSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -2481,7 +2481,7 @@ export const ConfirmButtonSource = (
       ></rect>
     </g>
   </g>
-)
+);
 
 export const CancelButtonSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -2505,7 +2505,7 @@ export const CancelButtonSource = (
       rx="10"
     ></rect>
   </g>
-)
+);
 
 export const DetailLinkButtonSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -2561,7 +2561,7 @@ export const DetailLinkButtonSource = (
       fillRule="nonzero"
     ></path>
   </g>
-)
+);
 
 export const CreateLinkButtonSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -2606,7 +2606,7 @@ export const CreateLinkButtonSource = (
       fillRule="nonzero"
     ></path>
   </g>
-)
+);
 
 export const UpdateLinkButtonSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -2644,7 +2644,7 @@ export const UpdateLinkButtonSource = (
       ></path>
     </g>
   </g>
-)
+);
 
 export const DataTableSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -2807,7 +2807,7 @@ export const DataTableSource = (
       rx="10"
     ></rect>
   </g>
-)
+);
 
 export const DataQueryListSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -2965,7 +2965,7 @@ export const DataQueryListSource = (
       rx="10"
     ></rect>
   </g>
-)
+);
 
 export const DataFormSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -3076,7 +3076,7 @@ export const DataFormSource = (
       ></path>
     </g>
   </g>
-)
+);
 
 export const DataDetailFormSource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -3178,7 +3178,7 @@ export const DataDetailFormSource = (
       ></path>
     </g>
   </g>
-)
+);
 
 export const EntitySource = (
   <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -3267,7 +3267,7 @@ export const EntitySource = (
       ></rect>
     </g>
   </g>
-)
+);
 
 export const ImageEntitySource = (
   <g stroke="none" fill="none">
@@ -3297,7 +3297,7 @@ export const ImageEntitySource = (
       fill="var(--dn-brand-color)"
     ></path>
   </g>
-)
+);
 
 export const FileEntitySource = (
   <g fill="none">
@@ -3333,7 +3333,7 @@ export const FileEntitySource = (
       transform="translate(534.183442, 656.500000) scale(1, -1) translate(-534.183442, -656.500000) "
     ></path>
   </g>
-)
+);
 
 export const FileSource = (
   <g stroke="none" fill="none">
@@ -3374,4 +3374,4 @@ export const FileSource = (
       rx="10"
     ></rect>
   </g>
-)
+);

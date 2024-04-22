@@ -1,20 +1,20 @@
-import React from 'react'
-import { ArrayField } from '@formily/core'
+import React from 'react';
+import { ArrayField } from '@formily/core';
 import {
   observer,
   useField,
   SchemaContext,
   Schema,
   ISchema,
-} from '@formily/react'
-import { GlobalRegistry } from '@trionesdev/designable-core'
-import { ArrayItems } from '@formily/antd-v5'
-import { FoldItem } from '@trionesdev/designable-react-settings-form'
-import { Select } from 'antd'
+} from '@formily/react';
+import { GlobalRegistry } from '@trionesdev/designable-core';
+import { ArrayItems } from '@formily/antd-v5';
+import { FoldItem } from '@trionesdev/designable-react-settings-form';
+import { Select } from 'antd';
 
 export interface IValidatorSetterProps {
-  value?: any
-  onChange?: (value: any) => void
+  value?: any;
+  onChange?: (value: any) => void;
 }
 
 const ValidatorSchema: ISchema = {
@@ -141,11 +141,11 @@ const ValidatorSchema: ISchema = {
       },
     },
   },
-}
+};
 
 export const ValidatorSetter: React.FC<IValidatorSetterProps> = observer(
   (props) => {
-    const field = useField<ArrayField>()
+    const field = useField<ArrayField>();
     return (
       <FoldItem label={field.title}>
         <FoldItem.Base>
@@ -154,10 +154,10 @@ export const ValidatorSetter: React.FC<IValidatorSetterProps> = observer(
             onChange={props.onChange}
             allowClear
             placeholder={GlobalRegistry.getDesignerMessage(
-              'SettingComponents.ValidatorSetter.pleaseSelect'
+              'SettingComponents.ValidatorSetter.pleaseSelect',
             )}
             options={GlobalRegistry.getDesignerMessage(
-              'SettingComponents.ValidatorSetter.formats'
+              'SettingComponents.ValidatorSetter.formats',
             )}
           />
         </FoldItem.Base>
@@ -167,6 +167,6 @@ export const ValidatorSetter: React.FC<IValidatorSetterProps> = observer(
           </SchemaContext.Provider>
         </FoldItem.Extra>
       </FoldItem>
-    )
-  }
-)
+    );
+  },
+);

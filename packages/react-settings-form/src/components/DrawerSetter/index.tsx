@@ -1,31 +1,35 @@
-import React, { Fragment, useState, useLayoutEffect } from 'react'
-import { createPortal } from 'react-dom'
-import { observer, useField } from '@formily/react'
-import { FormLayout } from '@formily/antd-v5'
-import { IconWidget, usePrefix, useTreeNode } from '@trionesdev/designable-react'
-import { Button, ButtonProps } from 'antd'
-import cls from 'classnames'
+import React, { Fragment, useState, useLayoutEffect } from 'react';
+import { createPortal } from 'react-dom';
+import { observer, useField } from '@formily/react';
+import { FormLayout } from '@formily/antd-v5';
+import {
+  IconWidget,
+  usePrefix,
+  useTreeNode,
+} from '@trionesdev/designable-react';
+import { Button, ButtonProps } from 'antd';
+import cls from 'classnames';
 // import './styles.less'
 
 export interface IDrawerSetterProps {
-  text: React.ReactNode
-  triggerProps: ButtonProps
+  text: React.ReactNode;
+  triggerProps: ButtonProps;
 }
 
 export const DrawerSetter: React.FC<IDrawerSetterProps> = observer((props) => {
-  const node = useTreeNode()
-  const field = useField()
-  const [visible, setVisible] = useState(false)
-  const [remove, setRemove] = useState(false)
-  const [root, setRoot] = useState<Element>()
-  const prefix = usePrefix('drawer-setter')
-  const formWrapperCls = usePrefix('settings-form-wrapper')
+  const node = useTreeNode();
+  const field = useField();
+  const [visible, setVisible] = useState(false);
+  const [remove, setRemove] = useState(false);
+  const [root, setRoot] = useState<Element>();
+  const prefix = usePrefix('drawer-setter');
+  const formWrapperCls = usePrefix('settings-form-wrapper');
   useLayoutEffect(() => {
-    const wrapper = document.querySelector('.' + formWrapperCls)
+    const wrapper = document.querySelector('.' + formWrapperCls);
     if (wrapper) {
-      setRoot(wrapper)
+      setRoot(wrapper);
     }
-  }, [node])
+  }, [node]);
 
   const renderDrawer = () => {
     if (root && visible) {
@@ -54,23 +58,23 @@ export const DrawerSetter: React.FC<IDrawerSetterProps> = observer((props) => {
             </FormLayout>
           </div>
         </div>,
-        root
-      )
+        root,
+      );
     }
-    return null
-  }
+    return null;
+  };
 
   const handleOpen = () => {
-    setVisible(true)
-  }
+    setVisible(true);
+  };
 
   const handleClose = () => {
-    setRemove(true)
+    setRemove(true);
     setTimeout(() => {
-      setVisible(false)
-      setRemove(false)
-    }, 150)
-  }
+      setVisible(false);
+      setRemove(false);
+    }, 150);
+  };
 
   return (
     <Fragment>
@@ -79,5 +83,5 @@ export const DrawerSetter: React.FC<IDrawerSetterProps> = observer((props) => {
       </Button>
       {renderDrawer()}
     </Fragment>
-  )
-})
+  );
+});

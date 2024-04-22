@@ -1,4 +1,4 @@
-import { KeyCode, Shortcut, TreeNode } from '../models'
+import { KeyCode, Shortcut, TreeNode } from '../models';
 
 /**
  * 快捷删除，快捷复制粘贴
@@ -7,20 +7,20 @@ import { KeyCode, Shortcut, TreeNode } from '../models'
 export const DeleteNodes = new Shortcut({
   codes: [[KeyCode.Backspace], [KeyCode.Delete]],
   handler(context) {
-    const operation = context?.workspace.operation
+    const operation = context?.workspace.operation;
     if (operation) {
-      TreeNode.remove(operation.selection.selectedNodes)
+      TreeNode.remove(operation.selection.selectedNodes);
     }
   },
-})
+});
 
 interface IClipboard {
-  nodes: TreeNode[]
+  nodes: TreeNode[];
 }
 
 const Clipboard: IClipboard = {
   nodes: [],
-}
+};
 
 export const CopyNodes = new Shortcut({
   codes: [
@@ -28,12 +28,12 @@ export const CopyNodes = new Shortcut({
     [KeyCode.Control, KeyCode.C],
   ],
   handler(context) {
-    const operation = context?.workspace.operation
+    const operation = context?.workspace.operation;
     if (operation) {
-      Clipboard.nodes = operation.selection.selectedNodes
+      Clipboard.nodes = operation.selection.selectedNodes;
     }
   },
-})
+});
 
 export const PasteNodes = new Shortcut({
   codes: [
@@ -41,9 +41,9 @@ export const PasteNodes = new Shortcut({
     [KeyCode.Control, KeyCode.V],
   ],
   handler(context) {
-    const operation = context?.workspace.operation
+    const operation = context?.workspace.operation;
     if (operation) {
-      TreeNode.clone(Clipboard.nodes)
+      TreeNode.clone(Clipboard.nodes);
     }
   },
-})
+});

@@ -1,3 +1,3 @@
-import * as AllLocales from './all'
+import * as AllLocales from './all';
 
-export { AllLocales }
+export { AllLocales };

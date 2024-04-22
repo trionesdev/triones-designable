@@ -1,14 +1,14 @@
-import {GlobalToken} from "antd";
-import {CSSInterpolation} from "@ant-design/cssinjs";
+import { GlobalToken } from 'antd';
+import { CSSInterpolation } from '@ant-design/cssinjs';
 
 export const genFormStyle = (
-    prefixCls: string,
-    token: GlobalToken,
+  prefixCls: string,
+  token: GlobalToken,
 ): CSSInterpolation => {
-    const antPrefix = "ant";
-    return {
-        [`.${prefixCls}`]: {
-            [`
+  const antPrefix = 'ant';
+  return {
+    [`.${prefixCls}`]: {
+      [`
             .${antPrefix}-input,
             .${antPrefix}-input-number,
             .${antPrefix}-input-affix-wrapper,
@@ -30,14 +30,14 @@ export const genFormStyle = (
             .${antPrefix}-select,
             .${antPrefix}-select-selector
             `]: {
-                pointerEvents: `none`,
-                [`input`]: {
-                    pointerEvents: `none`,
-                }
-            },
-            [`.anticon svg `]: {
-                pointerEvents: 'none'
-            }
-        }
-    }
-}
+        pointerEvents: `none`,
+        [`input`]: {
+          pointerEvents: `none`,
+        },
+      },
+      [`.anticon svg `]: {
+        pointerEvents: 'none',
+      },
+    },
+  };
+};

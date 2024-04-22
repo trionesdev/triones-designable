@@ -1,39 +1,39 @@
-import React from 'react'
-import { usePrefix } from '@trionesdev/designable-react'
-import { useField, observer } from '@formily/react'
-import { FoldItem } from '../FoldItem'
-import { ColorInput } from '../ColorInput'
-import { SizeInput } from '../SizeInput'
-import { InputItems } from '../InputItems'
-import cls from 'classnames'
+import React from 'react';
+import { usePrefix } from '@trionesdev/designable-react';
+import { useField, observer } from '@formily/react';
+import { FoldItem } from '../FoldItem';
+import { ColorInput } from '../ColorInput';
+import { SizeInput } from '../SizeInput';
+import { InputItems } from '../InputItems';
+import cls from 'classnames';
 
 export interface IBoxShadowStyleSetterProps {
-  className?: string
-  style?: React.CSSProperties
-  value?: string
-  onChange?: (value: string) => void
+  className?: string;
+  style?: React.CSSProperties;
+  value?: string;
+  onChange?: (value: string) => void;
 }
 
 export const BoxShadowStyleSetter: React.FC<IBoxShadowStyleSetterProps> =
   observer((props) => {
-    const field = useField()
-    const prefix = usePrefix('shadow-style-setter')
+    const field = useField();
+    const prefix = usePrefix('shadow-style-setter');
     const createBoxShadowConnector = (position: number) => {
       const splited = String(props.value || '')
         .trim()
-        .split(' ')
+        .split(' ');
       return {
         value: splited[position],
         onChange: (value: any) => {
-          splited[position] = value
+          splited[position] = value;
           props.onChange?.(
             `${splited[0] || ''} ${splited[1] || ''} ${splited[2] || ''} ${
               splited[3] || ''
-            } ${splited[4] || ''}`
-          )
+            } ${splited[4] || ''}`,
+          );
         },
-      }
-    }
+      };
+    };
     return (
       <FoldItem
         className={cls(prefix, props.className)}
@@ -72,5 +72,5 @@ export const BoxShadowStyleSetter: React.FC<IBoxShadowStyleSetterProps> =
           </InputItems>
         </FoldItem.Extra>
       </FoldItem>
-    )
-  })
+    );
+  });

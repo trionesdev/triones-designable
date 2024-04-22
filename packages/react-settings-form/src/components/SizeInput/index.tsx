@@ -1,40 +1,40 @@
-import { InputNumber } from 'antd'
-import { createPolyInput } from '../PolyInput'
+import { InputNumber } from 'antd';
+import { createPolyInput } from '../PolyInput';
 
 const takeNumber = (value: any) => {
   const num = String(value)
     .trim()
-    .replace(/[^\d\.]+/, '')
-  if (num === '') return
-  return Number(num)
-}
+    .replace(/[^\d\.]+/, '');
+  if (num === '') return;
+  return Number(num);
+};
 
 const createUnitType = (type: string) => {
   return {
     type,
     component: InputNumber,
     checker(value: any) {
-      return String(value).includes(type)
+      return String(value).includes(type);
     },
     toInputValue(value: any) {
-      return takeNumber(value)
+      return takeNumber(value);
     },
     toChangeValue(value: any) {
-      return `${value || 0}${type}`
+      return `${value || 0}${type}`;
     },
-  }
-}
+  };
+};
 
 const createSpecialSizeOption = (type: string) => ({
   type: type,
   checker(value: any) {
-    if (value === type) return true
-    return false
+    if (value === type) return true;
+    return false;
   },
   toChangeValue() {
-    return type
+    return type;
   },
-})
+});
 
 const NormalSizeOptions = [
   createSpecialSizeOption('inherit'),
@@ -43,9 +43,9 @@ const NormalSizeOptions = [
   createUnitType('%'),
   createUnitType('vh'),
   createUnitType('em'),
-]
+];
 
-export const SizeInput = createPolyInput(NormalSizeOptions)
+export const SizeInput = createPolyInput(NormalSizeOptions);
 
 export const BackgroundSizeInput = createPolyInput([
   createSpecialSizeOption('cover'),
@@ -54,4 +54,4 @@ export const BackgroundSizeInput = createPolyInput([
   createUnitType('%'),
   createUnitType('vh'),
   createUnitType('em'),
-])
+]);

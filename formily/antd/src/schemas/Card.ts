@@ -1,5 +1,5 @@
-import { GlobalRegistry } from '@trionesdev/designable-core'
-import { ISchema } from '@formily/react'
+import { GlobalRegistry } from '@trionesdev/designable-core';
+import { ISchema } from '@formily/react';
 
 export const Card: ISchema & { Addition?: ISchema } = {
   type: 'object',
@@ -33,4 +33,4 @@ export const Card: ISchema & { Addition?: ISchema } = {
       },
     },
   },
-}
+};

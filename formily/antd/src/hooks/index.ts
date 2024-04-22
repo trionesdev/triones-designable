@@ -1,1 +1,1 @@
-export * from './useDropTemplate'
+export * from './useDropTemplate';

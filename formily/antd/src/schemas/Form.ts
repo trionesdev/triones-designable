@@ -1,6 +1,6 @@
-import { ISchema } from '@formily/react'
-import { FormLayout } from './FormLayout'
-import { CSSStyle } from './CSSStyle'
+import { ISchema } from '@formily/react';
+import { FormLayout } from './FormLayout';
+import { CSSStyle } from './CSSStyle';
 
 export const Form: ISchema = {
   type: 'object',
@@ -8,4 +8,4 @@ export const Form: ISchema = {
     ...(FormLayout.properties as any),
     style: CSSStyle,
   },
-}
+};

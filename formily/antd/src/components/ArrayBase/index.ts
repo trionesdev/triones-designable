@@ -1,7 +1,7 @@
-import { createBehavior } from '@trionesdev/designable-core'
-import { createFieldSchema, createVoidFieldSchema } from '../Field'
-import { AllSchemas } from '../../schemas'
-import { AllLocales } from '../../locales'
+import { createBehavior } from '@trionesdev/designable-core';
+import { createFieldSchema, createVoidFieldSchema } from '../Field';
+import { AllSchemas } from '../../schemas';
+import { AllLocales } from '../../locales';
 
 export const createArrayBehavior = (name: string) => {
   return createBehavior(
@@ -21,7 +21,7 @@ export const createArrayBehavior = (name: string) => {
       selector: (node) => node.props['x-component'] === `${name}.Addition`,
       designerProps: {
         allowDrop(parent) {
-          return parent.props['x-component'] === name
+          return parent.props['x-component'] === name;
         },
         propsSchema: createVoidFieldSchema(AllSchemas[name].Addition),
       },
@@ -33,7 +33,7 @@ export const createArrayBehavior = (name: string) => {
       selector: (node) => node.props['x-component'] === `${name}.Remove`,
       designerProps: {
         allowDrop(parent) {
-          return parent.props['x-component'] === name
+          return parent.props['x-component'] === name;
         },
         propsSchema: createVoidFieldSchema(),
       },
@@ -45,7 +45,7 @@ export const createArrayBehavior = (name: string) => {
       selector: (node) => node.props['x-component'] === `${name}.Index`,
       designerProps: {
         allowDrop(parent) {
-          return parent.props['x-component'] === name
+          return parent.props['x-component'] === name;
         },
         propsSchema: createVoidFieldSchema(),
       },
@@ -57,7 +57,7 @@ export const createArrayBehavior = (name: string) => {
       selector: (node) => node.props['x-component'] === `${name}.MoveUp`,
       designerProps: {
         allowDrop(parent) {
-          return parent.props['x-component'] === name
+          return parent.props['x-component'] === name;
         },
         propsSchema: createVoidFieldSchema(),
       },
@@ -69,11 +69,11 @@ export const createArrayBehavior = (name: string) => {
       selector: (node) => node.props['x-component'] === `${name}.MoveDown`,
       designerProps: {
         allowDrop(parent) {
-          return parent.props['x-component'] === 'ArrayCards'
+          return parent.props['x-component'] === 'ArrayCards';
         },
         propsSchema: createVoidFieldSchema(),
       },
       designerLocales: AllLocales.ArrayMoveDown,
-    }
-  )
-}
+    },
+  );
+};

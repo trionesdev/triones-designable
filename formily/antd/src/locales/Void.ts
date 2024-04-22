@@ -8,4 +8,4 @@ export const Void = {
   'ko-KR': {
     title: '비어있음',
   },
-}
+};

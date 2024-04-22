@@ -8,4 +8,4 @@ export const CheckboxGroup = {
   'ko-KR': {
     title: '체크박스',
   },
-}
+};

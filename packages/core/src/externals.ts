@@ -1,7 +1,7 @@
-import { isArr } from '@trionesdev/designable-shared'
-import { untracked } from '@formily/reactive'
-import { DEFAULT_DRIVERS, DEFAULT_EFFECTS, DEFAULT_SHORTCUTS } from './presets'
-import { Engine, TreeNode } from './models'
+import { isArr } from '@trionesdev/designable-shared';
+import { untracked } from '@formily/reactive';
+import { DEFAULT_DRIVERS, DEFAULT_EFFECTS, DEFAULT_SHORTCUTS } from './presets';
+import { Engine, TreeNode } from './models';
 import {
   IEngineProps,
   IResourceCreator,
@@ -11,52 +11,52 @@ import {
   IBehavior,
   IBehaviorHost,
   IResourceHost,
-} from './types'
-import { mergeLocales } from './internals'
+} from './types';
+import { mergeLocales } from './internals';
 
 export const isBehaviorHost = (val: any): val is IBehaviorHost =>
-  val?.Behavior && isBehaviorList(val.Behavior)
+  val?.Behavior && isBehaviorList(val.Behavior);
 
 export const isBehaviorList = (val: any): val is IBehavior[] =>
-  Array.isArray(val) && val.every(isBehavior)
+  Array.isArray(val) && val.every(isBehavior);
 
 export const isBehavior = (val: any): val is IBehavior =>
   val?.name ||
   val?.selector ||
   val?.extends ||
   val?.designerProps ||
-  val?.designerLocales
+  val?.designerLocales;
 
 export const isResourceHost = (val: any): val is IResourceHost =>
-  val?.Resource && isResourceList(val.Resource)
+  val?.Resource && isResourceList(val.Resource);
 
 export const isResourceList = (val: any): val is IResource[] =>
-  Array.isArray(val) && val.every(isResource)
+  Array.isArray(val) && val.every(isResource);
 
 export const isResource = (val: any): val is IResource =>
-  val?.node && !!val.node.isSourceNode && val.node instanceof TreeNode
+  val?.node && !!val.node.isSourceNode && val.node instanceof TreeNode;
 
 export const createLocales = (...packages: IDesignerLocales[]) => {
-  const results = {}
+  const results = {};
   packages.forEach((locales) => {
-    mergeLocales(results, locales)
-  })
-  return results
-}
+    mergeLocales(results, locales);
+  });
+  return results;
+};
 
 export const createBehavior = (
   ...behaviors: Array<IBehaviorCreator | IBehaviorCreator[]>
 ): IBehavior[] => {
   return behaviors.reduce((buf: any[], behavior) => {
-    if (isArr(behavior)) return buf.concat(createBehavior(...behavior))
-    const { selector } = behavior || {}
-    if (!selector) return buf
+    if (isArr(behavior)) return buf.concat(createBehavior(...behavior));
+    const { selector } = behavior || {};
+    if (!selector) return buf;
     if (typeof selector === 'string') {
-      behavior.selector = (node) => node.componentName === selector
+      behavior.selector = (node) => node.componentName === selector;
     }
-    return buf.concat(behavior)
-  }, [])
-}
+    return buf.concat(behavior);
+  }, []);
+};
 
 export const createResource = (...sources: IResourceCreator[]): IResource[] => {
   return sources.reduce((buf, source) => {
@@ -67,14 +67,14 @@ export const createResource = (...sources: IResourceCreator[]): IResource[] => {
         isSourceNode: true,
         children: source.elements || [],
       }),
-    })
-  }, [])
-}
+    });
+  }, []);
+};
 
 export const createDesigner = (props: IEngineProps<Engine> = {}) => {
-  const drivers = props.drivers || []
-  const effects = props.effects || []
-  const shortcuts = props.shortcuts || []
+  const drivers = props.drivers || [];
+  const effects = props.effects || [];
+  const shortcuts = props.shortcuts || [];
   return untracked(
     () =>
       new Engine({
@@ -82,6 +82,6 @@ export const createDesigner = (props: IEngineProps<Engine> = {}) => {
         effects: [...effects, ...DEFAULT_EFFECTS],
         drivers: [...drivers, ...DEFAULT_DRIVERS],
         shortcuts: [...shortcuts, ...DEFAULT_SHORTCUTS],
-      })
-  )
-}
+      }),
+  );
+};

@@ -1,4 +1,4 @@
-import { ISchema } from '@formily/react'
+import { ISchema } from '@formily/react';
 
 export const FormGrid: ISchema & { GridColumn?: ISchema } = {
   type: 'object',
@@ -62,7 +62,7 @@ export const FormGrid: ISchema & { GridColumn?: ISchema } = {
       },
     },
   },
-}
+};
 
 FormGrid.GridColumn = {
   type: 'object',
@@ -76,4 +76,4 @@ FormGrid.GridColumn = {
       },
     },
   },
-}
+};

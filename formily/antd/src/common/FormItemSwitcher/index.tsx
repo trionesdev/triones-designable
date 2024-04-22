@@ -1,9 +1,9 @@
-import React from 'react'
-import { Switch } from 'antd'
+import React from 'react';
+import { Switch } from 'antd';
 
 export interface IFormItemSwitcherProps {
-  value?: string
-  onChange?: (value: string) => void
+  value?: string;
+  onChange?: (value: string) => void;
 }
 
 export const FormItemSwitcher: React.FC<IFormItemSwitcherProps> = (props) => {
@@ -11,8 +11,8 @@ export const FormItemSwitcher: React.FC<IFormItemSwitcherProps> = (props) => {
     <Switch
       checked={props.value === 'FormItem'}
       onChange={(value) => {
-        props.onChange(value ? 'FormItem' : undefined)
+        props.onChange(value ? 'FormItem' : undefined);
       }}
     />
-  )
-}
+  );
+};

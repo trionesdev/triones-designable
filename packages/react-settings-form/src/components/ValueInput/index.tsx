@@ -2,38 +2,40 @@
  * 支持文本、数字、布尔、表达式
  * Todo: JSON、富文本，公式
  */
-import { createPolyInput } from '../PolyInput'
-import { Input, Button, Popover, InputNumber, Select } from 'antd'
-import { MonacoInput } from '../MonacoInput'
-import { TextWidget } from '@trionesdev/designable-react'
-import React from 'react'
+import { createPolyInput } from '../PolyInput';
+import { Input, Button, Popover, InputNumber, Select } from 'antd';
+import { MonacoInput } from '../MonacoInput';
+import { TextWidget } from '@trionesdev/designable-react';
+import React from 'react';
 
 const STARTTAG_REX =
-  /<([-A-Za-z0-9_]+)((?:\s+[a-zA-Z_:][-a-zA-Z0-9_:.]*(?:\s*=\s*(?:(?:"[^"]*")|(?:'[^']*')|[^>\s]+))?)*)\s*(\/?)>/
+  /<([-A-Za-z0-9_]+)((?:\s+[a-zA-Z_:][-a-zA-Z0-9_:.]*(?:\s*=\s*(?:(?:"[^"]*")|(?:'[^']*')|[^>\s]+))?)*)\s*(\/?)>/;
 
-const EXPRESSION_REX = /^\{\{([\s\S]*)\}\}$/
+const EXPRESSION_REX = /^\{\{([\s\S]*)\}\}$/;
 
-const isNumber = (value: any) => typeof value === 'number'
+const isNumber = (value: any) => typeof value === 'number';
 
-const isBoolean = (value: any) => typeof value === 'boolean'
+const isBoolean = (value: any) => typeof value === 'boolean';
 
 const isExpression = (value: any) => {
-  return typeof value === 'string' && EXPRESSION_REX.test(value)
-}
+  return typeof value === 'string' && EXPRESSION_REX.test(value);
+};
 
 const isRichText = (value: any) => {
-  return typeof value === 'string' && STARTTAG_REX.test(value)
-}
+  return typeof value === 'string' && STARTTAG_REX.test(value);
+};
 
 const isNormalText = (value: any) => {
-  return typeof value === 'string' && !isExpression(value) && !isRichText(value)
-}
+  return (
+    typeof value === 'string' && !isExpression(value) && !isRichText(value)
+  );
+};
 
 const takeNumber = (value: any) => {
-  const num = String(value).replace(/[^\d\.]+/, '')
-  if (num === '') return
-  return Number(num)
-}
+  const num = String(value).replace(/[^\d\.]+/, '');
+  if (num === '') return;
+  return Number(num);
+};
 
 export const ValueInput = createPolyInput([
   {
@@ -67,18 +69,18 @@ export const ValueInput = createPolyInput([
             <TextWidget token="SettingComponents.ValueInput.expression" />
           </Button>
         </Popover>
-      )
+      );
     },
     checker: isExpression,
     toInputValue: (value) => {
-      if (!value || value === '{{}}') return
-      const matched = String(value).match(EXPRESSION_REX)
-      return matched?.[1] || value || ''
+      if (!value || value === '{{}}') return;
+      const matched = String(value).match(EXPRESSION_REX);
+      return matched?.[1] || value || '';
     },
     toChangeValue: (value) => {
-      if (!value || value === '{{}}') return
-      const matched = String(value).match(EXPRESSION_REX)
-      return `{{${matched?.[1] || value || ''}}}`
+      if (!value || value === '{{}}') return;
+      const matched = String(value).match(EXPRESSION_REX);
+      return `{{${matched?.[1] || value || ''}}}`;
     },
   },
   {
@@ -95,10 +97,10 @@ export const ValueInput = createPolyInput([
     ),
     checker: isBoolean,
     toInputValue: (value) => {
-      return !!value
+      return !!value;
     },
     toChangeValue: (value) => {
-      return !!value
+      return !!value;
     },
   },
   {
@@ -109,4 +111,4 @@ export const ValueInput = createPolyInput([
     toInputValue: takeNumber,
     toChangeValue: takeNumber,
   },
-])
+]);

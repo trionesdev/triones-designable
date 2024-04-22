@@ -1,7 +1,7 @@
 export default {
-    'zh-CN': {
-        settings: {
-            "":""
-        },
+  'zh-CN': {
+    settings: {
+      '': '',
     },
-}
+  },
+};

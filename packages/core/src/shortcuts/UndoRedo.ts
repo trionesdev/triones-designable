@@ -1,4 +1,4 @@
-import { KeyCode, Shortcut } from '../models'
+import { KeyCode, Shortcut } from '../models';
 
 export const UndoMutation = new Shortcut({
   codes: [
@@ -6,13 +6,13 @@ export const UndoMutation = new Shortcut({
     [KeyCode.Control, KeyCode.Z],
   ],
   handler(context) {
-    const workspace = context?.workspace
+    const workspace = context?.workspace;
     if (workspace) {
-      workspace.history.undo()
+      workspace.history.undo();
     }
-    workspace.operation.hover.clear()
+    workspace.operation.hover.clear();
   },
-})
+});
 
 export const RedoMutation = new Shortcut({
   codes: [
@@ -20,10 +20,10 @@ export const RedoMutation = new Shortcut({
     [KeyCode.Control, KeyCode.Shift, KeyCode.Z],
   ],
   handler(context) {
-    const workspace = context?.workspace
+    const workspace = context?.workspace;
     if (workspace) {
-      workspace.history.redo()
+      workspace.history.redo();
     }
-    workspace.operation.hover.clear()
+    workspace.operation.hover.clear();
   },
-})
+});

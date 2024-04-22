@@ -1,20 +1,20 @@
-import { IEngineContext } from '../../types'
-import { globalThisPolyfill } from '@trionesdev/designable-shared'
+import { IEngineContext } from '../../types';
+import { globalThisPolyfill } from '@trionesdev/designable-shared';
 
 export interface IViewportEventData {
-  scrollX: number
-  scrollY: number
-  width: number
-  height: number
-  view: Window
-  innerWidth: number
-  innerHeight: number
-  target: EventTarget
+  scrollX: number;
+  scrollY: number;
+  width: number;
+  height: number;
+  view: Window;
+  innerWidth: number;
+  innerHeight: number;
+  target: EventTarget;
 }
 
 export class AbstractViewportEvent {
-  data: IViewportEventData
-  context: IEngineContext
+  data: IViewportEventData;
+  context: IEngineContext;
   constructor(data: IViewportEventData) {
     this.data = data || {
       scrollX: globalThisPolyfill.scrollX,
@@ -25,6 +25,6 @@ export class AbstractViewportEvent {
       innerHeight: globalThisPolyfill.innerHeight,
       view: globalThisPolyfill,
       target: globalThisPolyfill,
-    }
+    };
   }
 }

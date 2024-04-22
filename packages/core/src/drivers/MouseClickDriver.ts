@@ -1,14 +1,14 @@
-import { EventDriver } from '@trionesdev/designable-shared'
-import { Engine } from '../models/Engine'
-import { MouseClickEvent, MouseDoubleClickEvent } from '../events'
+import { EventDriver } from '@trionesdev/designable-shared';
+import { Engine } from '../models/Engine';
+import { MouseClickEvent, MouseDoubleClickEvent } from '../events';
 
 export class MouseClickDriver extends EventDriver<Engine> {
   onMouseClick = (e: MouseEvent) => {
-    const target = e.target as HTMLElement
+    const target = e.target as HTMLElement;
     if (
       target?.closest(`*[${this.engine.props.clickStopPropagationAttrName}]`)
     ) {
-      return
+      return;
     }
     this.dispatch(
       new MouseClickEvent({
@@ -18,16 +18,16 @@ export class MouseClickDriver extends EventDriver<Engine> {
         pageY: e.pageY,
         target: e.target,
         view: e.view,
-      })
-    )
-  }
+      }),
+    );
+  };
 
   onMouseDoubleClick = (e: MouseEvent) => {
-    const target = e.target as HTMLElement
+    const target = e.target as HTMLElement;
     if (
       target?.closest(`*[${this.engine.props.clickStopPropagationAttrName}]`)
     ) {
-      return
+      return;
     }
     this.dispatch(
       new MouseDoubleClickEvent({
@@ -37,25 +37,25 @@ export class MouseClickDriver extends EventDriver<Engine> {
         pageY: e.pageY,
         target: e.target,
         view: e.view,
-      })
-    )
-  }
+      }),
+    );
+  };
 
   attach() {
     this.addEventListener('click', this.onMouseClick, {
       mode: 'onlyChild',
-    })
+    });
     this.addEventListener('dblclick', this.onMouseDoubleClick, {
       mode: 'onlyChild',
-    })
+    });
   }
 
   detach() {
     this.removeEventListener('click', this.onMouseClick, {
       mode: 'onlyChild',
-    })
+    });
     this.removeEventListener('dblclick', this.onMouseDoubleClick, {
       mode: 'onlyChild',
-    })
+    });
   }
 }

@@ -1,60 +1,60 @@
-import { isFn } from './types'
+import { isFn } from './types';
 
-const UNSUBSCRIBE_ID_SYMBOL = Symbol('UNSUBSCRIBE_ID_SYMBOL')
+const UNSUBSCRIBE_ID_SYMBOL = Symbol('UNSUBSCRIBE_ID_SYMBOL');
 
 export interface ISubscriber<Payload = any> {
-  (payload: Payload): void | boolean
+  (payload: Payload): void | boolean;
 }
 
 export class Subscribable<ExtendsType = any> {
   private subscribers: {
-    index?: number
-    [key: number]: ISubscriber
+    index?: number;
+    [key: number]: ISubscriber;
   } = {
     index: 0,
-  }
+  };
 
   dispatch<T extends ExtendsType = any>(event: T, context?: any) {
-    let interrupted = false
+    let interrupted = false;
     for (const key in this.subscribers) {
       if (isFn(this.subscribers[key])) {
-        event['context'] = context
+        event['context'] = context;
         if (this.subscribers[key](event) === false) {
-          interrupted = true
+          interrupted = true;
         }
       }
     }
-    return interrupted ? false : true
+    return interrupted ? false : true;
   }
 
   subscribe(subscriber: ISubscriber) {
-    let id: number
+    let id: number;
     if (isFn(subscriber)) {
-      id = this.subscribers.index + 1
-      this.subscribers[id] = subscriber
-      this.subscribers.index++
+      id = this.subscribers.index + 1;
+      this.subscribers[id] = subscriber;
+      this.subscribers.index++;
     }
 
     const unsubscribe = () => {
-      this.unsubscribe(id)
-    }
+      this.unsubscribe(id);
+    };
 
-    unsubscribe[UNSUBSCRIBE_ID_SYMBOL] = id
+    unsubscribe[UNSUBSCRIBE_ID_SYMBOL] = id;
 
-    return unsubscribe
+    return unsubscribe;
   }
 
   unsubscribe = (id?: number | string | (() => void)) => {
     if (id === undefined || id === null) {
       for (const key in this.subscribers) {
-        this.unsubscribe(key)
+        this.unsubscribe(key);
       }
-      return
+      return;
     }
     if (!isFn(id)) {
-      delete this.subscribers[id]
+      delete this.subscribers[id];
     } else {
-      delete this.subscribers[id[UNSUBSCRIBE_ID_SYMBOL]]
+      delete this.subscribers[id[UNSUBSCRIBE_ID_SYMBOL]];
     }
-  }
+  };
 }

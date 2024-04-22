@@ -1,5 +1,5 @@
-import React from 'react'
-import { WorkspacePanel, IWorkspaceItemProps } from './WorkspacePanel'
+import React from 'react';
+import { WorkspacePanel, IWorkspaceItemProps } from './WorkspacePanel';
 
 export const ToolbarPanel: React.FC<IWorkspaceItemProps> = (props) => {
   return (
@@ -15,5 +15,5 @@ export const ToolbarPanel: React.FC<IWorkspaceItemProps> = (props) => {
     >
       {props.children}
     </WorkspacePanel.Item>
-  )
-}
+  );
+};

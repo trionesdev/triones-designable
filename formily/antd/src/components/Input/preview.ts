@@ -1,13 +1,13 @@
-import React from 'react'
-import { Input as FormilyInput } from '@formily/antd-v5'
-import { createBehavior, createResource } from '@trionesdev/designable-core'
-import { DnFC } from '@trionesdev/designable-react'
-import { createFieldSchema } from '../Field'
-import { AllSchemas } from '../../schemas'
-import { AllLocales } from '../../locales'
+import React from 'react';
+import { Input as FormilyInput } from '@formily/antd-v5';
+import { createBehavior, createResource } from '@trionesdev/designable-core';
+import { DnFC } from '@trionesdev/designable-react';
+import { createFieldSchema } from '../Field';
+import { AllSchemas } from '../../schemas';
+import { AllLocales } from '../../locales';
 
 export const Input: DnFC<React.ComponentProps<typeof FormilyInput>> =
-  FormilyInput
+  FormilyInput;
 
 Input.Behavior = createBehavior(
   {
@@ -27,8 +27,8 @@ Input.Behavior = createBehavior(
       propsSchema: createFieldSchema(AllSchemas.Input.TextArea),
     },
     designerLocales: AllLocales.TextArea,
-  }
-)
+  },
+);
 
 Input.Resource = createResource(
   {
@@ -58,5 +58,5 @@ Input.Resource = createResource(
         },
       },
     ],
-  }
-)
+  },
+);

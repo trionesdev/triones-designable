@@ -1,4 +1,4 @@
-import { ISchema } from '@formily/react'
+import { ISchema } from '@formily/react';
 
 const CommonDatePickerAPI = {
   allowClear: {
@@ -63,7 +63,7 @@ const CommonDatePickerAPI = {
       placeholder: 'YYYY-MM-DD',
     },
   },
-}
+};
 
 export const DatePicker: ISchema & { RangePicker?: ISchema } = {
   type: 'object',
@@ -94,7 +94,7 @@ export const DatePicker: ISchema & { RangePicker?: ISchema } = {
       'x-component': 'Switch',
     },
   },
-}
+};
 
 DatePicker.RangePicker = {
   type: 'object',
@@ -115,4 +115,4 @@ DatePicker.RangePicker = {
       'x-component': 'Switch',
     },
   },
-}
+};
