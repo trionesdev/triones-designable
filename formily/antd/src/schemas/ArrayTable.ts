@@ -1,4 +1,4 @@
-import { ISchema } from '@formily/react'
+import { ISchema } from '@formily/react';
 
 export const ArrayTable: ISchema & { Addition?: ISchema; Column?: ISchema } = {
   type: 'object',
@@ -44,7 +44,7 @@ export const ArrayTable: ISchema & { Addition?: ISchema; Column?: ISchema } = {
       },
     },
   },
-}
+};
 
 const Column: ISchema = {
   type: 'object',
@@ -84,7 +84,7 @@ const Column: ISchema = {
       },
     },
   },
-}
+};
 
 const Addition: ISchema = {
   type: 'object',
@@ -105,7 +105,7 @@ const Addition: ISchema = {
       'x-component': 'ValueInput',
     },
   },
-}
+};
 
-ArrayTable.Column = Column
-ArrayTable.Addition = Addition
+ArrayTable.Column = Column;
+ArrayTable.Addition = Addition;

@@ -1,9 +1,9 @@
-import { ICustomEvent } from '@trionesdev/designable-shared'
-import { AbstractHistoryEvent } from './AbstractHistoryEvent'
+import { ICustomEvent } from '@trionesdev/designable-shared';
+import { AbstractHistoryEvent } from './AbstractHistoryEvent';
 
 export class HistoryRedoEvent
   extends AbstractHistoryEvent
   implements ICustomEvent
 {
-  type = 'history:redo'
+  type = 'history:redo';
 }

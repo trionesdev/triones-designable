@@ -1,2 +1,2 @@
-export * from './KeyDownEvent'
-export * from './KeyUpEvent'
+export * from './KeyDownEvent';
+export * from './KeyUpEvent';

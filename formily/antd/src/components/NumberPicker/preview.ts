@@ -1,14 +1,14 @@
-import React from 'react'
-import { NumberPicker as FormilyNumberPicker } from '@formily/antd-v5'
-import { createBehavior, createResource } from '@trionesdev/designable-core'
-import { DnFC } from '@trionesdev/designable-react'
-import { createFieldSchema } from '../Field'
-import { AllSchemas } from '../../schemas'
-import { AllLocales } from '../../locales'
+import React from 'react';
+import { NumberPicker as FormilyNumberPicker } from '@formily/antd-v5';
+import { createBehavior, createResource } from '@trionesdev/designable-core';
+import { DnFC } from '@trionesdev/designable-react';
+import { createFieldSchema } from '../Field';
+import { AllSchemas } from '../../schemas';
+import { AllLocales } from '../../locales';
 
 export const NumberPicker: DnFC<
   React.ComponentProps<typeof FormilyNumberPicker>
-> = FormilyNumberPicker
+> = FormilyNumberPicker;
 
 NumberPicker.Behavior = createBehavior({
   name: 'NumberPicker',
@@ -18,7 +18,7 @@ NumberPicker.Behavior = createBehavior({
     propsSchema: createFieldSchema(AllSchemas.NumberPicker),
   },
   designerLocales: AllLocales.NumberPicker,
-})
+});
 
 NumberPicker.Resource = createResource({
   icon: 'NumberPickerSource',
@@ -33,4 +33,4 @@ NumberPicker.Resource = createResource({
       },
     },
   ],
-})
+});

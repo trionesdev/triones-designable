@@ -9,7 +9,7 @@ const ValidatorFormats = [
   { label: '中文格式', value: 'zh' },
   { label: '日期格式', value: 'date' },
   { label: '邮编格式', value: 'zip' },
-]
+];
 
 export default {
   'zh-CN': {
@@ -97,4 +97,4 @@ export default {
       },
     },
   },
-}
+};

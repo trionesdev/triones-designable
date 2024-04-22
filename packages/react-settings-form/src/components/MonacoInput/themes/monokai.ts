@@ -137,4 +137,4 @@ export default {
     'editorIndentGuide.activeBackground': '#9D550FB0',
     'editor.selectionHighlightBorder': '#222218',
   },
-}
+};

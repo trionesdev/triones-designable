@@ -1,14 +1,14 @@
-import {GlobalToken} from "antd";
-import {CSSInterpolation} from "@ant-design/cssinjs";
+import { GlobalToken } from 'antd';
+import { CSSInterpolation } from '@ant-design/cssinjs';
 
 export const genComponentTreeWidgetStyle = (
-    prefixCls: string,
-    token: GlobalToken,
+  prefixCls: string,
+  token: GlobalToken,
 ): CSSInterpolation => [
-    {
-        [`.${prefixCls}`]: {
-            minHeight: '100%',
-            minWidth: '100%'
-        }
-    }
-]
+  {
+    [`.${prefixCls}`]: {
+      minHeight: '100%',
+      minWidth: '100%',
+    },
+  },
+];

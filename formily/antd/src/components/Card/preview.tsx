@@ -1,11 +1,11 @@
-import React from 'react'
-import { Card as AntdCard } from 'antd'
+import React from 'react';
+import { Card as AntdCard } from 'antd';
 
-import { createBehavior, createResource } from '@trionesdev/designable-core'
-import { DnFC } from '@trionesdev/designable-react'
-import { createVoidFieldSchema } from '../Field'
-import { AllSchemas } from '../../schemas'
-import { AllLocales } from '../../locales'
+import { createBehavior, createResource } from '@trionesdev/designable-core';
+import { DnFC } from '@trionesdev/designable-react';
+import { createVoidFieldSchema } from '../Field';
+import { AllSchemas } from '../../schemas';
+import { AllLocales } from '../../locales';
 
 export const Card: DnFC<React.ComponentProps<typeof AntdCard>> = (props) => {
   return (
@@ -19,8 +19,8 @@ export const Card: DnFC<React.ComponentProps<typeof AntdCard>> = (props) => {
     >
       {props.children}
     </AntdCard>
-  )
-}
+  );
+};
 
 Card.Behavior = createBehavior({
   name: 'Card',
@@ -31,7 +31,7 @@ Card.Behavior = createBehavior({
     propsSchema: createVoidFieldSchema(AllSchemas.Card),
   },
   designerLocales: AllLocales.Card,
-})
+});
 
 Card.Resource = createResource({
   icon: 'CardSource',
@@ -47,4 +47,4 @@ Card.Resource = createResource({
       },
     },
   ],
-})
+});

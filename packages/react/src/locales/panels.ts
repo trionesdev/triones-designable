@@ -23,4 +23,4 @@ export default {
       History: '기록',
     },
   },
-}
+};

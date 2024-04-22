@@ -1,39 +1,43 @@
-import React, { Fragment, useState } from 'react'
-import { observer } from '@formily/react'
-import { Collapse } from 'antd'
-import { CollapseProps, CollapsePanelProps } from 'antd/lib/collapse'
-import { TreeNode, createBehavior, createResource } from '@trionesdev/designable-core'
+import React, { Fragment, useState } from 'react';
+import { observer } from '@formily/react';
+import { Collapse } from 'antd';
+import { CollapseProps, CollapsePanelProps } from 'antd/lib/collapse';
+import {
+  TreeNode,
+  createBehavior,
+  createResource,
+} from '@trionesdev/designable-core';
 import {
   useTreeNode,
   useNodeIdProps,
   DroppableWidget,
   TreeNodeWidget,
   DnFC,
-} from '@trionesdev/designable-react'
-import { toArr } from '@formily/shared'
-import { LoadTemplate } from '../../common/LoadTemplate'
-import { useDropTemplate } from '../../hooks'
-import { createVoidFieldSchema } from '../Field'
-import { AllSchemas } from '../../schemas'
-import { AllLocales } from '../../locales'
-import { matchComponent } from '../../shared'
+} from '@trionesdev/designable-react';
+import { toArr } from '@formily/shared';
+import { LoadTemplate } from '../../common/LoadTemplate';
+import { useDropTemplate } from '../../hooks';
+import { createVoidFieldSchema } from '../Field';
+import { AllSchemas } from '../../schemas';
+import { AllLocales } from '../../locales';
+import { matchComponent } from '../../shared';
 
 const parseCollapse = (parent: TreeNode) => {
-  const tabs: TreeNode[] = []
+  const tabs: TreeNode[] = [];
   parent.children.forEach((node) => {
     if (matchComponent(node, 'FormCollapse.CollapsePanel')) {
-      tabs.push(node)
+      tabs.push(node);
     }
-  })
-  return tabs
-}
+  });
+  return tabs;
+};
 
 export const FormCollapse: DnFC<CollapseProps> & {
-  CollapsePanel?: React.FC<CollapsePanelProps>
+  CollapsePanel?: React.FC<CollapsePanelProps>;
 } = observer((props) => {
-  const [activeKey, setActiveKey] = useState<string | string[]>([])
-  const node = useTreeNode()
-  const nodeId = useNodeIdProps()
+  const [activeKey, setActiveKey] = useState<string | string[]>([]);
+  const node = useTreeNode();
+  const nodeId = useNodeIdProps();
   const designer = useDropTemplate('FormCollapse', (source) => {
     const panelNode = new TreeNode({
       componentName: 'Field',
@@ -45,18 +49,18 @@ export const FormCollapse: DnFC<CollapseProps> & {
         },
       },
       children: source,
-    })
+    });
 
-    setActiveKey(toArr(activeKey).concat(panelNode.id))
-    return [panelNode]
-  })
-  const panels = parseCollapse(node)
+    setActiveKey(toArr(activeKey).concat(panelNode.id));
+    return [panelNode];
+  });
+  const panels = parseCollapse(node);
   const renderCollapse = () => {
-    if (!node.children?.length) return <DroppableWidget />
+    if (!node.children?.length) return <DroppableWidget />;
     return (
       <Collapse {...props} activeKey={panels.map((tab) => tab.id)}>
         {panels.map((panel) => {
-          const props = panel.props['x-component-props'] || {}
+          const props = panel.props['x-component-props'] || {};
           return (
             <Collapse.Panel
               {...props}
@@ -83,14 +87,14 @@ export const FormCollapse: DnFC<CollapseProps> & {
                   <TreeNodeWidget node={panel} />
                 ) : (
                   <DroppableWidget />
-                )
+                ),
               )}
             </Collapse.Panel>
-          )
+          );
         })}
       </Collapse>
-    )
-  }
+    );
+  };
   return (
     <div {...nodeId}>
       {renderCollapse()}
@@ -109,21 +113,21 @@ export const FormCollapse: DnFC<CollapseProps> & {
                     header: `Unnamed Title`,
                   },
                 },
-              })
-              node.append(tabPane)
-              const keys = toArr(activeKey)
-              setActiveKey(keys.concat(tabPane.id))
+              });
+              node.append(tabPane);
+              const keys = toArr(activeKey);
+              setActiveKey(keys.concat(tabPane.id));
             },
           },
         ]}
       />
     </div>
-  )
-})
+  );
+});
 
 FormCollapse.CollapsePanel = (props) => {
-  return <Fragment>{props.children}</Fragment>
-}
+  return <Fragment>{props.children}</Fragment>;
+};
 
 FormCollapse.Behavior = createBehavior(
   {
@@ -135,7 +139,7 @@ FormCollapse.Behavior = createBehavior(
       allowAppend: (target, source) =>
         target.children.length === 0 ||
         source.every(
-          (node) => node.props['x-component'] === 'FormCollapse.CollapsePanel'
+          (node) => node.props['x-component'] === 'FormCollapse.CollapsePanel',
         ),
       propsSchema: createVoidFieldSchema(AllSchemas.FormCollapse),
     },
@@ -152,8 +156,8 @@ FormCollapse.Behavior = createBehavior(
       propsSchema: createVoidFieldSchema(AllSchemas.FormCollapse.CollapsePanel),
     },
     designerLocales: AllLocales.FormCollapsePanel,
-  }
-)
+  },
+);
 
 FormCollapse.Resource = createResource({
   icon: 'CollapseSource',
@@ -166,4 +170,4 @@ FormCollapse.Resource = createResource({
       },
     },
   ],
-})
+});

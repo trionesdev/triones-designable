@@ -1,14 +1,14 @@
-import React from 'react'
-import { Space as FormilySpace } from '@formily/antd-v5'
-import { createBehavior, createResource } from '@trionesdev/designable-core'
-import { DnFC } from '@trionesdev/designable-react'
-import { createVoidFieldSchema } from '../Field'
-import { withContainer } from '../../common/Container'
-import { AllSchemas } from '../../schemas'
-import { AllLocales } from '../../locales'
+import React from 'react';
+import { Space as FormilySpace } from '@formily/antd-v5';
+import { createBehavior, createResource } from '@trionesdev/designable-core';
+import { DnFC } from '@trionesdev/designable-react';
+import { createVoidFieldSchema } from '../Field';
+import { withContainer } from '../../common/Container';
+import { AllSchemas } from '../../schemas';
+import { AllLocales } from '../../locales';
 
 export const Space: DnFC<React.ComponentProps<typeof FormilySpace>> =
-  withContainer(FormilySpace)
+  withContainer(FormilySpace);
 
 Space.Behavior = createBehavior({
   name: 'Space',
@@ -20,7 +20,7 @@ Space.Behavior = createBehavior({
     propsSchema: createVoidFieldSchema(AllSchemas.Space),
   },
   designerLocales: AllLocales.Space,
-})
+});
 
 Space.Resource = createResource({
   icon: 'SpaceSource',
@@ -33,4 +33,4 @@ Space.Resource = createResource({
       },
     },
   ],
-})
+});

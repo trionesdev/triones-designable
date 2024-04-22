@@ -1,8 +1,11 @@
-import { MonacoInput, getNpmCDNRegistry } from '@trionesdev/designable-react-settings-form'
+import {
+  MonacoInput,
+  getNpmCDNRegistry,
+} from '@trionesdev/designable-react-settings-form';
 
 export interface IDependency {
-  name: string
-  path: string
+  name: string;
+  path: string;
 }
 
 const loadDependencies = async (deps: IDependency[]) => {
@@ -11,23 +14,23 @@ const loadDependencies = async (deps: IDependency[]) => {
       name,
       path,
       library: await fetch(`${getNpmCDNRegistry()}/${name}/${path}`).then(
-        (res) => res.text()
+        (res) => res.text(),
       ),
-    }))
-  )
-}
+    })),
+  );
+};
 
 export const initDeclaration = async () => {
   return MonacoInput.loader.init().then(async (monaco) => {
     const deps = await loadDependencies([
       { name: '@formily/core', path: 'dist/formily.core.all.d.ts' },
-    ])
+    ]);
     deps?.forEach(({ name, library }) => {
       monaco.languages.typescript.typescriptDefaults.addExtraLib(
         `declare module '${name}'{ ${library} }`,
-        `file:///node_modules/${name}/index.d.ts`
-      )
-    })
+        `file:///node_modules/${name}/index.d.ts`,
+      );
+    });
     monaco.languages.typescript.typescriptDefaults.addExtraLib(
       `
     import { Form, Field } from '@formily/core'
@@ -62,7 +65,7 @@ export const initDeclaration = async () => {
       declare var $props: (props: any) => void
     }
     `,
-      `file:///node_modules/formily_global.d.ts`
-    )
-  })
-}
+      `file:///node_modules/formily_global.d.ts`,
+    );
+  });
+};

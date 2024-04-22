@@ -1,17 +1,17 @@
 export interface IDataSourceItem {
-  label?: ''
-  value?: any
-  children?: any[]
+  label?: '';
+  value?: any;
+  children?: any[];
 }
 
 export interface INodeItem {
-  key: string
-  duplicateKey?: string
-  map?: { label: string; value: any }[]
-  children?: INodeItem[]
+  key: string;
+  duplicateKey?: string;
+  map?: { label: string; value: any }[];
+  children?: INodeItem[];
 }
 
 export interface ITreeDataSource {
-  dataSource: INodeItem[]
-  selectedKey: string
+  dataSource: INodeItem[];
+  selectedKey: string;
 }

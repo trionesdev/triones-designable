@@ -1,7 +1,7 @@
-import { Engine } from '../models'
-import { ICustomEvent } from '@trionesdev/designable-shared'
-import { IEngineContext } from '../types'
-import { SelectNodeEvent } from '../events'
+import { Engine } from '../models';
+import { ICustomEvent } from '@trionesdev/designable-shared';
+import { IEngineContext } from '../types';
+import { SelectNodeEvent } from '../events';
 
 export const useWorkspaceEffect = (engine: Engine) => {
   engine.subscribeWith<ICustomEvent<any, IEngineContext>>(
@@ -21,15 +21,15 @@ export const useWorkspaceEffect = (engine: Engine) => {
     ],
     (event) => {
       if (event.context?.workbench) {
-        engine.workbench.setActiveWorkspace(event.context.workspace)
+        engine.workbench.setActiveWorkspace(event.context.workspace);
       }
-    }
-  )
+    },
+  );
   engine.subscribeTo(SelectNodeEvent, (event) => {
     engine.workbench.eachWorkspace((workspace) => {
       if (workspace !== event.context.workspace) {
-        workspace.operation.selection.clear()
+        workspace.operation.selection.clear();
       }
-    })
-  })
-}
+    });
+  });
+};

@@ -1,4 +1,4 @@
-import { ISchema } from '@formily/react'
+import { ISchema } from '@formily/react';
 
 export const Radio: ISchema & { Group?: ISchema } = {
   type: 'object',
@@ -9,7 +9,7 @@ export const Radio: ISchema & { Group?: ISchema } = {
       'x-component': 'Switch',
     },
   },
-}
+};
 
 Radio.Group = {
   type: 'object',
@@ -35,4 +35,4 @@ Radio.Group = {
       },
     },
   },
-}
+};

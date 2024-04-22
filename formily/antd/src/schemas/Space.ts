@@ -1,4 +1,4 @@
-import { ISchema } from '@formily/react'
+import { ISchema } from '@formily/react';
 
 export const Space: ISchema = {
   type: 'object',
@@ -38,4 +38,4 @@ export const Space: ISchema = {
       'x-component': 'Switch',
     },
   },
-}
+};

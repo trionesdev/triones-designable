@@ -1,4 +1,4 @@
-import { ISchema } from '@formily/react'
+import { ISchema } from '@formily/react';
 
 export const CommonTimePickerAPI = {
   allowClear: {
@@ -111,14 +111,14 @@ export const CommonTimePickerAPI = {
       placeholder: 'YYYY-MM-DD',
     },
   },
-}
+};
 
 export const TimePicker: ISchema & { RangePicker?: ISchema } = {
   type: 'object',
   properties: CommonTimePickerAPI,
-}
+};
 
 TimePicker.RangePicker = {
   type: 'object',
   properties: CommonTimePickerAPI,
-}
+};

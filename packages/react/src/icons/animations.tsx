@@ -103,7 +103,7 @@ export const DragLeftSourceAnimation = {
             </g>
         `,
   },
-}
+};
 
 export const DragRightSourceAnimation = {
   light: {
@@ -209,7 +209,7 @@ export const DragRightSourceAnimation = {
         <path fill="#808080" opacity="1" stroke="none" d="M1,0L3,0C3.55228,0,4,0.447715,4,1L4,3C4,3.55228,3.55228,4,3,4L1,4C0.447715,4,0,3.55228,0,3L0,1C0,0.447715,0.447715,0,1,0Z" transform="translate(-15.4435,22) rotate(90) scale(2,2) translate(-2,-14)" style="animation: 3.3s linear infinite both a11_d;"/>
     </g>`,
   },
-}
+};
 
 export const BatchDragAnimation = {
   light: {
@@ -322,4 +322,4 @@ export const BatchDragAnimation = {
             </g>
             `,
   },
-}
+};

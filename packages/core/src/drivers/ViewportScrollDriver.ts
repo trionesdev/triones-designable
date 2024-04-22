@@ -1,12 +1,12 @@
-import { EventDriver, globalThisPolyfill } from '@trionesdev/designable-shared'
-import { Engine } from '../models/Engine'
-import { ViewportScrollEvent } from '../events'
+import { EventDriver, globalThisPolyfill } from '@trionesdev/designable-shared';
+import { Engine } from '../models/Engine';
+import { ViewportScrollEvent } from '../events';
 
 export class ViewportScrollDriver extends EventDriver<Engine> {
-  request = null
+  request = null;
 
   onScroll = (e: UIEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     this.request = globalThisPolyfill.requestAnimationFrame(() => {
       this.dispatch(
         new ViewportScrollEvent({
@@ -18,17 +18,17 @@ export class ViewportScrollDriver extends EventDriver<Engine> {
           innerWidth: this.contentWindow.innerWidth,
           view: this.contentWindow,
           target: e.target,
-        })
-      )
-      cancelAnimationFrame(this.request)
-    })
-  }
+        }),
+      );
+      cancelAnimationFrame(this.request);
+    });
+  };
 
   attach() {
-    this.addEventListener('scroll', this.onScroll)
+    this.addEventListener('scroll', this.onScroll);
   }
 
   detach() {
-    this.removeEventListener('scroll', this.onScroll)
+    this.removeEventListener('scroll', this.onScroll);
   }
 }

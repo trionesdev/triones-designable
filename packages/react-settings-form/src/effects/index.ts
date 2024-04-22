@@ -1,2 +1,2 @@
-export * from './effectLocales'
-export * from './effectSnapshot'
+export * from './effectLocales';
+export * from './effectSnapshot';

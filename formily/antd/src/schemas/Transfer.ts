@@ -1,4 +1,4 @@
-import { ISchema } from '@formily/react'
+import { ISchema } from '@formily/react';
 
 export const Transfer: ISchema = {
   type: 'object',
@@ -43,4 +43,4 @@ export const Transfer: ISchema = {
       },
     },
   },
-}
+};

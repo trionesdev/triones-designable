@@ -1,9 +1,9 @@
-import { TreeNode } from '@trionesdev/designable-core'
-import React, { createContext } from 'react'
+import { TreeNode } from '@trionesdev/designable-core';
+import React, { createContext } from 'react';
 
 interface INodeContext {
-  renderTitle?: (node: TreeNode) => React.ReactNode
-  renderActions?: (node: TreeNode) => React.ReactNode
+  renderTitle?: (node: TreeNode) => React.ReactNode;
+  renderActions?: (node: TreeNode) => React.ReactNode;
 }
 
-export const NodeContext = createContext<INodeContext>(null)
+export const NodeContext = createContext<INodeContext>(null);

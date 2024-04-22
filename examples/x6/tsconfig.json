@@ -1,10 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
 
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
@@ -23,28 +19,26 @@
     "sourceMap": false,
     "declaration": true,
     "skipLibCheck": true,
-//    "experimentalDecorators": true,
+    //    "experimentalDecorators": true,
     "downlevelIteration": true,
     "baseUrl": "./",
     "allowSyntheticDefaultImports": true,
     "paths": {
-//      "@alkaid/*": ["../../packages/*", "../../formily/*"],
-//      "@alkaid/shared": ["src/alkaid/shared"],
+      //      "@alkaid/*": ["../../packages/*", "../../formily/*"],
+      //      "@alkaid/shared": ["src/alkaid/shared"],
       "@trionesdev/designable-shared": ["../../packages/shared/src"],
-//      "@alkaid/core": ["src/alkaid/core"],
+      //      "@alkaid/core": ["src/alkaid/core"],
       "@trionesdev/designable-core": ["../../packages/core/src"],
       "@trionesdev/designable-core/*": ["../../packages/core/src/*"],
-//      "@alkaid/react": ["src/alkaid/react"],
+      //      "@alkaid/react": ["src/alkaid/react"],
       "@trionesdev/designable-react": ["../../packages/react/src"],
-//      "@alkaid/react-settings-form": ["src/alkaid/react-settings-form"],
-      "@trionesdev/designable-react-settings-form": ["../../packages/react-settings-form/src"],
+      //      "@alkaid/react-settings-form": ["src/alkaid/react-settings-form"],
+      "@trionesdev/designable-react-settings-form": [
+        "../../packages/react-settings-form/src"
+      ],
 
       "@trionesdev/designable-flow": ["../../packages/flow/src"]
     }
   },
-  "include": [
-    "src",
-    "../../packages/*/src",
-    "../../formily/*/src",
-  ]
+  "include": ["src", "../../packages/*/src", "../../formily/*/src"]
 }

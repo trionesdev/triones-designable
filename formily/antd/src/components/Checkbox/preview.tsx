@@ -1,13 +1,13 @@
-import React from 'react'
-import { Checkbox as FormilyCheckbox } from '@formily/antd-v5'
-import { createBehavior, createResource } from '@trionesdev/designable-core'
-import { DnFC } from '@trionesdev/designable-react'
-import { createFieldSchema } from '../Field'
-import { AllSchemas } from '../../schemas'
-import { AllLocales } from '../../locales'
+import React from 'react';
+import { Checkbox as FormilyCheckbox } from '@formily/antd-v5';
+import { createBehavior, createResource } from '@trionesdev/designable-core';
+import { DnFC } from '@trionesdev/designable-react';
+import { createFieldSchema } from '../Field';
+import { AllSchemas } from '../../schemas';
+import { AllLocales } from '../../locales';
 
 export const Checkbox: DnFC<React.ComponentProps<typeof FormilyCheckbox>> =
-  FormilyCheckbox
+  FormilyCheckbox;
 
 Checkbox.Behavior = createBehavior({
   name: 'Checkbox.Group',
@@ -17,7 +17,7 @@ Checkbox.Behavior = createBehavior({
     propsSchema: createFieldSchema(AllSchemas.Checkbox.Group),
   },
   designerLocales: AllLocales.CheckboxGroup,
-})
+});
 
 Checkbox.Resource = createResource({
   icon: 'CheckboxGroupSource',
@@ -36,4 +36,4 @@ Checkbox.Resource = createResource({
       },
     },
   ],
-})
+});

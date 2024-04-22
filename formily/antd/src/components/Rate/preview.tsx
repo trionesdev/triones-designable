@@ -1,12 +1,12 @@
-import React from 'react'
-import { Rate as AntdRate } from 'antd'
-import { createBehavior, createResource } from '@trionesdev/designable-core'
-import { DnFC } from '@trionesdev/designable-react'
-import { createFieldSchema } from '../Field'
-import { AllSchemas } from '../../schemas'
-import { AllLocales } from '../../locales'
+import React from 'react';
+import { Rate as AntdRate } from 'antd';
+import { createBehavior, createResource } from '@trionesdev/designable-core';
+import { DnFC } from '@trionesdev/designable-react';
+import { createFieldSchema } from '../Field';
+import { AllSchemas } from '../../schemas';
+import { AllLocales } from '../../locales';
 
-export const Rate: DnFC<React.ComponentProps<typeof AntdRate>> = AntdRate
+export const Rate: DnFC<React.ComponentProps<typeof AntdRate>> = AntdRate;
 
 Rate.Behavior = createBehavior({
   name: 'Rate',
@@ -16,7 +16,7 @@ Rate.Behavior = createBehavior({
     propsSchema: createFieldSchema(AllSchemas.Rate),
   },
   designerLocales: AllLocales.Rate,
-})
+});
 
 Rate.Resource = createResource({
   icon: 'RateSource',
@@ -31,4 +31,4 @@ Rate.Resource = createResource({
       },
     },
   ],
-})
+});

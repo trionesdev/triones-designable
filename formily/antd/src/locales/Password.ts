@@ -1,5 +1,5 @@
-import { createLocales } from '@trionesdev/designable-core'
-import { Input } from './Input'
+import { createLocales } from '@trionesdev/designable-core';
+import { Input } from './Input';
 
 export const Password = createLocales(Input, {
   'zh-CN': {
@@ -11,4 +11,4 @@ export const Password = createLocales(Input, {
   'ko-KR': {
     title: '비밀번호',
   },
-})
+});

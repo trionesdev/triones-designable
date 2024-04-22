@@ -1,28 +1,28 @@
-import React from 'react'
-import {useMoveHelper, usePrefix, useToken} from '../../hooks'
-import { ClosestPosition } from '@trionesdev/designable-core'
-import { observer } from '@formily/reactive-react'
-import cls from "classnames";
+import React from 'react';
+import { useMoveHelper, usePrefix, useToken } from '../../hooks';
+import { ClosestPosition } from '@trionesdev/designable-core';
+import { observer } from '@formily/reactive-react';
+import cls from 'classnames';
 
 export interface IInsertionProps {
-  workspaceId?: string
+  workspaceId?: string;
 }
 
 export const Insertion: React.FC<IInsertionProps> = observer(
   ({ workspaceId }) => {
-    const moveHelper = useMoveHelper(workspaceId)
-    const prefix = usePrefix('outline-tree-insertion')
-    const {hashId} = useToken()
+    const moveHelper = useMoveHelper(workspaceId);
+    const prefix = usePrefix('outline-tree-insertion');
+    const { hashId } = useToken();
     const createInsertionStyle = (): React.CSSProperties => {
-      const closestDirection = moveHelper.outlineClosestDirection
-      const closestRect = moveHelper.outlineClosestOffsetRect
+      const closestDirection = moveHelper.outlineClosestDirection;
+      const closestRect = moveHelper.outlineClosestOffsetRect;
       const baseStyle: React.CSSProperties = {
         position: 'absolute',
         transform: 'perspective(1px) translate3d(0,0,0)',
         top: 0,
         left: 0,
-      }
-      if (!closestRect) return baseStyle
+      };
+      if (!closestRect) return baseStyle;
       if (
         closestDirection === ClosestPosition.After ||
         closestDirection === ClosestPosition.InnerAfter ||
@@ -31,11 +31,11 @@ export const Insertion: React.FC<IInsertionProps> = observer(
         closestDirection === ClosestPosition.ForbidInnerAfter ||
         closestDirection === ClosestPosition.ForbidUnder
       ) {
-        baseStyle.width = closestRect.width
-        baseStyle.height = 2
+        baseStyle.width = closestRect.width;
+        baseStyle.height = 2;
         baseStyle.transform = `perspective(1px) translate3d(${
           closestRect.x
-        }px,${closestRect.y + closestRect.height - 2}px,0)`
+        }px,${closestRect.y + closestRect.height - 2}px,0)`;
       } else if (
         closestDirection === ClosestPosition.Before ||
         closestDirection === ClosestPosition.InnerBefore ||
@@ -44,22 +44,24 @@ export const Insertion: React.FC<IInsertionProps> = observer(
         closestDirection === ClosestPosition.ForbidInnerBefore ||
         closestDirection === ClosestPosition.ForbidUpper
       ) {
-        baseStyle.width = closestRect.width
-        baseStyle.height = 2
-        baseStyle.transform = `perspective(1px) translate3d(${closestRect.x}px,${closestRect.y}px,0)`
+        baseStyle.width = closestRect.width;
+        baseStyle.height = 2;
+        baseStyle.transform = `perspective(1px) translate3d(${closestRect.x}px,${closestRect.y}px,0)`;
       }
       if (closestDirection.includes('FORBID')) {
-        baseStyle.backgroundColor = 'red'
+        baseStyle.backgroundColor = 'red';
       } else {
-        baseStyle.backgroundColor = ''
+        baseStyle.backgroundColor = '';
       }
-      return baseStyle
-    }
+      return baseStyle;
+    };
 
-    if (!moveHelper?.closestNode) return null
+    if (!moveHelper?.closestNode) return null;
 
-    return <div className={cls(prefix,hashId)} style={createInsertionStyle()}></div>
-  }
-)
+    return (
+      <div className={cls(prefix, hashId)} style={createInsertionStyle()}></div>
+    );
+  },
+);
 
-Insertion.displayName = 'Insertion'
+Insertion.displayName = 'Insertion';

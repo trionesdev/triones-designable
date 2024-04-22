@@ -1,13 +1,13 @@
-import React from 'react'
-import { Transfer as FormilyTransfer } from '@formily/antd-v5'
-import { createBehavior, createResource } from '@trionesdev/designable-core'
-import { DnFC } from '@trionesdev/designable-react'
-import { createFieldSchema } from '../Field'
-import { AllSchemas } from '../../schemas'
-import { AllLocales } from '../../locales'
+import React from 'react';
+import { Transfer as FormilyTransfer } from '@formily/antd-v5';
+import { createBehavior, createResource } from '@trionesdev/designable-core';
+import { DnFC } from '@trionesdev/designable-react';
+import { createFieldSchema } from '../Field';
+import { AllSchemas } from '../../schemas';
+import { AllLocales } from '../../locales';
 
 export const Transfer: DnFC<React.ComponentProps<typeof FormilyTransfer>> =
-  FormilyTransfer
+  FormilyTransfer;
 
 Transfer.Behavior = createBehavior({
   name: 'Transfer',
@@ -17,7 +17,7 @@ Transfer.Behavior = createBehavior({
     propsSchema: createFieldSchema(AllSchemas.Transfer),
   },
   designerLocales: AllLocales.Transfer,
-})
+});
 
 Transfer.Resource = createResource({
   icon: 'TransferSource',
@@ -31,4 +31,4 @@ Transfer.Resource = createResource({
       },
     },
   ],
-})
+});

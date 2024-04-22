@@ -8,4 +8,4 @@ export const ObjectLocale = {
   'ko-KR': {
     title: '오브젝트',
   },
-}
+};

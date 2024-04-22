@@ -1,19 +1,19 @@
 function getGlobalThis() {
   try {
     if (typeof self !== 'undefined') {
-      return self
+      return self;
     }
   } catch (e) {}
   try {
     if (typeof globalThisPolyfill !== 'undefined') {
-      return globalThisPolyfill
+      return globalThisPolyfill;
     }
   } catch (e) {}
   try {
     if (typeof global !== 'undefined') {
-      return global
+      return global;
     }
   } catch (e) {}
-  return Function('return this')()
+  return Function('return this')();
 }
-export const globalThisPolyfill: Window = getGlobalThis()
+export const globalThisPolyfill: Window = getGlobalThis();

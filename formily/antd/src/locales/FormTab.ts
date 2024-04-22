@@ -53,7 +53,7 @@ export const FormTab = {
       },
     },
   },
-}
+};
 
 export const FormTabPane = {
   'zh-CN': {
@@ -80,4 +80,4 @@ export const FormTabPane = {
       },
     },
   },
-}
+};

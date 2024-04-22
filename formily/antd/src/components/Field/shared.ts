@@ -1,15 +1,15 @@
-import { ISchema } from '@formily/json-schema'
+import { ISchema } from '@formily/json-schema';
 import {
   ReactionsSetter,
   DataSourceSetter,
   ValidatorSetter,
-} from '@trionesdev/designable-formily-setters'
-import { FormItemSwitcher } from '../../common/FormItemSwitcher'
-import { AllSchemas } from '../../schemas'
+} from '@trionesdev/designable-formily-setters';
+import { FormItemSwitcher } from '../../common/FormItemSwitcher';
+import { AllSchemas } from '../../schemas';
 
 export const createComponentSchema = (
   component: ISchema,
-  decorator: ISchema
+  decorator: ISchema,
 ) => {
   return {
     'component-group': component && {
@@ -71,12 +71,12 @@ export const createComponentSchema = (
         'x-decorator-props.style': AllSchemas.CSSStyle,
       },
     },
-  }
-}
+  };
+};
 
 export const createFieldSchema = (
   component?: ISchema,
-  decorator: ISchema = AllSchemas.FormItem
+  decorator: ISchema = AllSchemas.FormItem,
 ): ISchema => {
   return {
     type: 'object',
@@ -143,12 +143,12 @@ export const createFieldSchema = (
       },
       ...createComponentSchema(component, decorator),
     },
-  }
-}
+  };
+};
 
 export const createVoidFieldSchema = (
   component?: ISchema,
-  decorator: ISchema = AllSchemas.FormItem
+  decorator: ISchema = AllSchemas.FormItem,
 ) => {
   return {
     type: 'object',
@@ -217,5 +217,5 @@ export const createVoidFieldSchema = (
       },
       ...createComponentSchema(component, decorator),
     },
-  }
-}
+  };
+};

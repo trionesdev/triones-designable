@@ -47,4 +47,4 @@ export default {
       from_node: '자식 노드 트리 수정',
     },
   },
-}
+};

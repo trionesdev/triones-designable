@@ -1,4 +1,4 @@
-import { createContext } from 'react'
-import { ISettingFormProps } from '../types'
+import { createContext } from 'react';
+import { ISettingFormProps } from '../types';
 
-export const SettingsFormContext = createContext<ISettingFormProps>(null)
+export const SettingsFormContext = createContext<ISettingFormProps>(null);

@@ -1,2 +1,2 @@
-import './locales'
-export * from './components'
+import './locales';
+export * from './components';

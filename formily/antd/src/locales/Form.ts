@@ -1,5 +1,5 @@
-import { createLocales } from '@trionesdev/designable-core'
-import { Component } from './Component'
+import { createLocales } from '@trionesdev/designable-core';
+import { Component } from './Component';
 
 export const Form = createLocales(Component, {
   'zh-CN': {
@@ -116,4 +116,4 @@ export const Form = createLocales(Component, {
       },
     },
   },
-})
+});

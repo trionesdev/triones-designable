@@ -1,13 +1,13 @@
-import React from 'react'
-import { Radio as FormilyRadio } from '@formily/antd-v5'
-import { createBehavior, createResource } from '@trionesdev/designable-core'
-import { DnFC } from '@trionesdev/designable-react'
-import { createFieldSchema } from '../Field'
-import { AllSchemas } from '../../schemas'
-import { AllLocales } from '../../locales'
+import React from 'react';
+import { Radio as FormilyRadio } from '@formily/antd-v5';
+import { createBehavior, createResource } from '@trionesdev/designable-core';
+import { DnFC } from '@trionesdev/designable-react';
+import { createFieldSchema } from '../Field';
+import { AllSchemas } from '../../schemas';
+import { AllLocales } from '../../locales';
 
 export const Radio: DnFC<React.ComponentProps<typeof FormilyRadio>> =
-  FormilyRadio
+  FormilyRadio;
 
 Radio.Behavior = createBehavior({
   name: 'Radio.Group',
@@ -17,7 +17,7 @@ Radio.Behavior = createBehavior({
     propsSchema: createFieldSchema(AllSchemas.Radio.Group),
   },
   designerLocales: AllLocales.RadioGroup,
-})
+});
 
 Radio.Resource = createResource({
   icon: 'RadioGroupSource',
@@ -36,4 +36,4 @@ Radio.Resource = createResource({
       },
     },
   ],
-})
+});

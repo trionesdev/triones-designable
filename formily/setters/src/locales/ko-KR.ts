@@ -9,7 +9,7 @@ const ValidatorFormats = [
   { label: '중국', value: 'zh' },
   { label: '날짜', value: 'date' },
   { label: 'Zip', value: 'zip' },
-]
+];
 
 export default {
   'ko-KR': {
@@ -97,4 +97,4 @@ export default {
       },
     },
   },
-}
+};

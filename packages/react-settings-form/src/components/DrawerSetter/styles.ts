@@ -1,11 +1,9 @@
-import {GlobalToken} from "antd";
-import {CSSInterpolation} from "@ant-design/cssinjs";
+import { GlobalToken } from 'antd';
+import { CSSInterpolation } from '@ant-design/cssinjs';
 
 export const genDrawerSetterStyle = (
-    prefixCls: string,
-    token: GlobalToken,
+  prefixCls: string,
+  token: GlobalToken,
 ): CSSInterpolation => {
-    return {
-
-    }
-}
+  return {};
+};

@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-export const Command:React.JSX.Element = (
+export const Command: React.JSX.Element = (
   <svg>
     <path
       d="M652.714667 699.904H371.285333c-26.752 0-47.189333-20.48-47.189333-47.189333V371.285333c0-26.752 20.48-47.189333 47.189333-47.189333h281.429334c26.752 0 47.189333 20.48 47.189333 47.189333v281.429334c0 26.752-20.48 47.189333-47.189333 47.189333z m-234.24-94.336h187.093333V418.432H418.432v187.136z"
@@ -11,4 +11,4 @@ export const Command:React.JSX.Element = (
       p-id="5443"
     ></path>
   </svg>
-)
+);

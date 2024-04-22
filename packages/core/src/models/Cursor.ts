@@ -1,6 +1,9 @@
-import { Engine } from './Engine'
-import { action, define, observable } from '@formily/reactive'
-import { globalThisPolyfill, isValidNumber } from '@trionesdev/designable-shared'
+import { Engine } from './Engine';
+import { action, define, observable } from '@formily/reactive';
+import {
+  globalThisPolyfill,
+  isValidNumber,
+} from '@trionesdev/designable-shared';
 
 export enum CursorStatus {
   Normal = 'NORMAL',
@@ -25,33 +28,33 @@ export enum CursorType {
 }
 
 export interface ICursorPosition {
-  pageX?: number
+  pageX?: number;
 
-  pageY?: number
+  pageY?: number;
 
-  clientX?: number
+  clientX?: number;
 
-  clientY?: number
+  clientY?: number;
 
-  topPageX?: number
+  topPageX?: number;
 
-  topPageY?: number
+  topPageY?: number;
 
-  topClientX?: number
+  topClientX?: number;
 
-  topClientY?: number
+  topClientY?: number;
 }
 
 export interface ICursor {
-  status?: CursorStatus
+  status?: CursorStatus;
 
-  position?: ICursorPosition
+  position?: ICursorPosition;
 
-  dragStartPosition?: ICursorPosition
+  dragStartPosition?: ICursorPosition;
 
-  dragEndPosition?: ICursorPosition
+  dragEndPosition?: ICursorPosition;
 
-  view?: Window
+  view?: Window;
 }
 
 const DEFAULT_POSITION = {
@@ -63,59 +66,59 @@ const DEFAULT_POSITION = {
   topPageY: 0,
   topClientX: 0,
   topClientY: 0,
-}
+};
 
 const setCursorStyle = (contentWindow: Window, style: string) => {
-  const currentRoot = document?.getElementsByTagName?.('html')?.[0]
-  const root = contentWindow?.document?.getElementsByTagName('html')?.[0]
+  const currentRoot = document?.getElementsByTagName?.('html')?.[0];
+  const root = contentWindow?.document?.getElementsByTagName('html')?.[0];
   if (root && root.style.cursor !== style) {
-    root.style.cursor = style
+    root.style.cursor = style;
   }
   if (currentRoot && currentRoot.style.cursor !== style) {
-    currentRoot.style.cursor = style
+    currentRoot.style.cursor = style;
   }
-}
+};
 
 const calcPositionDelta = (
   end: ICursorPosition,
-  start: ICursorPosition
+  start: ICursorPosition,
 ): ICursorPosition => {
   return Object.keys(end || {}).reduce((buf, key) => {
     if (isValidNumber(end?.[key]) && isValidNumber(start?.[key])) {
-      buf[key] = end[key] - start[key]
+      buf[key] = end[key] - start[key];
     } else {
-      buf[key] = end[key]
+      buf[key] = end[key];
     }
-    return buf
-  }, {})
-}
+    return buf;
+  }, {});
+};
 
 export class Cursor {
-  engine: Engine
+  engine: Engine;
 
-  type: CursorType | string = CursorType.Normal
+  type: CursorType | string = CursorType.Normal;
 
-  dragType: CursorDragType | string = CursorDragType.Move
+  dragType: CursorDragType | string = CursorDragType.Move;
 
-  status: CursorStatus = CursorStatus.Normal
+  status: CursorStatus = CursorStatus.Normal;
 
-  position: ICursorPosition = DEFAULT_POSITION
+  position: ICursorPosition = DEFAULT_POSITION;
 
-  dragStartPosition: ICursorPosition
+  dragStartPosition: ICursorPosition;
 
-  dragEndPosition: ICursorPosition
+  dragEndPosition: ICursorPosition;
 
-  dragAtomDelta: ICursorPosition = DEFAULT_POSITION
+  dragAtomDelta: ICursorPosition = DEFAULT_POSITION;
 
-  dragStartToCurrentDelta: ICursorPosition = DEFAULT_POSITION
+  dragStartToCurrentDelta: ICursorPosition = DEFAULT_POSITION;
 
-  dragStartToEndDelta: ICursorPosition = DEFAULT_POSITION
+  dragStartToEndDelta: ICursorPosition = DEFAULT_POSITION;
 
-  view: Window = globalThisPolyfill
+  view: Window = globalThisPolyfill;
 
   constructor(engine: Engine) {
-    this.engine = engine
-    this.makeObservable()
+    this.engine = engine;
+    this.makeObservable();
   }
 
   makeObservable() {
@@ -134,65 +137,65 @@ export class Cursor {
       setPosition: action,
       setStatus: action,
       setType: action,
-    })
+    });
   }
 
   get speed() {
     return Math.sqrt(
       Math.pow(this.dragAtomDelta.clientX, 2) +
-        Math.pow(this.dragAtomDelta.clientY, 2)
-    )
+        Math.pow(this.dragAtomDelta.clientY, 2),
+    );
   }
 
   setStatus(status: CursorStatus) {
-    this.status = status
+    this.status = status;
   }
 
   setType(type: CursorType | string) {
-    this.type = type
+    this.type = type;
   }
 
   setDragType(type: CursorDragType | string) {
-    this.dragType = type
+    this.dragType = type;
   }
 
   setStyle(style: string) {
     this.engine.workbench.eachWorkspace((workspace) => {
-      setCursorStyle(workspace.viewport.contentWindow, style)
-    })
+      setCursorStyle(workspace.viewport.contentWindow, style);
+    });
   }
 
   setPosition(position?: ICursorPosition) {
-    this.dragAtomDelta = calcPositionDelta(this.position, position)
-    this.position = { ...position }
+    this.dragAtomDelta = calcPositionDelta(this.position, position);
+    this.position = { ...position };
     if (this.status === CursorStatus.Dragging) {
       this.dragStartToCurrentDelta = calcPositionDelta(
         this.position,
-        this.dragStartPosition
-      )
+        this.dragStartPosition,
+      );
     }
   }
 
   setDragStartPosition(position?: ICursorPosition) {
     if (position) {
-      this.dragStartPosition = { ...position }
+      this.dragStartPosition = { ...position };
     } else {
-      this.dragStartPosition = null
-      this.dragStartToCurrentDelta = DEFAULT_POSITION
+      this.dragStartPosition = null;
+      this.dragStartToCurrentDelta = DEFAULT_POSITION;
     }
   }
 
   setDragEndPosition(position?: ICursorPosition) {
-    if (!this.dragStartPosition) return
+    if (!this.dragStartPosition) return;
     if (position) {
-      this.dragEndPosition = { ...position }
+      this.dragEndPosition = { ...position };
       this.dragStartToEndDelta = calcPositionDelta(
         this.dragStartPosition,
-        this.dragEndPosition
-      )
+        this.dragEndPosition,
+      );
     } else {
-      this.dragEndPosition = null
-      this.dragStartToEndDelta = DEFAULT_POSITION
+      this.dragEndPosition = null;
+      this.dragStartToEndDelta = DEFAULT_POSITION;
     }
   }
 }

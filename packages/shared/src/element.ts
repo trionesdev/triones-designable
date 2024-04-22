@@ -1,4 +1,4 @@
-import { Point } from './coordinate'
+import { Point } from './coordinate';
 
 const InlineLayoutTagNames = new Set([
   'A',
@@ -55,11 +55,11 @@ const InlineLayoutTagNames = new Set([
   'WBR',
   'INPUT',
   'SPAN',
-])
+]);
 
 export const calcElementOuterWidth = (
   innerWidth: number,
-  style: CSSStyleDeclaration
+  style: CSSStyleDeclaration,
 ) => {
   return (
     innerWidth +
@@ -69,76 +69,76 @@ export const calcElementOuterWidth = (
     parseFloat(style.paddingRight) +
     parseFloat(style.borderLeftWidth) +
     parseFloat(style.borderRightWidth)
-  )
-}
+  );
+};
 
 export const calcElementLayout = (element: Element) => {
-  if (!element) return 'vertical'
-  const parent = element.parentElement
-  if (!parent) return 'vertical'
-  const tagName = element.tagName
-  const parentTagName = parent.tagName
-  const style = getComputedStyle(element)
-  const parentStyle = getComputedStyle(parent)
+  if (!element) return 'vertical';
+  const parent = element.parentElement;
+  if (!parent) return 'vertical';
+  const tagName = element.tagName;
+  const parentTagName = parent.tagName;
+  const style = getComputedStyle(element);
+  const parentStyle = getComputedStyle(parent);
 
   const isNotFullWidth = () => {
-    const innerWidth = element.getBoundingClientRect().width
-    const outerWidth = calcElementOuterWidth(innerWidth, style)
-    const parentInnerWidth = parent.getBoundingClientRect().width
-    return outerWidth.toFixed(0) < parentInnerWidth.toFixed(0)
-  }
+    const innerWidth = element.getBoundingClientRect().width;
+    const outerWidth = calcElementOuterWidth(innerWidth, style);
+    const parentInnerWidth = parent.getBoundingClientRect().width;
+    return outerWidth.toFixed(0) < parentInnerWidth.toFixed(0);
+  };
   if (tagName === 'TH' || tagName === 'TD') {
-    if (parentTagName === 'TR') return 'horizontal'
+    if (parentTagName === 'TR') return 'horizontal';
   }
   if (parentStyle.display === 'flex' && parentStyle.flexDirection === 'row')
-    return 'horizontal'
+    return 'horizontal';
   if (parentStyle.display === 'grid') {
     if (isNotFullWidth()) {
-      return 'horizontal'
+      return 'horizontal';
     }
   }
   if (InlineLayoutTagNames.has(tagName)) {
     if (style.display === 'block') {
       if (style.float === 'left' || style.float === 'right') {
         if (isNotFullWidth()) {
-          return 'horizontal'
+          return 'horizontal';
         }
       }
-      return 'vertical'
+      return 'vertical';
     }
-    return 'horizontal'
+    return 'horizontal';
   }
-}
+};
 
 export const calcElementTranslate = (element: HTMLElement) => {
-  const transform = element?.style?.transform
+  const transform = element?.style?.transform;
   if (transform) {
     const [x, y] = transform
       .match(
-        /translate(?:3d)?\(\s*([-\d.]+)[a-z]+?[\s,]+([-\d.]+)[a-z]+?(?:[\s,]+([-\d.]+))?[a-z]+?\s*\)/
+        /translate(?:3d)?\(\s*([-\d.]+)[a-z]+?[\s,]+([-\d.]+)[a-z]+?(?:[\s,]+([-\d.]+))?[a-z]+?\s*\)/,
       )
-      ?.slice(1, 3) ?? [0, 0]
+      ?.slice(1, 3) ?? [0, 0];
 
-    return new Point(Number(x), Number(y))
+    return new Point(Number(x), Number(y));
   } else {
-    return new Point(Number(element.offsetLeft), Number(element.offsetTop))
+    return new Point(Number(element.offsetLeft), Number(element.offsetTop));
   }
-}
+};
 
 export const calcElementRotate = (element: HTMLElement) => {
-  const transform = element?.style?.transform
+  const transform = element?.style?.transform;
   if (transform) {
-    return Number(transform.match(/rotate\(\s*([-\d.]+)/)?.[1] ?? 0)
+    return Number(transform.match(/rotate\(\s*([-\d.]+)/)?.[1] ?? 0);
   } else {
-    return 0
+    return 0;
   }
-}
+};
 
 export const calcElementScale = (element: HTMLElement) => {
-  const transform = element?.style?.transform
+  const transform = element?.style?.transform;
   if (transform) {
-    return Number(transform.match(/scale\(\s*([-\d.]+)/)?.[1] ?? 0)
+    return Number(transform.match(/scale\(\s*([-\d.]+)/)?.[1] ?? 0);
   } else {
-    return 0
+    return 0;
   }
-}
+};

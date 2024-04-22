@@ -1,12 +1,12 @@
-import React from 'react'
-import { Switch as AntdSwitch } from 'antd'
-import { createBehavior, createResource } from '@trionesdev/designable-core'
-import { DnFC } from '@trionesdev/designable-react'
-import { createFieldSchema } from '../Field'
-import { AllSchemas } from '../../schemas'
-import { AllLocales } from '../../locales'
+import React from 'react';
+import { Switch as AntdSwitch } from 'antd';
+import { createBehavior, createResource } from '@trionesdev/designable-core';
+import { DnFC } from '@trionesdev/designable-react';
+import { createFieldSchema } from '../Field';
+import { AllSchemas } from '../../schemas';
+import { AllLocales } from '../../locales';
 
-export const Switch: DnFC<React.ComponentProps<typeof AntdSwitch>> = AntdSwitch
+export const Switch: DnFC<React.ComponentProps<typeof AntdSwitch>> = AntdSwitch;
 
 Switch.Behavior = createBehavior({
   name: 'Switch',
@@ -16,7 +16,7 @@ Switch.Behavior = createBehavior({
     propsSchema: createFieldSchema(AllSchemas.Switch),
   },
   designerLocales: AllLocales.Switch,
-})
+});
 
 Switch.Resource = createResource({
   icon: 'SwitchSource',
@@ -31,4 +31,4 @@ Switch.Resource = createResource({
       },
     },
   ],
-})
+});

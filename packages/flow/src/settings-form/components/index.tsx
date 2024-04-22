@@ -1,1 +1,1 @@
-export * from "./CollapseItem"
+export * from './CollapseItem';

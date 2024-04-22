@@ -1,13 +1,13 @@
-import React from 'react'
-import { DatePicker as FormilyDatePicker } from '@formily/antd-v5'
-import { createBehavior, createResource } from '@trionesdev/designable-core'
-import { DnFC } from '@trionesdev/designable-react'
-import { createFieldSchema } from '../Field'
-import { AllSchemas } from '../../schemas'
-import { AllLocales } from '../../locales'
+import React from 'react';
+import { DatePicker as FormilyDatePicker } from '@formily/antd-v5';
+import { createBehavior, createResource } from '@trionesdev/designable-core';
+import { DnFC } from '@trionesdev/designable-react';
+import { createFieldSchema } from '../Field';
+import { AllSchemas } from '../../schemas';
+import { AllLocales } from '../../locales';
 
 export const DatePicker: DnFC<React.ComponentProps<typeof FormilyDatePicker>> =
-  FormilyDatePicker
+  FormilyDatePicker;
 
 DatePicker.Behavior = createBehavior(
   {
@@ -27,8 +27,8 @@ DatePicker.Behavior = createBehavior(
       propsSchema: createFieldSchema(AllSchemas.DatePicker.RangePicker),
     },
     designerLocales: AllLocales.DateRangePicker,
-  }
-)
+  },
+);
 
 DatePicker.Resource = createResource(
   {
@@ -58,5 +58,5 @@ DatePicker.Resource = createResource(
         },
       },
     ],
-  }
-)
+  },
+);
