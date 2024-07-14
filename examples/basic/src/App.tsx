@@ -11,7 +11,7 @@ import {
   CompositePanel,
   Designer,
   DesignerToolsWidget,
-  HistoryWidget,
+  HistoryWidget, IDesignerComponents,
   OutlineTreeWidget,
   ResourceWidget,
   SettingsPanel,
@@ -36,6 +36,7 @@ import {
 import { SettingsForm } from '@trionesdev/designable-react-settings-form';
 import { transformToSchema } from '@trionesdev/designable-formily-transformer';
 import { Button } from 'antd';
+import { PreviewWidget } from './PreviewWidget';
 
 function App() {
   const engine = useMemo(
@@ -66,6 +67,17 @@ function App() {
   useEffect(() => {
     GlobalRegistry.setDesignerLanguage('zh-cn');
   }, []);
+
+  const components: IDesignerComponents = {
+    Form,
+    Field,
+    Input,
+    Rate,
+    NumberPicker,
+    Password,
+    ArrayCards,
+    ArrayTable,
+  };
 
   return (
     <Designer engine={engine}>
@@ -102,18 +114,12 @@ function App() {
               <ViewPanel type="DESIGNABLE">
                 {() => (
                   <ComponentTreeWidget
-                    components={{
-                      Form,
-                      Field,
-                      Input,
-                      Rate,
-                      NumberPicker,
-                      Password,
-                      ArrayCards,
-                      ArrayTable,
-                    }}
+                    components={components}
                   />
                 )}
+              </ViewPanel>
+              <ViewPanel type={`PREVIEW`}>
+                {(tree) => <PreviewWidget tree={tree} components={components} />}
               </ViewPanel>
             </ViewportPanel>
           </WorkspacePanel>
