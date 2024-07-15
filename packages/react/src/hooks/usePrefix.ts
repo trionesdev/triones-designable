@@ -1,5 +1,5 @@
-import { useLayout } from './useLayout'
+import { useLayout } from './useLayout';
 
 export const usePrefix = (after = '') => {
-  return useLayout()?.prefixCls + after
-}
+  return useLayout()?.prefixCls + after;
+};

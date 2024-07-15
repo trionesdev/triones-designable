@@ -1,5 +1,5 @@
-import {theme} from "antd";
+import { theme } from 'antd';
 
 export const useToken = () => {
-    return theme.useToken()
-}
+  return theme.useToken();
+};

@@ -1,6 +1,6 @@
 {
   "name": "@trionesdev/designable-shared",
-  "version": "0.0.2-beta.0",
+  "version": "0.0.7-beta.0",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -33,5 +33,5 @@
   "dependencies": {
     "requestidlecallback": "^0.3.0"
   },
-  "gitHead": "690a5cf13f852f3c3f639534d228e71678d6d532"
+  "gitHead": "5014179493da76e7f55bafd2dd35594d42ae2bf1"
 }

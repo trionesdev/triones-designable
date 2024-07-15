@@ -1,2 +1,2 @@
-export * from './preview'
-export * from './shared'
+export * from './preview';
+export * from './shared';

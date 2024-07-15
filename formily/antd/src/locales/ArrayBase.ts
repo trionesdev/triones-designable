@@ -1,4 +1,4 @@
-import { GlobalRegistry } from '@trionesdev/designable-core'
+import { GlobalRegistry } from '@trionesdev/designable-core';
 
 GlobalRegistry.registerDesignerLocales({
   'zh-CN': {
@@ -12,7 +12,7 @@ GlobalRegistry.registerDesignerLocales({
       addOperation: '添加操作',
     },
   },
-})
+});
 
 export const ArrayAddition = {
   'zh-CN': {
@@ -24,7 +24,7 @@ export const ArrayAddition = {
       },
     },
   },
-}
+};
 
 export const ArrayRemove = {
   'zh-CN': {
@@ -36,7 +36,7 @@ export const ArrayRemove = {
   'ko-KR': {
     title: '삭제',
   },
-}
+};
 
 export const ArrayMoveUp = {
   'zh-CN': {
@@ -48,7 +48,7 @@ export const ArrayMoveUp = {
   'ko-KR': {
     title: '위로 옮기기',
   },
-}
+};
 
 export const ArrayMoveDown = {
   'zh-CN': {
@@ -60,7 +60,7 @@ export const ArrayMoveDown = {
   'ko-KR': {
     title: '아래로 옮기기',
   },
-}
+};
 
 export const ArrayIndex = {
   'zh-CN': {
@@ -72,7 +72,7 @@ export const ArrayIndex = {
   'ko-KR': {
     title: '색인',
   },
-}
+};
 
 export const ArraySortHandle = {
   'zh-CN': {
@@ -84,4 +84,4 @@ export const ArraySortHandle = {
   'ko-KR': {
     title: '정렬 핸들',
   },
-}
+};

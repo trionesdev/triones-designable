@@ -1,11 +1,15 @@
-import React, { useEffect, useMemo, useState } from 'react'
-import { clone, uid } from '@formily/shared'
-import { createForm, isVoidField } from '@formily/core'
-import { createSchemaField } from '@formily/react'
-import { GlobalRegistry } from '@trionesdev/designable-core'
-import { requestIdle } from '@trionesdev/designable-shared'
-import {usePrefix, TextWidget, useCssInJs} from '@trionesdev/designable-react'
-import { MonacoInput } from '@trionesdev/designable-react-settings-form'
+import React, { useEffect, useMemo, useState } from 'react';
+import { clone, uid } from '@formily/shared';
+import { createForm, isVoidField } from '@formily/core';
+import { createSchemaField } from '@formily/react';
+import { GlobalRegistry } from '@trionesdev/designable-core';
+import { requestIdle } from '@trionesdev/designable-shared';
+import {
+  usePrefix,
+  TextWidget,
+  useCssInJs,
+} from '@trionesdev/designable-react';
+import { MonacoInput } from '@trionesdev/designable-react-settings-form';
 import {
   Form,
   ArrayTable,
@@ -13,25 +17,25 @@ import {
   Select,
   FormItem,
   FormCollapse,
-} from '@formily/antd-v5'
-import { Modal, Card, Button, Tag, Tooltip } from 'antd'
-import { PathSelector } from './PathSelector'
-import { FieldPropertySetter } from './FieldPropertySetter'
-import { FulfillRunHelper } from './helpers'
-import { IReaction } from './types'
-import { initDeclaration } from './declarations'
-import {genReactionsSetterStyle} from "./styles";
-import cls from "classnames";
+} from '@formily/antd-v5';
+import { Modal, Card, Button, Tag, Tooltip } from 'antd';
+import { PathSelector } from './PathSelector';
+import { FieldPropertySetter } from './FieldPropertySetter';
+import { FulfillRunHelper } from './helpers';
+import { IReaction } from './types';
+import { initDeclaration } from './declarations';
+import { genReactionsSetterStyle } from './styles';
+import cls from 'classnames';
 // import './styles.less'
 
 export interface IReactionsSetterProps {
-  value?: IReaction
-  onChange?: (value: IReaction) => void
+  value?: IReaction;
+  onChange?: (value: IReaction) => void;
 }
 
 const TypeView = ({ value }) => {
-  const text = String(value)
-  if (text.length <= 26) return <Tag>{text}</Tag>
+  const text = String(value);
+  if (text.length <= 26) return <Tag>{text}</Tag>;
   return (
     <Tag>
       <Tooltip
@@ -48,8 +52,8 @@ const TypeView = ({ value }) => {
         {text.substring(0, 24)}...
       </Tooltip>
     </Tag>
-  )
-}
+  );
+};
 
 const SchemaField = createSchemaField({
   components: {
@@ -64,7 +68,7 @@ const SchemaField = createSchemaField({
     ArrayTable,
     MonacoInput,
   },
-})
+});
 
 const FieldStateProperties = [
   'value',
@@ -96,7 +100,7 @@ const FieldStateProperties = [
   'editable',
   'validateStatus',
   'validating',
-]
+];
 
 const FieldStateValueTypes = {
   modified: 'boolean',
@@ -136,40 +140,43 @@ const FieldStateValueTypes = {
   editable: 'boolean',
   validateStatus: "'error' | 'warning' | 'success' | 'validating'",
   validating: 'boolean',
-}
+};
 
 export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
-  const [modalVisible, setModalVisible] = useState(false)
-  const [innerVisible, setInnerVisible] = useState(false)
-  const prefix = usePrefix('reactions-setter')
-  const {hashId,wrapSSR} = useCssInJs({prefix,styleFun: genReactionsSetterStyle})
+  const [modalVisible, setModalVisible] = useState(false);
+  const [innerVisible, setInnerVisible] = useState(false);
+  const prefix = usePrefix('reactions-setter');
+  const { hashId, wrapSSR } = useCssInJs({
+    prefix,
+    styleFun: genReactionsSetterStyle,
+  });
   const form = useMemo(() => {
     return createForm({
       values: clone(props.value),
-    })
-  }, [modalVisible, props.value])
+    });
+  }, [modalVisible, props.value]);
   const formCollapse = useMemo(
     () => FormCollapse.createFormCollapse(['deps', 'state']),
-    [modalVisible]
-  )
-  const openModal = () => setModalVisible(true)
-  const closeModal = () => setModalVisible(false)
+    [modalVisible],
+  );
+  const openModal = () => setModalVisible(true);
+  const closeModal = () => setModalVisible(false);
   useEffect(() => {
     if (modalVisible) {
       requestIdle(
         () => {
           initDeclaration().then(() => {
-            setInnerVisible(true)
-          })
+            setInnerVisible(true);
+          });
         },
         {
           timeout: 400,
-        }
-      )
+        },
+      );
     } else {
-      setInnerVisible(false)
+      setInnerVisible(false);
     }
-  }, [modalVisible])
+  }, [modalVisible]);
   return wrapSSR(
     <>
       <Button block onClick={openModal}>
@@ -177,7 +184,7 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
       </Button>
       <Modal
         title={GlobalRegistry.getDesignerMessage(
-          'SettingComponents.ReactionsSetter.configureReactions'
+          'SettingComponents.ReactionsSetter.configureReactions',
         )}
         width="70%"
         centered
@@ -189,12 +196,12 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
         destroyOnClose
         onOk={() => {
           form.submit((values) => {
-            props.onChange?.(values)
-          })
-          closeModal()
+            props.onChange?.(values);
+          });
+          closeModal();
         }}
       >
-        <div className={cls(prefix,hashId)}>
+        <div className={cls(prefix, hashId)}>
           {innerVisible && (
             <Form form={form}>
               <SchemaField>
@@ -211,7 +218,7 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
                     x-component-props={{
                       key: 'deps',
                       header: GlobalRegistry.getDesignerMessage(
-                        'SettingComponents.ReactionsSetter.relationsFields'
+                        'SettingComponents.ReactionsSetter.relationsFields',
                       ),
                     }}
                   >
@@ -225,7 +232,7 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
                           x-component="ArrayTable.Column"
                           x-component-props={{
                             title: GlobalRegistry.getDesignerMessage(
-                              'SettingComponents.ReactionsSetter.sourceField'
+                              'SettingComponents.ReactionsSetter.sourceField',
                             ),
                             width: 240,
                           }}
@@ -236,7 +243,7 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
                             x-component="PathSelector"
                             x-component-props={{
                               placeholder: GlobalRegistry.getDesignerMessage(
-                                'SettingComponents.ReactionsSetter.pleaseSelect'
+                                'SettingComponents.ReactionsSetter.pleaseSelect',
                               ),
                             }}
                           />
@@ -245,7 +252,7 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
                           x-component="ArrayTable.Column"
                           x-component-props={{
                             title: GlobalRegistry.getDesignerMessage(
-                              'SettingComponents.ReactionsSetter.sourceProperty'
+                              'SettingComponents.ReactionsSetter.sourceProperty',
                             ),
                             width: 200,
                           }}
@@ -263,7 +270,7 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
                           x-component="ArrayTable.Column"
                           x-component-props={{
                             title: GlobalRegistry.getDesignerMessage(
-                              'SettingComponents.ReactionsSetter.variableName'
+                              'SettingComponents.ReactionsSetter.variableName',
                             ),
                             width: 200,
                           }}
@@ -274,31 +281,34 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
                             x-validator={{
                               pattern: /^[$_a-zA-Z]+[$_a-zA-Z0-9]*$/,
                               message: GlobalRegistry.getDesignerMessage(
-                                'SettingComponents.ReactionsSetter.variableNameValidateMessage'
+                                'SettingComponents.ReactionsSetter.variableNameValidateMessage',
                               ),
                             }}
                             x-component="Input"
                             x-component-props={{
                               addonBefore: '$deps.',
                               placeholder: GlobalRegistry.getDesignerMessage(
-                                'SettingComponents.ReactionsSetter.pleaseInput'
+                                'SettingComponents.ReactionsSetter.pleaseInput',
                               ),
                             }}
                             x-reactions={(field) => {
-                              if (isVoidField(field)) return
+                              if (isVoidField(field)) return;
                               field.query('.source').take((source) => {
-                                if (isVoidField(source)) return
+                                if (isVoidField(source)) return;
                                 if (
                                   source.value &&
                                   !field.value &&
                                   !field.modified
                                 ) {
-                                  field.setValue(source.inputValues[1]?.props?.name || `v_${uid()}`)
+                                  field.setValue(
+                                    source.inputValues[1]?.props?.name ||
+                                      `v_${uid()}`,
+                                  );
                                   // field.value =
                                   //   source.inputValues[1]?.props?.name ||
                                   //   `v_${uid()}`
                                 }
-                              })
+                              });
                             }}
                           />
                         </SchemaField.Void>
@@ -307,7 +317,7 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
                           x-component="ArrayTable.Column"
                           x-component-props={{
                             title: GlobalRegistry.getDesignerMessage(
-                              'SettingComponents.ReactionsSetter.variableType'
+                              'SettingComponents.ReactionsSetter.variableType',
                             ),
                             ellipsis: {
                               showTitle: false,
@@ -322,39 +332,44 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
                             x-decorator="FormItem"
                             x-component="TypeView"
                             x-reactions={(field) => {
-                              if (isVoidField(field)) return
+                              if (isVoidField(field)) return;
                               const property = field
                                 .query('.property')
-                                .get('inputValues')
-                              if (!property) return
-                              property[0] = property[0] || 'value'
+                                .get('inputValues');
+                              if (!property) return;
+                              property[0] = property[0] || 'value';
                               field.query('.source').take((source) => {
-                                if (isVoidField(source)) return
+                                if (isVoidField(source)) return;
                                 if (source.value) {
                                   if (
                                     property[0] === 'value' ||
                                     property[0] === 'initialValue' ||
                                     property[0] === 'inputValue'
                                   ) {
-                                    field.setValue(source.inputValues[1]?.props?.type || 'any')
+                                    field.setValue(
+                                      source.inputValues[1]?.props?.type ||
+                                        'any',
+                                    );
                                     // field.value =
                                     //   source.inputValues[1]?.props?.type ||
                                     //   'any'
                                   } else if (property[0] === 'inputValues') {
                                     // @ts-ignore
-                                    field.setValue(`any[]`)
+                                    field.setValue(`any[]`);
                                     // field.value = `any[]`
                                   } else if (property[0]) {
-                                    field.setValue(FieldStateValueTypes[property[0]])
+                                    field.setValue(
+                                      FieldStateValueTypes[property[0]],
+                                    );
                                     // field.value =
                                     //   FieldStateValueTypes[property[0]]
                                   } else {
                                     // @ts-ignore
-                                    field.setValue("any")
+                                    field.setValue('any');
                                     // field.value = 'any'
                                   }
                                 }
-                              })
+                              });
                             }}
                           />
                         </SchemaField.Void>
@@ -362,7 +377,7 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
                           x-component="ArrayTable.Column"
                           x-component-props={{
                             title: GlobalRegistry.getDesignerMessage(
-                              'SettingComponents.ReactionsSetter.operations'
+                              'SettingComponents.ReactionsSetter.operations',
                             ),
                             align: 'center',
                             width: 80,
@@ -376,7 +391,7 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
                       </SchemaField.Object>
                       <SchemaField.Void
                         title={GlobalRegistry.getDesignerMessage(
-                          'SettingComponents.ReactionsSetter.addRelationField'
+                          'SettingComponents.ReactionsSetter.addRelationField',
                         )}
                         x-component="ArrayTable.Addition"
                         x-component-props={{ style: { marginTop: 8 } }}
@@ -388,7 +403,7 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
                     x-component="FormCollapse.CollapsePanel"
                     x-component-props={{
                       header: GlobalRegistry.getDesignerMessage(
-                        'SettingComponents.ReactionsSetter.propertyReactions'
+                        'SettingComponents.ReactionsSetter.propertyReactions',
                       ),
                       key: 'state',
                       className: 'reaction-state',
@@ -404,7 +419,7 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
                     x-component-props={{
                       key: 'run',
                       header: GlobalRegistry.getDesignerMessage(
-                        'SettingComponents.ReactionsSetter.actionReactions'
+                        'SettingComponents.ReactionsSetter.actionReactions',
                       ),
                       className: 'reaction-runner',
                     }}
@@ -424,16 +439,16 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
                         },
                       }}
                       x-reactions={(field) => {
-                        const deps = field.query('dependencies').value()
+                        const deps = field.query('dependencies').value();
                         if (Array.isArray(deps)) {
                           field.componentProps.extraLib = `
                           declare var $deps : {
                             ${deps.map(({ name, type }) => {
-                              if (!name) return ''
-                              return `${name}?:${type || 'any'},`
+                              if (!name) return '';
+                              return `${name}?:${type || 'any'},`;
                             })}
                           }
-                          `
+                          `;
                         }
                       }}
                     />
@@ -444,6 +459,6 @@ export const ReactionsSetter: React.FC<IReactionsSetterProps> = (props) => {
           )}
         </div>
       </Modal>
-    </>
-  )
-}
+    </>,
+  );
+};

@@ -1,6 +1,6 @@
-import { useContext } from 'react'
-import { TreeNodeContext } from '../context'
+import { useContext } from 'react';
+import { TreeNodeContext } from '../context';
 
 export const useTreeNode = () => {
-  return useContext(TreeNodeContext)
-}
+  return useContext(TreeNodeContext);
+};

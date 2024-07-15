@@ -1,5 +1,5 @@
-import { useLayout } from './useLayout'
+import { useLayout } from './useLayout';
 
 export const usePosition = () => {
-  return useLayout()?.position
-}
+  return useLayout()?.position;
+};

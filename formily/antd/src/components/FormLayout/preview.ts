@@ -1,14 +1,14 @@
-import React from 'react'
-import { FormLayout as FormilyFormLayout } from '@formily/antd-v5'
-import { createBehavior, createResource } from '@trionesdev/designable-core'
-import { DnFC } from '@trionesdev/designable-react'
-import { withContainer } from '../../common/Container'
-import { createVoidFieldSchema } from '../Field'
-import { AllSchemas } from '../../schemas'
-import { AllLocales } from '../../locales'
+import React from 'react';
+import { FormLayout as FormilyFormLayout } from '@formily/antd-v5';
+import { createBehavior, createResource } from '@trionesdev/designable-core';
+import { DnFC } from '@trionesdev/designable-react';
+import { withContainer } from '../../common/Container';
+import { createVoidFieldSchema } from '../Field';
+import { AllSchemas } from '../../schemas';
+import { AllLocales } from '../../locales';
 
 export const FormLayout: DnFC<React.ComponentProps<typeof FormilyFormLayout>> =
-  withContainer(FormilyFormLayout)
+  withContainer(FormilyFormLayout);
 
 FormLayout.Behavior = createBehavior({
   name: 'FormLayout',
@@ -19,7 +19,7 @@ FormLayout.Behavior = createBehavior({
     propsSchema: createVoidFieldSchema(AllSchemas.FormLayout),
   },
   designerLocales: AllLocales.FormLayout,
-})
+});
 
 FormLayout.Resource = createResource({
   icon: 'FormLayoutSource',
@@ -32,4 +32,4 @@ FormLayout.Resource = createResource({
       },
     },
   ],
-})
+});

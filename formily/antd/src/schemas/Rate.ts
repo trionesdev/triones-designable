@@ -1,4 +1,4 @@
-import { ISchema } from '@formily/react'
+import { ISchema } from '@formily/react';
 
 export const Rate: ISchema = {
   type: 'object',
@@ -37,4 +37,4 @@ export const Rate: ISchema = {
       'x-component': 'Switch',
     },
   },
-}
+};

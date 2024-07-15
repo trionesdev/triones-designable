@@ -13,13 +13,15 @@
     "preversion": "yarn run build",
     "version:beta": "lerna version prerelease --preid beta",
     "release:github": "ts-node scripts/release release",
-    "release:force": "lerna publish from-package --yes --registry=https://moensun-npm.pkg.coding.net/npm/moensun/",
+    "release:force": "lerna publish from-package --yes",
     "prelease:force": "lerna publish from-package --yes --dist-tag next",
-    "release": "lerna publish --registry=https://moensun-npm.pkg.coding.net/npm/moensun/",
-    "codingPublish": "lerna publish --registry=https://moensun-npm.pkg.coding.net/npm/moensun/"
+    "release": "lerna publish",
+    "codingPublish": "lerna publish --registry=https://moensun-npm.pkg.coding.net/npm/moensun/",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'"
   },
-  "dependencies": {},
   "devDependencies": {
-    "lerna": "^7.1.1"
+    "eslint-plugin-prettier": "^5.1.3",
+    "lerna": "^7.1.1",
+    "prettier": "^3.2.5"
   }
 }

@@ -1,90 +1,90 @@
-import { IEngineProps } from '../types'
-import { ITreeNode, TreeNode } from './TreeNode'
-import { Workbench } from './Workbench'
-import { Cursor } from './Cursor'
-import { Keyboard } from './Keyboard'
-import { Screen, ScreenType } from './Screen'
-import { Event, uid, globalThisPolyfill } from '@trionesdev/designable-shared'
+import { IEngineProps } from '../types';
+import { ITreeNode, TreeNode } from './TreeNode';
+import { Workbench } from './Workbench';
+import { Cursor } from './Cursor';
+import { Keyboard } from './Keyboard';
+import { Screen, ScreenType } from './Screen';
+import { Event, uid, globalThisPolyfill } from '@trionesdev/designable-shared';
 
 /**
  * 设计器引擎
  */
 
 export class Engine extends Event {
-  id: string
+  id: string;
 
-  props: IEngineProps<Engine>
+  props: IEngineProps<Engine>;
 
-  cursor: Cursor
+  cursor: Cursor;
 
-  workbench: Workbench
+  workbench: Workbench;
 
-  keyboard: Keyboard
+  keyboard: Keyboard;
 
-  screen: Screen
+  screen: Screen;
 
   constructor(props: IEngineProps<Engine>) {
-    super(props)
+    super(props);
     this.props = {
       ...Engine.defaultProps,
       ...props,
-    }
-    this.init()
-    this.id = uid()
+    };
+    this.init();
+    this.id = uid();
   }
 
   init() {
-    this.workbench = new Workbench(this)
-    this.screen = new Screen(this)
-    this.cursor = new Cursor(this)
-    this.keyboard = new Keyboard(this)
+    this.workbench = new Workbench(this);
+    this.screen = new Screen(this);
+    this.cursor = new Cursor(this);
+    this.keyboard = new Keyboard(this);
   }
 
   setCurrentTree(tree?: ITreeNode) {
     if (this.workbench.currentWorkspace) {
-      this.workbench.currentWorkspace.operation.tree.from(tree)
+      this.workbench.currentWorkspace.operation.tree.from(tree);
     }
   }
 
   getCurrentTree() {
-    return this.workbench?.currentWorkspace?.operation?.tree
+    return this.workbench?.currentWorkspace?.operation?.tree;
   }
 
   getAllSelectedNodes() {
-    let results: TreeNode[] = []
+    let results: TreeNode[] = [];
     for (let i = 0; i < this.workbench.workspaces.length; i++) {
-      const workspace = this.workbench.workspaces[i]
-      results = results.concat(workspace.operation.selection.selectedNodes)
+      const workspace = this.workbench.workspaces[i];
+      results = results.concat(workspace.operation.selection.selectedNodes);
     }
-    return results
+    return results;
   }
 
   findNodeById(id: string) {
-    return TreeNode.findById(id)
+    return TreeNode.findById(id);
   }
 
   findMovingNodes(): TreeNode[] {
-    const results = []
+    const results = [];
     this.workbench.eachWorkspace((workspace) => {
       workspace.operation.moveHelper.dragNodes?.forEach((node) => {
         if (!results.includes(node)) {
-          results.push(node)
+          results.push(node);
         }
-      })
-    })
-    return results
+      });
+    });
+    return results;
   }
 
   createNode(node: ITreeNode, parent?: TreeNode) {
-    return new TreeNode(node, parent)
+    return new TreeNode(node, parent);
   }
 
   mount() {
-    this.attachEvents(globalThisPolyfill)
+    this.attachEvents(globalThisPolyfill);
   }
 
   unmount() {
-    this.detachEvents()
+    this.detachEvents();
   }
 
   static defaultProps: IEngineProps<Engine> = {
@@ -104,5 +104,5 @@ export class Engine extends Event {
     outlineNodeIdAttrName: 'data-designer-outline-node-id',
     nodeTranslateAttrName: 'data-designer-node-translate-handler',
     defaultScreenType: ScreenType.PC,
-  }
+  };
 }

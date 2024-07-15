@@ -1,4 +1,4 @@
-import { createLocales } from '@trionesdev/designable-core'
+import { createLocales } from '@trionesdev/designable-core';
 
 export const Upload = {
   'zh-CN': {
@@ -70,7 +70,7 @@ export const Upload = {
       },
     },
   },
-}
+};
 
 export const UploadDragger = createLocales(Upload, {
   'zh-CN': {
@@ -91,4 +91,4 @@ export const UploadDragger = createLocales(Upload, {
       'x-component-props': {},
     },
   },
-})
+});

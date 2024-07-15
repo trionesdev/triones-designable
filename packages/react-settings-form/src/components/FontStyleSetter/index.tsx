@@ -1,28 +1,28 @@
-import React from 'react'
-import { usePrefix, IconWidget } from '@trionesdev/designable-react'
-import { useField, Field, observer } from '@formily/react'
-import { Select, Radio, NumberPicker } from '@formily/antd-v5'
-import { FoldItem } from '../FoldItem'
-import { InputItems } from '../InputItems'
-import { SizeInput } from '../SizeInput'
-import { ColorInput } from '../ColorInput'
-import cls from 'classnames'
+import React from 'react';
+import { usePrefix, IconWidget } from '@trionesdev/designable-react';
+import { useField, Field, observer } from '@formily/react';
+import { Select, Radio, NumberPicker } from '@formily/antd-v5';
+import { FoldItem } from '../FoldItem';
+import { InputItems } from '../InputItems';
+import { SizeInput } from '../SizeInput';
+import { ColorInput } from '../ColorInput';
+import cls from 'classnames';
 export interface IFontStyleSetterProps {
-  className?: string
-  style?: React.CSSProperties
+  className?: string;
+  style?: React.CSSProperties;
 }
 
 const createFontFamilyOptions = (fonts: string[]) => {
   return fonts.map((font) => {
-    const splited = font.split('=')
-    const label = splited?.[0]
-    const value = splited?.[1]
+    const splited = font.split('=');
+    const label = splited?.[0];
+    const value = splited?.[1];
     return {
       label: <span style={{ fontFamily: value }}>{label}</span>,
       value,
-    }
-  })
-}
+    };
+  });
+};
 
 const FontFamilyOptions = createFontFamilyOptions([
   '宋体=SimSun',
@@ -44,12 +44,12 @@ const FontFamilyOptions = createFontFamilyOptions([
   'Times New Roman=times new roman,times,serif',
   'Trebuchet MS=trebuchet ms,geneva,sans-serif',
   'Verdana=verdana,geneva,sans-serif',
-])
+]);
 
 export const FontStyleSetter: React.FC<IFontStyleSetterProps> = observer(
   (props) => {
-    const field = useField()
-    const prefix = usePrefix('font-style-setter')
+    const field = useField();
+    const prefix = usePrefix('font-style-setter');
     return (
       <FoldItem
         label={field.title}
@@ -163,6 +163,6 @@ export const FontStyleSetter: React.FC<IFontStyleSetterProps> = observer(
           </InputItems>
         </FoldItem.Extra>
       </FoldItem>
-    )
-  }
-)
+    );
+  },
+);

@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-export const AddSort:React.JSX.Element = (
+export const AddSort: React.JSX.Element = (
   <g stroke="none" strokeWidth="1" fillRule="evenodd">
     <rect
       transform="translate(370.000000, 495.274170) scale(1, -1) rotate(90.000000) translate(-370.000000, -495.274170) "
@@ -35,9 +35,9 @@ export const AddSort:React.JSX.Element = (
       rx="40"
     ></rect>
   </g>
-)
+);
 
-export const AddIndex:React.JSX.Element = (
+export const AddIndex: React.JSX.Element = (
   <g stroke="none" strokeWidth="1" fillRule="evenodd">
     <path
       d="M281,34 C195.672006,34 126.5,103.172006 126.5,188.5 C126.5,273.827994 195.672006,343 281,343 C366.327994,343 435.5,273.827994 435.5,188.5 C435.5,103.172006 366.327994,34 281,34 Z M281,114 C322.145214,114 355.5,147.354786 355.5,188.5 C355.5,229.645214 322.145214,263 281,263 C239.854786,263 206.5,229.645214 206.5,188.5 C206.5,147.354786 239.854786,114 281,114 Z"
@@ -52,9 +52,9 @@ export const AddIndex:React.JSX.Element = (
       fillRule="nonzero"
     ></path>
   </g>
-)
+);
 
-export const AddColumn:React.JSX.Element = (
+export const AddColumn: React.JSX.Element = (
   <g stroke="none" strokeWidth="1" fillRule="evenodd">
     <rect
       transform="translate(354.000000, 512.000000) rotate(90.000000) translate(-354.000000, -512.000000) "
@@ -77,9 +77,9 @@ export const AddColumn:React.JSX.Element = (
       rx="40"
     ></rect>
   </g>
-)
+);
 
-export const AddColumnGroup:React.JSX.Element = (
+export const AddColumnGroup: React.JSX.Element = (
   <g stroke="none" strokeWidth="1" fillRule="evenodd">
     <path
       d="M864,62 L160,62 C71.63444,62 0,133.63444 0,222 L0,802 C0,890.36556 71.63444,962 160,962 L864,962 C952.36556,962 1024,890.36556 1024,802 L1024,222 C1024,133.63444 952.36556,62 864,62 Z M160,142 L864,142 C908.18278,142 944,177.81722 944,222 L944,802 C944,846.18278 908.18278,882 864,882 L160,882 C115.81722,882 80,846.18278 80,802 L80,222 C80,177.81722 115.81722,142 160,142 Z"
@@ -95,9 +95,9 @@ export const AddColumnGroup:React.JSX.Element = (
       rx="40"
     ></rect>
   </g>
-)
+);
 
-export const AddPanel:React.JSX.Element = (
+export const AddPanel: React.JSX.Element = (
   <g stroke="none" strokeWidth="1" fillRule="evenodd">
     <path
       d="M864,62 L160,62 C71.63444,62 0,133.63444 0,222 L0,802 C0,890.36556 71.63444,962 160,962 L864,962 C952.36556,962 1024,890.36556 1024,802 L1024,222 C1024,133.63444 952.36556,62 864,62 Z M160,142 L864,142 C908.18278,142 944,177.81722 944,222 L944,802 C944,846.18278 908.18278,882 864,882 L160,882 C115.81722,882 80,846.18278 80,802 L80,222 C80,177.81722 115.81722,142 160,142 Z"
@@ -105,9 +105,9 @@ export const AddPanel:React.JSX.Element = (
     ></path>
     <rect x="40" y="281" width="984" height="80" rx="40"></rect>
   </g>
-)
+);
 
-export const AddOperation:React.JSX.Element = (
+export const AddOperation: React.JSX.Element = (
   <g stroke="none" strokeWidth="1" fillRule="evenodd">
     <path
       d="M421.97834,146.878887 C449.098125,146.878887 475.034958,155.079747 495.071944,170.058344 C517.366493,186.724577 531.199744,210.946101 531.474179,238.012376 L531.47834,238.833432 L531.47834,567.878887 C531.47834,589.970277 513.56973,607.878887 491.47834,607.878887 C469.607864,607.878887 451.83693,590.326658 451.483699,568.54036 L451.47834,567.878887 L451.47762,238.832254 L451.424408,238.717723 L451.319172,238.517315 L451.202904,238.308109 C450.531417,237.121323 449.203347,235.651792 447.172579,234.133697 C441.310242,229.751322 432.225599,226.878887 421.97834,226.878887 C411.73108,226.878887 402.646438,229.751322 396.784101,234.133697 C394.753333,235.651792 393.425263,237.121323 392.753776,238.308109 L392.559374,238.664382 L392.47834,238.833432 L392.47834,567.878887 C392.47834,589.970277 374.56973,607.878887 352.47834,607.878887 C330.607864,607.878887 312.83693,590.326658 312.483699,568.54036 L312.47834,567.878887 L312.47834,238.833432 C312.47834,211.436195 326.364989,186.892923 348.884736,170.058344 C368.921722,155.079747 394.858555,146.878887 421.97834,146.878887 Z"
@@ -135,4 +135,4 @@ export const AddOperation:React.JSX.Element = (
       fillRule="nonzero"
     ></path>
   </g>
-)
+);

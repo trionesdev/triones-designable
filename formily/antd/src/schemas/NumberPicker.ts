@@ -1,4 +1,4 @@
-import { ISchema } from '@formily/react'
+import { ISchema } from '@formily/react';
 
 export const NumberPicker: ISchema = {
   type: 'object',
@@ -78,4 +78,4 @@ export const NumberPicker: ISchema = {
       },
     },
   },
-}
+};

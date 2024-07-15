@@ -1,12 +1,12 @@
-import React from 'react'
-import { Slider as AntdSlider } from 'antd'
-import { createBehavior, createResource } from '@trionesdev/designable-core'
-import { DnFC } from '@trionesdev/designable-react'
-import { createFieldSchema } from '../Field'
-import { AllSchemas } from '../../schemas'
-import { AllLocales } from '../../locales'
+import React from 'react';
+import { Slider as AntdSlider } from 'antd';
+import { createBehavior, createResource } from '@trionesdev/designable-core';
+import { DnFC } from '@trionesdev/designable-react';
+import { createFieldSchema } from '../Field';
+import { AllSchemas } from '../../schemas';
+import { AllLocales } from '../../locales';
 
-export const Slider: DnFC<React.ComponentProps<typeof AntdSlider>> = AntdSlider
+export const Slider: DnFC<React.ComponentProps<typeof AntdSlider>> = AntdSlider;
 
 Slider.Behavior = createBehavior({
   name: 'Slider',
@@ -16,7 +16,7 @@ Slider.Behavior = createBehavior({
     propsSchema: createFieldSchema(AllSchemas.Slider),
   },
   designerLocales: AllLocales.Slider,
-})
+});
 
 Slider.Resource = createResource({
   icon: 'SliderSource',
@@ -31,4 +31,4 @@ Slider.Resource = createResource({
       },
     },
   ],
-})
+});

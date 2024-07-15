@@ -1,13 +1,13 @@
-import React from 'react'
-import { TimePicker as FormilyTimePicker } from '@formily/antd-v5'
-import { createBehavior, createResource } from '@trionesdev/designable-core'
-import { DnFC } from '@trionesdev/designable-react'
-import { createFieldSchema } from '../Field'
-import { AllSchemas } from '../../schemas'
-import { AllLocales } from '../../locales'
+import React from 'react';
+import { TimePicker as FormilyTimePicker } from '@formily/antd-v5';
+import { createBehavior, createResource } from '@trionesdev/designable-core';
+import { DnFC } from '@trionesdev/designable-react';
+import { createFieldSchema } from '../Field';
+import { AllSchemas } from '../../schemas';
+import { AllLocales } from '../../locales';
 
 export const TimePicker: DnFC<React.ComponentProps<typeof FormilyTimePicker>> =
-  FormilyTimePicker
+  FormilyTimePicker;
 
 TimePicker.Behavior = createBehavior(
   {
@@ -27,8 +27,8 @@ TimePicker.Behavior = createBehavior(
       propsSchema: createFieldSchema(AllSchemas.TimePicker.RangePicker),
     },
     designerLocales: AllLocales.TimeRangePicker,
-  }
-)
+  },
+);
 
 TimePicker.Resource = createResource(
   {
@@ -58,5 +58,5 @@ TimePicker.Resource = createResource(
         },
       },
     ],
-  }
-)
+  },
+);

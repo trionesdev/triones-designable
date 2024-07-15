@@ -1,13 +1,13 @@
-import React from 'react'
-import { Cascader as FormilyCascader } from '@formily/antd-v5'
-import { createBehavior, createResource } from '@trionesdev/designable-core'
-import { DnFC } from '@trionesdev/designable-react'
-import { createFieldSchema } from '../Field'
-import { AllSchemas } from '../../schemas'
-import { AllLocales } from '../../locales'
+import React from 'react';
+import { Cascader as FormilyCascader } from '@formily/antd-v5';
+import { createBehavior, createResource } from '@trionesdev/designable-core';
+import { DnFC } from '@trionesdev/designable-react';
+import { createFieldSchema } from '../Field';
+import { AllSchemas } from '../../schemas';
+import { AllLocales } from '../../locales';
 
 export const Cascader: DnFC<React.ComponentProps<typeof FormilyCascader>> =
-  FormilyCascader
+  FormilyCascader;
 
 Cascader.Behavior = createBehavior({
   name: 'Cascader',
@@ -17,7 +17,7 @@ Cascader.Behavior = createBehavior({
     propsSchema: createFieldSchema(AllSchemas.Cascader),
   },
   designerLocales: AllLocales.Cascader,
-})
+});
 
 Cascader.Resource = createResource({
   icon: 'CascaderSource',
@@ -31,4 +31,4 @@ Cascader.Resource = createResource({
       },
     },
   ],
-})
+});

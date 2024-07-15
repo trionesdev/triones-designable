@@ -1,4 +1,4 @@
-import { ISchema } from '@formily/react'
+import { ISchema } from '@formily/react';
 
 export const FormTab: ISchema & { TabPane?: ISchema } = {
   type: 'object',
@@ -32,7 +32,7 @@ export const FormTab: ISchema & { TabPane?: ISchema } = {
       },
     },
   },
-}
+};
 
 FormTab.TabPane = {
   type: 'object',
@@ -43,4 +43,4 @@ FormTab.TabPane = {
       'x-component': 'Input',
     },
   },
-}
+};

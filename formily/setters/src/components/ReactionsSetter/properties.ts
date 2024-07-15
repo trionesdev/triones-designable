@@ -7,7 +7,7 @@ import {
   DecoratorPropsHelper,
   DisplayHelper,
   ComponentPropsHelper,
-} from './helpers'
+} from './helpers';
 
 export const FieldProperties = [
   {
@@ -48,4 +48,4 @@ export const FieldProperties = [
     type: 'object',
     helpCode: DecoratorPropsHelper,
   },
-]
+];

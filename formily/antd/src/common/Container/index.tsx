@@ -1,15 +1,15 @@
-import React from 'react'
-import { observer } from '@formily/reactive-react'
-import { DroppableWidget } from '@trionesdev/designable-react'
+import React from 'react';
+import { observer } from '@formily/reactive-react';
+import { DroppableWidget } from '@trionesdev/designable-react';
 // import './styles.less'
 
 type ContainerProps = {
-  children?:React.ReactNode
-}
+  children?: React.ReactNode;
+};
 
 export const Container: React.FC<ContainerProps> = observer((props) => {
-  return <DroppableWidget>{props.children}</DroppableWidget>
-})
+  return <DroppableWidget>{props.children}</DroppableWidget>;
+});
 
 export const withContainer = (Target: React.JSXElementConstructor<any>) => {
   return (props: any) => {
@@ -17,6 +17,6 @@ export const withContainer = (Target: React.JSXElementConstructor<any>) => {
       <DroppableWidget>
         <Target {...props} />
       </DroppableWidget>
-    )
-  }
-}
+    );
+  };
+};

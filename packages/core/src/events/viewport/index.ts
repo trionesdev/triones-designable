@@ -1,2 +1,2 @@
-export * from './ViewportResizeEvent'
-export * from './ViewportScrollEvent'
+export * from './ViewportResizeEvent';
+export * from './ViewportScrollEvent';

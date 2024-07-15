@@ -41,7 +41,7 @@ export const FormCollapse = {
       },
     },
   },
-}
+};
 
 export const FormCollapsePanel = {
   'zh-CN': {
@@ -80,4 +80,4 @@ export const FormCollapsePanel = {
       },
     },
   },
-}
+};

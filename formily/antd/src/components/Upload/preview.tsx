@@ -1,13 +1,13 @@
-import React from 'react'
-import { Upload as FormilyUpload } from '@formily/antd-v5'
-import { createBehavior, createResource } from '@trionesdev/designable-core'
-import { DnFC } from '@trionesdev/designable-react'
-import { createFieldSchema } from '../Field'
-import { AllSchemas } from '../../schemas'
-import { AllLocales } from '../../locales'
+import React from 'react';
+import { Upload as FormilyUpload } from '@formily/antd-v5';
+import { createBehavior, createResource } from '@trionesdev/designable-core';
+import { DnFC } from '@trionesdev/designable-react';
+import { createFieldSchema } from '../Field';
+import { AllSchemas } from '../../schemas';
+import { AllLocales } from '../../locales';
 
 export const Upload: DnFC<React.ComponentProps<typeof FormilyUpload>> =
-  FormilyUpload
+  FormilyUpload;
 
 Upload.Behavior = createBehavior(
   {
@@ -27,8 +27,8 @@ Upload.Behavior = createBehavior(
       propsSchema: createFieldSchema(AllSchemas.Upload.Dragger),
     },
     designerLocales: AllLocales.UploadDragger,
-  }
-)
+  },
+);
 
 Upload.Resource = createResource(
   {
@@ -64,5 +64,5 @@ Upload.Resource = createResource(
         },
       },
     ],
-  }
-)
+  },
+);

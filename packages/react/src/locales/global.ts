@@ -13,4 +13,4 @@ export default {
     reset: 'Reset',
     publish: 'Publish',
   },
-}
+};

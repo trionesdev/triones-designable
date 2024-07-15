@@ -146,5 +146,5 @@ export enum KeyCode {
 }
 
 export const getKeyCodeFromEvent = (event: KeyboardEvent): KeyCode => {
-  return event.key as any
-}
+  return event.key as any;
+};

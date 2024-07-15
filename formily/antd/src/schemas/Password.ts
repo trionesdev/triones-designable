@@ -1,5 +1,5 @@
-import { ISchema } from '@formily/react'
-import { Input } from './Input'
+import { ISchema } from '@formily/react';
+import { Input } from './Input';
 export const Password: ISchema = {
   type: 'object',
   properties: {
@@ -10,4 +10,4 @@ export const Password: ISchema = {
       'x-component': 'Switch',
     },
   },
-}
+};

@@ -1,9 +1,7 @@
 import { defineConfig } from 'father';
-import * as path from "path";
-const resolve = dir => path.resolve(__dirname, dir);
+import * as path from 'path';
+const resolve = (dir) => path.resolve(__dirname, dir);
 export default defineConfig({
-  alias:{
-
-  },
+  alias: {},
   esm: { output: 'dist' },
 });

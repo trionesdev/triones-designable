@@ -47,7 +47,7 @@ export const FormGrid = {
       },
     },
   },
-}
+};
 
 export const FormGridColumn = {
   'zh-CN': {
@@ -74,4 +74,4 @@ export const FormGridColumn = {
       },
     },
   },
-}
+};

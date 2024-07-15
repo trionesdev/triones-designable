@@ -1,3 +1,3 @@
-import * as AllSchemas from './all'
+import * as AllSchemas from './all';
 
-export { AllSchemas }
+export { AllSchemas };

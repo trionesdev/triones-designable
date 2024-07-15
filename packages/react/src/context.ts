@@ -1,17 +1,18 @@
-import { createContext } from 'react'
-import { TreeNode, Engine } from '@trionesdev/designable-core'
+import { createContext } from 'react';
+import { TreeNode, Engine } from '@trionesdev/designable-core';
 import {
   IDesignerLayoutContext,
   IWorkspaceContext,
   IDesignerComponents,
-} from './types'
+} from './types';
 
-export const DesignerComponentsContext = createContext<IDesignerComponents>({})
+export const DesignerComponentsContext = createContext<IDesignerComponents>({});
 
-export const DesignerLayoutContext = createContext<IDesignerLayoutContext>(null)
+export const DesignerLayoutContext =
+  createContext<IDesignerLayoutContext>(null);
 
-export const DesignerEngineContext = createContext<Engine>(null)
+export const DesignerEngineContext = createContext<Engine>(null);
 
-export const TreeNodeContext = createContext<TreeNode>(null)
+export const TreeNodeContext = createContext<TreeNode>(null);
 
-export const WorkspaceContext = createContext<IWorkspaceContext>(null)
+export const WorkspaceContext = createContext<IWorkspaceContext>(null);

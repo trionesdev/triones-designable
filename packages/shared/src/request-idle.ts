@@ -1,22 +1,22 @@
-import 'requestidlecallback'
-import { globalThisPolyfill } from './globalThisPolyfill'
+import 'requestidlecallback';
+import { globalThisPolyfill } from './globalThisPolyfill';
 
 export interface IIdleDeadline {
-  didTimeout: boolean
-  timeRemaining: () => DOMHighResTimeStamp
+  didTimeout: boolean;
+  timeRemaining: () => DOMHighResTimeStamp;
 }
 
 export interface IdleCallbackOptions {
-  timeout?: number
+  timeout?: number;
 }
 
 export const requestIdle = (
   callback: (params: IIdleDeadline) => void,
-  options?: IdleCallbackOptions
+  options?: IdleCallbackOptions,
 ): number => {
-  return globalThisPolyfill['requestIdleCallback'](callback, options)
-}
+  return globalThisPolyfill['requestIdleCallback'](callback, options);
+};
 
 export const cancelIdle = (id: number) => {
-  globalThisPolyfill['cancelIdleCallback'](id)
-}
+  globalThisPolyfill['cancelIdleCallback'](id);
+};

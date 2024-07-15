@@ -1,8 +1,12 @@
-import { useState, useEffect, useMemo, useCallback } from 'react'
-import { TreeNode, CursorStatus, CursorDragType } from '@trionesdev/designable-core'
-import {LayoutObserver, Rect} from '@trionesdev/designable-shared'
-import { useViewport } from './useViewport'
-import { useDesigner } from './useDesigner'
+import { useState, useEffect, useMemo, useCallback } from 'react';
+import {
+  TreeNode,
+  CursorStatus,
+  CursorDragType,
+} from '@trionesdev/designable-core';
+import { LayoutObserver, Rect } from '@trionesdev/designable-shared';
+import { useViewport } from './useViewport';
+import { useDesigner } from './useDesigner';
 
 const isEqualRect = (rect1: Rect, rect2: Rect) => {
   return (
@@ -10,39 +14,39 @@ const isEqualRect = (rect1: Rect, rect2: Rect) => {
     rect1?.y === rect2?.y &&
     rect1?.width === rect2?.width &&
     rect1?.height === rect2?.height
-  )
-}
+  );
+};
 
 export const useValidNodeOffsetRect = (node: TreeNode) => {
-  const engine = useDesigner()
-  const viewport = useViewport()
-  const [, forceUpdate] = useState(null)
+  const engine = useDesigner();
+  const viewport = useViewport();
+  const [, forceUpdate] = useState(null);
   const rectRef = useMemo(
     () => ({ current: viewport.getValidNodeOffsetRect(node) }),
-    [viewport]
-  )
+    [viewport],
+  );
 
-  const element = viewport.findElementById(node?.id)
+  const element = viewport.findElementById(node?.id);
 
   const compute = useCallback(() => {
     if (
       engine.cursor.status !== CursorStatus.Normal &&
       engine.cursor.dragType === CursorDragType.Move
     )
-      return
-    const nextRect = viewport.getValidNodeOffsetRect(node)
+      return;
+    const nextRect = viewport.getValidNodeOffsetRect(node);
     if (!isEqualRect(rectRef.current, nextRect) && nextRect) {
-      rectRef.current = nextRect
-      forceUpdate([])
+      rectRef.current = nextRect;
+      forceUpdate([]);
     }
-  }, [viewport, node])
+  }, [viewport, node]);
 
   useEffect(() => {
-    const layoutObserver = new LayoutObserver(compute)
-    if (element) layoutObserver.observe(element)
+    const layoutObserver = new LayoutObserver(compute);
+    if (element) layoutObserver.observe(element);
     return () => {
-      layoutObserver.disconnect()
-    }
-  }, [node, viewport, element])
-  return rectRef.current
-}
+      layoutObserver.disconnect();
+    };
+  }, [node, viewport, element]);
+  return rectRef.current;
+};

@@ -1,4 +1,4 @@
-import { ISchema } from '@formily/react'
+import { ISchema } from '@formily/react';
 
 export const Switch: ISchema = {
   type: 'object',
@@ -18,4 +18,4 @@ export const Switch: ISchema = {
       },
     },
   },
-}
+};
