@@ -1,6 +1,6 @@
 {
   "name": "@trionesdev/designable-formily-transformer",
-  "version": "0.0.7-beta.1",
+  "version": "0.0.7-beta.2",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -29,8 +29,8 @@
   "dependencies": {
     "@formily/core": "^2.2.29",
     "@formily/json-schema": "^2.2.29",
-    "@trionesdev/designable-core": "^0.0.7-beta.1",
-    "@trionesdev/designable-shared": "^0.0.7-beta.1"
+    "@trionesdev/designable-core": "^0.0.7-beta.2",
+    "@trionesdev/designable-shared": "^0.0.7-beta.2"
   },
   "gitHead": "5014179493da76e7f55bafd2dd35594d42ae2bf1"
 }
