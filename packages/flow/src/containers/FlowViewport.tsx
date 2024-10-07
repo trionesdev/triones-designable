@@ -12,7 +12,7 @@ import ReactDOM from 'react-dom/client';
 import { ContextMenuPanel } from '../panels/ContextMenuPanel';
 import { observer } from '@formily/reactive-react';
 import React from 'react';
-import { GraphNode } from '@trionesdev/designable-flow';
+import { GraphNode } from '../types';
 
 export const FlowViewport = observer(() => {
   const prefix = 'alkaid-flow-viewport';

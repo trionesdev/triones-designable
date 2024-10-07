@@ -19,7 +19,7 @@ import {
 import { CollapseItem } from './components';
 import { Slider } from 'antd';
 
-export const SchemaField = createSchemaField({
+export const SchemaField:any = createSchemaField({
   components: {
     FormItem,
     CollapseItem,

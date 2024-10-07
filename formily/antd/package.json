@@ -1,6 +1,6 @@
 {
   "name": "@trionesdev/designable-formily-antd",
-  "version": "0.0.7-beta.0",
+  "version": "0.0.7-beta.2",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -28,20 +28,22 @@
     "father": "^4.3.0"
   },
   "dependencies": {
+    "@ant-design/cssinjs": "^1.16.1",
     "@formily/antd-v5": "^1.1.0",
     "@formily/core": "^2.2.29",
+    "@formily/json-schema": "^2.2.29",
     "@formily/react": "^2.2.29",
     "@formily/reactive": "^2.2.29",
     "@formily/reactive-react": "^2.2.29",
     "@formily/shared": "^2.2.29",
-    "@trionesdev/designable-core": "^0.0.7-beta.0",
-    "@trionesdev/designable-formily-setters": "^0.0.7-beta.0",
-    "@trionesdev/designable-formily-transformer": "^0.0.7-beta.0",
-    "@trionesdev/designable-react": "^0.0.7-beta.0",
-    "@trionesdev/designable-shared": "^0.0.7-beta.0",
+    "@trionesdev/designable-core": "^0.0.7-beta.2",
+    "@trionesdev/designable-formily-setters": "^0.0.7-beta.2",
+    "@trionesdev/designable-formily-transformer": "^0.0.7-beta.2",
+    "@trionesdev/designable-react": "^0.0.7-beta.2",
+    "@trionesdev/designable-shared": "^0.0.7-beta.2",
     "antd": "^5.8.2",
     "classnames": "^2.3.2",
     "react": "^18.2.0"
   },
-  "gitHead": "5014179493da76e7f55bafd2dd35594d42ae2bf1"
+  "gitHead": "785f7ec18a215d788786eee472703e8b697bca15"
 }
