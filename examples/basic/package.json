@@ -1,0 +1,42 @@
+{
+  "name": "basic",
+  "private": true,
+  "version": "0.0.7-beta.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@ant-design/cssinjs": "^1.16.1",
+    "@formily/antd-v5": "^1.1.0",
+    "@formily/core": "^2.2.27",
+    "@formily/react": "^2.2.27",
+    "@formily/reactive": "^2.2.27",
+    "@trionesdev/designable-core": "^0.0.7-beta.1",
+    "@trionesdev/designable-formily-antd": "^0.0.7-beta.1",
+    "@trionesdev/designable-formily-transformer": "^0.0.7-beta.1",
+    "@trionesdev/designable-react": "^0.0.7-beta.1",
+    "@trionesdev/designable-react-settings-form": "^0.0.7-beta.1",
+    "@trionesdev/designable-shared": "^0.0.7-beta.1",
+    "antd": "^5.8.0",
+    "cross-env": "^7.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.11.1",
+    "@types/react": "^18.3.10",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "eslint": "^9.11.1",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.12",
+    "globals": "^15.9.0",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^8.7.0",
+    "vite": "^5.4.8"
+  }
+}
