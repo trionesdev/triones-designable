@@ -7,17 +7,19 @@
     "packages/*"
   ],
   "scripts": {
-    "bootstrap": "lerna bootstrap",
     "clean": "lerna clean",
+    "check:types": "tsc --project tsconfig.json --noEmit",
     "build": "lerna run build",
     "preversion": "yarn run build",
     "version:beta": "lerna version prerelease --preid beta",
     "release:github": "ts-node scripts/release release",
-    "release:force": "lerna publish from-package --yes",
+    "release:force": "lerna publish from-package --yes --registry=https://registry.npmjs.org/",
     "prelease:force": "lerna publish from-package --yes --dist-tag next",
-    "release": "lerna publish",
-    "codingPublish": "lerna publish --registry=https://moensun-npm.pkg.coding.net/npm/moensun/",
-    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'"
+    "release": "lerna publish --registry=https://registry.npmjs.org/",
+    "format": "prettier --write \"**/*.{ts,tsx,js,json,css,less}\"",
+    "publish": "npm publish --registry=https://registry.npmjs.org/",
+    "publishOnly": "npm publish --ignore-scripts --registry=https://registry.npmjs.org/",
+    "triones:publishOnly": "npm publish --ignore-scripts --registry=https://moensun-npm.pkg.coding.net/npm/moensun/"
   },
   "devDependencies": {
     "eslint-plugin-prettier": "^5.1.3",
