@@ -10,8 +10,8 @@ function getGlobalThis() {
     }
   } catch (e) {}
   try {
-    if (typeof global !== 'undefined') {
-      return global;
+    if (typeof window !== 'undefined') {
+      return window;
     }
   } catch (e) {}
   return Function('return this')();

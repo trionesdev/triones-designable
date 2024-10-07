@@ -5,7 +5,6 @@ import {
   Shortcut,
 } from '@trionesdev/designable-core';
 import { useEffect, useMemo } from 'react';
-import './App.css';
 import {
   ComponentTreeWidget,
   CompositePanel,
@@ -48,7 +47,8 @@ function App() {
               [KeyCode.Meta, KeyCode.S],
               [KeyCode.Control, KeyCode.S],
             ],
-            handler(ctx) {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            handler(_ctx:any) {
               console.log(
                 JSON.stringify(transformToSchema(engine.getCurrentTree())),
               );

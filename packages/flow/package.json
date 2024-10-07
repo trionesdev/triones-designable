@@ -40,6 +40,8 @@
     "@formily/reactive": "^2.2.27",
     "@formily/reactive-react": "^2.2.27",
     "@trionesdev/designable-react": "^0.0.7-beta.0",
+    "@trionesdev/designable-core": "^0.0.7-beta.0",
+    "@trionesdev/designable-shared": "^0.0.7-beta.0",
     "ahooks": "^3.7.8",
     "antd": "^5.8.0",
     "classnames": "^2.3.2",

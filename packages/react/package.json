@@ -36,6 +36,7 @@
     "@formily/reactive": "^2.2.29",
     "@formily/reactive-react": "^2.2.29",
     "@trionesdev/designable-core": "^0.0.7-beta.0",
+    "@trionesdev/designable-shared": "^0.0.7-beta.0",
     "antd": "^5.8.2",
     "classnames": "^2.3.2",
     "dateformat": "^5.0.3",

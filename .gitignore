@@ -2,3 +2,4 @@ node_modules/
 .idea
 */node_modules/
 .npmrc
+pnpm-lock.yaml

@@ -28,6 +28,7 @@
     "father": "^4.3.0"
   },
   "dependencies": {
+    "@ant-design/cssinjs": "^1.16.1",
     "@ant-design/icons": "^5.2.5",
     "@formily/antd-v5": "^1.1.0",
     "@formily/core": "^2.2.29",
