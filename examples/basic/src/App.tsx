@@ -31,11 +31,15 @@ import {
   NumberPicker,
   Password,
   Rate,
+  Card,
+  FormGrid,
+  Space
 } from '@trionesdev/designable-formily-antd';
 import { SettingsForm } from '@trionesdev/designable-react-settings-form';
 import { transformToSchema } from '@trionesdev/designable-formily-transformer';
 import { Button } from 'antd';
 import { PreviewWidget } from './PreviewWidget';
+
 
 function App() {
   const engine = useMemo(
@@ -77,6 +81,9 @@ function App() {
     Password,
     ArrayCards,
     ArrayTable,
+    Card,
+    FormGrid,
+    Space
   };
 
   return (
@@ -88,7 +95,7 @@ function App() {
               title="sources.Inputs"
               sources={[Input, Password, NumberPicker, Rate]}
             />
-            <ResourceWidget title="sources.Layouts" sources={[]} />
+            <ResourceWidget title="sources.Layouts" sources={[Card,FormGrid,Space]} />
             <ResourceWidget
               title="sources.Arrays"
               sources={[ArrayCards, ArrayTable]}
