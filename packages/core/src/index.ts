@@ -1,9 +1,10 @@
 import { globalThisPolyfill } from '@trionesdev/designable-shared';
 import * as Core from './exports';
+
 export * from './exports';
 
 if (globalThisPolyfill?.['Designable']?.['Core']) {
-  if (module.exports) {
+  if (module && module.exports) {
     module.exports = {
       __esModule: true,
       ...globalThisPolyfill['Designable']['Core'],

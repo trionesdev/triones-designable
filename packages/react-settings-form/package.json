@@ -1,6 +1,6 @@
 {
   "name": "@trionesdev/designable-react-settings-form",
-  "version": "0.0.7-beta.0",
+  "version": "0.0.7-beta.2",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -39,7 +39,9 @@
     "@formily/shared": "^2.2.27",
     "@monaco-editor/loader": "^1.3.3",
     "@monaco-editor/react": "^4.5.1",
-    "@trionesdev/designable-react": "^0.0.7-beta.0",
+    "@trionesdev/designable-core": "^0.0.7-beta.2",
+    "@trionesdev/designable-react": "^0.0.7-beta.2",
+    "@trionesdev/designable-shared": "^0.0.7-beta.2",
     "antd": "^5.8.0",
     "classnames": "^2.3.2",
     "monaco-editor": "^0.41.0",
@@ -49,5 +51,5 @@
     "react-dom": "^18.2.0",
     "react-tiny-popover": "^7.2.4"
   },
-  "gitHead": "5014179493da76e7f55bafd2dd35594d42ae2bf1"
+  "gitHead": "785f7ec18a215d788786eee472703e8b697bca15"
 }

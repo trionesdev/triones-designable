@@ -1,6 +1,6 @@
 {
   "name": "@trionesdev/designable-core",
-  "version": "0.0.7-beta.0",
+  "version": "0.0.7-beta.2",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -25,15 +25,17 @@
     "access": "public"
   },
   "devDependencies": {
+    "@types/node": "^16.7.13",
     "@types/react": "^18.0.28",
     "father": "^4.3.0",
     "react": "^18.2.0"
   },
   "dependencies": {
+    "@formily/json-schema": "^2.2.29",
     "@formily/path": "^2.2.29",
     "@formily/reactive": "^2.2.29",
     "@juggle/resize-observer": "^3.4.0",
-    "@trionesdev/designable-shared": "^0.0.7-beta.0"
+    "@trionesdev/designable-shared": "^0.0.7-beta.2"
   },
-  "gitHead": "5014179493da76e7f55bafd2dd35594d42ae2bf1"
+  "gitHead": "785f7ec18a215d788786eee472703e8b697bca15"
 }

@@ -5,7 +5,6 @@ import {
   Shortcut,
 } from '@trionesdev/designable-core';
 import { useEffect, useMemo } from 'react';
-import './App.css';
 import {
   ComponentTreeWidget,
   CompositePanel,
@@ -32,11 +31,15 @@ import {
   NumberPicker,
   Password,
   Rate,
+  Card,
+  FormGrid,
+  Space
 } from '@trionesdev/designable-formily-antd';
 import { SettingsForm } from '@trionesdev/designable-react-settings-form';
 import { transformToSchema } from '@trionesdev/designable-formily-transformer';
 import { Button } from 'antd';
 import { PreviewWidget } from './PreviewWidget';
+
 
 function App() {
   const engine = useMemo(
@@ -48,7 +51,8 @@ function App() {
               [KeyCode.Meta, KeyCode.S],
               [KeyCode.Control, KeyCode.S],
             ],
-            handler(ctx) {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            handler(_ctx:any) {
               console.log(
                 JSON.stringify(transformToSchema(engine.getCurrentTree())),
               );
@@ -77,6 +81,9 @@ function App() {
     Password,
     ArrayCards,
     ArrayTable,
+    Card,
+    FormGrid,
+    Space
   };
 
   return (
@@ -88,7 +95,7 @@ function App() {
               title="sources.Inputs"
               sources={[Input, Password, NumberPicker, Rate]}
             />
-            <ResourceWidget title="sources.Layouts" sources={[]} />
+            <ResourceWidget title="sources.Layouts" sources={[Card,FormGrid,Space]} />
             <ResourceWidget
               title="sources.Arrays"
               sources={[ArrayCards, ArrayTable]}
@@ -119,7 +126,7 @@ function App() {
                 )}
               </ViewPanel>
               <ViewPanel type={`PREVIEW`}>
-                {(tree) => <PreviewWidget tree={tree} components={components} />}
+                {(tree) => <PreviewWidget tree={tree}  />}
               </ViewPanel>
             </ViewportPanel>
           </WorkspacePanel>

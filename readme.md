@@ -67,7 +67,9 @@ chore:    不修改src或者test的其余修改，例如构建过程或辅助工
 
 ```
 
-#### 互相吹捧，共同进步
+#### 关注我们，一起交流
+
+##### 联系:如果issue回复较慢，可以通过公众号直接发信息
 
 <div style="width: 100%;text-align: center">
 <img src="images/shuque_wx.jpg" width="200px" alt="">

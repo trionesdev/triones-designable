@@ -4,7 +4,7 @@
     "moduleResolution": "node",
     "jsx": "react",
     "module": "commonjs",
-    "target": "es5",
+    "target": "es2016",
     "allowJs": false,
     "noUnusedLocals": true,
     "preserveConstEnums": true,
