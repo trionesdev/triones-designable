@@ -126,7 +126,7 @@ function App() {
                 )}
               </ViewPanel>
               <ViewPanel type={`PREVIEW`}>
-                {(tree) => <PreviewWidget tree={tree} components={components} />}
+                {(tree) => <PreviewWidget tree={tree}  />}
               </ViewPanel>
             </ViewportPanel>
           </WorkspacePanel>
