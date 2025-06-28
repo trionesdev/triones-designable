@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: yarn install
-      - run: yarn run build
+      - run: pnpm install
+      - run: pnpm run build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
