@@ -125,6 +125,9 @@ function App() {
                   />
                 )}
               </ViewPanel>
+              <ViewPanel type="JSONTREE">
+                {(tree) => <div dangerouslySetInnerHTML={{__html:JSON.stringify(transformToSchema(tree))}}></div>}
+              </ViewPanel>
               <ViewPanel type={`PREVIEW`}>
                 {(tree) => <PreviewWidget tree={tree}  />}
               </ViewPanel>
