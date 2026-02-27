@@ -1,17 +1,17 @@
 # @alkaid/designer
 
-[![NPM version](https://img.shields.io/npm/v/@alkaid/designer.svg?style=flat)](https://npmjs.org/package/@alkaid/designer)
-[![NPM downloads](http://img.shields.io/npm/dm/@alkaid/designer.svg?style=flat)](https://npmjs.org/package/@alkaid/designer)
+[![NPM version](https://img.shields.io/npm/v/@trionesdev/designable-flow.svg?style=flat)](https://npmjs.org/package/@trionesdev/designable-flow)
+[![NPM downloads](http://img.shields.io/npm/dm/@trionesdev/designable-flow.svg?style=flat)](https://npmjs.org/package/@trionesdev/designable-flow)
 
 ## Install
 
 ```bash
-$ yarn install
+$ pnpm install
 ```
 
 ```bash
-$ npm run dev
-$ npm run build
+$ pnpm run dev
+$ pnpm run build
 ```
 
 ## Options

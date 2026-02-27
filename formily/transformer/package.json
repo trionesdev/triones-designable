@@ -29,8 +29,8 @@
   "dependencies": {
     "@formily/core": "^2.2.29",
     "@formily/json-schema": "^2.2.29",
-    "@trionesdev/designable-core": "^0.0.7-beta.2",
-    "@trionesdev/designable-shared": "^0.0.7-beta.2"
+    "@trionesdev/designable-core": "workspace:*",
+    "@trionesdev/designable-shared": "workspace:*"
   },
   "gitHead": "785f7ec18a215d788786eee472703e8b697bca15"
 }

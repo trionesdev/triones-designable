@@ -80,6 +80,7 @@ export class Selection {
   }
 
   batchSafeSelect(ids: string[] | TreeNode[]) {
+    this.selected = [];
     if (!ids?.length) return;
     this.batchSelect(ids);
   }

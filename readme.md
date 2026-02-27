@@ -9,24 +9,24 @@
 安装依赖
 
 ```
-yarn install
+pnpm install
 ```
 
 打包组件
 
 ```
-yarn build
+pnpm build
 ```
 
 启动范例
 进入到 examples/basic目录下，执行启动命令
 
 ```
-yarn start
+pnpm start
 ```
 
-> 如果想进行调试，则进入对应的组件目录下，执行 `yarn dev`
-> 如果报错找不到依赖，请事先进入formily和packages目录下的所有子组件的应用中，执行启动命令 `yarn dev`
+> 如果想进行调试，则进入对应的组件目录下，执行 `pnpm dev`
+> 如果报错找不到依赖，请事先进入formily和packages目录下的所有子组件的应用中，执行启动命令 `pnpm dev`
 
 ## 推送私仓
 
