@@ -17,6 +17,7 @@ export class Subscribable<ExtendsType = any> {
   dispatch<T extends ExtendsType = any>(event: T, context?: any) {
     let interrupted = false;
     for (const key in this.subscribers) {
+
       if (isFn(this.subscribers[key])) {
         event['context'] = context;
         if (this.subscribers[key](event) === false) {

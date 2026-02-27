@@ -550,7 +550,7 @@ export class TreeNode {
         this.children = this.children.concat(newNodes);
         return newNodes;
       },
-      [],
+      [...newNodes], //解决 https://github.com/trionesdev/triones-designable/issues/27#issuecomment-3948852455 临时方案，作者写的太复杂了，我实在看不动了。能解决issue中的问题，但是我感觉会有坑
     );
   }
 

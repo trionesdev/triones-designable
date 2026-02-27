@@ -1,6 +1,6 @@
 {
   "name": "@trionesdev/designable-formily-antd",
-  "version": "0.0.7-beta.2",
+  "version": "0.0.7-beta.3",
   "description": "",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -36,14 +36,14 @@
     "@formily/reactive": "^2.2.29",
     "@formily/reactive-react": "^2.2.29",
     "@formily/shared": "^2.2.29",
-    "@trionesdev/designable-core": "^0.0.7-beta.2",
-    "@trionesdev/designable-formily-setters": "^0.0.7-beta.2",
-    "@trionesdev/designable-formily-transformer": "^0.0.7-beta.2",
-    "@trionesdev/designable-react": "^0.0.7-beta.2",
-    "@trionesdev/designable-shared": "^0.0.7-beta.2",
+    "@trionesdev/designable-core": "0.0.7-beta.3",
+    "@trionesdev/designable-formily-setters": "0.0.7-beta.3",
+    "@trionesdev/designable-formily-transformer": "0.0.7-beta.3",
+    "@trionesdev/designable-react": "0.0.7-beta.3",
+    "@trionesdev/designable-shared": "0.0.7-beta.3",
     "antd": "^5.8.2",
     "classnames": "^2.3.2",
     "react": "^18.2.0"
   },
-  "gitHead": "785f7ec18a215d788786eee472703e8b697bca15"
+  "gitHead": "1975c4b9973cd6bbff6710c573c23a96f72ff7a6"
 }

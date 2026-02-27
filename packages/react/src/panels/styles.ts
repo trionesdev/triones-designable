@@ -66,8 +66,7 @@ export const genCompositePanelStyle = (
   prefixCls: string,
   token: GlobalToken,
 ): CSSInterpolation => {
-  console.log(prefixCls);
-  console.log(token);
+
   return {
     [`.${prefixCls}`]: {
       flexGrow: 0,

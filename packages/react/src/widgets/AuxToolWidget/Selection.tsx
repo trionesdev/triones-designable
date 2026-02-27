@@ -71,7 +71,9 @@ export const Selection = observer(() => {
   const tree = useTree();
   const cursor = useCursor();
   const viewportMoveHelper = useMoveHelper();
+
   if (cursor.status !== 'NORMAL' && viewportMoveHelper.touchNode) return null;
+
   return (
     <Fragment>
       {selection.selected.map((id) => {
