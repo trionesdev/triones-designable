@@ -35,7 +35,7 @@
     "@formily/path": "^2.2.29",
     "@formily/reactive": "^2.2.29",
     "@juggle/resize-observer": "^3.4.0",
-    "@trionesdev/designable-shared": "workspace:*"
+    "@trionesdev/designable-shared": "0.0.7-beta.3"
   },
-  "gitHead": "785f7ec18a215d788786eee472703e8b697bca15"
+  "gitHead": "af15ea2fc34bc3d05ffe9fccd88c79c233cf10fd"
 }
